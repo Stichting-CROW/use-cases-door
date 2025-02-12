@@ -1,0 +1,1 @@
+Dit document beschrijft de use cases van gemeente Nijmegen voor het DOOR-programma. Het onderwerp is revisiegegevens uit projecten verwerken in het beheersysteem. 
