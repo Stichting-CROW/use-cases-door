@@ -1,0 +1,1279 @@
+<!DOCTYPE html><html lang="nl"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 32.3.0">
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:MuseoSans,"Museo Sans",Museo,sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+<link rel="stylesheet" href="https://docs.crow.nl/webfonts/webfonts.css">
+<link rel="stylesheet" href="https://docs.crow.nl/respec-design/stichting-crow/base.min.css">
+<link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://docs.crow.nl/respec-design/stichting-crow/dark.min.css">
+  
+  
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+  
+  
+  
+<title>Use Case Nijmegen</title>
+  
+  
+  
+<style>
+
+@media ( prefers-reduced-motion: no-preference ) {
+  @keyframes animateheader {
+    0% { background-color: unset; }
+    20%   { background-color: #ffff0020; }
+    100% { background-color: unset; }
+  }
+}
+
+:target {
+  animation: animateheader 1s ease-in-out ;
+}
+.toc-labeled>li li {
+  margin-left: 0;
+  list-style: disc;
+  margin-left: 1rem;
+}
+:not(li)>.toc-labeled {
+  margin-left: 0;
+}
+.toc-labeled {
+  font-size: 0.9rem;
+  line-height: inherit;
+}
+
+</style>
+
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000;color:var(--toclink-text)}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<link rel="icon" href="https://docs.crow.nl/respec-design/logos/crow.ico">
+<style>
+ul.index{columns:30ch;column-gap:1.5em}
+ul.index li{list-style:inherit}
+ul.index li span{color:inherit;cursor:pointer;white-space:normal}
+#index-defined-here ul.index li{font-size:.9rem}
+ul.index code{color:inherit}
+#index-defined-here .print-only{display:none}
+@media print{
+#index-defined-here .print-only{display:initial}
+}
+</style>
+<meta name="description" content="Dit document beschrijft de use cases van gemeente Nijmegen voor het DOOR-programma. Het onderwerp is revisiegegevens van rioleringen uit projecten verwerken in het beheersysteem.">
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "specStatus": "CR",
+  "pubDomain": "use-cases-door",
+  "shortName": "nijmegen",
+  "license": "CC-BY",
+  "subtitle": "Revisieverwerking van rioleringen",
+  "lint": {
+    "no-unused-dfns": false
+  },
+  "editors": [
+    {
+      "name": "Elisabeth Klören",
+      "company": "CROW"
+    },
+    {
+      "name": "Rosemarie Mijlhoff",
+      "company": "OpenPerspectief"
+    }
+  ],
+  "github": "https://github.com/Stichting-CROW/use-cases-door",
+  "postProcess": [
+    null
+  ],
+  "hypothesisComments": true,
+  "reviewDateEnd": 2019,
+  "publishISODate": "2025-02-26T00:00:00.000Z",
+  "generatedSubtitle": "CROW, in consultatie 26 februari 2025"
+}</script></head>
+
+<body class="h-entry" style="background-image: url(&quot;https://docs.crow.nl/respec-design/stichting-crow/status-nl/CR.svg&quot;);"><div class="head">
+    <p class="logos"><a class="logo" href="https://www.crow.nl"><img crossorigin="" alt="CROW" height="75" src="https://docs.crow.nl/respec-design/stichting-crow/logo/crow.svg" width="150">
+  </a></p>
+    <h1 id="title" class="title">Use Case Nijmegen</h1> <h2 id="subtitle" class="subtitle">Revisieverwerking van rioleringen</h2>
+    <p id="w3c-state">CROW,
+  in consultatie <time style="white-space: pre;" class="dt-published" datetime="2025-02-26">26 februari 2025</time></p>
+    <details open="">
+      <summary>Meer informatie over dit document</summary>
+      <dl>
+        
+        
+        
+        <dt>Laatste werkversie:</dt><dd><a href="https://docs.crow.nl/use-cases-door/nijmegen">https://docs.crow.nl/use-cases-door/nijmegen</a></dd>
+        <dt>Geschiedenis:</dt><dd>
+                    <a href="https://github.com/Stichting-CROW/use-cases-door/commits/">Wijzigingsgeschiedenis</a>
+                  </dd>
+        
+        
+        
+        <dt>Redacteurs:</dt><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Elisabeth Klören</span> (<span class="p-org org h-org">CROW</span>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Rosemarie Mijlhoff</span> (<span class="p-org org h-org">OpenPerspectief</span>)
+  </dd>
+        
+        
+        <dt>Feedback:</dt><dd>
+        <a href="https://github.com/Stichting-CROW/use-cases-door/">GitHub Stichting-CROW/use-cases-door</a>
+        (<a href="https://github.com/Stichting-CROW/use-cases-door/pulls/">wijzigingsverzoeken</a>,
+        <a href="https://github.com/Stichting-CROW/use-cases-door/issues/new/choose">nieuw issue</a>,
+        <a href="https://github.com/Stichting-CROW/use-cases-door/issues/">openstaande issues</a>)
+      </dd><dd id="annotation-service-placeholder">
+        <button type="button" data-load-annotation-service="">
+          Laad annotaties
+        </button>
+        <span><small>Annotaties door <a href="https://web.hypothes.is">Hypothes.is</a> (<a href="https://web.hypothes.is/privacy">privacybeleid</a>).</small></span>
+      </dd><dd hidden="" id="annotation-service-loaded">
+        <span data-hypothesis-annotation-count="">...</span> annotatie(s) met <em>Hypothes.is</em>
+        <button type="button" data-hypothesis-trigger="">
+          Toon annotatiebalk
+        </button>
+        <button type="button" data-unload-annotation-service="">
+          Verberg
+        </button>
+      </dd>
+        
+        
+      </dl>
+    </details>
+    
+    <p class="copyright">
+    Copyright ©
+    2025
+    
+    <a href="https://www.crow.nl">CROW</a>.
+    CROW
+    <a href="https://www.crow.nl/disclaimer">disclaimer</a>
+      van toepassing en gedistribueerd onder
+      <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" title="Creative Commons Naamsvermelding">CC BY 4.0</a>
+  </p>
+    <hr title="Separator for header">
+  </div>
+  
+  <section id="abstract" data-format="markdown" class="introductory"><h2>Samenvatting</h2><p>Dit document beschrijft de use cases van gemeente Nijmegen voor het DOOR-programma. Het onderwerp is revisiegegevens van rioleringen uit projecten verwerken in het beheersysteem.</p>
+</section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">2. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aanleiding"><bdi class="secno">2.1 </bdi>Aanleiding</a></li><li class="tocline"><a class="tocxref" href="#gebruik-van-use-cases"><bdi class="secno">2.2 </bdi>Gebruik van use cases</a></li><li class="tocline"><a class="tocxref" href="#werkwijze"><bdi class="secno">2.3 </bdi>Werkwijze</a></li><li class="tocline"><a class="tocxref" href="#use-case-nijmegen"><bdi class="secno">2.4 </bdi>Use case Nijmegen</a></li><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">2.5 </bdi>Leeswijzer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vraagstuk-en-toegevoegde-waarde"><bdi class="secno">3. </bdi>Vraagstuk en toegevoegde waarde</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#welk-vraagstuk-willen-we-oplossen"><bdi class="secno">3.1 </bdi>Welk vraagstuk willen we oplossen?</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vraagstuk-informatievoorziening"><bdi class="secno">3.1.1 </bdi>Vraagstuk Informatievoorziening</a></li><li class="tocline"><a class="tocxref" href="#vraagstuk-organisatiecultuur"><bdi class="secno">3.1.2 </bdi>Vraagstuk organisatiecultuur</a></li></ol></li><li class="tocline"><a class="tocxref" href="#voor-wie-is-het-vraagstuk"><bdi class="secno">3.2 </bdi>Voor wie is het vraagstuk?</a></li><li class="tocline"><a class="tocxref" href="#welke-opgave-ligt-aan-het-vraagstuk-ten-grondslag"><bdi class="secno">3.3 </bdi>Welke opgave ligt aan het vraagstuk ten grondslag?​</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#hoofdlijnen-revisieproces"><bdi class="secno">3.3.1 </bdi>Hoofdlijnen revisieproces</a></li><li class="tocline"><a class="tocxref" href="#opgave-informatievoorziening"><bdi class="secno">3.3.2 </bdi>Opgave informatievoorziening</a></li><li class="tocline"><a class="tocxref" href="#opgave-organisatiecultuur"><bdi class="secno">3.3.3 </bdi>Opgave organisatiecultuur**:</a></li></ol></li><li class="tocline"><a class="tocxref" href="#wat-zijn-de-grootste-knelpunten"><bdi class="secno">3.4 </bdi>Wat zijn de grootste knelpunten?​</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#knelpunt-dubbele-inwinning-van-gegevens"><bdi class="secno">3.4.1 </bdi>Knelpunt: dubbele inwinning van gegevens</a></li><li class="tocline"><a class="tocxref" href="#knelpunt-te-late-aanlevering-klic"><bdi class="secno">3.4.2 </bdi>Knelpunt: Te late aanlevering Klic</a></li><li class="tocline"><a class="tocxref" href="#knelpunt-tegenstrijdige-bronnen-beheerinformatie"><bdi class="secno">3.4.3 </bdi>Knelpunt: Tegenstrijdige bronnen beheerinformatie</a></li><li class="tocline"><a class="tocxref" href="#knelpunt-beheerdata-niet-gebaseerd-op-imbor-of-gwsw"><bdi class="secno">3.4.4 </bdi>Knelpunt: Beheerdata niet gebaseerd op <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> of <abbr title="Gegevenswoordenboek Stedelijk Water">GWSW</abbr></a></li><li class="tocline"><a class="tocxref" href="#knelpunt-verlies-ontwerpparameters-bij-overdracht-naar-beheer"><bdi class="secno">3.4.5 </bdi>Knelpunt: Verlies ontwerpparameters bij overdracht naar beheer</a></li><li class="tocline"><a class="tocxref" href="#knelpunt-beheerinformatie-ontbreekt-in-bestekstekening"><bdi class="secno">3.4.6 </bdi>Knelpunt: Beheerinformatie ontbreekt in bestekstekening</a></li><li class="tocline"><a class="tocxref" href="#knelpunt-eisen-aan-oplevering"><bdi class="secno">3.4.7 </bdi>Knelpunt: Eisen aan oplevering</a></li><li class="tocline"><a class="tocxref" href="#knelpunt-falende-controle-opleverdossier"><bdi class="secno">3.4.8 </bdi>Knelpunt: Falende controle opleverdossier</a></li><li class="tocline"><a class="tocxref" href="#knelpunt-beheerder-niet-betrokken"><bdi class="secno">3.4.9 </bdi>Knelpunt: Beheerder niet betrokken</a></li><li class="tocline"><a class="tocxref" href="#knelpunt-opleverdossier-te-laat-incompleet"><bdi class="secno">3.4.10 </bdi>Knelpunt: Opleverdossier te laat, incompleet</a></li></ol></li><li class="tocline"><a class="tocxref" href="#welke-maatschappelijke-waarde-willen-we-realiseren"><bdi class="secno">3.5 </bdi>Welke maatschappelijke waarde willen we realiseren?</a></li><li class="tocline"><a class="tocxref" href="#wat-zijn-onze-inhoudelijke-doelen"><bdi class="secno">3.6 </bdi>Wat zijn onze inhoudelijke doelen?​</a></li><li class="tocline"><a class="tocxref" href="#welke-criteria-hanteren-we-om-deze-doelen-meetbaar-te-maken"><bdi class="secno">3.7 </bdi>Welke criteria hanteren we om  deze doelen meetbaar te maken?​</a></li></ol></li><li class="tocline"><a class="tocxref" href="#belanghebbenden-wensen-en-verwachtingen"><bdi class="secno">4. </bdi>Belanghebbenden, wensen en verwachtingen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wie-zijn-belanghebbend"><bdi class="secno">4.1 </bdi>Wie zijn belanghebbend?</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#hoofdactoren-intern"><bdi class="secno">4.1.1 </bdi>Hoofdactoren intern</a></li><li class="tocline"><a class="tocxref" href="#hoofdactoren-extern"><bdi class="secno">4.1.2 </bdi>Hoofdactoren extern</a></li><li class="tocline"><a class="tocxref" href="#secundaire-actoren-intern"><bdi class="secno">4.1.3 </bdi>Secundaire actoren intern</a></li><li class="tocline"><a class="tocxref" href="#secundaire-actoren-extern"><bdi class="secno">4.1.4 </bdi>Secundaire actoren extern</a></li><li class="tocline"><a class="tocxref" href="#ihkv-organisatiecultuur"><bdi class="secno">4.1.5 </bdi>Ihkv organisatiecultuur</a></li><li class="tocline"><a class="tocxref" href="#voor-welke-vragen-zoeken-zij-een-oplossing"><bdi class="secno">4.1.6 </bdi>Voor welke vragen zoeken zij een oplossing?</a></li><li class="tocline"><a class="tocxref" href="#welke-beslissingen-willen-zij-kunnen-nemen"><bdi class="secno">4.1.7 </bdi>Welke beslissingen willen zij kunnen nemen</a></li><li class="tocline"><a class="tocxref" href="#wie-is-eigenaar-van-het-vraagstuk"><bdi class="secno">4.1.8 </bdi>Wie is eigenaar van het vraagstuk?​</a></li><li class="tocline"><a class="tocxref" href="#wie-is-opdrachtgever-voor-het-oplossen"><bdi class="secno">4.1.9 </bdi>Wie is opdrachtgever voor het oplossen?​</a></li><li class="tocline"><a class="tocxref" href="#wie-is-budgethouder"><bdi class="secno">4.1.10 </bdi>Wie is budgethouder?​</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#het-ontwerp"><bdi class="secno">5. </bdi>Het ontwerp</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#algemeen-advies"><bdi class="secno">5.1 </bdi>Algemeen advies</a></li><li class="tocline"><a class="tocxref" href="#toetsen-ontwerp-en-contract"><bdi class="secno">5.2 </bdi>Toetsen ontwerp en contract</a></li><li class="tocline"><a class="tocxref" href="#toetsen-werk-uitvoeren-meting-tijdens-en-na-realisatie-bouwrijpfase"><bdi class="secno">5.3 </bdi>Toetsen werk &amp; uitvoeren meting tijdens en na realisatie bouwrijpfase</a></li><li class="tocline"><a class="tocxref" href="#riool-inspectie-uitvoeren-voor-het-gat-dichtgaat-tijdens-bouwrijp-maken"><bdi class="secno">5.4 </bdi>Riool inspectie uitvoeren (voor het gat dichtgaat tijdens bouwrijp maken)</a></li><li class="tocline"><a class="tocxref" href="#besluit-voldoet-riool-aan-de-vereisten-go-no-go"><bdi class="secno">5.5 </bdi>Besluit: voldoet riool aan de vereisten? Go / no go</a></li><li class="tocline"><a class="tocxref" href="#oplevering-informatie-controleren-na-bouwrijp-maken"><bdi class="secno">5.6 </bdi>Oplevering informatie controleren (na bouwrijp maken)</a></li><li class="tocline"><a class="tocxref" href="#gegevens-opleveren-aan-klic"><bdi class="secno">5.7 </bdi>Gegevens opleveren aan <abbr title="Kabels en Leidingen Informatieportaal">KLIC</abbr></a></li><li class="tocline"><a class="tocxref" href="#meting-van-het-op-te-leveren-werk-woon-inrichting-rijp-en-uitvoeren-rioolinspectie"><bdi class="secno">5.8 </bdi>Meting van het op te leveren werk (woon-/inrichting rijp) en uitvoeren rioolinspectie</a></li><li class="tocline"><a class="tocxref" href="#controlemeting-op-de-meting-van-de-aannemer"><bdi class="secno">5.9 </bdi>Controlemeting op de meting van de aannemer</a></li><li class="tocline"><a class="tocxref" href="#toetsing-revisiedossier"><bdi class="secno">5.10 </bdi>Toetsing revisiedossier</a></li><li class="tocline"><a class="tocxref" href="#formele-oplevering-woon-inrichting-rijp"><bdi class="secno">5.11 </bdi>Formele oplevering woon-/inrichting rijp</a></li><li class="tocline"><a class="tocxref" href="#besluit-voldoet-de-oplevering"><bdi class="secno">5.12 </bdi>Besluit: voldoet de oplevering?</a></li></ol></li><li class="tocline"><a class="tocxref" href="#user-stories"><bdi class="secno">6. </bdi>User stories</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#user-stories-toetsen-ontwerp-en-contract"><bdi class="secno">6.1 </bdi>User stories Toetsen ontwerp en contract</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#als-rioolbeheerder"><bdi class="secno">6.1.1 </bdi>Als rioolbeheerder</a></li><li class="tocline"><a class="tocxref" href="#als-rioolbeheerder-0"><bdi class="secno">6.1.2 </bdi>Als rioolbeheerder</a></li><li class="tocline"><a class="tocxref" href="#als-werkvoorbereider"><bdi class="secno">6.1.3 </bdi>Als werkvoorbereider​</a></li></ol></li><li class="tocline"><a class="tocxref" href="#user-story-toetsen-werk-uitvoeren-meting-tijdens-en-na-realisatie-bouwrijpfase"><bdi class="secno">6.2 </bdi>User story Toetsen werk &amp; uitvoeren meting tijdens en na realisatie bouwrijpfase</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#als-aannemer"><bdi class="secno">6.2.1 </bdi>Als aannemer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#user-story-riool-inspectie-uitvoeren-voor-het-gat-dichtgaat-tijdens-bouwrijp-maken"><bdi class="secno">6.3 </bdi>User story Riool inspectie uitvoeren (voor het gat dichtgaat tijdens bouwrijp maken)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#als-rioolbeheerder-1"><bdi class="secno">6.3.1 </bdi>Als rioolbeheerder</a></li></ol></li><li class="tocline"><a class="tocxref" href="#user-story-besluit-voldoet-riool-aan-de-vereisten-go-no-go"><bdi class="secno">6.4 </bdi>User story Besluit: voldoet riool aan de vereisten? Go / no go</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#als-toezichthouder"><bdi class="secno">6.4.1 </bdi>Als toezichthouder</a></li></ol></li><li class="tocline"><a class="tocxref" href="#user-story-oplevering-informatie-controleren-na-bouwrijp-maken"><bdi class="secno">6.5 </bdi>User story Oplevering informatie controleren (na bouwrijp maken)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#als-rioolbeheerder-2"><bdi class="secno">6.5.1 </bdi>Als rioolbeheerder</a></li></ol></li><li class="tocline"><a class="tocxref" href="#user-story-gegevens-opleveren-voor-de-klic"><bdi class="secno">6.6 </bdi>User story Gegevens opleveren voor de <abbr title="Kabels en Leidingen Informatieportaal">KLIC</abbr></a></li><li class="tocline"><a class="tocxref" href="#user-story-meting-van-het-op-te-leveren-werk-woon-inrichting-rijp"><bdi class="secno">6.7 </bdi>User story Meting van het op te leveren werk (woon-/inrichting rijp)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#als-rioolbeheerder-3"><bdi class="secno">6.7.1 </bdi>Als rioolbeheerder</a></li></ol></li><li class="tocline"><a class="tocxref" href="#user-story-controlemeting-op-de-meting-van-de-aannemer"><bdi class="secno">6.8 </bdi>User story Controlemeting op de meting van de aannemer</a></li><li class="tocline"><a class="tocxref" href="#user-story-toetsing-revisiedossier"><bdi class="secno">6.9 </bdi>User story Toetsing revisiedossier</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#als-rioolbeheerder-4"><bdi class="secno">6.9.1 </bdi>Als rioolbeheerder</a></li></ol></li><li class="tocline"><a class="tocxref" href="#user-story-formele-oplevering-woon-inrichting-rijp"><bdi class="secno">6.10 </bdi>User story formele oplevering woon-/inrichting rijp</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#als-toezichthouder-0"><bdi class="secno">6.10.1 </bdi>Als toezichthouder</a></li><li class="tocline"><a class="tocxref" href="#als-aannemer-0"><bdi class="secno">6.10.2 </bdi>Als aannemer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#user-story-besluit-voldoet-de-oplevering"><bdi class="secno">6.11 </bdi>User story Besluit: voldoet de oplevering?</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#als-projectleider"><bdi class="secno">6.11.1 </bdi>Als projectleider</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#bouwen"><bdi class="secno">7. </bdi>Bouwen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inventarisatie-bgt-meting-versus-revisie"><bdi class="secno">7.1 </bdi>Inventarisatie <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr>-meting versus revisie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#datavergelijking"><bdi class="secno">7.1.1 </bdi>Datavergelijking</a></li><li class="tocline"><a class="tocxref" href="#analyse"><bdi class="secno">7.1.2 </bdi>Analyse</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#toetsingscriteria"><bdi class="secno">7.1.2.1 </bdi>Toetsingscriteria</a></li><li class="tocline"><a class="tocxref" href="#stappenplan"><bdi class="secno">7.1.2.2 </bdi>Stappenplan</a></li></ol></li><li class="tocline"><a class="tocxref" href="#geleverde-revisietekening-aannemer-autocad-zelfde-fragment-bgt-data-landmeter-gemeente-nijmegenmerk-op-zwarte-cirkels-zijn-de-gemeten-rioolputten-figuur-9-zelfde-fragment-bgt-data-landmeter-gemeente-nijmegen-zwarte-cirkels-zijn-de-gemeten-rioolputten"><bdi class="secno">7.1.3 </bdi></a></li><li class="tocline"><a class="tocxref" href="#analyseresultaten"><bdi class="secno">7.1.4 </bdi>Analyseresultaten</a></li><li class="tocline"><a class="tocxref" href="#beoordeling-resultaten"><bdi class="secno">7.1.5 </bdi>Beoordeling resultaten</a></li><li class="tocline"><a class="tocxref" href="#bijvangst-data-analyse"><bdi class="secno">7.1.6 </bdi>‘Bijvangst’ data-analyse</a></li></ol></li><li class="tocline"><a class="tocxref" href="#experiment-reviesieverwerking"><bdi class="secno">7.2 </bdi>Experiment reviesieverwerking</a></li></ol></li><li class="tocline"><a class="tocxref" href="#experimenteren-en-evalueren"><bdi class="secno">8. </bdi>Experimenteren en evalueren</a></li><li class="tocline"><a class="tocxref" href="#definities"><bdi class="secno">9. </bdi>Definities</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Termen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Termen gedefinieerd door referentie</a></li></ol></li></ol></nav>
+  
+  
+  
+    <section id="conformance"><div class="header-wrapper"><h2 id="x1-conformiteit"><bdi class="secno">1. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 1."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn,
+      zijn ook alle diagrammen, voorbeelden, en noten in dit document niet
+      normatief. Verder is alles in dit document normatief.</p></section> 
+  
+  <section data-format="markdown" id="inleiding"><div class="header-wrapper"><h2 id="x2-inleiding"><bdi class="secno">2. </bdi>Inleiding</h2><a class="self-link" href="#inleiding" aria-label="Permalink for Section 2."></a></div>
+<section id="aanleiding"><div class="header-wrapper"><h3 id="x2-1-aanleiding"><bdi class="secno">2.1 </bdi>Aanleiding</h3><a class="self-link" href="#aanleiding" aria-label="Permalink for Section 2.1"></a></div>
+<p>De CORE gemeenten, Stichting Rioned en CROW hebben de handen ineen geslagen om voor de sector assetmanagement ​te komen tot een gemeenschappelijke informatiebasis met het volgende doel: ​</p>
+<blockquote>
+<p>In 2030 beschikken Assetmanagers en hun (keten)partners in de openbare ruimte en infrastructuur over een samenhangend stelsel objectstandaarden in de leefomgeving om de data over hun beheerde assets efficiënt op orde te houden en uit te wisselen.​</p>
+</blockquote>
+<p>Een deel van de objectstandaarden is al uitgewerkt en worden toegepast in diverse (keten) werkprocessen. DOOR richt zich op de ontwikkeling van de ontbrekende standaards en uitwisselingsprotocollen, zodat een samenhangend stelsel ontstaat. Daarom is de focus van DOOR gericht op: </p>
+<ul>
+<li>Ontwikkeling van ontbrekende informatiemodellen en onderliggende ontologieën.  </li>
+<li>Ontwikkeling van mappings tussen informatiemodellen, die de samenhang verbeteren. </li>
+<li>Ontwikkeling van afspraken voor de uitwisseling van data binnen (keten)werkprocessen.</li>
+</ul>
+</section><section id="gebruik-van-use-cases"><div class="header-wrapper"><h3 id="x2-2-gebruik-van-use-cases"><bdi class="secno">2.2 </bdi>Gebruik van use cases</h3><a class="self-link" href="#gebruik-van-use-cases" aria-label="Permalink for Section 2.2"></a></div>
+<p>Use cases zijn het mechanisme om tot de kern door te dringen van de behoefte van de assetmanagers en hun ketenpartners. De keuze van deze use cases is kritisch, omdat de oplossing niet alleen geschikt moet zijn voor de specifieke situatie, maar ook generiek toepasbaar binnen de sector en daarmee een bijdrage leveren aan het programma DOOR. </p>
+<p>Use cases zijn essentieel om tot praktijkgerichte resultaten te komen. Door middel van use cases uit de praktijk wordt geëxperimenteerd met nieuwe en aanvullende vastlegging van informatie om de ambitie van DOOR waar te maken.  </p>
+</section><section id="werkwijze"><div class="header-wrapper"><h3 id="x2-3-werkwijze"><bdi class="secno">2.3 </bdi>Werkwijze</h3><a class="self-link" href="#werkwijze" aria-label="Permalink for Section 2.3"></a></div>
+<p>De CORE-gemeenten leveren daartoe use cases, waaruit de  informatiebehoefte blijkt, die in de praktijk leeft.​ Dit gebeurt in workshops die uitgaan van een proces van ‘lerend een gezamenlijke informatiebasis ontwikkelen &amp; verankeren’​. Beleids- cq vraagstukinhoudelijk &amp; geo-data-experts van betrokken organisaties samen aan tafel​, over silo’s heen leren samenwerken​, 
+elkaar, elkaars werksituatie en uitdagingen leren kennen en begrijpen​ 
+een gemeenschappelijke taal ontwikkelen​. Een manier van werken ontwikkelen waarop we interdisciplinair en met stakeholders kunnen samenwerken​.</p>
+<p>CROW ontwikkelt met de CORE gemeente de logische structuur en data-deel-afspraken die nodig zijn om invulling te geven aan de informatiebehoeften binnen de  use case. ​</p>
+<p>In een experimenteeromgeving wordt middels prototyping het resultaat beproefd, in samenwerking met marktpartijen, zodat er werkbare standaarden ontstaan, die softwareleveranciers kunnen toepassen.​</p>
+<p>Het resultaat wordt vastgelegd in de <a href="https://docs.crow.nl/referentie-architectuur/framework/">BORIUS-referentiearchitectuur</a></p>
+</section><section id="use-case-nijmegen"><div class="header-wrapper"><h3 id="x2-4-use-case-nijmegen"><bdi class="secno">2.4 </bdi>Use case Nijmegen</h3><a class="self-link" href="#use-case-nijmegen" aria-label="Permalink for Section 2.4"></a></div>
+<p>De gemeente Nijmegen is gestart met een groot project voor het op orde brengen van de informatievoorziening van het fysieke domein van de gemeente. Dit heeft geresulteerd in een programma met een doorlooptijd van 2 jaar en 21 deelprojecten. Eén van de deelprojecten is het voorkomen van informatieverlies en het stimuleren van de dataverrijking door het verbeteren en optimaliseren van het revisieproces. 
+<br><br>
+Bij elke verandering binnen de gemeente verandert de data, binnen projecten gaat het om grote hoeveelheden data die door aannemers en bureaus in de vorm van revisiebestanden aangeleverd worden. Deze revisies worden niet of onvoldoende verwerkt ondanks dat hierover afspraken gemaakt zijn. </p>
+</section><section id="leeswijzer"><div class="header-wrapper"><h3 id="x2-5-leeswijzer"><bdi class="secno">2.5 </bdi>Leeswijzer</h3><a class="self-link" href="#leeswijzer" aria-label="Permalink for Section 2.5"></a></div>
+<p>De use case wordt onderbouwd in een use case canvas, waar de met de gemeente samen vastgestelde onderwerpen aan bod komen in de volgende hoofdstukken: </p>
+<ol start="3">
+<li><b>De toegevoegde waarde</b> wat oplossen en waarom​ (huidige situatie)</li>
+<li><b>Belanghebbenden, wensen en verwachtingen</b> met wie, voor wie en waartoe</li>
+<li>​<b>Het ontwerp​</b> op welke manier met het vraagstuk aan de slag (gewenste situatie)</li>
+<li>​<b>User stories​</b> wensen en behoeften gebruikers​</li>
+<li><b>Verfijnen user stories &amp; bouwen experimenteer-omgeving </b> incl. ontbrekende informatiemodellen</li>
+<li><b>Evalueren experiment &amp; leerpunten​</b> de toepassing en borging​</li>
+</ol>
+<figure id="fig-de-onderwerpen-van-het-use-case-canvas">
+<img src="../images/analyse-use-cases.jpg" alt="visuele weergave van de 6 onderwerpen van het use case canvas, zoals beschreven in de tekst" height="720" width="1280">
+<figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">De onderwerpen van het use case canvas
+</span></figcaption></figure></section></section>
+  <section data-format="markdown" id="vraagstuk-en-toegevoegde-waarde"><div class="header-wrapper"><h2 id="x3-vraagstuk-en-toegevoegde-waarde"><bdi class="secno">3. </bdi>Vraagstuk en toegevoegde waarde</h2><a class="self-link" href="#vraagstuk-en-toegevoegde-waarde" aria-label="Permalink for Section 3."></a></div>
+<p>Dit hoofdstuk beschrijft het vraagstuk en de toegevoegde waarde. </p>
+<figure id="fig-de-vragen-bij-het-vraagstuk-en-de-toegevoegde-waarde">
+<img src="../images/vraagstukenwaarde.png" alt="visuele weergave van de paragraven die men kan verwachten in dit hoofdstuk" height="737" width="696">
+<figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">De vragen bij het vraagstuk en de toegevoegde waarde
+</span></figcaption></figure>
+
+
+
+<section id="welk-vraagstuk-willen-we-oplossen"><div class="header-wrapper"><h3 id="x3-1-welk-vraagstuk-willen-we-oplossen"><bdi class="secno">3.1 </bdi>Welk vraagstuk willen we oplossen?</h3><a class="self-link" href="#welk-vraagstuk-willen-we-oplossen" aria-label="Permalink for Section 3.1"></a></div>
+<section id="vraagstuk-informatievoorziening"><div class="header-wrapper"><h4 id="x3-1-1-vraagstuk-informatievoorziening"><bdi class="secno">3.1.1 </bdi>Vraagstuk Informatievoorziening</h4><a class="self-link" href="#vraagstuk-informatievoorziening" aria-label="Permalink for Section 3.1.1"></a></div>
+<p>De werkgroep geeft aan dat het van groot belang is om vertrouwen te hebben in het aangeleverde product. Dit houdt in dat de gegevens niet alleen betrouwbaar moeten zijn, maar ook dat de efficiëntie moet worden vergroot om kosten te verlagen. Daarnaast moet het beheer van data goed georganiseerd worden, waarbij volledige overdrachtsdossiers essentieel zijn. Daarbij geldt: om goede revisiegegevens te krijgen uit een project moet men ook goede startinformatie geven aan het project.</p>
+<p>Verder wordt besproken welke objecten precies vastgelegd moeten worden in de <a data-link-type="dfn" href="#dfn-bgt" class="internalDFN" id="ref-for-dfn-bgt-1">BGT</a> en/of het <a data-link-type="dfn" href="#dfn-klic" class="internalDFN" id="ref-for-dfn-klic-1">KLIC</a>. De werkgroep vraagt zich af of het noodzakelijk is om een compleet overzicht te hebben van alle objecten in de openbare ruimte, of dat het voldoende is om alleen de belangrijkste objecten te registreren.</p>
+</section><section id="vraagstuk-organisatiecultuur"><div class="header-wrapper"><h4 id="x3-1-2-vraagstuk-organisatiecultuur"><bdi class="secno">3.1.2 </bdi>Vraagstuk organisatiecultuur</h4><a class="self-link" href="#vraagstuk-organisatiecultuur" aria-label="Permalink for Section 3.1.2"></a></div>
+<p>De werkgroep geeft aan dat het belangrijk is om een werkomgeving te creëren waarin frustratie wordt voorkomen, en waarin medewerkers met plezier en voldoening aan de slag kunnen gaan. Dit vereist het opstellen van duidelijke, eenduidige en gemakkelijk vindbare afspraken. Door deze afspraken goed vast te leggen, ontstaat er een vangnet voor iedereen in de organisatie. De werkgroep benadrukt ook dat het essentieel is om deze afspraken strikt na te leven, zodat er geen sprake is van "anarchie" binnen het team.</p>
+<p>Daarnaast wordt het belang van samenwerking onderstreept: hoe zorgen we ervoor dat we elkaar actief opzoeken in plaats van mijden? De werkgroep ziet dit als een belangrijke factor voor het verbeteren van de onderlinge relaties en de algehele effectiviteit van de organisatie.</p>
+</section></section><section id="voor-wie-is-het-vraagstuk"><div class="header-wrapper"><h3 id="x3-2-voor-wie-is-het-vraagstuk"><bdi class="secno">3.2 </bdi>Voor wie is het vraagstuk?</h3><a class="self-link" href="#voor-wie-is-het-vraagstuk" aria-label="Permalink for Section 3.2"></a></div>
+<p>Het vraagstuk betreft <strong>de hele organisatie</strong>, <strong>het management</strong>, en <strong>alle actoren/stakeholders</strong>, omdat onjuiste en incomplete gegevens aanzienlijke impact kunnen hebben op het beheer, de uitvoering, planningen en onderhoud. Voor deze groepen is het essentieel om duidelijke afspraken te maken over welke objecten opgenomen moeten worden en om goed aangeleverde producten in één keer in te winnen. Dit zorgt voor gestroomlijnde processen, verlaagt kosten en maakt het mogelijk om tijdig te sturen op zowel kwaliteit als de beheer- en onderhoudskosten. Het helpt deze belanghebbenden niet alleen om efficiënter te werken, maar ook om risico's en vertragingen te minimaliseren.</p>
+</section><section id="welke-opgave-ligt-aan-het-vraagstuk-ten-grondslag"><div class="header-wrapper"><h3 id="x3-3-welke-opgave-ligt-aan-het-vraagstuk-ten-grondslag"><bdi class="secno">3.3 </bdi>Welke opgave ligt aan het vraagstuk ten grondslag?​</h3><a class="self-link" href="#welke-opgave-ligt-aan-het-vraagstuk-ten-grondslag" aria-label="Permalink for Section 3.3"></a></div>
+<section id="hoofdlijnen-revisieproces"><div class="header-wrapper"><h4 id="x3-3-1-hoofdlijnen-revisieproces"><bdi class="secno">3.3.1 </bdi>Hoofdlijnen revisieproces</h4><a class="self-link" href="#hoofdlijnen-revisieproces" aria-label="Permalink for Section 3.3.1"></a></div>
+<p>De hoofdstappen worden weergegeven in onderstaande vereenvoudigde informatiestroom tussen: </p>
+<ol>
+<li>De landelijke registraties en de gemeentelijke beheerorganisatie.</li>
+<li>De beheerder en de projectorganisatie van de gemeentelijke opdrachtgever.</li>
+<li>De gemeentelijke opdrachtgever en een externe opdrachtnemer.</li>
+</ol>
+<figure id="fig-de-uitwisseling-van-informatie-tussen-landelijke-registraties-en-de-beheerder-tussen-de-beheerder-en-de-projectorganisatie-van-de-opdrachtgever-en-tussen-interne-projectorganisatie-en-een-externe-opdrachtnemer">
+<img src="../images/ketenproces-revisie.png" alt="visuele weergave van de uitwisseling van informatie tussen landelijke registraties en de beheerder; tussen de beheerder en de projectorganisatie van de opdrachtgever; en tussen interne projectorganisatie en een externe opdrachtnemer." height="876" width="1427">
+<figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">De uitwisseling van informatie tussen landelijke registraties en de beheerder; tussen de beheerder en de projectorganisatie van de opdrachtgever; en tussen interne projectorganisatie en een externe opdrachtnemer.
+</span></figcaption></figure>
+
+</section><section id="opgave-informatievoorziening"><div class="header-wrapper"><h4 id="x3-3-2-opgave-informatievoorziening"><bdi class="secno">3.3.2 </bdi>Opgave informatievoorziening</h4><a class="self-link" href="#opgave-informatievoorziening" aria-label="Permalink for Section 3.3.2"></a></div>
+<p>De werkgroep geeft aan dat verschillende plannen en systemen cruciaal zijn voor een goed overzicht van de gemeentelijke infrastructuur. Dit omvat het <strong>gemeentelijk rioleringsplan (GRP)</strong>, het <strong>water- en rioleringsplan (WRP)</strong> en het <strong>gemeentelijk bomenplan</strong>. Daarnaast is het van belang om betrouwbaar inzicht te hebben in de kwaliteitssystemen, zodat toekomstige kosten voor beheer en onderhoud goed kunnen worden ingeschat. Het is essentieel dat er een <strong>duidelijk en transparant bestek</strong> wordt opgesteld, zodat alle betrokkenen weten waar ze aan toe zijn en er geen misverstanden ontstaan over de benodigde werkzaamheden.</p>
+</section><section id="opgave-organisatiecultuur"><div class="header-wrapper"><h4 id="x3-3-3-opgave-organisatiecultuur"><bdi class="secno">3.3.3 </bdi>Opgave organisatiecultuur**:</h4><a class="self-link" href="#opgave-organisatiecultuur" aria-label="Permalink for Section 3.3.3"></a></div>
+<p>De werkgroep benadrukt dat een projectleider zich vrij moet voelen om een aannemer te benaderen voor verbeteringen. Dit is echter vaak moeilijk doordat er te weinig kennis, middelen of mogelijkheden voor sancties zijn. Het besef van het belang om in contact te treden met de aannemer ontbreekt soms. Daarnaast is het belangrijk dat het management <strong>durft te investeren in uren en capaciteit</strong>, zodat de noodzakelijke veranderingen doorgevoerd kunnen worden. Om een cultuurverandering te realiseren, is het cruciaal dat het management actief betrokken wordt en zijn steun verleent aan dit proces.</p>
+</section></section><section id="wat-zijn-de-grootste-knelpunten"><div class="header-wrapper"><h3 id="x3-4-wat-zijn-de-grootste-knelpunten"><bdi class="secno">3.4 </bdi>Wat zijn de grootste knelpunten?​</h3><a class="self-link" href="#wat-zijn-de-grootste-knelpunten" aria-label="Permalink for Section 3.4"></a></div>
+<p>De grootste knelpunten binnen dit proces zijn een gebrek aan bewustzijn, conflicterende belangen en onduidelijkheden in taken, rollen en verantwoordelijkheden. Dit leidt tot een zwak verantwoordelijkheidsgevoel, problemen met tijd, geld en personele bezetting, en onvoldoende toezicht. Daarnaast ontbreekt soms het lef om gebreken te benoemen en tijdig in te grijpen bij kwaliteitsproblemen. Cruciale aspecten zoals het aanleveren van de juiste data, toezicht op de uitvoering, advies en controle tijdens het ontwerp en de revisie lopen hierdoor gevaar. </p>
+<p>Deze knelpunten treffen verschillende partijen: aannemers bij herinrichtings- en aanpassingsopdrachten, stadsbeheer door extra kosten en tijdverlies, en gebruikers zoals ondernemers en bewoners, die last hebben van falende processen en hogere kosten. Ook werkvoorbereiding, projectleiding, vakinhoudelijke adviseurs en geo-specialisten ondervinden hinder, bijvoorbeeld doordat objecten achteraf nog ingemeten moeten worden voor de <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr> of omdat ondergrondse objecten niet correct worden verwerkt in het <abbr title="Kabels en Leidingen Informatieportaal">KLIC</abbr>.</p>
+<section id="knelpunt-dubbele-inwinning-van-gegevens"><div class="header-wrapper"><h4 id="x3-4-1-knelpunt-dubbele-inwinning-van-gegevens"><bdi class="secno">3.4.1 </bdi>Knelpunt: dubbele inwinning van gegevens</h4><a class="self-link" href="#knelpunt-dubbele-inwinning-van-gegevens" aria-label="Permalink for Section 3.4.1"></a></div>
+<p>Voor de <a data-link-type="dfn" href="#dfn-bgt" class="internalDFN" id="ref-for-dfn-bgt-2">BGT</a> wordt onafhankelijk van de revisiegegevens van het project, altijd door de geo-afdeling een landmeter naar buiten gestuurd en ingemeten. Omdat de aannemer ook nieuw aangebrachte objecten en aansluitingen moet inmeten voor de oplevering van revisiegegevens, wordt buiten dubbel gemeten. Het kan de moeite waard zijn om te onderzoeken, of de revisiemeting van de aannemer de basis kan zijn voor de <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr>-levering. </p>
+</section><section id="knelpunt-te-late-aanlevering-klic"><div class="header-wrapper"><h4 id="x3-4-2-knelpunt-te-late-aanlevering-klic"><bdi class="secno">3.4.2 </bdi>Knelpunt: Te late aanlevering Klic</h4><a class="self-link" href="#knelpunt-te-late-aanlevering-klic" aria-label="Permalink for Section 3.4.2"></a></div>
+<p>Voor de <a data-link-type="dfn" href="#dfn-klic" class="internalDFN" id="ref-for-dfn-klic-2">KLIC</a> wordt gebruik gemaakt van de revisietekeningen van de aannemer. De levering van gegevens gebeurt door de beheerder. Omdat de aannemer in de huidige situatie pas oplevert aan het einde van het project, worden de Klic gegevens mogelijk te laat aangeleverd, deze zouden na de oplevering van de bouwrijp fase meteen doorgestuurd moeten worden naar de Klic. </p>
+</section><section id="knelpunt-tegenstrijdige-bronnen-beheerinformatie"><div class="header-wrapper"><h4 id="x3-4-3-knelpunt-tegenstrijdige-bronnen-beheerinformatie"><bdi class="secno">3.4.3 </bdi>Knelpunt: Tegenstrijdige bronnen beheerinformatie</h4><a class="self-link" href="#knelpunt-tegenstrijdige-bronnen-beheerinformatie" aria-label="Permalink for Section 3.4.3"></a></div>
+<p>Een projectteam maakt een NLCS-bestekstekening, waarbij vaak twee bronnen worden gebruikt: de <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr> en de eigen beheerdatabase. Er blijken regelmatig verschillen op te treden tussen deze bronnen, soms door tijdsverschil bij de verwerking naar de <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr>, soms omdat de beheerionformatie wordt vastgelegd op basis van de revisietekening, en deze niet de as-built weergeeft maar het ontwerp. Soms wordt door het project nog eens een meting gedaan buiten, om vast te stellen wat de werkelijke situatie is, omdat de informatie niet als betrouwbaar wordt gezien. Dat is de derde dubbele meting in het huidige proces. </p>
+</section><section id="knelpunt-beheerdata-niet-gebaseerd-op-imbor-of-gwsw"><div class="header-wrapper"><h4 id="x3-4-4-knelpunt-beheerdata-niet-gebaseerd-op-imbor-of-gwsw"><bdi class="secno">3.4.4 </bdi>Knelpunt: Beheerdata niet gebaseerd op <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> of <abbr title="Gegevenswoordenboek Stedelijk Water">GWSW</abbr></h4><a class="self-link" href="#knelpunt-beheerdata-niet-gebaseerd-op-imbor-of-gwsw" aria-label="Permalink for Section 3.4.4"></a></div>
+<p>De beheerdatabase is nog niet uitgedrukt in de standaarden <a data-link-type="dfn" href="#dfn-imbor" class="internalDFN" id="ref-for-dfn-imbor-1">IMBOR</a> of <a data-link-type="dfn" href="#dfn-gwsw" class="internalDFN" id="ref-for-dfn-gwsw-1">GWSW</a>, de rioleringsgegevens worden niet gepubliceerd in PDOK Thema Stedelijk Water. Daarom kan ook voor de uitwisseling met het projectteam nog niet worden uitgewisseld in herkenbare informatie, en zal dit team zelf in de bron moeten kijken voor informatie en deze transformeren naar NLCS-CAD voor het ontwerp en de bestekstekening. Ook de vertalingstabel van rioleringsgegevens vanuit PDOK Thema Stedelijk Water naar NLCS kan niet worden gebruikt. De informatie in de <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr> is de enige die kan worden omgezet naar CAD; dit betekent een verlies aan informatie ten opzichte van het beheersysteem, of handwerk per project.</p>
+</section><section id="knelpunt-verlies-ontwerpparameters-bij-overdracht-naar-beheer"><div class="header-wrapper"><h4 id="x3-4-5-knelpunt-verlies-ontwerpparameters-bij-overdracht-naar-beheer"><bdi class="secno">3.4.5 </bdi>Knelpunt: Verlies ontwerpparameters bij overdracht naar beheer</h4><a class="self-link" href="#knelpunt-verlies-ontwerpparameters-bij-overdracht-naar-beheer" aria-label="Permalink for Section 3.4.5"></a></div>
+<p>De bestekstekening bevat voor wat betreft bestaande objecten alleen lijnen, punten, symbolen en vlakken uit de <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr> en/of het beheersysteem op basis van GIS. Eventuele CAD-ontwerpparameters zoals wegalignement of bijvoorbeeld offsets tussen lijnen uit eerdere ontwerpen zijn niet bewaard door de beheerder. </p>
+</section><section id="knelpunt-beheerinformatie-ontbreekt-in-bestekstekening"><div class="header-wrapper"><h4 id="x3-4-6-knelpunt-beheerinformatie-ontbreekt-in-bestekstekening"><bdi class="secno">3.4.6 </bdi>Knelpunt: Beheerinformatie ontbreekt in bestekstekening</h4><a class="self-link" href="#knelpunt-beheerinformatie-ontbreekt-in-bestekstekening" aria-label="Permalink for Section 3.4.6"></a></div>
+<p>Bij de beheerinformatie (en de <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr>) zit attribuut-informatie over de objecten. Omdat de geometrie wordt omgezet naar CAD op basis van NLCS, kan de beheerinformatie niet in de tekening worden meegeleverd. Dit is een beperking van de CAD-systemen, en bij NLCS is nog geen afspraak beschikbaar over het uitwisselen van attributen bij de objecten in een tekening.<br>Op dit moment wordt deze informatie ook niet meegeleverd naar de aannemer. De eigen interne projectorganisatie heeft er wel toegang toe, via een intern beschikbare kaart. </p>
+</section><section id="knelpunt-eisen-aan-oplevering"><div class="header-wrapper"><h4 id="x3-4-7-knelpunt-eisen-aan-oplevering"><bdi class="secno">3.4.7 </bdi>Knelpunt: Eisen aan oplevering</h4><a class="self-link" href="#knelpunt-eisen-aan-oplevering" aria-label="Permalink for Section 3.4.7"></a></div>
+<p>Het project krijgt een moederbestek, waarin ook een bijlage is opgenomen over de oplevering van een revisiedossier. Daarin staat voor rioleringen uitgebreid beschreven welke documenten en tekeningen moeten worden opgeleverd.</p>
+<p>De ontwerp- en bouweisen staan in het Handboek Inrichting Openbare Ruimte (HIOR) van de gemeeente, deze zit toegevoegd aan het contract. Daarin staan alleen de eisen van de beheerder, niet de kwaliteitseisen voor de <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr> meting, omdat deze nu niet hoeft te worden uitgevoerd door de aannemer.  </p>
+<p>Openstaande vragen zijn hierbij: Is het moederbestek, inclusief bijlagen, logisch en goed leesbaar voor een aannemer of uitvoerende partij? Kunnen zij hier eenvoudig mee aan de slag en wordt het risico op fouten in de uitvoering beperkt?  </p>
+<p>Biedt het bestek voldoende informatie voor de behoeften van standsrealisatie (doel: controle op correcte uitvoering contract) en stadsbeheer (doel: verwerken mutaties uit project), zodat zij een grondige controle kunnen uitvoeren? Daarnaast is het van belang te beoordelen of de verstrekte informatie voldoet aan alle wettelijke en contractuele verplichtingen.</p>
+</section><section id="knelpunt-falende-controle-opleverdossier"><div class="header-wrapper"><h4 id="x3-4-8-knelpunt-falende-controle-opleverdossier"><bdi class="secno">3.4.8 </bdi>Knelpunt: Falende controle opleverdossier</h4><a class="self-link" href="#knelpunt-falende-controle-opleverdossier" aria-label="Permalink for Section 3.4.8"></a></div>
+<p>De <strong>projectleider</strong> of <strong>contractmanager</strong> accepteert de oplevering, terwijl de <strong>opzichter</strong> de geleverde revisie archiveert bij de projectdocumenten. Echter, de inhoudelijke controle van de gegevens wordt niet goed uitgevoerd, omdat de <strong>expert</strong> of <strong>beheerder</strong> hierbij niet betrokken is. <strong>Directievoerders</strong> houden toezicht op de correcte fysieke uitvoering van het werk, maar controleren de bijbehorende data niet.</p>
+</section><section id="knelpunt-beheerder-niet-betrokken"><div class="header-wrapper"><h4 id="x3-4-9-knelpunt-beheerder-niet-betrokken"><bdi class="secno">3.4.9 </bdi>Knelpunt: Beheerder niet betrokken</h4><a class="self-link" href="#knelpunt-beheerder-niet-betrokken" aria-label="Permalink for Section 3.4.9"></a></div>
+<p>De controle op de uitvoering en oplevering van het werk gebeurt door het projectteam. Dat zijn generalisten die niet van alle assets kennis hebben. De beheerder wordt soms wel geraadpleegd (op basis van persoonlijk initiatief), maar heeft geen rol bij de controle van het werk of het opleverdossier.</p>
+</section><section id="knelpunt-opleverdossier-te-laat-incompleet"><div class="header-wrapper"><h4 id="x3-4-10-knelpunt-opleverdossier-te-laat-incompleet"><bdi class="secno">3.4.10 </bdi>Knelpunt: Opleverdossier te laat, incompleet</h4><a class="self-link" href="#knelpunt-opleverdossier-te-laat-incompleet" aria-label="Permalink for Section 3.4.10"></a></div>
+<p>De beheerder krijgt van het projectteam een opleverdossier, zodra  dit geleverd wordt. Vaak wordt dit dossier pas na of ver na afhandeling van de betaling van de aannemer geleverd. Het dossier is vaak niet volledig, en de revisietekeningen geven soms de ontwerpsituatie aan, en niet de ingemeten situatie. De beheerder maakt soms wel een overzicht van gebreken, maar deze worden lang niet altijd alsnog aangeleverd. DE aannemer wordt door de projectleider niet aangesproken op ontbrekende gegevens. </p>
+</section></section><section id="welke-maatschappelijke-waarde-willen-we-realiseren"><div class="header-wrapper"><h3 id="x3-5-welke-maatschappelijke-waarde-willen-we-realiseren"><bdi class="secno">3.5 </bdi>Welke maatschappelijke waarde willen we realiseren?</h3><a class="self-link" href="#welke-maatschappelijke-waarde-willen-we-realiseren" aria-label="Permalink for Section 3.5"></a></div>
+<p>We streven naar een deskundige, betrouwbare en transparante organisatie voor burgers, aannemers en andere betrokkenen. Dit omvat het creëren van een goede en veilige openbare ruimte, het bevorderen van een betere integrale samenwerking en het efficiënt gebruiken van belastinggeld. Door zo laag mogelijke (faal)kosten na te streven, willen we verspilling minimaliseren en de maatschappelijke impact maximaliseren.</p>
+</section><section id="wat-zijn-onze-inhoudelijke-doelen"><div class="header-wrapper"><h3 id="x3-6-wat-zijn-onze-inhoudelijke-doelen"><bdi class="secno">3.6 </bdi>Wat zijn onze inhoudelijke doelen?​</h3><a class="self-link" href="#wat-zijn-onze-inhoudelijke-doelen" aria-label="Permalink for Section 3.6"></a></div>
+<p>Voor de <strong>informatievoorziening</strong> streven we naar een goed en compleet overdrachtsdossier, beter toezicht buiten, kostenbesparingen en het op orde krijgen van informatie en data in het hele proces van ontwerp tot beheer voor reproduceerbaarheid. Binnen de <strong>organisatiecultuur</strong> richten we ons op het benadrukken van het belang van dit project bij het MT, meer betrokkenheid van het MT en het vergroten van de inhoudelijke kennis bij MT &amp; PL om het proces te ondersteunen.  </p>
+<p>​</p>
+</section><section id="welke-criteria-hanteren-we-om-deze-doelen-meetbaar-te-maken"><div class="header-wrapper"><h3 id="x3-7-welke-criteria-hanteren-we-om-deze-doelen-meetbaar-te-maken"><bdi class="secno">3.7 </bdi>Welke criteria hanteren we om  deze doelen meetbaar te maken?​</h3><a class="self-link" href="#welke-criteria-hanteren-we-om-deze-doelen-meetbaar-te-maken" aria-label="Permalink for Section 3.7"></a></div>
+<p>We maken een <strong>0-analyse</strong> voor zowel informatievoorziening als cultuur en leggen nieuwe processen vast. De voortgang en winst worden inzichtelijk gemaakt aan de hand van concrete criteria, zoals deskundig toezicht en controle van data bij ontwerp, realisatie en overdracht. Daarnaast hanteren we de <strong><abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr>-normen</strong> en <strong><abbr title="Kabels en Leidingen Informatieportaal">KLIC</abbr>-normen</strong> van de overheid en de wensen van interne gebruikers met betrekking tot de gewenste (beheer-)informatie over objecten. Voor het monitoren van de cultuur baseren we ons op wetenschappelijke studies.</p>
+</section></section>
+  <section data-format="markdown" id="belanghebbenden-wensen-en-verwachtingen"><div class="header-wrapper"><h2 id="x4-belanghebbenden-wensen-en-verwachtingen"><bdi class="secno">4. </bdi>Belanghebbenden, wensen en verwachtingen</h2><a class="self-link" href="#belanghebbenden-wensen-en-verwachtingen" aria-label="Permalink for Section 4."></a></div>
+<p>Dit hoofdstuk beschrijft de belanghebbenden, wennsen en verwachtingen.</p>
+<figure id="fig-de-vragen-bij-de-belanghebbenden-wennsen-en-verwachtingen">
+<img src="../images/belanghebbende.png" alt="visuele weergave van de paragraven die men kan verwachten in dit hoofdstuk" height="894" width="570">
+<figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">De vragen bij de belanghebbenden, wennsen en verwachtingen
+</span></figcaption></figure>
+
+<section id="wie-zijn-belanghebbend"><div class="header-wrapper"><h3 id="x4-1-wie-zijn-belanghebbend"><bdi class="secno">4.1 </bdi>Wie zijn belanghebbend?</h3><a class="self-link" href="#wie-zijn-belanghebbend" aria-label="Permalink for Section 4.1"></a></div>
+<section id="hoofdactoren-intern"><div class="header-wrapper"><h4 id="x4-1-1-hoofdactoren-intern"><bdi class="secno">4.1.1 </bdi>Hoofdactoren intern</h4><a class="self-link" href="#hoofdactoren-intern" aria-label="Permalink for Section 4.1.1"></a></div>
+<p>Vanuit het organisatieperspectief zijn de belangrijkste interne belanghebbenden het MT op bureau- en afdelingsniveau. Vanuit het projectperspectief spelen projectleiders en beleidsmedewerkers een cruciale rol. Daarnaast is integraal samenwerken essentieel. Een goede definitie van het probleem en de consequenties is nodig, met aandacht voor financiële aspecten, kosten, objecten en risico’s.  </p>
+</section><section id="hoofdactoren-extern"><div class="header-wrapper"><h4 id="x4-1-2-hoofdactoren-extern"><bdi class="secno">4.1.2 </bdi>Hoofdactoren extern</h4><a class="self-link" href="#hoofdactoren-extern" aria-label="Permalink for Section 4.1.2"></a></div>
+<p>Extern zijn er verschillende partijen betrokken. Burgers zijn belanghebbenden, net als aannemers die zich bezighouden met calamiteiten en projecten. Ook projectontwikkelaars en de standaardisatie-organisaties CROW, Stichting Rioned en DigiGO spelen een rol in het proces. Daarnaast draagt dit bij aan minder overlast in de omgeving en een prettige stad om in te wonen. Kostenverlaging vertaalt zich direct naar lagere belastingen.  </p>
+</section><section id="secundaire-actoren-intern"><div class="header-wrapper"><h4 id="x4-1-3-secundaire-actoren-intern"><bdi class="secno">4.1.3 </bdi>Secundaire actoren intern</h4><a class="self-link" href="#secundaire-actoren-intern" aria-label="Permalink for Section 4.1.3"></a></div>
+<p>Binnen de organisatie zijn er ook secundaire actoren die van belang zijn. Vanuit het organisatieperspectief zijn dit beheerders, geo-specialisten, vakinhoudelijke adviseurs, werkvoorbereiders, projectleiders en beleidsmedewerkers. Vanuit het projectperspectief zijn vooral projectleiders van belang. Verder is het essentieel om te beschikken over complete en betrouwbare data, zodat voorspellingen en analyses beter kunnen worden uitgevoerd.  </p>
+</section><section id="secundaire-actoren-extern"><div class="header-wrapper"><h4 id="x4-1-4-secundaire-actoren-extern"><bdi class="secno">4.1.4 </bdi>Secundaire actoren extern</h4><a class="self-link" href="#secundaire-actoren-extern" aria-label="Permalink for Section 4.1.4"></a></div>
+<p>Extern zijn er naast aannemers en projectontwikkelaars ook landmeetkundigen en softwareontwikkelaars die een rol spelen in het proces. Een goede samenwerking en efficiënte datauitwisseling zorgen ervoor dat werkzaamheden sneller en effectiever kunnen worden uitgevoerd.  </p>
+</section><section id="ihkv-organisatiecultuur"><div class="header-wrapper"><h4 id="x4-1-5-ihkv-organisatiecultuur"><bdi class="secno">4.1.5 </bdi>Ihkv organisatiecultuur</h4><a class="self-link" href="#ihkv-organisatiecultuur" aria-label="Permalink for Section 4.1.5"></a></div>
+<p>Belanghebbenden, zoals aannemers en projectleiders, moeten samen aan tafel zitten om een slag te kunnen maken. Dit stelt hen in staat om elkaars situatie en belangen toe te lichten en</p>
+</section><section id="voor-welke-vragen-zoeken-zij-een-oplossing"><div class="header-wrapper"><h4 id="x4-1-6-voor-welke-vragen-zoeken-zij-een-oplossing"><bdi class="secno">4.1.6 </bdi>Voor welke vragen zoeken zij een oplossing?</h4><a class="self-link" href="#voor-welke-vragen-zoeken-zij-een-oplossing" aria-label="Permalink for Section 4.1.6"></a></div>
+<p>Interne hoofdactoren richten zich op het terugbrengen van faalkosten, het vergroten van betrouwbaarheid en reproduceerbaarheid, en het efficiënt ontvangen van revisiedata. Externe hoofdactoren streven naar minder belasting. Zowel interne als externe secundaire actoren delen deze doelen en werken aan hetzelfde streven naar efficiëntie en betrouwbaarheid binnen het proces.</p>
+</section><section id="welke-beslissingen-willen-zij-kunnen-nemen"><div class="header-wrapper"><h4 id="x4-1-7-welke-beslissingen-willen-zij-kunnen-nemen"><bdi class="secno">4.1.7 </bdi>Welke beslissingen willen zij kunnen nemen</h4><a class="self-link" href="#welke-beslissingen-willen-zij-kunnen-nemen" aria-label="Permalink for Section 4.1.7"></a></div>
+<p>Interne hoofdactoren willen beslissingen kunnen nemen over een goede scope en een duidelijke visie voor het revisieproces, de producten en de succes- &amp; faalfactoren. Daarnaast is het essentieel dat zij voldoende (financiële) middelen en mensen kunnen regelen, de overdracht kunnen accepteren en projecten succesvol kunnen afronden. Ook speelt de opname in de <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr> en <abbr title="Kabels en Leidingen Informatieportaal">KLIC</abbr> een belangrijke rol binnen hun besluitvorming.</p>
+</section><section id="wie-is-eigenaar-van-het-vraagstuk"><div class="header-wrapper"><h4 id="x4-1-8-wie-is-eigenaar-van-het-vraagstuk"><bdi class="secno">4.1.8 </bdi>Wie is eigenaar van het vraagstuk?​</h4><a class="self-link" href="#wie-is-eigenaar-van-het-vraagstuk" aria-label="Permalink for Section 4.1.8"></a></div>
+<p>​Gemeentelijke organisatie:​ Concernmanager stadsbeheer
+​</p>
+</section><section id="wie-is-opdrachtgever-voor-het-oplossen"><div class="header-wrapper"><h4 id="x4-1-9-wie-is-opdrachtgever-voor-het-oplossen"><bdi class="secno">4.1.9 </bdi>Wie is opdrachtgever voor het oplossen?​</h4><a class="self-link" href="#wie-is-opdrachtgever-voor-het-oplossen" aria-label="Permalink for Section 4.1.9"></a></div>
+<p>​
+Gemeentelijke organisatie:​ Stuurgroep programma Datagedreven Samenwerken​</p>
+</section><section id="wie-is-budgethouder"><div class="header-wrapper"><h4 id="x4-1-10-wie-is-budgethouder"><bdi class="secno">4.1.10 </bdi>Wie is budgethouder?​</h4><a class="self-link" href="#wie-is-budgethouder" aria-label="Permalink for Section 4.1.10"></a></div>
+<p>Programmamanger Datagedreven samenwerken​</p>
+</section></section></section>
+  <section data-format="markdown" id="het-ontwerp"><div class="header-wrapper"><h2 id="x5-het-ontwerp"><bdi class="secno">5. </bdi>Het ontwerp</h2><a class="self-link" href="#het-ontwerp" aria-label="Permalink for Section 5."></a></div>
+<p>Dit hoofdstuk beschrijft het ontwerp. </p>
+<figure id="fig-de-vragen-bij-het-ontwerp">
+<img src="../images/ontwerp.png" alt="visuele weergave van de paragraven die men kan verwachten in dit hoofdstuk" height="893" width="469">
+<figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">De vragen bij het ontwerp
+</span></figcaption></figure>
+
+
+<section id="algemeen-advies"><div class="header-wrapper"><h3 id="x5-1-algemeen-advies"><bdi class="secno">5.1 </bdi>Algemeen advies</h3><a class="self-link" href="#algemeen-advies" aria-label="Permalink for Section 5.1"></a></div>
+<p>Algemeen adviea aan Nijmegen:</p>
+<ul>
+<li>Borg het revisieproces en breng het naar een hoger  volwassenheidsniveau.</li>
+<li>Leg verantwoordelijkheden van alle rollen in het proces expliciet vast, communiceer ze en zie erop toe. Met name deze rollen: aannemer, projectleider gemeente, toezichthouder/ directievoerder, rioolbeheerder, geo-specialist.</li>
+<li>Een methode om deze afspraken te kunnen opvolgen, is het gebruik van de VISI standaard. Hiermee kan de contractuele communicatie met opdrachtnemer worden vastgelegd, en kunnen ook interne betrokkenen of controlemomenten worden vastgelegd. De processtappen die hieronder beschreven zijn voor revisie van gegevens, kunnen odnerdeel zijn van het visi raamwerk van de organisatie. Een manager kan vervolgens over alle contracten heen zien of de processen gevolgd zijn. Dit vraagt wel een volwassenwording van de organisatie, met name ook de projectleiders, om in plaats van mondelinge communicatie en mails, een VISI app te gebruiken om afspraken vast te leggen. Het bijbehorend voordeel is dat afspraken over meer- of minderwerk, afspraken over aanpassingen in het contract en goedkeuring van opleveringen altijd netjes vastgelegd worden, en collega's elkaars werk beter kunnen overnemen.</li>
+</ul>
+</section><section id="toetsen-ontwerp-en-contract"><div class="header-wrapper"><h3 id="x5-2-toetsen-ontwerp-en-contract"><bdi class="secno">5.2 </bdi>Toetsen ontwerp en contract</h3><a class="self-link" href="#toetsen-ontwerp-en-contract" aria-label="Permalink for Section 5.2"></a></div>
+<ul>
+<li><strong>Door wie:</strong> Vakinhoudelijk specialist (rioolbeheerder)  </li>
+<li><strong>Advies aan organisatie:</strong>  <ul>
+<li>Zorg dat een vakinhoudelijk specialist het ontwerp en het contract toetst </li>
+<li>Lever de vereisten aan in het contract voor de levering van ingevulde objectenpaspoorten en meetgegevens van gerealiseerde objecten voor <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr>, Klic en beheersysteem door de aannemer.</li>
+<li>Onderzoek of je de volgende onderdelen kunt automatiseren:<ul>
+<li>Automatisch invullen van objectenpaspoort van bestaande objecten uit het beheersysteem op basis van <abbr title="Gegevenswoordenboek Stedelijk Water">GWSW</abbr>/<abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> in de NLCS-CAD-bestekstekening.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Advies mbt standaarden:</strong>  <ul>
+<li>Men moet een objectpaspoort (informatieleveringsspecificatie) kunnen uitwisselen bij te realiseren of te wijzigen objecten: <ul>
+<li>Levering aan <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr> en <abbr title="Kabels en Leidingen Informatieportaal">KLIC</abbr></li>
+<li>Levering aan Beheersysteem conform <abbr title="Gegevenswoordenboek Stedelijk Water">GWSW</abbr> / <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></li>
+<li>Levering technische specificaties aan aannemer</li>
+</ul>
+</li>
+<li>Stel een open formaat vast waarin de objectenpaspoorten kunnen worden geleverd bij een NLCS tekening.</li>
+<li>Open uitwisselformaat voor objectattributen vaststellen en hierover afspraken maken in de standaard (<strong>NLCS</strong>).</li>
+<li>Open uitwisselformaat voor technische specificaties vaststellen en hierover afspraken maken in de standaard (<strong>NLCS</strong>).</li>
+</ul>
+</li>
+</ul>
+</section><section id="toetsen-werk-uitvoeren-meting-tijdens-en-na-realisatie-bouwrijpfase"><div class="header-wrapper"><h3 id="x5-3-toetsen-werk-uitvoeren-meting-tijdens-en-na-realisatie-bouwrijpfase"><bdi class="secno">5.3 </bdi>Toetsen werk &amp; uitvoeren meting tijdens en na realisatie bouwrijpfase</h3><a class="self-link" href="#toetsen-werk-uitvoeren-meting-tijdens-en-na-realisatie-bouwrijpfase" aria-label="Permalink for Section 5.3"></a></div>
+<ul>
+<li><strong>Door wie:</strong> Aannemer  </li>
+<li><strong>Advies aan organisatie:</strong>  <ul>
+<li>De aannemer moet op basis van de technische eisen in het contract toetsen of hij gemaakt  heeft wat hij had moeten maken.</li>
+<li>De aannemer moet op basis van de objectpaspoorten in het contract inmetingen doen van het werk, deze meting op de revisietekening weergeven en de gevraagde paspoortinformatie leveren bij de objecten.</li>
+</ul>
+</li>
+<li><strong>Advies mbt standaarden:</strong><br>Om de uitwisseling naar beheer mogelijk te maken, moet men een open uitwisselformaat voor CAD-geometrie vaststellen en hierover afspraken maken in de standaard (<strong>NLCS</strong>), of een afspraak maken dat revisietekeningen altijd in een geo-formaat moeten worden opgeleverd. De revisie zou immers een meting moeten bevatten van het uitgevoerde werk</li>
+</ul>
+</section><section id="riool-inspectie-uitvoeren-voor-het-gat-dichtgaat-tijdens-bouwrijp-maken"><div class="header-wrapper"><h3 id="x5-4-riool-inspectie-uitvoeren-voor-het-gat-dichtgaat-tijdens-bouwrijp-maken"><bdi class="secno">5.4 </bdi>Riool inspectie uitvoeren (voor het gat dichtgaat tijdens bouwrijp maken)</h3><a class="self-link" href="#riool-inspectie-uitvoeren-voor-het-gat-dichtgaat-tijdens-bouwrijp-maken" aria-label="Permalink for Section 5.4"></a></div>
+<ul>
+<li><strong>Door wie:</strong> Toezichthouder + Rioolbeheerder  </li>
+<li><strong>Advies aan organisatie:</strong>  <ul>
+<li>Aannemer heeft de 'inwendige' toetsing van het riool uitgevoerd (zie stap 2). De projectleider van de gemeente moet hier consequent op toezien.</li>
+<li>Laat de rioolbeheerder (specialist) tijdens het werk direct meedraaien met werkvoorbeheerder (generalist) om de kwaliteit van inspecties te waarborgen.</li>
+</ul>
+</li>
+</ul>
+</section><section id="besluit-voldoet-riool-aan-de-vereisten-go-no-go"><div class="header-wrapper"><h3 id="x5-5-besluit-voldoet-riool-aan-de-vereisten-go-no-go"><bdi class="secno">5.5 </bdi>Besluit: voldoet riool aan de vereisten? Go / no go</h3><a class="self-link" href="#besluit-voldoet-riool-aan-de-vereisten-go-no-go" aria-label="Permalink for Section 5.5"></a></div>
+<ul>
+<li><strong>Door wie:</strong> Toezichthouder + Rioolbeheerder  </li>
+<li><strong>Advies aan organisatie:</strong>  <ul>
+<li>Durf aannemer aan te spreken en zaken te verbeteren</li>
+</ul>
+</li>
+</ul>
+</section><section id="oplevering-informatie-controleren-na-bouwrijp-maken"><div class="header-wrapper"><h3 id="x5-6-oplevering-informatie-controleren-na-bouwrijp-maken"><bdi class="secno">5.6 </bdi>Oplevering informatie controleren (na bouwrijp maken)</h3><a class="self-link" href="#oplevering-informatie-controleren-na-bouwrijp-maken" aria-label="Permalink for Section 5.6"></a></div>
+<ul>
+<li><strong>Door wie:</strong> Toezichthouder  </li>
+<li><strong>Advies aan organisatie:</strong>  <ul>
+<li>Zorg ervoor dat de aannemer na bouwrijp maken meteen de oplevering doet van de gegevens, om te voldoen aan de wettelijke termijnen in de WIBON voor levering aan de <abbr title="Kabels en Leidingen Informatieportaal">KLIC</abbr>. De beheerder van de netwerken binnen de beheerpolygoon (het grondgebied van de gemeente Nijmegen) is wettelijk verplicht mutaties in de netwerken uiterlijk 30 dagen na aanleg aan te bieden aan het Klic. Deze termijn is dus van invloed op het moment waarop de aannemer zijn/haar revisiegegevens aanlevert aan de opdrachtgever.</li>
+<li>Onderzoek of je de volgende onderdelen kunt automatiseren:<ul>
+<li>Zorg ervoor dat de toezichthouder en rioolbeheerder inzicht hebben in het verschil in de locatie van objecten op de ontwerptekening met de revisietekening, zodat ze <ul>
+<li>Kunnen controleren of afwijkingen terecht zijn</li>
+<li>Kunnen controleren of de aannemer daadwerkelijk heeft ingemeten waar de objecten geplaatst zijn, en niet een kopie van de ontwerptekening heeft ingeleverd als revisietekening</li>
+</ul>
+</li>
+<li>CAD-NLCS oplevering in GIS-bestand omzetten met objecten met <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>/<abbr title="Gegevenswoordenboek Stedelijk Water">GWSW</abbr>-typering en kenmerken, zodat de beheerder dit met één druk op de knop kan verwerken.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Advies mbt standaarden:</strong> <ul>
+<li>Maak afspraken hoe in NLCS de nieuwe of verplaatste objecten kunnen worden geidentificeerd om het verschil te kunnen meten tussen de geometrie van het het ontwerp en de gerealiseerde geometrie in de revisietekening.</li>
+</ul>
+</li>
+</ul>
+</section><section id="gegevens-opleveren-aan-klic"><div class="header-wrapper"><h3 id="x5-7-gegevens-opleveren-aan-klic"><bdi class="secno">5.7 </bdi>Gegevens opleveren aan <abbr title="Kabels en Leidingen Informatieportaal">KLIC</abbr></h3><a class="self-link" href="#gegevens-opleveren-aan-klic" aria-label="Permalink for Section 5.7"></a></div>
+<ul>
+<li><strong>Door wie:</strong> Rioolbeheerder</li>
+<li><strong>Advies aan organisatie:</strong>  <ul>
+<li>Rioolbeheerder volgt de wettelijke termijn op voor aanlevering gegevens aan de Klic</li>
+</ul>
+</li>
+<li><strong>Advies mbt standaarden:</strong> <ul>
+<li>Gegevens voor de <abbr title="Kabels en Leidingen Informatieportaal">KLIC</abbr> automatisch uit CAD kunnen halen &gt; vraagt om een objectenpaspoort en/of een mapping met NLCS, attributen en eventueel ook 3D hoogtes bij de knooppunten?</li>
+</ul>
+</li>
+</ul>
+</section><section id="meting-van-het-op-te-leveren-werk-woon-inrichting-rijp-en-uitvoeren-rioolinspectie"><div class="header-wrapper"><h3 id="x5-8-meting-van-het-op-te-leveren-werk-woon-inrichting-rijp-en-uitvoeren-rioolinspectie"><bdi class="secno">5.8 </bdi>Meting van het op te leveren werk (woon-/inrichting rijp) en uitvoeren rioolinspectie</h3><a class="self-link" href="#meting-van-het-op-te-leveren-werk-woon-inrichting-rijp-en-uitvoeren-rioolinspectie" aria-label="Permalink for Section 5.8"></a></div>
+<ul>
+<li><strong>Door wie:</strong> Aannemer  </li>
+<li><strong>Advies aan organisatie:</strong>  <ul>
+<li>De aannemer moet op basis van de technische eisen in het contract toetsen of hij gemaakt  heeft wat hij had moeten maken.</li>
+<li>De aannemer moet op basis van de objectpaspoorten in het contract inmetingen doen van het werk, deze meting op de revisietekening weergeven en de gevraagde paspoortinformatie leveren bij de objecten.</li>
+<li>De aannemer moet controleren, of hij een volledige oplevering doet van alle gevraagde revisiegegevens in het contract.</li>
+</ul>
+</li>
+<li><strong>Advies mbt standaarden:</strong> 
+Gegevens voor <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr> en beheersysteem automatisch kunnen generen c.q. kunnen opnemen in het betreffende systeem &gt; &gt; vraagt om een objectenpaspoort en/of een mapping met NLCS, attributen, objectidentificatie van bestaande, gewijzigde of vervallen objecten in de tekening.</li>
+</ul>
+</section><section id="controlemeting-op-de-meting-van-de-aannemer"><div class="header-wrapper"><h3 id="x5-9-controlemeting-op-de-meting-van-de-aannemer"><bdi class="secno">5.9 </bdi>Controlemeting op de meting van de aannemer</h3><a class="self-link" href="#controlemeting-op-de-meting-van-de-aannemer" aria-label="Permalink for Section 5.9"></a></div>
+<ul>
+<li><strong>Door wie:</strong> Landmeter  </li>
+<li><strong>Advies aan organisatie:</strong>  <ul>
+<li>Vanuit efficientie oogpunt en potentieel personeelstekort onderzoeken of aannemer het werk <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr>-klaar kan aanleveren.</li>
+<li>Risico's en verantwoordelijkheden in kaart brengen en bewust keuzes in maken.</li>
+</ul>
+</li>
+</ul>
+</section><section id="toetsing-revisiedossier"><div class="header-wrapper"><h3 id="x5-10-toetsing-revisiedossier"><bdi class="secno">5.10 </bdi>Toetsing revisiedossier</h3><a class="self-link" href="#toetsing-revisiedossier" aria-label="Permalink for Section 5.10"></a></div>
+<ul>
+<li><strong>Door wie:</strong> Toezichthouder + Rioolbeheerder  </li>
+<li><strong>Advies aan organisatie:</strong>  <ul>
+<li>Toetsen op volledigheid van het overdrachtsdossier en vakinhoudelijk toetsen. Dit is inclusief kwaliteit van de data  bij de acceptatie van het opgeleverde werk</li>
+</ul>
+</li>
+</ul>
+</section><section id="formele-oplevering-woon-inrichting-rijp"><div class="header-wrapper"><h3 id="x5-11-formele-oplevering-woon-inrichting-rijp"><bdi class="secno">5.11 </bdi>Formele oplevering woon-/inrichting rijp</h3><a class="self-link" href="#formele-oplevering-woon-inrichting-rijp" aria-label="Permalink for Section 5.11"></a></div>
+<ul>
+<li><strong>Door wie:</strong> Toezichthouder + Rioolbeheerder + Aannemer</li>
+</ul>
+</section><section id="besluit-voldoet-de-oplevering"><div class="header-wrapper"><h3 id="x5-12-besluit-voldoet-de-oplevering"><bdi class="secno">5.12 </bdi>Besluit: voldoet de oplevering?</h3><a class="self-link" href="#besluit-voldoet-de-oplevering" aria-label="Permalink for Section 5.12"></a></div>
+<p><strong>Ja</strong>: betalen laatste termijn aannemer
+<br></p>
+<p><strong>Nee</strong>: laatste termijn niet betalen en actie ondernemen naar aannemer  </p>
+<ul>
+<li><strong>Door wie:</strong>  <ul>
+<li><strong>Besluit:</strong> Toezichthouder + Rioolbeheerder  </li>
+<li><strong>Financiële afwikkeling &amp; actie naar aannemer:</strong> Projectleider</li>
+</ul>
+</li>
+<li><strong>Advies aan organisatiestandaarden:</strong>  <ul>
+<li>Recht van betaling regelen in RAW  </li>
+<li>Mogelijkheid om een deel van de opdrachtsom in te houden als het werk niet conform specificaties is opgeleverd</li>
+</ul>
+</li>
+</ul>
+</section></section>
+  <section data-format="markdown" id="user-stories"><div class="header-wrapper"><h2 id="x6-user-stories"><bdi class="secno">6. </bdi>User stories</h2><a class="self-link" href="#user-stories" aria-label="Permalink for Section 6."></a></div>
+<p>Dit hoofdstuk beschrijft de <a data-link-type="dfn" href="#dfn-user-story" class="internalDFN" id="ref-for-dfn-user-story-1">user stories</a> per stap in het ontwerp. </p>
+<figure id="fig-de-vragen-bij-de-user-stories">
+<img src="../images/userstories.png" alt="visuele weergave van de paragraven die men kan verwachten in dit hoofdstuk" height="896" width="590">
+<figcaption>Figuur <bdi class="figno">6</bdi> <span class="fig-title">De vragen bij de user stories
+</span></figcaption></figure>
+
+
+<section id="user-stories-toetsen-ontwerp-en-contract"><div class="header-wrapper"><h3 id="x6-1-user-stories-toetsen-ontwerp-en-contract"><bdi class="secno">6.1 </bdi>User stories Toetsen ontwerp en contract</h3><a class="self-link" href="#user-stories-toetsen-ontwerp-en-contract" aria-label="Permalink for Section 6.1"></a></div>
+<section id="als-rioolbeheerder"><div class="header-wrapper"><h4 id="x6-1-1-als-rioolbeheerder"><bdi class="secno">6.1.1 </bdi>Als rioolbeheerder</h4><a class="self-link" href="#als-rioolbeheerder" aria-label="Permalink for Section 6.1.1"></a></div>
+<p><strong>Wil ik</strong> </p>
+<ol>
+<li>toetsen of het ontwerp voldoet aan mijn eisen als beheerder</li>
+<li>toetsen of de correcte informatie over bestaande assets is gebruikt bij het opstellen van het ontwerp (levering bestaand areaal aan aannemer)</li>
+<li>toetsen of de correcte informatie over bestaande assets is gebruikt bij het opstellen van het ontwerp (levering bestaand areaal aan aannemer)<br></li>
+</ol>
+<p><strong>Zodat ik</strong> kan zorgen dat de aannemer met de juiste uitgangspunten aan het werk gaat en de juiste informatie oplevert. </p>
+<p><strong>Omdat</strong> het rioolsysteem goed moet functioneren tijdens de gebruiks- en beheerfase</p>
+</section><section id="als-rioolbeheerder-0"><div class="header-wrapper"><h4 id="x6-1-2-als-rioolbeheerder"><bdi class="secno">6.1.2 </bdi>Als rioolbeheerder</h4><a class="self-link" href="#als-rioolbeheerder-0" aria-label="Permalink for Section 6.1.2"></a></div>
+<p><strong>Wil ik</strong> toetsen of mijn informatieleveringsspecificaties voor oplevering van informatie voor <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr>, Klic en beheersysteem goed in het contract staan 
+<br></p>
+<p><strong>Zodat ik</strong> kan zorgen dat de aannemer de juiste informatie oplevert. </p>
+<p><strong>Omdat</strong> ik tijdens de beheer- en gebruiksfase alle informatie nodig heb om het systeem te kunnen beheren.</p>
+</section><section id="als-werkvoorbereider"><div class="header-wrapper"><h4 id="x6-1-3-als-werkvoorbereider"><bdi class="secno">6.1.3 </bdi>Als werkvoorbereider​</h4><a class="self-link" href="#als-werkvoorbereider" aria-label="Permalink for Section 6.1.3"></a></div>
+<p>​
+<strong>Wil ik</strong> De gegevens weten die de beheerder nodig heeft om zijn beheersysteem volledig en goed in te vullen (ligging, type, kenmerken)​ en de technische eisen die de beheerder stelt aan de riolering
+<br>
+​<br></p>
+<p><strong>Zodat ik</strong> kan zorgen dat de juiste onderdelen in het moederbestek​ en in contracten komen
+<br>
+​<br></p>
+<p><strong>Omdat</strong> ik zo kan zorgen dat werk goed kan worden overgedragen aan de beheerder</p>
+</section></section><section id="user-story-toetsen-werk-uitvoeren-meting-tijdens-en-na-realisatie-bouwrijpfase"><div class="header-wrapper"><h3 id="x6-2-user-story-toetsen-werk-uitvoeren-meting-tijdens-en-na-realisatie-bouwrijpfase"><bdi class="secno">6.2 </bdi>User story Toetsen werk &amp; uitvoeren meting tijdens en na realisatie bouwrijpfase</h3><a class="self-link" href="#user-story-toetsen-werk-uitvoeren-meting-tijdens-en-na-realisatie-bouwrijpfase" aria-label="Permalink for Section 6.2"></a></div>
+<section id="als-aannemer"><div class="header-wrapper"><h4 id="x6-2-1-als-aannemer"><bdi class="secno">6.2.1 </bdi>Als aannemer</h4><a class="self-link" href="#als-aannemer" aria-label="Permalink for Section 6.2.1"></a></div>
+<p><strong>Wil ik</strong> toetsen en inmeten of ik het juiste gebouwd heb
+<br>​
+<br></p>
+<p><strong>Zodat ik</strong> zorg dat mijn werk en de opgeleverde informatie voldoen aan de contractuele vereisten<br><br>​
+<br></p>
+<p><strong>Omdat</strong> ik betaald wil krijgen voor mijn werk en geen herstelwerkzaamheden wil uitvoeren</p>
+</section></section><section id="user-story-riool-inspectie-uitvoeren-voor-het-gat-dichtgaat-tijdens-bouwrijp-maken"><div class="header-wrapper"><h3 id="x6-3-user-story-riool-inspectie-uitvoeren-voor-het-gat-dichtgaat-tijdens-bouwrijp-maken"><bdi class="secno">6.3 </bdi>User story Riool inspectie uitvoeren (voor het gat dichtgaat tijdens bouwrijp maken)</h3><a class="self-link" href="#user-story-riool-inspectie-uitvoeren-voor-het-gat-dichtgaat-tijdens-bouwrijp-maken" aria-label="Permalink for Section 6.3"></a></div>
+<section id="als-rioolbeheerder-1"><div class="header-wrapper"><h4 id="x6-3-1-als-rioolbeheerder"><bdi class="secno">6.3.1 </bdi>Als rioolbeheerder</h4><a class="self-link" href="#als-rioolbeheerder-1" aria-label="Permalink for Section 6.3.1"></a></div>
+<p><strong>Wil ik</strong> zorgen dat eventuele aanlegfouten zoals onvoldoende hoogteverschillen of verzakkingen worden ontdekt
+<br>​</p>
+<p><strong>Zodat ik</strong> kan zorgen dat dit hersteld wordt door de aannemer, voordat voor herstel in een later stadium veel grotere uitgaven gedaan moeten worden op kosten van de beheerder.<br><br>​</p>
+<p><strong>Omdat</strong> de technische kwaliteit van het stelsel gewaarborgd moet blijven tijdens de jaren van gebruik en beheer.</p>
+</section></section><section id="user-story-besluit-voldoet-riool-aan-de-vereisten-go-no-go"><div class="header-wrapper"><h3 id="x6-4-user-story-besluit-voldoet-riool-aan-de-vereisten-go-no-go"><bdi class="secno">6.4 </bdi>User story Besluit: voldoet riool aan de vereisten? Go / no go</h3><a class="self-link" href="#user-story-besluit-voldoet-riool-aan-de-vereisten-go-no-go" aria-label="Permalink for Section 6.4"></a></div>
+<section id="als-toezichthouder"><div class="header-wrapper"><h4 id="x6-4-1-als-toezichthouder"><bdi class="secno">6.4.1 </bdi>Als toezichthouder</h4><a class="self-link" href="#als-toezichthouder" aria-label="Permalink for Section 6.4.1"></a></div>
+<p><strong>wil ik</strong> zorgen dat eventuele aanlegfouten zoals onvoldoende hoogteverschillen of verzakkingen tijdig worden ontdekt
+<br>​</p>
+<p><strong>zodat ik</strong> ik kan zorgen dat de aannemer het werk volgens het contract uitvoert 
+<br>​</p>
+<p><strong>omdat</strong>:   </p>
+<ul>
+<li>Ik moet zorgen dat fouten hersteld worden door de aanemer, voordat ik over ga tot betaling.</li>
+</ul>
+</section></section><section id="user-story-oplevering-informatie-controleren-na-bouwrijp-maken"><div class="header-wrapper"><h3 id="x6-5-user-story-oplevering-informatie-controleren-na-bouwrijp-maken"><bdi class="secno">6.5 </bdi>User story Oplevering informatie controleren (na bouwrijp maken)</h3><a class="self-link" href="#user-story-oplevering-informatie-controleren-na-bouwrijp-maken" aria-label="Permalink for Section 6.5"></a></div>
+<section id="als-rioolbeheerder-2"><div class="header-wrapper"><h4 id="x6-5-1-als-rioolbeheerder"><bdi class="secno">6.5.1 </bdi>Als rioolbeheerder</h4><a class="self-link" href="#als-rioolbeheerder-2" aria-label="Permalink for Section 6.5.1"></a></div>
+<p><strong>wil ik</strong> de geografische ligging, gegevenskenmerken van het rioolstelsel met een bepaalde nauwkeurigheid, volledigheid en kwaliteit op een snelle manier importeren in mijn beheersysteem<br><br>​</p>
+<p><strong>zodat ik</strong> deze data snel en volledig (wat nodig is) kan verstrekken aan de organisatie en externe partijen<br><br>​</p>
+<p><strong>omdat</strong>:  </p>
+<ul>
+<li>Ik het rioolsysteem kan onderhouden, reinigen en inspecteren  </li>
+<li>De organisatie integraal kan ontwerpen, opbouwen van hydraulische modellen, opstellen van MJP  </li>
+<li>Technische kwaliteit van het stelsel / kwaliteit van gegevens gewaarborgd blijft.</li>
+</ul>
+</section></section><section id="user-story-gegevens-opleveren-voor-de-klic"><div class="header-wrapper"><h3 id="x6-6-user-story-gegevens-opleveren-voor-de-klic"><bdi class="secno">6.6 </bdi>User story Gegevens opleveren voor de <abbr title="Kabels en Leidingen Informatieportaal">KLIC</abbr></h3><a class="self-link" href="#user-story-gegevens-opleveren-voor-de-klic" aria-label="Permalink for Section 6.6"></a></div>
+<ul>
+<li>Als rioolbeheerder</li>
+</ul>
+<p><strong>Wil ik</strong> tijdig de revisiegegevens ontvangen van de aannemer voor de levering aan Klic<br><br>​</p>
+<p><strong>Zodat ik</strong> de geografische ligging, gegevenskenmerken van het rioolstelsel met een bepaalde nauwkeurigheid, volledigheid en kwaliteit kunnen opleveren aan de Klic
+<br>​</p>
+<p><strong>Omdat</strong> ik een wettelijke plicht heb te zorgen dat informatie over ondergrondse infra volledig is, zodat graafschade voorkomen kan worden bij verdere uitvoering van werkzaamheden. </p>
+</section><section id="user-story-meting-van-het-op-te-leveren-werk-woon-inrichting-rijp"><div class="header-wrapper"><h3 id="x6-7-user-story-meting-van-het-op-te-leveren-werk-woon-inrichting-rijp"><bdi class="secno">6.7 </bdi>User story Meting van het op te leveren werk (woon-/inrichting rijp)</h3><a class="self-link" href="#user-story-meting-van-het-op-te-leveren-werk-woon-inrichting-rijp" aria-label="Permalink for Section 6.7"></a></div>
+<section id="als-rioolbeheerder-3"><div class="header-wrapper"><h4 id="x6-7-1-als-rioolbeheerder"><bdi class="secno">6.7.1 </bdi>Als rioolbeheerder</h4><a class="self-link" href="#als-rioolbeheerder-3" aria-label="Permalink for Section 6.7.1"></a></div>
+<p>Zie <a href="#oplevering-informatie-controleren-na-bouwrijp-maken">User story Oplevering informatie controleren (na bouwrijp maken)</a> </p>
+</section></section><section id="user-story-controlemeting-op-de-meting-van-de-aannemer"><div class="header-wrapper"><h3 id="x6-8-user-story-controlemeting-op-de-meting-van-de-aannemer"><bdi class="secno">6.8 </bdi>User story Controlemeting op de meting van de aannemer</h3><a class="self-link" href="#user-story-controlemeting-op-de-meting-van-de-aannemer" aria-label="Permalink for Section 6.8"></a></div>
+<ul>
+<li>Als <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr>-beheerder​</li>
+</ul>
+<p><strong>wil ik</strong> een locatie-nauwkeurige revisie, inclusief tijdsplanning​
+<br>​</p>
+<p><strong>zodat ik</strong> eenvoudig de projectinformatie kan verwerken in de <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr> en kan doorsturen naar assetbeheerders​
+<br>​</p>
+<p><strong>omdat ik</strong> verantwoordelijk ben voor nauwkeurige datalevering aan de landelijke voorziening en deze data ook aanlever aan assetbeheerders (horizontaal berichtenverkeer)​</p>
+</section><section id="user-story-toetsing-revisiedossier"><div class="header-wrapper"><h3 id="x6-9-user-story-toetsing-revisiedossier"><bdi class="secno">6.9 </bdi>User story Toetsing revisiedossier</h3><a class="self-link" href="#user-story-toetsing-revisiedossier" aria-label="Permalink for Section 6.9"></a></div>
+<section id="als-rioolbeheerder-4"><div class="header-wrapper"><h4 id="x6-9-1-als-rioolbeheerder"><bdi class="secno">6.9.1 </bdi>Als rioolbeheerder</h4><a class="self-link" href="#als-rioolbeheerder-4" aria-label="Permalink for Section 6.9.1"></a></div>
+<p>Zie <a href="#oplevering-informatie-controleren-na-bouwrijp-maken">User story Oplevering informatie controleren (na bouwrijp maken)</a> </p>
+</section></section><section id="user-story-formele-oplevering-woon-inrichting-rijp"><div class="header-wrapper"><h3 id="x6-10-user-story-formele-oplevering-woon-inrichting-rijp"><bdi class="secno">6.10 </bdi>User story formele oplevering woon-/inrichting rijp</h3><a class="self-link" href="#user-story-formele-oplevering-woon-inrichting-rijp" aria-label="Permalink for Section 6.10"></a></div>
+<section id="als-toezichthouder-0"><div class="header-wrapper"><h4 id="x6-10-1-als-toezichthouder"><bdi class="secno">6.10.1 </bdi>Als toezichthouder</h4><a class="self-link" href="#als-toezichthouder-0" aria-label="Permalink for Section 6.10.1"></a></div>
+<p>Zie <a href="#user-story-besluit-voldoet-riool-aan-de-vereisten-go-no-go">User story Besluit: voldoet riool aan de vereisten? Go / no go </a></p>
+</section><section id="als-aannemer-0"><div class="header-wrapper"><h4 id="x6-10-2-als-aannemer"><bdi class="secno">6.10.2 </bdi>Als aannemer</h4><a class="self-link" href="#als-aannemer-0" aria-label="Permalink for Section 6.10.2"></a></div>
+<p>Zie <a href="#toetsen-werk-uitvoeren-meting-tijdens-en-na-realisatie-bouwrijpfase">User story Toetsen werk &amp; uitvoeren meting tijdens en na realisatie bouwrijpfase</a></p>
+</section></section><section id="user-story-besluit-voldoet-de-oplevering"><div class="header-wrapper"><h3 id="x6-11-user-story-besluit-voldoet-de-oplevering"><bdi class="secno">6.11 </bdi>User story Besluit: voldoet de oplevering?</h3><a class="self-link" href="#user-story-besluit-voldoet-de-oplevering" aria-label="Permalink for Section 6.11"></a></div>
+<section id="als-projectleider"><div class="header-wrapper"><h4 id="x6-11-1-als-projectleider"><bdi class="secno">6.11.1 </bdi>Als projectleider</h4><a class="self-link" href="#als-projectleider" aria-label="Permalink for Section 6.11.1"></a></div>
+<p><strong>wil ik</strong> zorgen dat de aannemer alle informatie heeft opgeleverd.
+<br>​</p>
+<p><strong>zodat ik</strong> eenvoudig de projectinformatie kan doorsturen naar assetbeheerders​ en het werk goed kan opleveren.
+<br>​</p>
+<p><strong>omdat ik</strong> verantwoordelijk ben voor controle dat het contract goed is uitgevoerd voor ik overga tot betaling.</p>
+</section></section></section>
+  <section data-format="markdown" id="bouwen"><div class="header-wrapper"><h2 id="x7-bouwen"><bdi class="secno">7. </bdi>Bouwen</h2><a class="self-link" href="#bouwen" aria-label="Permalink for Section 7."></a></div>
+<p>Dit hoofdstuk beschrijft het bouwen: De ontwikkeling van modellen en inrchten van de experimenteeromgeving. Daarnaast is de beschrijving toegevoegd van een al eerder uitgevoerd onderzoek, de Inventarisatie <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr>-meting versus revisie.</p>
+<figure id="fig-de-vragen-bij-het-bouwen">
+<img src="../images/bouwen.png" alt="visuele weergave van de paragraven die men kan verwachten in dit hoofdstuk" height="918" width="553">
+<figcaption>Figuur <bdi class="figno">7</bdi> <span class="fig-title">De vragen bij het bouwen
+</span></figcaption></figure>
+
+
+<section id="inventarisatie-bgt-meting-versus-revisie"><div class="header-wrapper"><h3 id="x7-1-inventarisatie-bgt-meting-versus-revisie"><bdi class="secno">7.1 </bdi>Inventarisatie <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr>-meting versus revisie</h3><a class="self-link" href="#inventarisatie-bgt-meting-versus-revisie" aria-label="Permalink for Section 7.1"></a></div>
+<p>Het direct kunnen importeren van revisiegegevens in de verschillende beheersystemen (<strong><abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr>/gemeentelijk beheersysteem</strong>) kan een enorme tijdwinst opleveren. Indien de door de aannemer geleverde gegevens voldoen aan de overeengekomen kwaliteit (volledigheid/nauwkeurigheid) die door de betreffende beheersystemen worden vereist, is een (hernieuwde) inwinning van de objecten in de openbare ruimte overbodig en kunnen beide systemen met behulp van de revisiegegevens relatief eenvoudig up-to-date worden gehouden.  </p>
+<p>Bij wijze van proef is onderzocht in hoeverre de revisie-dataset, aangeleverd door de aannemer, overeenkomt met of afwijkt van de inwinningsgegevens van onze eigen landmeter. De vergelijking beperkte zich hierbij tot de locatiegegevens (<strong>x- en y-coördinaten</strong>) van de rioolputten.  </p>
+<section id="datavergelijking"><div class="header-wrapper"><h4 id="x7-1-1-datavergelijking"><bdi class="secno">7.1.1 </bdi>Datavergelijking</h4><a class="self-link" href="#datavergelijking" aria-label="Permalink for Section 7.1.1"></a></div>
+<p>Testgebied: Woenderskamp en Hof van Holland, Nijmegen Noord  </p>
+<p>Datasets:</p>
+<ol>
+<li>Revisietekening (<strong>AutoCAD-bestand</strong>), aangeleverd door aannemer  </li>
+<li>Inmeting <strong><abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr></strong> (inwinning landmeter gemeente Nijmegen)</li>
+</ol>
+<p>Met analysetool FME zijn de datasets vergeleken.  </p>
+</section><section id="analyse"><div class="header-wrapper"><h4 id="x7-1-2-analyse"><bdi class="secno">7.1.2 </bdi>Analyse</h4><a class="self-link" href="#analyse" aria-label="Permalink for Section 7.1.2"></a></div>
+<p>Om iets te kunnen zeggen over de kwaliteit van de geleverde <strong>CAD-tekening</strong>, zijn de locatiegegevens (<strong>x- en y-coördinaten</strong>) van de objecten (<strong>rioolputten</strong>) in deze dataset vergeleken met de locatiegegevens van de betreffende rioolobjecten die middels inmeting door de landmeter van de gemeente Nijmegen zijn verkregen.  </p>
+<p>De locatiegegevens van de rioolobjecten uit deze twee beschikbare datasets zijn vervolgens met elkaar vergeleken (<strong>onderlinge afstand is berekend</strong>) en de resultaten van deze analyse zijn op kaart weergegeven.  </p>
+<section id="toetsingscriteria"><div class="header-wrapper"><h5 id="x7-1-2-1-toetsingscriteria"><bdi class="secno">7.1.2.1 </bdi>Toetsingscriteria</h5><a class="self-link" href="#toetsingscriteria" aria-label="Permalink for Section 7.1.2.1"></a></div>
+<p>De toetsingscriteria zijn als volgt gedefinieerd:</p>
+<figure id="fig-toetsingscriteria">
+  <img src="../images/criteria.png" alt="Toetsingscriteria gevisualiseerd, dit zijn de cirteria die verderop in de tekst met bullets zijn beschreven" height="150" width="263">
+  <figcaption>Figuur <bdi class="figno">8</bdi> <span class="fig-title">Toetsingscriteria</span></figcaption>
+</figure>
+
+<ul>
+<li>Is de berekende onderlinge afstand van een rioolput in beide beschikbare datasets kleiner of gelijk aan <strong>10 cm</strong>, dan wordt de revisietekening beoordeeld als <strong>‘nauwkeurig’</strong> en wordt het object als een <strong>groene punt</strong> op de kaart weergegeven.  </li>
+<li>Is de berekende afstand tussen <strong>10 en 25 cm</strong> (dus grotere onderlinge afwijking), dan wordt de rioolput <strong>geel</strong> weergegeven.  </li>
+<li>Is de berekende onderlinge afstand <strong>groter dan 1 meter</strong> of is het object door de landmeter niet aangetroffen, dan verschijnt er een <strong>rode punt</strong> op de kaart.  </li>
+<li>Indien de landmeter in het veld een rioolput constateert die niet op de revisietekening staat, dan wordt dit weergegeven als een <strong>paarse ruit</strong>.</li>
+</ul>
+<p>Deze toetsingscriteria zijn in samenwerking met de <strong>projectleider Waalsprong</strong> tot stand gekomen.  </p>
+</section><section id="stappenplan"><div class="header-wrapper"><h5 id="x7-1-2-2-stappenplan"><bdi class="secno">7.1.2.2 </bdi>Stappenplan</h5><a class="self-link" href="#stappenplan" aria-label="Permalink for Section 7.1.2.2"></a></div>
+<ol>
+<li>Converteren <strong>CAD-data</strong> (revisietekening aannemer) naar <strong>GIS-data</strong> t.b.v. publicatie in GIS-software (<strong>QGIS/gemeentelijke Kaartviewer</strong>).  </li>
+<li>Inlezen meetgegevens landmeter gemeente Nijmegen.  </li>
+<li>Bepalen onderlinge afstand object (<strong>rioolput</strong>) met behulp van <strong>FME</strong>.  </li>
+<li>Visualiseren analyseresultaten op basis van de kleurindeling van de toetsingscriteria.</li>
+</ol>
+</section></section><section id="geleverde-revisietekening-aannemer-autocad-zelfde-fragment-bgt-data-landmeter-gemeente-nijmegenmerk-op-zwarte-cirkels-zijn-de-gemeten-rioolputten-figuur-9-zelfde-fragment-bgt-data-landmeter-gemeente-nijmegen-zwarte-cirkels-zijn-de-gemeten-rioolputten"><div class="header-wrapper"><h4 id="x7-1-3"><bdi class="secno">7.1.3 </bdi></h4><a class="self-link" href="#geleverde-revisietekening-aannemer-autocad-zelfde-fragment-bgt-data-landmeter-gemeente-nijmegenmerk-op-zwarte-cirkels-zijn-de-gemeten-rioolputten-figuur-9-zelfde-fragment-bgt-data-landmeter-gemeente-nijmegen-zwarte-cirkels-zijn-de-gemeten-rioolputten" aria-label="Permalink for Section 7.1.3"></a></div>
+<p>Geleverde revisietekening aannemer (AutoCAD)<br><img src="../images/fragment_revisietekening.png" alt="Fragment geleverde revisietekening aannemer (AutoCAD)" width="600">  </p>
+<p>Zelfde fragment, <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr>-data landmeter gemeente Nijmegen<br>Merk op: <strong>zwarte cirkels</strong> zijn de gemeten rioolputten.  </p>
+<figure id="fig-zelfde-fragment-bgt-data-landmeter-gemeente-nijmegen-zwarte-cirkels-zijn-de-gemeten-rioolputten">
+  <img src="../images/bgt_data_landmeter.png" alt="BGT-data landmeter gemeente Nijmegen" height="314" width="519">
+  <figcaption>Figuur <bdi class="figno">9</bdi> <span class="fig-title">Zelfde fragment, <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr>-data landmeter gemeente Nijmegen (zwarte cirkels zijn de gemeten rioolputten)</span></figcaption>
+</figure> 
+
+</section><section id="analyseresultaten"><div class="header-wrapper"><h4 id="x7-1-4-analyseresultaten"><bdi class="secno">7.1.4 </bdi>Analyseresultaten</h4><a class="self-link" href="#analyseresultaten" aria-label="Permalink for Section 7.1.4"></a></div>
+<figure id="fig-analyseresultaten-van-de-vergelijking-tussen-revisiedata-en-bgt-data">
+  <img src="../images/analyseresultaten.png" alt="Analyseresultaten" height="314" width="519">
+  <figcaption>Figuur <bdi class="figno">10</bdi> <span class="fig-title">Analyseresultaten van de vergelijking tussen revisiedata en <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr>-data</span></figcaption>
+</figure>
+
+<figure id="fig-revisietekening-aangeleverd-door-aannemer">
+  <img src="../images/revisietekening_aannemer.png" alt="Revisietekening aannemer" height="227" width="375">
+  <figcaption>Figuur <bdi class="figno">11</bdi> <span class="fig-title">Revisietekening aangeleverd door aannemer</span></figcaption>
+</figure>
+
+<figure id="fig-inmeting-bgt-door-landmeter-gemeente-nijmegen">
+  <img src="../images/inmeting_bgt.png" alt="Inmeting BGT" height="227" width="375">
+  <figcaption>Figuur <bdi class="figno">12</bdi> <span class="fig-title">Inmeting <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr> door landmeter gemeente Nijmegen</span></figcaption>
+</figure>
+
+<figure id="fig-detail-van-de-analyseresultaten-van-de-vergelijking-tussen-revisiedata-en-bgt-data">
+  <img src="../images/analyseresultaten.png" alt="Analyseresultaten" height="314" width="519">
+  <figcaption>Figuur <bdi class="figno">13</bdi> <span class="fig-title">Detail van de analyseresultaten van de vergelijking tussen revisiedata en <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr>-data</span></figcaption>
+</figure>
+
+</section><section id="beoordeling-resultaten"><div class="header-wrapper"><h4 id="x7-1-5-beoordeling-resultaten"><bdi class="secno">7.1.5 </bdi>Beoordeling resultaten</h4><a class="self-link" href="#beoordeling-resultaten" aria-label="Permalink for Section 7.1.5"></a></div>
+<p>De resultaten dienen (<strong>zoals altijd</strong>) kritisch beoordeeld te worden. De mogelijke redenen voor afwijkingen zijn divers en vaak niet toe te schrijven aan één enkele oorzaak.  </p>
+</section><section id="bijvangst-data-analyse"><div class="header-wrapper"><h4 id="x7-1-6-bijvangst-data-analyse"><bdi class="secno">7.1.6 </bdi>‘Bijvangst’ data-analyse</h4><a class="self-link" href="#bijvangst-data-analyse" aria-label="Permalink for Section 7.1.6"></a></div>
+<p>Naast eventuele <strong>nauwkeurigheidsissues</strong> kwamen er voor het gekozen gebied ook andere <strong>onvolkomenheden</strong> aan de oppervlakte, die in feite buiten de scope van de analyse vielen.  </p>
+<p>Een opvallende constatering was dat er in een aantal gevallen een <strong>rioolput op de revisietekening stond aangegeven</strong> die door de landmeter <strong>niet</strong> was ingemeten.  </p>
+<p>Deze putten ontbraken ook daadwerkelijk in het straatbeeld (<strong>controle via Streetview</strong>). Nader onderzoek wees uit dat in deze gevallen de putobjecten tijdens de <strong>bouwrijpmaakfase</strong> weliswaar weliswaar waren aangelegd, maar dat de putranden tijdens de fase-overgang ‘bouwrijp maken / woonrijp maken’ niet waren opgemetseld waarna het nieuwe straatwerk over deze pas aangelegde putten was aangebracht.</p>
+<p>De kosten om dit te herstellen liggen tussen de 3.000 en 4.000 euro per putobject. Deze kosten komen vaak voor rekening van de gemeente omdat deze ‘fouten’ bij oplevering vaak niet gesignaleerd worden en pas bij problemen van het rioolstelsel (dus vaak jaren later) naar boven komen. De data-analyse heeft echter plaatsgevonden kort na oplevering, waarna de aannemer is aangesproken op bovenstaande fouten. Kostenbesparing voor de gemeente Nijmegen: een kleine 60.000 euro.</p>
+<p>Deze analyse heeft niet geleid tot de controle van het volledige projectgebied dat is opgeleverd. Deelnemers aan de werksessie wijten dat aan de cultuur binnen de gemeente. </p>
+</section></section><section id="experiment-reviesieverwerking"><div class="header-wrapper"><h3 id="x7-2-experiment-reviesieverwerking"><bdi class="secno">7.2 </bdi>Experiment reviesieverwerking</h3><a class="self-link" href="#experiment-reviesieverwerking" aria-label="Permalink for Section 7.2"></a></div>
+<p>In het experiment revisieverwerking worden de volgende stappen worden onderzocht met hulp van de proefdataset die door de gemeente Nijmegen wordt verstrekt aan CROW:</p>
+<ol>
+<li>Beheerinformatie riolering publiceren met <abbr title="Gegevenswoordenboek Stedelijk Water">GWSW</abbr>-standaard. Hiervoor wordt de geleverde beheerinformatie over putten en rioolleidingen omgezet naar linked data op basis van het <abbr title="Gegevenswoordenboek Stedelijk Water">GWSW</abbr>-model.</li>
+<li>De revisietekening riolering wordt omgezet naar linked data op basis van het <abbr title="Gegevenswoordenboek Stedelijk Water">GWSW</abbr>-model, op basis van een test-ontology alignment tussen NLCS en <abbr title="Gegevenswoordenboek Stedelijk Water">GWSW</abbr>. Deze wordt gemaakt op basis van de tabel waarmee PDOK Thema Stedelijk Water wordt vergeleken met NLCS.</li>
+<li>Onderzocht wordt, of de bestaande objecten uit de beheerdata herkenbaar zijn in de revisietekening. Omdat nog niet met objectidentificatie gwerkt kan worden in NLCS, wordt gebruik gemaakt van de aanname, dat een object op dezelfde locatie in de tekening als in de beheerdata, hetzelfde object zijn.</li>
+<li>Onderzocht wordt welke attributen reeds bekend zijn op basis van het symbool en/of de laagnaam</li>
+</ol>
+</section></section>
+  <section data-format="markdown" id="experimenteren-en-evalueren"><div class="header-wrapper"><h2 id="x8-experimenteren-en-evalueren"><bdi class="secno">8. </bdi>Experimenteren en evalueren</h2><a class="self-link" href="#experimenteren-en-evalueren" aria-label="Permalink for Section 8."></a></div>
+<p>Dit hoofdstuk beschrijft het uitvoeren en evalueren van het experiment​, de toepassing en borging​.</p>
+<figure id="fig-de-vragen-bij-het-experimenteren-en-evalueren">
+<img src="../images/evalueren.png" alt="visuele weergave van de paragraven die men kan verwachten in dit hoofdstuk" height="886" width="575">
+<figcaption>Figuur <bdi class="figno">14</bdi> <span class="fig-title">De vragen bij het experimenteren en evalueren
+</span></figcaption></figure></section>
+  <section data-format="markdown" id="definities"><div class="header-wrapper"><h2 id="x9-definities"><bdi class="secno">9. </bdi>Definities</h2><a class="self-link" href="#definities" aria-label="Permalink for Section 9."></a></div>
+<dl data-sort=""><dt><dfn data-lt="BGT|Basisregistratie Grootschalige Topografie" id="dfn-bgt" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn"><abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr></dfn></dt>
+<dd><abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr> is een digitale kaart van Nederland waarop gebouwen, wegen, waterlopen, terreinen en spoorlijnen eenduidig zijn vastgelegd met een nauwkeurigheid van 20 centimeter. De informatie wordt aangeleverd door de beheerders van de objecten. Wegen zijn hierin opgenomen als 2D-vlakobjecten, terwijl verkeersborden als 2D-punten van het type <q>bord</q> worden geregistreerd, conform het <abbr title="Informatiemodel Grootschalige Geografie">IMGeo</abbr>
+</dd>
+
+
+<dt><dfn data-lt="GWSW|Gegevenswoordenboek Stedelijk Water" id="dfn-gwsw" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn"><abbr title="Gegevenswoordenboek Stedelijk Water">GWSW</abbr></dfn></dt>
+  <dd>
+    Het <abbr title="Gegevenswoordenboek Stedelijk Water">GWSW</abbr> is een gestandaardiseerd informatiemodel voor het vastleggen, beheren en uitwisselen van gegevens over stedelijk waterbeheer. Het bevat eenduidige definities en semantische afspraken voor objecten zoals rioleringen, watergangen en bergingsvoorzieningen. Het model zorgt voor een betere interoperabiliteit tussen verschillende partijen, zoals gemeenten, waterschappen en ingenieursbureaus.  
+    Zie ook <a href="https://www.riool.net/applicaties/gegevenswoordenboek-stedelijk-water-gwsw" target="_blank">deze website</a> en <a href="https://data.gwsw.nl/" target="_blank">deze viewer</a>.
+  </dd><dt><dfn data-lt="IMBOR|Informatiemodel Beheer Openbare Ruimte" id="dfn-imbor" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn"><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></dfn></dt>
+  <dd>
+    Het <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> bevat de afspraken over de benamingen en definities van alle type objecten in de openbare ruimte en de beheergegevens die per type object vastgelegd kunnen worden. Veel gemeenten gebruiken de objecttypen uit de 
+    <abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr> voor de geometrische representatie van de objecten.  
+    Zie ook <a href="https://www.crow.nl/thema-s/openbare-ruimte/imbor" target="_blank">deze website</a> en <a href="https://imbor-viewer.apps.crow.nl/" target="_blank">deze viewer</a>.
+  </dd>
+
+
+
+  <dt><dfn data-lt="KLIC|Kabels en Leidingen Informatieportaal" id="dfn-klic" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn"><abbr title="Kabels en Leidingen Informatieportaal">KLIC</abbr></dfn></dt>
+  <dd>
+    Een digitaal systeem waarin netbeheerders informatie over ondergrondse kabels en leidingen registreren. Het portaal wordt beheerd door het Kadaster en maakt het mogelijk om via een 
+    <abbr title="Kabels en Leidingen Informatieportaal">KLIC</abbr>-melding gegevens op te vragen over de ligging van kabels en leidingen. Dit is verplicht bij graafwerkzaamheden om schade te voorkomen en de veiligheid te waarborgen.
+  </dd>
+
+
+
+<dt><dfn data-lt="Use case|Use Cases|Use Case" id="dfn-use-case" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Use Case</dfn></dt>
+<dd>
+Een **use case** binnen het **DOOR-programma** beschrijft een proces vanuit het perspectief van de betrokken partijen (actoren) en hoe zij informatie met elkaar uitwisselen. Het gaat hierbij niet om het ontwikkelen van software, maar om het waarborgen van een **interoperabele** en **eenduidige uitwisseling van informatie** tussen ketenpartners.  
+
+<p>De use case beschrijft <strong>wie</strong> betrokken is bij de informatie-uitwisseling (actoren), <strong>wat</strong> het doel is en <strong>hoe</strong> de interactie verloopt in een reeks logische stappen. Actoren kunnen personen, organisaties of systemen zijn die gegevens aanleveren, verwerken of gebruiken. De focus ligt op het creëren van een gestroomlijnd proces waarin data betrouwbaar en reproduceerbaar wordt gedeeld, zodat alle partijen effectief kunnen samenwerken bij werkzaamheden in de openbare ruimte en infrastructuur.</p>
+</dd>
+
+<dt><dfn data-lt="User story|User Stories" data-plurals="user stories" id="dfn-user-story" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">User story</dfn></dt>
+<dd>
+Een user story is een bekend concept in agile softwareontwikkeling en helpt bij het beschrijven van softwarefunctionaliteiten vanuit het oogpunt van de eindgebruiker.​ De user story wordt geformuleerd vanuit het oogpunt van een gebruiker, beschrijft wat deze wil bereiken en met welk doel. Deze structuur helpt het ontwikkelteam en andere belanghebbenden te begrijpen wat ​
+er moet worden gebouwd en waarom, en biedt meetbare criteria voor succes.​
+</dd>
+
+</dl></section>  
+  <section id="index" class="appendix"><div class="header-wrapper"><h2 id="a-index"><bdi class="secno">A. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix A."></a></div><section id="index-defined-here"><div class="header-wrapper"><h3 id="a-1-termen-gedefinieerd-door-deze-specificatie"><bdi class="secno">A.1 </bdi>Termen gedefinieerd door deze specificatie</h3><a class="self-link" href="#index-defined-here" aria-label="Permalink for Appendix A.1"></a></div>
+    
+    <ul class="index">
+    <li>
+      <a class="index-term" href="#dfn-bgt">BGT</a> 
+    <span class="print-only">§9.</span></li><li>
+      <a class="index-term" href="#dfn-gwsw">GWSW</a> 
+    <span class="print-only">§9.</span></li><li>
+      <a class="index-term" href="#dfn-imbor">IMBOR</a> 
+    <span class="print-only">§9.</span></li><li>
+      <a class="index-term" href="#dfn-klic">KLIC</a> 
+    <span class="print-only">§9.</span></li><li>
+      <a class="index-term" href="#dfn-use-case">Use Case</a> 
+    <span class="print-only">§9.</span></li><li>
+      <a class="index-term" href="#dfn-user-story">User story</a> 
+    <span class="print-only">§9.</span></li>
+  </ul>
+  </section><section id="index-defined-elsewhere"><div class="header-wrapper"><h3 id="a-2-termen-gedefinieerd-door-referentie"><bdi class="secno">A.2 </bdi>Termen gedefinieerd door referentie</h3><a class="self-link" href="#index-defined-elsewhere" aria-label="Permalink for Appendix A.2"></a></div>
+    
+    <ul class="index">
+    
+  </ul>
+  </section></section>
+
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+
+<script id="annotation-service-runtime">(() => {
+// @ts-check
+const SETTING_KEY = "annotation-service-hypothesis";
+const SETTING_VALUE_ALLOWED = "allowed";
+const hClientDefault = {
+  openSidebar: false,
+  showHighlights: true,
+  theme: "classic",
+  branding: {
+    accentColor: "rgb(0, 157, 224)",
+    appBackgroundColor: "white",
+    ctaBackgroundColor: "rgb(255, 110, 26)",
+    ctaTextColor: "white",
+    selectionFontFamily: "'Museo Sans', Museo, Helvetica, Arial, sans serif",
+    annotationFontFamily: "'Museo Sans', Museo, Helvetica, Arial, sans serif",
+  },
+};
+
+if (document.respec) {
+  document.respec.ready.then(render);
+} else {
+  render();
+}
+
+/** Render the placeholder (Load Service Button) or annotation info (# annotations, Show Annotation Button). */
+function render() {
+  if (localStorage.getItem(SETTING_KEY) == SETTING_VALUE_ALLOWED) {
+    renderAnnotationServiceInfo();
+  } else {
+    renderPlaceholder();
+  }
+}
+
+/** Render Load Service Button, with privacy info. */
+function renderPlaceholder() {
+  localStorage.removeItem(SETTING_KEY);
+
+  /** @type {HTMLElement} */
+  const placeholder = document.querySelector("#annotation-service-placeholder");
+  placeholder.hidden = false;
+
+  const listener = loadButtonListener();
+  document
+    .querySelector("[data-load-annotation-service]")
+    .addEventListener("keydown", listener);
+  document
+    .querySelector("[data-load-annotation-service]")
+    .addEventListener("click", listener);
+
+  /** @type {HTMLElement} */
+  const serviceInfo = document.querySelector("#annotation-service-loaded");
+  serviceInfo.hidden = true;
+}
+
+function loadButtonListener() {
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLButtonElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    target.disabled = true;
+    localStorage.setItem(SETTING_KEY, SETTING_VALUE_ALLOWED);
+    renderAnnotationServiceInfo();
+  };
+}
+
+function unloadButtonListener() {
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLButtonElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    target.disabled = true;
+    localStorage.removeItem(SETTING_KEY);
+    removeHScript();
+  };
+}
+
+function renderAnnotationServiceInfo() {
+  addHConfig(document);
+  addHScript(document);
+}
+
+/**
+ *
+ * @param {Document} doc
+ * @param {*} conf
+ */
+function addHScript(doc, conf) {
+  const script = doc.createElement("script");
+  script.src = "https://hypothes.is/embed.js";
+  script.async = true;
+  doc.body.appendChild(script);
+
+  script.addEventListener("load", event => {
+    /** @type {HTMLElement} */
+    const placeholder = document.querySelector(
+      "#annotation-service-placeholder"
+    );
+    placeholder.hidden = true;
+
+    /** @type {HTMLElement} */
+    const serviceInfo = document.querySelector("#annotation-service-loaded");
+    serviceInfo.hidden = false;
+
+    const unloadListener = unloadButtonListener();
+    document
+      .querySelector("[data-unload-annotation-service]")
+      .addEventListener("keydown", unloadListener);
+    document
+      .querySelector("[data-unload-annotation-service]")
+      .addEventListener("click", unloadListener);
+  });
+}
+
+/**
+ * Retract Hypothesis permission.
+ */
+function removeHScript() {
+  // Deleting the hypothesis-script, does not undo its changes, listeners etc.
+  // Instead, reload the frame.
+  window.location.reload();
+}
+
+/**
+ *
+ * @param {Document} doc
+ * @param {*} conf
+ */
+function addHConfig(doc, conf) {
+  const script = doc.createElement("script");
+  script.className = "js-hypothesis-config";
+  script.type = "application/json";
+  script.innerText = JSON.stringify(hClientDefault);
+  doc.body.appendChild(script);
+}
+})()</script><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-bgt" aria-label="Links in this document to definition: BGT">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-bgt" aria-label="Permalink for definition: BGT. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-bgt-1" title="§ 3.1.1 Vraagstuk Informatievoorziening">§ 3.1.1 Vraagstuk Informatievoorziening</a> 
+  </li><li>
+    <a href="#ref-for-dfn-bgt-2" title="§ 3.4.1 Knelpunt: dubbele inwinning van gegevens">§ 3.4.1 Knelpunt: dubbele inwinning van gegevens</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-gwsw" aria-label="Links in this document to definition: GWSW">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-gwsw" aria-label="Permalink for definition: GWSW. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-gwsw-1" title="§ 3.4.4 Knelpunt: Beheerdata niet gebaseerd op IMBOR of GWSW">§ 3.4.4 Knelpunt: Beheerdata niet gebaseerd op IMBOR of GWSW</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-imbor" aria-label="Links in this document to definition: IMBOR">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-imbor" aria-label="Permalink for definition: IMBOR. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-imbor-1" title="§ 3.4.4 Knelpunt: Beheerdata niet gebaseerd op IMBOR of GWSW">§ 3.4.4 Knelpunt: Beheerdata niet gebaseerd op IMBOR of GWSW</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-klic" aria-label="Links in this document to definition: KLIC">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-klic" aria-label="Permalink for definition: KLIC. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-klic-1" title="§ 3.1.1 Vraagstuk Informatievoorziening">§ 3.1.1 Vraagstuk Informatievoorziening</a> 
+  </li><li>
+    <a href="#ref-for-dfn-klic-2" title="§ 3.4.2 Knelpunt: Te late aanlevering Klic">§ 3.4.2 Knelpunt: Te late aanlevering Klic</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-use-case" aria-label="Links in this document to definition: Use Case">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-use-case" aria-label="Permalink for definition: Use Case. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-user-story" aria-label="Links in this document to definition: User story">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-user-story" aria-label="Permalink for definition: User story. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-user-story-1" title="§ 6. User stories">§ 6. User stories</a> 
+  </li>
+  </ul>
+    </div><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://docs.crow.nl/respec-design/fixup.js"></script></body></html>
