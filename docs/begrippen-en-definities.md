@@ -10,6 +10,13 @@ Een **use case** binnen het **DOOR-programma** beschrijft een proces vanuit het 
 De use case beschrijft **wie** betrokken is bij de informatie-uitwisseling (actoren), **wat** het doel is en **hoe** de interactie verloopt in een reeks logische stappen. Actoren kunnen personen, organisaties of systemen zijn die gegevens aanleveren, verwerken of gebruiken. De focus ligt op het creëren van een gestroomlijnd proces waarin data betrouwbaar en reproduceerbaar wordt gedeeld, zodat alle partijen effectief kunnen samenwerken bij werkzaamheden in de openbare ruimte en infrastructuur.
 </dd>
 
+
+<dt><dfn data-lt="DOOR|DOOR-programma">DOOR</dfn></dt>
+<dd>
+De CORE gemeenten, Stichting Rioned en CROW hebben de handen ineen geslagen om voor de sector assetmanagement ​te komen tot een gemeenschappelijke informatiebasis met het volgende doel: ​In 2030 beschikken Assetmanagers en hun (keten)partners in de openbare ruimte en infrastructuur over een samenhangend stelsel objectstandaarden in de leefomgeving om de data over hun beheerde assets efficiënt op orde te houden en uit te wisselen.​
+<abbr title="Dataharmonisatie Objecten in de Openbare Ruimte">DOOR</abbr> richt zich op de ontwikkeling van de ontbrekende standaards en uitwisselingsprotocollen, zodat een samenhangend stelsel ontstaat.  Zie ook <a href="https://www.crow.nl/Onderwerpen/Assetmanagement-en-beheer-openbare-ruimte/Data-en-informatie/programmadoor/" target="_blank">deze website</a>
+</dd>
+
 <dt><dfn data-lt="User story|User Stories">User story</dfn></dt>
 <dd>
 Een user story is een bekend concept in agile softwareontwikkeling en helpt bij het beschrijven van softwarefunctionaliteiten vanuit het oogpunt van de eindgebruiker.​ De user story wordt geformuleerd vanuit het oogpunt van een gebruiker, beschrijft wat deze wil bereiken en met welk doel. Deze structuur helpt het ontwikkelteam en andere belanghebbenden te begrijpen wat ​
@@ -45,7 +52,16 @@ er moet worden gebouwd en waarom, en biedt meetbare criteria voor succes.​
   </dd>
 
 
+  <dt><dfn data-lt="NLCS|Nederlandse CAD standaard">NLCS</dfn></dt>
+  <dd>
+    De <abbr title="Nederlandse CAD Standaard">NLCS</abbr> is een 2D-tekenstandaard voor de openbare ruimte en infrastructuur. Deze open standaard bevat afspraken voor het omgaan met metadata, digitaal tekenen, het uiterlijk van de tekening en de coderingssystematiek en lagenstructuur van tekenwerk.
+    Zie ook <a href="https://www.digigo.nu/standaarden/nlcs/" target="_blank">deze website</a>.
+  </dd>
 
+<dt><dfn data-lt="Minimale dataset">Minimale dataset</dfn></dt>
+  <dd>Een minimale dataset is de kleinst mogelijk verzameling gegevens (dataspecificatie) die nodig is om de gegevens van een bepaald proces of informatieproduct vast te leggen. 
+    Zie ook <a href="https://begrippen.crow.nl/ombk/nl/page/?uri=https%3A%2F%2Fdata.crow.nl%2Ftech-term%2Fterm%2FTT004" target="_blank">begrippen.crow.nl</a>.
+  </dd>
 
 </dl>
 
