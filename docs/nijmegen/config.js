@@ -85,7 +85,7 @@ var respecConfig = {
   lint: { "no-unused-dfns": false },
   editors: [
     {
-      name: "Elisabeth Klören",
+      name: "Elisabeth de Vries",
       company: "CROW",
     },
     {
