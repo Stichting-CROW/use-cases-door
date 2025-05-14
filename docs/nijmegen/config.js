@@ -77,7 +77,7 @@ function indexOfRequirements(config) {
 
 var respecConfig = {
   // => https://github.com/stichting-crow/respec/wiki
-  specStatus: "DRAFT",
+  specStatus: "DEF",
   pubDomain: "use-cases-door",
   shortName: "nijmegen",
   license: "CC-BY",
