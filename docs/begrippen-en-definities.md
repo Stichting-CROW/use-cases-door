@@ -44,6 +44,12 @@ er moet worden gebouwd en waarom, en biedt meetbare criteria voor succes.​
   </dd>
 
 
+<dt><dfn data-lt="BIM Basis Infra">BIM Basis Infra</dfn></dt>
+  <dd>
+  Samenwerkingsverband bij DigiGO met gelijknamige richtlijn. Opdrachtgever, opdrachtnemer, leverancier en onderaannemer in de infrastructuur beschikken met de BIM Basis Infra over een gemeenschappelijke taal voor 3D-modelleren. Deze richtlijn geeft antwoord op de vraag: hoe gaan we digitale informatie in de infra gestructureerd en eenduidig uitwisselen?  
+    Zie ook <a href="https://www.digigo.nu/ilsen-en-richtlijnen/bim-basis-infra/" target="_blank">deze website</a>.
+  </dd>
+
 
   <dt><dfn data-lt="GWSW|Gegevenswoordenboek Stedelijk Water">GWSW</dfn></dt>
   <dd>
