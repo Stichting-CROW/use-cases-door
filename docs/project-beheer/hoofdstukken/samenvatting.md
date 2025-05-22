@@ -3,35 +3,28 @@ Dit document beschrijft de verkenning van oplossingsrichtingen voor het uitwisse
 
 **Use cases**<br>
 De in de verkenning onderzochte use cases zijn:
-* Use case ontwerpen en bouwen met NLCS
+* Use case ontwerpen en bouwen met NLCS met diverse relaties naar landelijke registraties 
 * Use case Nijmegen
 * Pilot Dordrecht
 * Use case netbeheerders
 * Use case Amsterdam
-* Use case [=BIM Basis Infra=]
-Uit de use cases blijkt een algemene behoefte aan het op orde krijgen van informatie en informatiemanagement. Daarbij heeft elke partij eigen scripts en dataflows om aan te sluiten op de eigen datasilo's in applicaties. Een korte termijn matchings-oplossing ligt daarom niet voor de hand. 
+* Use case [=BIM Basis Infra=] en het Bestuursakkoord Digitale Gebouwde Omgeving '27.
+
+Uit de use cases en huidige praktijk blijkt dat niet wordt gewerkt met één duidelijke dataflow met datatransformaties tussen beheer en project. Er zijn grote verschillen tussen organisaties.
+
+In de praktijk wordt vooral ingezet op manieren om om te gaan met de verschillen tussen GIS en CAD, omdat veel organisaties hun beheer- en projectinformatie nog steeds in die silo's beheren. Oplossingen waarbij alleen met semantische informatie wordt uitgewisseld, worden nog niet ondersteund door de bestaande softwareleveranciers.
 
 **Informatieproces beheer - project**<br>
-Het doel van de aansluiting tussen NLCS en andere informatiemodellen is het uitwisselen van informatie tijdens een project, in dit document zijn de processtappen op hoofdlijnen beschreven en is per stap onderzocht wat daar nu de meest voorkomende oplossingen zijn die gebruikt worden in de use cases. Een matching tussen NLCS en IMBOR kan op twee momenten relevant zijn:
-1. Als de beheerder de startsituatie voor het project levert: geometrie en objectpaspoorten 
-2. Als het project na uitvoering revisiegegevens oplevert aan de beheerder op basis van een minimale dataset.
+Het doel van de aansluiting tussen NLCS en andere informatiemodellen is het uitwisselen van informatie tijdens een project, in dit document zijn de processtappen op hoofdlijnen beschreven en is per stap onderzocht wat daar nu de meest voorkomende oplossingen zijn die gebruikt worden in de use cases. Een matching tussen NLCS en IMBOR, GWSW of andere beheermodellen kan voor deze uitwisselingsmomenten relevant zijn:
+1. Als de beheerder de startsituatie voor het project levert: geometrie en objectpaspoorten.
+2. Als de beheerder de minimale dataset voor revisie specificeert in beide talen (IMBOR/GWSW/.. en NLCS)
+3. Als het project na uitvoering revisiegegevens oplevert aan de beheerder op basis van een minimale dataset.  
 
-
-**Bestaande relaties tussen standaarden**<br>
-Bij de NLCS standaard zijn de afgelopen jaren relaties gelegd naar andere standaarden, met als doel informatie op basis van die standaard te kunnen transformeren naar een NLCS tekening, of informatie uit de NLCS tekening te transformeren naar data volgens die standaard. Deze relaties zijn meestal niet-semantisch opgesteld in de vorm van mappingstabellen tussen attributen in de dataset en de laagnaam en het symbool op de NLCS tekening:
-* NLCS - IMGeo / Basisregistratie Grootschalige Topografie: matching naar dataset
-* NLCS - GWSW / PDOK THema Stedelijk Water: alignen informatiemodel naar huidige NLCS
-* NLCS - Nationale verkeersbordenregistratie: matching naar dataset
-* NLCS - IMBOR: deze vergelijking is een verkenning van de verschillen en niet opgenomen in de standaard.
-
-**Bestuursakkoord Digitale Gebouwde Omgeving '27**<br>
-Er wordt in samenwerking met de BIM Basis Infra een projectplan opgesteld dat zal worden ingebracht in het Bestuursakkoord Digitale Gebouwde Omgeving '27. Het project zal zich richten op het ontwikkelen van een ontwerpclassificatie op basis van NLCS en het maken van implementatievoorbeelden, waarbij de uitwisseling tussen beheer (IMBOR) en project (NLCS) één van de voorbeelden is. 
-
-
-**Lange termijn oplossing**<br>
-Op de lange termijn is de meest duurzame en schaalbare oplossing, om het informatiemodel van NLCS op te stellen en deze te harmoniseren met de andere informatiemodellen. Vervolgens kunnen ontology alignments worden opgesteld als er nog specifieke datatransformaties gedaan moeten kunnen worden, bijvoorbeeld het bundelen van gedetailleerde ontwerpinformatie naar minder gedetailleerde beheerinformatie.
+Voor deze uitwisselmomenten ziin transformaties en validaties tussen beheerdata in GIS, ontwerp- en bouwgegevens in CAD én inmetingen nodig. Dit gebeurt nu vaak met eigen scripts van de geo-afdeling, en zou collectief ontwikkeld kunnen worden voor korte termijn oplossingen. 
 
 **Korte termijn oplossing**<br>
-In de verkenning is onderzocht of een korte termijn oplossing nodig is voor de aansluiting tussen NLCS en IMBOR. Er is geen standaard geo-dataset vanuit beheer waar een mapping
+In de verkenning is onderzocht of een korte termijn oplossing nodig is voor de aansluiting tussen NLCS en IMBOR. Op korte termijn is elk van de varianten van de alignments geschikt voor de beschreven uitwisselingen. Er is nog wel kennis nodig vanuit verschillende vakgebieden om NLCS en IMBOR correct te matchen, er zitten nu nog veel open vragen in de vergelijking.
+Zolang vanuit het DOOR programma geen breed gedragen use case komt met een heel specifieke datatransformatie, lijkt er geen noodzaak om geld uit te geven aan een korte termijn oplossing. Men kan beter mee ontwikkelen naar een lange termijn oplossing. 
 
-
+**Lange termijn oplossing**<br>
+Op lange termijn is **variant 3: alignen van informatiemodellen met een NLCS-classificatie** de oplossing die de meeste toepassingen biedt in de gehele keten, en de laagste beheerlast geeft in het onderling afstemmen van standaarden. Omdat aan deze oplossing wordt gewerkt in collectief verband, binnen beleidsmaatregel 3 van Bestuursakkoord Digitale Gebouwde Omgeving '27, is de aanbeveling aan het DOOR programma om het gereserveerde budget voor de alignment tussen NLCS en IMBOR te besteden aan de digiDeal NLCS Objectclassificatie. Gelderland gaat hierin in de eerste fase de aansluiting van de NLCS classificatie van verhardingen en/of kunstwerken op IMBOR beheerdata beproeven. De hiervoor benodigde classificatie van NLCS en alignment naar IMBOR zou een logische besteding zijn van het DOOR budget en ervoor zorgen dat ontwikkelingen van de lagere overheden samen met de ketenpartners gedaan worden.

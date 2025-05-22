@@ -77,7 +77,7 @@ function indexOfRequirements(config) {
 
 var respecConfig = {
   // => https://github.com/stichting-crow/respec/wiki
-  specStatus: "DRAFT",
+  specStatus: "CR",
   pubDomain: "use-cases-door",
   shortName: "project-beheer",
   license: "CC-BY",
@@ -92,5 +92,5 @@ var respecConfig = {
   github: "https://github.com/Stichting-CROW/use-cases-door",
   postProcess: [indexOfRequirements],
   hypothesisComments: false,
-// reviewDateEnd: 2025-05-01,
+reviewDateEnd: 2025-07-09,
 };
