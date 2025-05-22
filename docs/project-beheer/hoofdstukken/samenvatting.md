@@ -14,7 +14,7 @@ Uit de use cases blijkt een algemene behoefte aan het op orde krijgen van inform
 **Informatieproces beheer - project**<br>
 Het doel van de aansluiting tussen NLCS en andere informatiemodellen is het uitwisselen van informatie tijdens een project, in dit document zijn de processtappen op hoofdlijnen beschreven en is per stap onderzocht wat daar nu de meest voorkomende oplossingen zijn die gebruikt worden in de use cases. Een matching tussen NLCS en IMBOR kan op twee momenten relevant zijn:
 1. Als de beheerder de startsituatie voor het project levert: geometrie en objectpaspoorten 
-2. Als het project na uitvoering revisiegegevens oplevert aan de beheerder.
+2. Als het project na uitvoering revisiegegevens oplevert aan de beheerder op basis van een minimale dataset.
 
 
 **Bestaande relaties tussen standaarden**<br>
@@ -24,8 +24,9 @@ Bij de NLCS standaard zijn de afgelopen jaren relaties gelegd naar andere standa
 * NLCS - Nationale verkeersbordenregistratie: matching naar dataset
 * NLCS - IMBOR: deze vergelijking is een verkenning van de verschillen en niet opgenomen in de standaard.
 
-**Ontwikkelpad NLCS: Objectgericht**<br>
-Met de BIM Basis Infra is een plan opgesteld om de NLCS Objectgericht te maken. Dit gebeurt door de NLCS te vertalen naar een informatiemodel op basis van de NEN 2660-2. Hiermee zouden 3D modellen in IFC geclassificeerd kunnen worden op basis van NLCS. Daarnaast zou dit de mogelijkheid bieden om informatie uit 2D of 3D modellen te gebruiken voor het automatiseren van processen zoals hoeveelheidsberekeningen, het valideren van ontwerpen of oplevering van revisiegegevens aan de beheerder.
+**Bestuursakkoord Digitale Gebouwde Omgeving '27**<br>
+Er wordt in samenwerking met de BIM Basis Infra een projectplan opgesteld dat zal worden ingebracht in het Bestuursakkoord Digitale Gebouwde Omgeving '27. Het project zal zich richten op het ontwikkelen van een ontwerpclassificatie op basis van NLCS en het maken van implementatievoorbeelden, waarbij de uitwisseling tussen beheer (IMBOR) en project (NLCS) één van de voorbeelden is. 
+
 
 **Lange termijn oplossing**<br>
 Op de lange termijn is de meest duurzame en schaalbare oplossing, om het informatiemodel van NLCS op te stellen en deze te harmoniseren met de andere informatiemodellen. Vervolgens kunnen ontology alignments worden opgesteld als er nog specifieke datatransformaties gedaan moeten kunnen worden, bijvoorbeeld het bundelen van gedetailleerde ontwerpinformatie naar minder gedetailleerde beheerinformatie.
