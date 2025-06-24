@@ -1,0 +1,1 @@
+Dit document beschrijft de verkenning naar nut en noodzaak voor het opstellen van een informatiemodel voor civiele kunstwerken, in het kader vsan de vervangings- en renovatieopgave.
