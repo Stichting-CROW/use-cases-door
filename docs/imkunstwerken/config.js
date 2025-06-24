@@ -76,7 +76,6 @@ function indexOfRequirements(config) {
 }
 
 var respecConfig = {
-  // => https://github.com/stichting-crow/respec/wiki
   specStatus: "DRAFT",
   pubDomain: "use-cases-door",
   shortName: "project-beheer",
@@ -92,4 +91,14 @@ var respecConfig = {
   github: "https://github.com/Stichting-CROW/use-cases-door",
   postProcess: [indexOfRequirements],
   hypothesisComments: false,
+
+  localBiblio: {
+    "TNO2021R10440": {
+      title: "Onderzoek naar de staat en benutting van civiele kunstwerken",
+      authors: ["TNO"],
+      date: "2021",
+      publisher: "TNO",
+      href: "https://publications.tno.nl/publication/34638082/s87EY1/TNO-2021-R10440-vs2.pdf"
+    }
+  }
 };
