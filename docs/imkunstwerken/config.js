@@ -99,6 +99,13 @@ var respecConfig = {
       date: "2021",
       publisher: "TNO",
       href: "https://publications.tno.nl/publication/34638082/s87EY1/TNO-2021-R10440-vs2.pdf"
+    },
+    "NEN2767": {
+      title: "Conditiemeting gebouwde omgeving - Deel 1: Methodiek",
+      authors: ["NEN"],
+      date: "2019",
+      publisher: "NEN",
+      href: "https://www.nen.nl/bouw/beheer-en-onderhoud/conditiemeting"
     }
   }
 };

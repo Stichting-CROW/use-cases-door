@@ -38,8 +38,7 @@ er moet worden gebouwd en waarom, en biedt meetbare criteria voor succes.​
 
 <dt><dfn data-lt="IMBOR|Informatiemodel Beheer Openbare Ruimte">IMBOR</dfn></dt>
   <dd>
-    Het <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> bevat de afspraken over de benamingen en definities van alle type objecten in de openbare ruimte en de beheergegevens die per type object vastgelegd kunnen worden. Veel gemeenten gebruiken de objecttypen uit de 
-    BGT voor de geometrische representatie van de objecten.  
+    Het <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> beschrijft de objecttypen die voorkomen in de openbare ruimte en de vaste objectgegevens die nodig zijn voor het beheer hiervan. 
     Zie ook <a href="https://www.crow.nl/thema-s/openbare-ruimte/imbor" target="_blank">deze website</a> en <a href="https://imbor-viewer.apps.crow.nl/" target="_blank">deze viewer</a>.
   </dd>
 
