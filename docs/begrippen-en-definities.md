@@ -68,5 +68,120 @@ er moet worden gebouwd en waarom, en biedt meetbare criteria voor succes.​
     Zie ook <a href="https://begrippen.crow.nl/ombk/nl/page/?uri=https%3A%2F%2Fdata.crow.nl%2Ftech-term%2Fterm%2FTT004" target="_blank">begrippen.crow.nl</a>.
   </dd>
 
+  <dt><dfn data-lt="Functioneel gepland">T1 Functioneel gepland</dfn></dt>
+<dd>T1 is de toestand waarin de entiteit (bijv. bouwwerk of component) een functioneel plan heeft dat gereed is. Deze toestand begint met het initiatief tot plannen en eindigt met het beschikbaar zijn van een gevalideerd functioneel ontwerp of plan.  
+Volgens <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">GEBORA</a> vormt deze toestand de eerste stap in de levenscyclus, waarin de behoefte van de gebruiker centraal staat en vertaald wordt naar ruimtelijke en functionele eisen.</dd>
+
+<dt><dfn data-lt="Technisch gepland">Technisch gepland</dfn></dt>
+<dd>T2 is de toestand waarin de technische uitwerking van het functioneel plan is afgerond. Deze toestand begint bij het starten van het technische ontwerp en eindigt wanneer het ontwerp gereed is voor realisatie.  
+Volgens <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">GEBORA</a> betekent dit dat de functionele eisen zijn vertaald naar technische objecten en specificaties, gereed voor uitvoering.</dd>
+
+<dt><dfn data-lt="Technisch gerealiseerd">Technisch gerealiseerd</dfn></dt>
+<dd>T3 is de toestand waarin de technische realisatie van de entiteit voltooid is. Dit betreft oplevering volgens technische specificaties, klaar voor functioneel gebruik of validatie.  
+Volgens <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">GEBORA</a> houdt dit in dat een object in de fysieke werkelijkheid gerealiseerd is op basis van de technische planning en specificaties.</dd>
+
+<dt><dfn data-lt="Functioneel gerealiseerd">Functioneel gerealiseerd</dfn></dt>
+<dd>T4 is de toestand waarin de entiteit in gebruik is genomen conform de functionele eisen. Dit markeert het moment waarop een bouwwerk, installatie of onderdeel operationeel beschikbaar is.  
+Volgens <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">GEBORA</a> blijft deze toestand ook tijdens gebruiks- en beheerfases gelden als virtuele representatie van het functionele object.</dd>
+
+<dt><dfn data-lt="Ontwikkeling">Ontwikkeling</dfn></dt>
+<dd>Ontwikkeling is de eerste fase in de levenscyclus waarin plannen worden gemaakt en gerealiseerd. Denk aan initiatief, ontwerp, engineering en bouw.  
+Volgens <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">GEBORA</a> omvat deze fase de overgang van gebruikersbehoefte naar functionele en technische realisatie.</dd>
+
+<dt><dfn data-lt="Onderhoud">Onderhoud</dfn></dt>
+<dd>Onderhoud is gericht op het behouden van functionaliteit, veiligheid en prestaties. Deze fase omvat inspecties, renovaties, vervanging en technische updates gedurende de gebruiksperiode.  
+Volgens <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">GEBORA</a> worden hierin objecten opnieuw gepland en gerealiseerd op componentniveau, met behoud van informatie.</dd>
+
+<dt><dfn data-lt="Ontmanteling">Ontmanteling</dfn></dt>
+<dd>Ontmanteling is de laatste fase van de levenscyclus waarin het bouwwerk (of onderdelen) buiten gebruik wordt gesteld en verwijderd. Hierbij is aandacht voor veiligheid, hergebruik en circulair materiaalbeheer.  
+Volgens <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">GEBORA</a> kan deze fase zowel op hoofdniveau als per component plaatsvinden en leidt tot terugkeer naar een toestand zonder bouwwerk ("niets").</dd>
+
+## Definities van GEBORA-stakeholders
+
+<dt><dfn data-lt="Asset eigenaar">Asset eigenaar</dfn></dt>
+<dd>Een asset eigenaar in de gebouwde omgeving is de persoon of entiteit die verantwoordelijk is voor het strategisch beheer van assets, zoals gebouwen, infrastructuur, en andere fysieke objecten.  
+Volgens het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> stelt de asset eigenaar doelen en kaders vast voor beheer, onderhoud, vervanging en nieuwbouw.</dd>
+
+<dt><dfn data-lt="Asset manager">Asset manager</dfn></dt>
+<dd>Een asset manager is verantwoordelijk voor het beheer en de optimalisatie van fysieke assets zoals gebouwen, infrastructuur en andere faciliteiten.  
+In <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA</a> bewaakt deze rol de prestaties en levensduur van assets in operationele zin.</dd>
+
+<dt><dfn data-lt="Architect">Architect</dfn></dt>
+<dd>Een architect in de gebouwde omgeving ontwerpt gebouwen, interieurs, landschappen en stedelijke gebieden met oog op functionaliteit, esthetiek en duurzaamheid.  
+Gedefinieerd in het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> als sleutelrol in ontwerp en planvorming.</dd>
+
+<dt><dfn data-lt="Bouwbedrijf">Bouwbedrijf</dfn></dt>
+<dd>Een bouwbedrijf is verantwoordelijk voor de uitvoering van bouwprojecten, inclusief renovaties en verbouwingen.  
+Volgens <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA</a> vallen hier ook infrabedrijven, woning- en utiliteitsbouwers onder.</dd>
+
+<dt><dfn data-lt="Ingenieur">Ingenieur</dfn></dt>
+<dd>Een ingenieur past wetenschappelijke en technische kennis toe bij ontwerp, realisatie en onderhoud van bouwwerken.  
+In <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA</a> ook aangeduid als technisch ontwerper of bestekschrijver.</dd>
+
+<dt><dfn data-lt="Installateur">Installateur</dfn></dt>
+<dd>Een installateur ontwerpt, installeert en onderhoudt technische installaties zoals HVAC, elektra, sanitair of ICT.  
+Volgens <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA</a> is dit een technische dienstverlener die integraal betrokken is bij bouw en gebruik.</dd>
+
+<dt><dfn data-lt="Beheerder">Beheerder</dfn></dt>
+<dd>Een beheerder is verantwoordelijk voor het dagelijkse operationele functioneren van gebouwen of infrastructuur.  
+In <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA</a> zijn er subtypen: facilitair bedrijf (utiliteit) en netwerkbeheerder (infra).</dd>
+
+<dt><dfn data-lt="Gebruiker">Gebruiker</dfn></dt>
+<dd>Een gebruiker is een persoon of organisatie die een gebouw of infrastructuur functioneel benut.  
+Volgens het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Rollenmodel</a> kan dit een bewoner, medewerker of bezoeker zijn.</dd>
+
+<dt><dfn data-lt="Sloopbedrijf">Sloopbedrijf</dfn></dt>
+<dd>Een sloop- en oogstbedrijf voert demontage van bouwwerken uit en wint waardevolle materialen terug voor hergebruik.  
+Binnen <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA</a> draagt dit bij aan circulair bouwen en materiaalbeheer.</dd>
+
+<dt><dfn data-lt="Adviseur">Adviseur</dfn></dt>
+<dd>Een adviseur biedt inhoudelijke begeleiding en ondersteuning aan bouwprojecten om kwaliteit, naleving en efficiëntie te waarborgen.  
+Gedefinieerd in het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> als consultant met specifieke expertise.</dd>
+
+<dt><dfn data-lt="Leverancier">Leverancier</dfn></dt>
+<dd>Een leverancier levert materialen, onderdelen of producten ten behoeve van bouw- of onderhoudsprojecten.  
+Binnen <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA</a> omvat dit ook tussenhandel, circulaire marktplaatsen en bouwtoeleveranciers.</dd>
+
+<dt><dfn data-lt="Registrerende instantie">Registrerende instantie</dfn></dt>
+<dd>Een registrerende instantie beheert officiële gegevens over eigendom, gebruik of technische status van objecten.  
+Volgens het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">rollenmodel</a> vallen bijvoorbeeld het Kadaster hieronder.</dd>
+
+<dt><dfn data-lt="Behoeftebepaler">Behoeftebepaler</dfn></dt>
+<dd>De actor die de functionele behoefte en het doel van een bouwwerk initieert en specificeert.  
+Volgens het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> valt deze rol onder de opdrachtgever of asset eigenaar die strategische doelen vertaalt naar functionele eisen.</dd>
+
+<dt><dfn data-lt="Ontwerper">Ontwerper</dfn></dt>
+<dd>De partij die ontwerpkeuzes maakt op basis van de functionele behoefte, regelgeving en technische haalbaarheid.  
+In <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA</a> omvat dit rollen als architect, stedenbouwkundige en ingenieur.</dd>
+
+<dt><dfn data-lt="Toeleverancier">Toeleverancier</dfn></dt>
+<dd>De actor die bouwproducten, componenten of systemen levert die direct worden toegepast in ontwerp, realisatie of onderhoud.  
+In het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">Rollenmodel</a> vallen ook leveranciers, fabrikanten en producenten hieronder.</dd>
+
+<dt><dfn data-lt="Realisator">Realisator</dfn></dt>
+<dd>De partij die verantwoordelijk is voor de fysieke uitvoering van bouw- of installatiewerkzaamheden.  
+GEBORA beschrijft deze rol als bouwbedrijf of installateur, die werkt op basis van het technische ontwerp en onder contract van de opdrachtgever.</dd>
+
+<dt><dfn data-lt="Toezichthouder">Toezichthouder</dfn></dt>
+<dd>De actor die toezicht houdt op naleving van afspraken, regelgeving en kwaliteit tijdens voorbereiding, uitvoering en gebruik.  
+Volgens <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA</a> vallen hier ook controlerende instanties onder zoals gemeentelijke inspecties of kwaliteitsborgers.</dd>
+
+<dt><dfn data-lt="Beleidvormer">Beleidvormer</dfn></dt>
+<dd>Een publieke of private actor die beleidskaders opstelt met betrekking tot ruimtelijke ordening, duurzaamheid of infrastructuurontwikkeling.  
+Deze rol is binnen <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA</a> verwant aan regievoerders en publieke opdrachtgevers met een beleidsmatige verantwoordelijkheid.</dd>
+
+<dt><dfn data-lt="Ontmantelaar">Ontmantelaar</dfn></dt>
+<dd>De partij die verantwoordelijk is voor het verwijderen, demonteren of circulair oogsten van objecten of onderdelen van een bouwwerk.  
+Binnen het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">rollenmodel</a> komt dit overeen met sloopbedrijven en circulaire demontagespecialisten.</dd>
+
+<dt><dfn data-lt="Initiatiefnemer">Initiatiefnemer</dfn></dt>
+<dd>De partij die een bouw-, renovatie- of ontwikkelproces in gang zet op basis van een behoefte of kans.  
+Volgens <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA</a> kan dit de opdrachtgever of asset eigenaar zijn, vaak in combinatie met ontwikkelende partijen.</dd>
+
+<dt><dfn data-lt="Gebiedsregisseur">Gebiedsregisseur</dfn></dt>
+<dd>De actor die de afstemming coördineert tussen verschillende ruimtelijke initiatieven, belanghebbenden en functies binnen een gebied.  
+In het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Rollenmodel</a> vallen dit vaak publieke partijen of gedelegeerde projectorganisaties met regietaken.</dd>
+
+
 </dl>
 
