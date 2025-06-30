@@ -187,5 +187,318 @@ Volgens het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target
 In het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Rollenmodel</a> vallen dit vaak publieke partijen of gedelegeerde projectorganisaties met regietaken.</dd>
 
 
+<!-- Standaarden functioneel geplande ontwikkeling -->
+<dt><dfn data-lt="Objectgegevens">Objectgegevens</dfn></dt>
+<dd>
+Gegevens die de fysieke en functionele kenmerken van een object beschrijven, zoals locatie, afmetingen, gebruiksdoel en eigendom. Deze informatie vormt de basis voor verdere planning en besluitvorming.
+</dd>
+
+<dt><dfn data-lt="Gebruiksdata">Gebruiksdata</dfn></dt>
+<dd>
+Informatie over het feitelijke gebruik van objecten of voorzieningen, zoals frequentie, duur en intensiteit. Deze data ondersteunen beleidskeuzes en optimalisatie van functionaliteit.
+</dd>
+
+<dt><dfn data-lt="Prestatie-indicatoren">Prestatie-indicatoren</dfn></dt>
+<dd>
+Meetbare waarden die aangeven in hoeverre objecten of voorzieningen voldoen aan hun beoogde functies of kwaliteitsniveaus. Ze dienen als stuurinformatie in de ontwikkelingsfase.
+</dd>
+
+<dt><dfn data-lt="Meldingen">Meldingen</dfn></dt>
+<dd>
+Gerapporteerde waarnemingen van gebruikers, zoals defecten, klachten of wensen. Meldingen leveren waardevolle informatie voor de beoordeling van de functionele behoefte.
+</dd>
+
+<dt><dfn data-lt="Gebruikerservaringen">Gebruikerservaringen</dfn></dt>
+<dd>
+Subjectieve beleving van gebruikers met betrekking tot gebruiksgemak, toegankelijkheid, veiligheid en comfort. Deze informatie wordt gebruikt om functionele kwaliteit te verbeteren.
+</dd>
+
+<dt><dfn data-lt="Ruimtelijke visies">Ruimtelijke visies</dfn></dt>
+<dd>
+Toekomstgerichte plannen of beleidsdocumenten die de ruimtelijke ontwikkeling van een gebied schetsen. Ze vormen het kader voor de functionele inrichting van de leefomgeving.
+</dd>
+
+<dt><dfn data-lt="Beleidskaders">Beleidskaders</dfn></dt>
+<dd>
+Formele richtlijnen en beleidsdocumenten die de randvoorwaarden en doelstellingen bepalen voor de (her)ontwikkeling van ruimtelijke en infrastructurele projecten.
+</dd>
+
+<!-- Standaarden technisch geplande ontwikkeling -->
+<dt><dfn data-lt="Constructieve gegevens">Constructieve gegevens</dfn></dt>
+<dd>
+Technische informatie over de dragende structuur van een bouwwerk of object, zoals funderingen, belastingen en krachtsverdelingen, die noodzakelijk zijn voor het ontwerp.
+</dd>
+
+<dt><dfn data-lt="Inspectierapporten">Inspectierapporten</dfn></dt>
+<dd>
+Verslagen van technische beoordelingen van bestaande objecten of systemen. Deze vormen input voor technische planning en beoordeling van ontwerpbehoeften.
+</dd>
+
+<dt><dfn data-lt="Ontwerpregels">Ontwerpregels</dfn></dt>
+<dd>
+Vastgestelde richtlijnen of parameters waarmee technische ontwerpen moeten voldoen, zoals afmetingen, toleranties of functionele eisen.
+</dd>
+
+<dt><dfn data-lt="Technische randvoorwaarden">Technische randvoorwaarden</dfn></dt>
+<dd>
+Vooraf bepaalde technische vereisten, beperkingen of uitgangspunten die invloed hebben op het ontwerp, zoals milieueisen, ruimteclaims of aansluitingen.
+</dd>
+
+<dt><dfn data-lt="Materiaalgegevens">Materiaalgegevens</dfn></dt>
+<dd>
+Informatie over fysische, chemische en mechanische eigenschappen van te gebruiken materialen in de ontwerp- en planningsfase.
+</dd>
+
+<dt><dfn data-lt="Regelgeving">Regelgeving</dfn></dt>
+<dd>
+Wettelijke eisen en normen waaraan technische ontwerpen moeten voldoen, zoals bouwbesluiten, veiligheidsvoorschriften of milieuregels.
+</dd>
+
+<!-- Standaarden technisch gerealiseerde ontwikkeling -->
+<dt><dfn data-lt="Werktekeningen">Werktekeningen</dfn></dt>
+<dd>
+Gedetailleerde technische tekeningen die gebruikt worden voor de feitelijke uitvoering van een ontwerp, inclusief maatvoering en materiaaltoepassing.
+</dd>
+
+
+<dt><dfn data-lt="Uitvoeringsspecificaties">Uitvoeringsspecificaties</dfn></dt>
+<dd>
+Technische beschrijvingen die aangeven hoe werkzaamheden moeten worden uitgevoerd, met aandacht voor kwaliteit, volgorde en controle.
+</dd>
+
+<dt><dfn data-lt="Opleverdocumenten">Opleverdocumenten</dfn></dt>
+<dd>
+Documentatie die bij afronding van een project wordt overhandigd, zoals garanties, testresultaten, tekeningen en goedkeuringen.
+</dd>
+
+
+<dt><dfn data-lt="Produkteigenschappen">Produkteigenschappen</dfn></dt>
+<dd>
+Technische kenmerken van gebruikte producten of componenten, zoals afmetingen, duurzaamheid, prestatie of onderhoudsvereisten.
+</dd>
+
+<dt><dfn data-lt="Certificaten">Certificaten</dfn></dt>
+<dd>
+Officiële documenten die de conformiteit van materialen, processen of objecten aantonen met erkende normen of standaarden.
+</dd>
+
+<!-- Standaarden functioneel gerealiseerde ontwikkeling -->
+<dt><dfn data-lt="Gebruiksstatus">Gebruiksstatus</dfn></dt>
+<dd>
+De actuele toestand van een object in termen van beschikbaarheid, functioneren en toegankelijkheid voor gebruikers.
+</dd>
+
+<dt><dfn data-lt="Conformiteit">Conformiteit</dfn></dt>
+<dd>
+De mate waarin een object of voorziening voldoet aan de gestelde functionele en beleidsmatige eisen.
+</dd>
+
+
+<!-- Fase 2: Onderhoud -->
+<!-- Standaarden functioneel geplande onderhoud -->
+<dt><dfn data-lt="Condities">Condities</dfn></dt>
+<dd>
+De actuele fysieke toestand of kwaliteit van een object, vastgesteld aan de hand van visuele inspectie of metingen, met het oog op toekomstige onderhoudsmaatregelen.
+</dd>
+
+<dt><dfn data-lt="Prestaties">Prestaties</dfn></dt>
+<dd>
+Waarden die het huidige functioneren van een object beschrijven, zoals beschikbaarheid, comfort of betrouwbaarheid, als input voor onderhoudsplanning.
+</dd>
+
+<dt><dfn data-lt="Kosten">Kosten</dfn></dt>
+<dd>
+Verwachte of begrote financiële uitgaven voor gepland onderhoud, inclusief materiaalkosten, arbeidsloon en risicoreserveringen.
+</dd>
+
+<dt><dfn data-lt="Incidenten">Incidenten</dfn></dt>
+<dd>
+Onvoorziene gebeurtenissen die de werking van een object verstoren of schade veroorzaken. Ze vormen een signaal voor structurele onderhoudsbehoefte.
+</dd>
+
+<dt><dfn data-lt="Meldingen van defecten en verstoringen">Meldingen van defecten en verstoringen</dfn></dt>
+<dd>
+Informatie afkomstig van gebruikers of beheerders over afwijkingen in de werking of schade aan objecten, ter ondersteuning van onderhoudsplanning.
+</dd>
+
+<!-- Standaarden technisch geplande onderhoud -->
+<dt><dfn data-lt="Technische degradatie">Technische degradatie</dfn></dt>
+<dd>
+Proces waarbij materialen of systemen in kwaliteit afnemen door slijtage, veroudering of belasting. Deze informatie bepaalt het technisch onderhoudsplan.
+</dd>
+
+<dt><dfn data-lt="Normen">Normen</dfn></dt>
+<dd>
+Technische richtlijnen of standaarden die aangeven aan welke prestaties, condities of eigenschappen objecten moeten voldoen tijdens hun levensduur.
+</dd>
+
+<dt><dfn data-lt="Risico’s">Risico’s</dfn></dt>
+<dd>
+Inschatting van mogelijke ongewenste gebeurtenissen tijdens gebruik of onderhoud, inclusief de kans en impact ervan, gebruikt voor onderhoudsbeslissingen.
+</dd>
+
+<!-- Standaarden technisch gerealiseerde onderhoud -->
+<dt><dfn data-lt="Onderhoudsinstructies">Onderhoudsinstructies</dfn></dt>
+<dd>
+Gedetailleerde richtlijnen voor het uitvoeren van onderhoud, inclusief werkwijze, gereedschappen, veiligheidsmaatregelen en frequentie.
+</dd>
+
+<dt><dfn data-lt="Materiaalstaten">Materiaalstaten</dfn></dt>
+<dd>
+Overzicht van materialen die gebruikt zijn of nodig zijn voor onderhoud, inclusief vervangingsfrequentie en voorraadbeheer.
+</dd>
+
+<dt><dfn data-lt="Werkvoorbereiding">Werkvoorbereiding</dfn></dt>
+<dd>
+Documentatie en planningsinformatie die nodig is om onderhoudswerkzaamheden effectief en veilig uit te voeren, zoals tijdsplanning en taakverdeling.
+</dd>
+
+<dt><dfn data-lt="Veiligheidsregels">Veiligheidsregels</dfn></dt>
+<dd>
+Voorschriften die gevolgd moeten worden tijdens onderhoud om risico’s voor personeel, omgeving en gebruikers te beperken.
+</dd>
+
+<dt><dfn data-lt="Keuringseisen">Keuringseisen</dfn></dt>
+<dd>
+Vereisten waaraan objecten moeten voldoen na onderhoud om opnieuw in gebruik genomen te worden, vaak inclusief functionele en veiligheidscontroles.
+</dd>
+
+<!-- Standaarden functioneel gerealiseerde onderhoud -->
+<dt><dfn data-lt="Vastgelegde normen">Vastgelegde normen</dfn></dt>
+<dd>
+Documenten waarin de vereiste prestatie- of conditiespecificaties zijn vastgelegd waaraan een object na onderhoud moet voldoen.
+</dd>
+
+<dt><dfn data-lt="Gebruiksrapportages">Gebruiksrapportages</dfn></dt>
+<dd>
+Verslagen waarin het gebruik en functioneren van objecten na onderhoud worden geëvalueerd, op basis van metingen, observaties of gebruikersfeedback.
+</dd>
+
+<!-- Fase 3: Ontmanteling -->
+<!-- Standaarden functioneel geplande ontmanteling -->
+<dt><dfn data-lt="Restlevensduur">Restlevensduur</dfn></dt>
+<dd>
+Verwachte periode waarin een object nog functioneel kan blijven voordat ontmanteling noodzakelijk wordt.
+</dd>
+
+<dt><dfn data-lt="Kostenramingen">Kostenramingen</dfn></dt>
+<dd>
+Voorspellingen van de financiële middelen die nodig zijn voor demontage, afvoer, hergebruik of sanering van objecten.
+</dd>
+
+<dt><dfn data-lt="Risicoanalyses">Risicoanalyses</dfn></dt>
+<dd>
+Beoordeling van mogelijke gevaren en impact van de ontmanteling, zoals veiligheidsrisico’s of milieuschade.
+</dd>
+
+<dt><dfn data-lt="Plankaarten">Plankaarten</dfn></dt>
+<dd>
+Kaarten waarop de geplande ontmanteling of herontwikkeling van objecten of gebieden is ingetekend.
+</dd>
+
+<dt><dfn data-lt="Eigendomsinformatie">Eigendomsinformatie</dfn></dt>
+<dd>
+Gegevens over de juridische eigendom en eventuele beperkingen, rechten of plichten die relevant zijn voor ontmanteling.
+</dd>
+
+<dt><dfn data-lt="Wettelijke kaders">Wettelijke kaders</dfn></dt>
+<dd>
+Regelgeving en beleidskaders die van toepassing zijn op de ontmanteling van objecten, inclusief milieuwetten, eigendomsrecht en vergunningen.
+</dd>
+
+<dt><dfn data-lt="Milieueisen">Milieueisen</dfn></dt>
+<dd>
+Vereisten met betrekking tot milieu-impact, afvalverwerking en hergebruik bij de sloop of ontmanteling van objecten.
+</dd>
+
+<!-- Standaarden technisch geplande ontmanteling -->
+<dt><dfn data-lt="Technische specificaties">Technische specificaties</dfn></dt>
+<dd>
+Inhoudelijke beschrijving van hoe technische demontage moet plaatsvinden, inclusief procedures, toleranties en materialen.
+</dd>
+
+
+<dt><dfn data-lt="Risicogegevens">Risicogegevens</dfn></dt>
+<dd>
+Technische data over mogelijke veiligheidsrisico’s bij ontmanteling, zoals instortingsgevaar, schadelijke stoffen of explosiegevaar.
+</dd>
+
+<!-- Standaarden technisch gerealiseerde ontmanteling -->
+<dt><dfn data-lt="Materiaalinformatie">Materiaalinformatie</dfn></dt>
+<dd>
+Overzicht van de materialen die vrijkomen bij de sloop of demontage, inclusief bestemming, classificatie en verwerkingsmethoden.
+</dd>
+
+<dt><dfn data-lt="Veiligheidsprotocollen">Veiligheidsprotocollen</dfn></dt>
+<dd>
+Procedures en richtlijnen om de veiligheid te waarborgen tijdens de uitvoering van de ontmanteling.
+</dd>
+
+<dt><dfn data-lt="Controlelijsten">Controlelijsten</dfn></dt>
+<dd>
+Lijsten met acties, controles en registraties die moeten worden uitgevoerd om een veilige en volledige demontage te garanderen.
+</dd>
+
+<dt><dfn data-lt="Registratie-eisen">Registratie-eisen</dfn></dt>
+<dd>
+Vastgelegde verplichtingen voor documentatie van de uitgevoerde demontage en verwijdering van materialen.
+</dd>
+
+<!-- Standaarden functioneel gerealiseerde ontmanteling -->
+<dt><dfn data-lt="Statuswijzigingen">Statuswijzigingen</dfn></dt>
+<dd>
+Formele registratie van de overgang van objecten naar een nieuwe status, zoals buiten gebruik, gesloopt of herbestemd.
+</dd>
+
+<dt><dfn data-lt="Gebiedsplannen">Gebiedsplannen</dfn></dt>
+<dd>
+Plannen voor de herontwikkeling, herinrichting of tijdelijke invulling van vrijkomende ruimte na ontmanteling.
+</dd>
+
+<dt><dfn data-lt="Opvolgingsscenario’s">Opvolgingsscenario’s</dfn></dt>
+<dd>
+Uitgewerkte toekomstscenario’s voor de invulling van het gebied of de functie van het ontmantelde object, inclusief afwegingen.
+</dd>
+
+<dt><dfn data-lt="iAMPro model">iAMPro model</dfn></dt>
+<dd>
+Het iAMPro model voor assetmanagement voorziet in de benodigde activiteiten, informatie en randvoorwaarden die een (overheids)organisatie nodig heeft om invulling te geven aan professioneel assetmanagement. Het model bestaat uit drie pijlers:  
+<ol><li><strong>Processtappen</strong>: zes opeenvolgende stappen die het assetmanagementproces structureren,  
+<li><strong>Data en informatie</strong>: betrouwbare, actuele en gestandaardiseerde gegevens als basis voor besluitvorming,  
+<li><strong>Mens en organisatie</strong>: randvoorwaarden voor competenties, rollen en cultuur binnen de organisatie.</li></ol>
+Zie ook <a href="https://essit.nl/over-assetmanagement/wat-is-het-iampro-model-voor-assetmanagement">deze link</a>
+</dd>
+
+<dt><dfn data-lt="Beleid en strategie">Beleid en strategie</dfn></dt>
+<dd>
+De eerste processtap binnen het <a>iAMPro model</a>iAMPro model waarin strategische doelen worden vastgesteld en vertaald naar uitgangspunten voor assetmanagement. Dit wordt vastgelegd in het Strategisch Asset Management Plan (SAMP).
+</dd>
+
+<dt><dfn data-lt="Beheren en Programmeren">Beheren en Programmeren</dfn></dt>
+<dd>
+De tweede processtap binnen het <a>iAMPro model</a>iAMPro model waarin meerjaren-maatregelenprogramma's worden opgesteld voor assets. De maatregelen kunnen eenmalig zijn (bijvoorbeeld een vervanging) of met regelmaat terugkeren (bijvoorbeeld een onderhoudsbeurt). 
+</dd>
+
+<dt><dfn data-lt="Plannen en Voorbereiden">Plannen en Voorbereiden</dfn></dt>
+<dd>
+De derde processtap binnen het <a>iAMPro model</a>iAMPro model waarin nieuwbouwplannen, herstructureringen en instandhoudingsmaatregelen worden uitgewerkt tot ontwerpoplossingen en bestekken. Daarbij horen ook planningen. Verder komen in deze stap aan de orde het opstellen van specificaties, het uitwerken van ontwerpen, het voorbereiden van contracten en het maken van een keuze tussen zelf doen en uitbesteden. Het resultaat bestaat uit contracten en inrichtingsplannen (ontwerpen).
+</dd>
+
+<dt><dfn data-lt="Bouwen en Onderhouden">Bouwen en Onderhouden</dfn></dt>
+<dd>
+De vierde processtap binnen het <a>iAMPro model</a>iAMPro model waarin de fysieke uitvoering plaatsvindt van werkzaamheden die in eerdere stappen zijn voorbereid. Denk aan het bouwen van nieuwe objecten, uitvoeren van groot onderhoud of het aanpassen van bestaande assets. In deze stap is ook toezicht inbegrepen, waarbij gecontroleerd wordt of de uitvoering voldoet aan specificaties en afspraken.
+</dd>
+
+<dt><dfn data-lt="Monitoren en analyseren">Monitoren en analyseren</dfn></dt>
+<dd>
+De vijfde processtap binnen het <a>iAMPro model</a>iAMPro model waarin de prestaties van het assetsysteem worden gemonitord en de resultaten geanalyseerd. Hierbij wordt bekeken in hoeverre de servicelevels uit de processtap ‘Beleid en Strategie’ zijn gehaald en wat de belangrijkste oorzaken zijn van eventuele afwijkingen. De onderhoudsactiviteiten worden gemonitord aan de hand van klachten en storingen; de conditie van de assets aan de hand van uitgevoerde inspecties. 
+</dd>
+
+<dt><dfn data-lt="Evalueren en Bijsturen">Evalueren en Bijsturenn</dfn></dt>
+<dd>
+De zesde processtap binnen het <a>iAMPro model</a>iAMPro model waarin het assetmanagementproces en het functioneren van het assetsysteem worden geëvalueerd. Dit gebeurt op basis van de aanbevelingsrapportage uit de processtap ‘Monitoren en Analyseren’, waarin ook de stakeholderstevredenheid is meegenomen. </dd>
+
+
+
 </dl>
 
