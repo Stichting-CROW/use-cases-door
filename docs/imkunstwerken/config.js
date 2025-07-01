@@ -93,10 +93,10 @@ var respecConfig = {
   hypothesisComments: false,
 
   localBiblio: {
-    "TNO2021R10440": {
-      title: "Onderzoek naar de staat en benutting van civiele kunstwerken",
+    "prognose-vernieuwingsopgave-2023": {
+      title: "Vernieuwingsopgave infrastructuur: Landelijk prognoserapport 2023",
       authors: ["TNO"],
-      date: "2021",
+      date: "2023",
       publisher: "TNO",
       href: "https://publications.tno.nl/publication/34638082/s87EY1/TNO-2021-R10440-vs2.pdf"
     },

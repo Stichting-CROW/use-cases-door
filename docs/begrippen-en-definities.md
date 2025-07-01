@@ -119,85 +119,128 @@ er moet worden gebouwd en waarom, en biedt meetbare criteria voor succes.​
 <dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een bouwbedrijf in de context van de gebouwde omgeving is een professional of bedrijf dat verantwoordelijk is voor het coördineren en uitvoeren van bouwprojecten. Dit omvat zowel nieuwbouw als renovaties en verbouwingen.</dd>
 
 
-
 <dt><dfn data-lt="Installateur">Installateur</dfn></dt>
-<dd>Een installateur ontwerpt, installeert en onderhoudt te is dit een technische dienstverlener die integraal betrokken is bij bouw en gebruik.</dd>
+<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een installateur of technisch dienstverlener in de context van de gebouwde omgeving is een bedrijf/professional die verantwoordelijk is voor het ontwerpen, aanleggen, onderhouden en repareren van technische installaties in gebouwen. Dit kan variëren van verwarmings-en koelsystemen (HVAC), waterleidingen en sanitair, tot elektrische installaties en ict/datanetwerken.</dd>
 
 <dt><dfn data-lt="Beheerder">Beheerder</dfn></dt>
-<dd>Een beheerder is verantwoordelijk voor het dage zijn er subtypen: facilitair bedrijf (utiliteit) en netwerkbeheerder (infra).</dd>
+<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>:Een beheerder in de context van de gebouwde omgeving is verantwoordelijk voor het beheer en de optimalisatie van een gebouw of infrastructuur. Dit kan variëren van het beheer van technische installaties tot het coördineren van facilitaire diensten.</dd>
 
 
 <dt><dfn data-lt="Sloopbedrijf">Sloopbedrijf</dfn></dt>
-<dd>Een sloop- en oogstbedrijf voert demontage van bouwwerk draagt dit bij aan circulair bouwen en materiaalbeheer.</dd>
+<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een sloop-en oogstbedrijf in de context van de gebouwde omgeving is een gespecialiseerde onderneming die niet alleen gebouwen en structuren veilig en efficiënt sloopt, maar ook waardevolle materialen en componenten uit het sloopproces terugwint (oogst). Deze materialen worden vervolgens gerecycled of hergebruikt in nieuwe bouwprojecten, wat bijdraagt aan duurzaamheid en afvalreductie.</dd>
 
-<dt><dfn data-lt="Adviseur">Adviseur</dfn></dt>
-<dd>Een adviseur biedt inhoudelijke begeleiding en ondersteuning aan bouwprojecten o als consultant met specifieke expertise.</dd>
+
 
 <dt><dfn data-lt="Leverancier">Leverancier</dfn></dt>
-<dd>Een leverancier levert materialen, onderdele omvat dit ook tussenhandel, circulaire marktplaatsen en bouwtoeleveranciers.</dd>
+<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een leverancier in de context van de gebouwde omgeving is een bedrijf of persoon die bouwmaterialen, apparatuur, en andere benodigdheden levert aan bouwprojecten. Leveranciers spelen een cruciale rol in de bouwsector door ervoor te zorgen dat de benodigde materialen en producten op tijd en in goede staat beschikbaar zijn voor de uitvoering van bouwprojecten</dd>
 
 <dt><dfn data-lt="Registrerende instantie">Registrerende instantie</dfn></dt>
-<dd>Een registrerende instantie beheert officiële gegevens over eigendom, gebruik of technische status van objecten.  
-Volgens het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">rollenmodel</a> vallen bijvoorbeeld het Kadaster hieronder.</dd>
+<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een registrerende instantie in de context van de gebouwde omgeving is een organisatie die verantwoordelijk is voor het bijhoudenen beheren van officiële registraties van onroerend goed, eigendomsrechten, en andere relevante gegevens. Deze instanties zorgen ervoor dat informatieover eigendom, gebruik en beperkingen van vastgoed nauwkeurig en up-to-date is.</dd>
 
-<dt><dfn data-lt="Behoeftebepaler">Behoeftebepaler</dfn></dt>
-<dd>De actor die de functionele behoe valt deze rol onder de opdrachtgever of asseteigenaar die strategische doelen vertaalt naar functionele eisen.</dd>
 
-<dt><dfn data-lt="Ontwerper">Ontwerper</dfn></dt>
-<dd>De partij die ontwerpkeuzes maakt op basis van  omvat dit rollen als architect, stedenbouwkundige en ingenieur.</dd>
 
-<dt><dfn data-lt="Toeleverancier">Toeleverancier</dfn></dt>
-<dd>De actor die bouwproducten, componenten of systemen levert die direct worden toegepast in ontwerp, realisatie of onderhoud.  
-In het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">Rollenmodel</a> vallen ook leveranciers, fabrikanten en producenten hieronder.</dd>
 
-<dt><dfn data-lt="Realisator">Realisator</dfn></dt>
-<dd>De partij die verantwoordelijk i bschrijft deze rol als bouwbedrijf of installateur, die werkt op basis van het technische ontwerp en onder contract van de opdrachtgever.</dd>
+<dt><dfn data-lt="Kwaliteitsborger">Kwaliteitsborger</dfn></dt>
+<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Onder de Wet Kwaliteitsborging voor het Bouwen (WKB) is een kwaliteitsborger een onafhankelijke partij die toeziet op de kwaliteit van bouwprojecten. De kwaliteitsborger controleert of de bouwtechnische aspecten van een project voldoen aan de gestelde regels en voorschriften, zoals brandveiligheid, fundering, en energiezuinigheid. Deze controle vindt plaats zowel voor als tijdens de bouw, en de kwaliteitsborger geeft uiteindelijk de finale goedkeuring voordat het project gereedmelding krijgt.</dd>
 
-<dt><dfn data-lt="Toezichthouder">Toezichthouder</dfn></dt>
-<dd>De actor die toezicht houdt op naleving van afspraken, regelgeving vallen hier ook controlerende instanties onder zoals gemeentelijke inspecties of kwaliteitsborgers.</dd>
+<dt><dfn data-lt="Onderhoudsbedrijf">Onderhoudsbedrijf</dfn></dt>
+<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een onderhoudsbedrijf in de context van de gebouwde omgeving is een onderneming die verantwoordelijk is voor het uitvoeren van onderhouds-en reparatiewerkzaamheden aan gebouwen, installaties en infrastructuur.</dd>
 
-<dt><dfn data-lt="Beleidvormer">Beleidvormer</dfn></dt>
-<dd>Een publieke of private actor die beleidskaders opstelt met betrekking tot ruimtelijke orden verwant aan regievoerders en publieke opdrachtgevers met een beleidsmatige verantwoordelijkheid.</dd>
-
-<dt><dfn data-lt="Ontmantelaar">Ontmantelaar</dfn></dt>
-<dd>De partij die verantwoordelijk is voor het verwijderen, demonteren of circulair oogsten van objecten of onderdelen van een bouwwerk.  
-Binnen het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">rollenmodel</a> komt dit overeen met sloopbedrijven en circulaire demontagespecialisten.</dd>
-
-<dt><dfn data-lt="Initiatiefnemer">Initiatiefnemer</dfn></dt>
-<dd>De partij die een bouw-, renovatie- of ont kan dit de opdrachtgever of asseteigenaar zijn, vaak in combinatie met ontwikkelende partijen.</dd>
 
 
 
 <!-- Standaarden functioneel geplande ontwikkeling -->
-<dt><dfn data-lt="Objectgegevens">Objectgegevens</dfn></dt>
+
+<dt><dfn data-lt="Strategische Organisatiedoelen">Strategische Organisatiedoelen</dfn></dt>
 <dd>
-Gegevens die de fysieke en functionele kenmerken van een object beschrijven, zoals locatie, afmetingen, gebruiksdoel en eigendom. Deze informatie vormt de basis voor verdere planning en besluitvorming.
+De lange termijn doelstellingen van een organisatie die de richting en het succes van de gehele organisatie bepalen. Binnen het <a>iAMPro model</a> worden strategische organisatiedoelen geformuleerd, bij voorbeeld veiligheid en mobiliteit, om ervoor te zorgen dat de inrichting van de openbare ruimte en infrastructuur op deze doelen kan worden afgestemd.
 </dd>
 
-<dt><dfn data-lt="Gebruiksdata">Gebruiksdata</dfn></dt>
+
+<dt><dfn data-lt="Assetmanagementdoelen">Assetmanagementdoelen</dfn></dt>
+  <dd>
+    Middellange termijn doelen (meestal 5–10 jaar) die afgeleid zijn van de strategische organisatiedoelen volgens het <a>iAMPro model</a>. Ze sturen het beheer van civiele kunstwerken zodat deze bijdragen aan maatschappelijke waarden. Voorbeelden zijn het verbeteren van verkeersveiligheid of het beperken van storingen aan infrastructuur.
+  </dd>
+
+  <dt><dfn data-lt="Kern Prestatie Indicatoren">Kern Prestatie Indicatoren</dfn></dt>
+  <dd>
+    Meetbare indicatoren die de mate van realisatie van assetmanagementdoelen zichtbaar maken volgens het <a>iAMPro model</a>. Ze bevatten een norm- of grenswaarden voor prestatiebeoordeling.
+  </dd>
+
+  <dt><dfn data-lt="Servicelevels">Servicelevels</dfn></dt>
+  <dd>
+    Gedefinieerde prestatieniveaus die aangeven welk minimum aan prestaties van assets wordt verwacht volgens het <a>iAMPro model</a>. Een combinatie van een kern prestatie indicator met een normwaarde leidt tot een gewenst service level. Dit bepaalt de uitvoeringsnorm voor prestaties op systeem- en objectniveau.
+  </dd>
+
+  <dt><dfn data-lt="Prestatie-indicatoren">Prestatie-indicatoren</dfn></dt>
+  <dd>
+    Onderliggende, concrete meetindicatoren die op functioneel of technisch niveau inzicht geven in de staat en werking van assets volgens het <a>iAMPro model</a>. Ze maken het mogelijk om KPI’s te vertalen naar dagelijkse uitvoering. Functionele indicatoren meten bijvoorbeeld gebruikservaring of beeldkwaliteit; technische indicatoren meten zaken als slijtage, scheurvorming of faalkans.
+  </dd>
+
+  <dt><dfn data-lt="Risico's">Risico's</dfn></dt>
+  <dd>
+    Binnen de beoordeling van civiele kunstwerken zijn risico’s de kans dat een gebrek, schade of functieverlies zich voordoet in combinatie met de mogelijke gevolgen daarvan voor veiligheid, functionaliteit, beschikbaarheid, milieu of kosten. Risicoanalyse maakt het mogelijk om op gestructureerde wijze prioriteiten te stellen in inspectie, onderhoud en vervanging. Typische risicofactoren zijn materiaalveroudering, overbelasting, gebrekkig onderhoud en externe invloeden zoals verkeer of weersomstandigheden.
+  </dd>
+
+  <dt><dfn data-lt="Levensduurkosten">Levensduurkosten</dfn></dt>
+  <dd>
+    Levensduurkosten zijn alle kosten die gedurende de gehele levenscyclus van een civiel kunstwerk worden gemaakt, vanaf ontwerp en aanleg tot en met beheer, onderhoud, vervanging en sloop. In de beoordeling van civiele kunstwerken vormen levensduurkosten een essentieel criterium om investeringen af te wegen tegen prestaties en risico’s. Door kosten integraal te benaderen (Total Cost of Ownership) kan een optimale balans worden gevonden tussen functionaliteit, duurzaamheid en financiële efficiëntie.
+  </dd>
+
+
+<dt><dfn data-lt="Assetregistratie civiele kunstwerken">Assetregistratie civiele kunstwerken</dfn></dt>
 <dd>
-Informatie over het feitelijke gebruik van objecten of voorzieningen, zoals frequentie, duur en intensiteit. Deze data ondersteunen beleidskeuzes en optimalisatie van functionaliteit.
+  Een gestructureerde vastlegging van gegevens over civiele kunstwerken, zoals bruggen, viaducten, tunnels, kademuren en sluizen. De assetregistratie bevat informatie over locatie, type, bouwjaar, materiaal, conditie en onderhoudstoestand van deze objecten. Deze registratie ondersteunt het beheer, onderhoud, inspectie en de besluitvorming over investeringen in de openbare ruimte.
 </dd>
 
-<dt><dfn data-lt="Meldingen">Meldingen</dfn></dt>
+<dt><dfn data-lt="Maatregelen">Maatregelen</dfn></dt>
 <dd>
-Gerapporteerde waarnemingen van gebruikers, zoals defecten, klachten of wensen. Meldingen leveren waardevolle informatie voor de beoordeling van de functionele behoefte.
+  Geplande acties gericht op het instandhouden of ontwikkelen van de functionaliteit van infrastructuurobjecten, zoals civiele kunstwerken. 
+  <br><br>
 </dd>
 
-<dt><dfn data-lt="Gebruikerservaringen">Gebruikerservaringen</dfn></dt>
+<dt><dfn data-lt="BIM-model">BIM-model</dfn></dt>
 <dd>
-Subjectieve beleving van gebruikers met betrekking tot gebruiksgemak, toegankelijkheid, veiligheid en comfort. Deze informatie wordt gebruikt om functionele kwaliteit te verbeteren.
+  Een digitaal informatiemodel dat de fysieke en functionele kenmerken van een bouwwerk beschrijft. Voor civiele kunstwerken bevat het gegevens zoals geometrie, materialen, afmetingen en samenhang tussen onderdelen.
 </dd>
 
-<dt><dfn data-lt="Ruimtelijke visies">Ruimtelijke visies</dfn></dt>
+<dt><dfn data-lt="Conditiemeting">Conditiemeting</dfn></dt>
 <dd>
-Toekomstgerichte plannen of beleidsdocumenten die de ruimtelijke ontwikkeling van een gebied schetsen. Ze vormen het kader voor de functionele inrichting van de leefomgeving.
+  Objectieve beoordeling van de fysieke staat van een asset of component, meestal op basis van visuele inspectie of meting. Wordt gebruikt om onderhoudsbehoefte en vervangingsnoodzaak vast te stellen.
 </dd>
 
-<dt><dfn data-lt="Beleidskaders">Beleidskaders</dfn></dt>
+<dt><dfn data-lt="Maximale belastingsklassen">Maximale belastingsklassen</dfn></dt>
 <dd>
-Formele richtlijnen en beleidsdocumenten die de randvoorwaarden en doelstellingen bepalen voor de (her)ontwikkeling van ruimtelijke en infrastructurele projecten.
+  Informatie over de toegestane belasting op constructies, uitgedrukt in gewichtsklassen of verkeerscategorieën. Wordt gebruikt voor gebruiksbeperkingen en toetsing van functionele geschiktheid.
 </dd>
+
+<dt><dfn data-lt="Constructieve berekening">Constructieve berekening</dfn></dt>
+<dd>
+  Rekenkundige onderbouwing van de draagkracht en stabiliteit van een constructie, op basis van ontwerp- en materiaaleigenschappen. Is essentieel voor veiligheidsbeoordeling en besluitvorming over maatregelen.
+</dd>
+
+<dt><dfn data-lt="Verkeersdata">Verkeersdata</dfn></dt>
+<dd>
+  Informatie over verkeersstromen, intensiteiten, wachttijden en snelheden. Wordt gebruikt om bereikbaarheid, mobiliteit en knelpunten in het netwerk te analyseren.
+</dd>
+
+<dt><dfn data-lt="Netwerkmodel">Netwerkmodel</dfn></dt>
+<dd>
+  Een abstracte weergave van het verkeersnetwerk met relaties tussen knooppunten, routes en capaciteit. Wordt gebruikt voor analyse van doorstroming, routealternatieven en robuustheid van het netwerk.
+</dd>
+
+<dt><dfn data-lt="Routes en alternatieve routes">Routes en alternatieve routes</dfn></dt>
+<dd>
+  Informatie over bestaande en beschikbare omleidingsroutes bij uitval of onderhoud van delen van het netwerk. Van belang voor bereikbaarheidsanalyse en planning van maatregelen.
+</dd>
+
+
+
+<dt><dfn data-lt="Uitvoeringsplanning">Uitvoeringsplanning</dfn></dt>
+<dd>
+  Operationele planning van concrete werkzaamheden, inclusief fasering, uitvoeringsmomenten en benodigde capaciteit. Wordt gebruikt voor aansturing van uitvoering en afstemming met stakeholders.
+</dd>
+
 
 <!-- Standaarden technisch geplande ontwikkeling -->
 <dt><dfn data-lt="Constructieve gegevens">Constructieve gegevens</dfn></dt>
@@ -218,6 +261,12 @@ Vastgestelde richtlijnen of parameters waarmee technische ontwerpen moeten voldo
 <dt><dfn data-lt="Technische randvoorwaarden">Technische randvoorwaarden</dfn></dt>
 <dd>
 Vooraf bepaalde technische vereisten, beperkingen of uitgangspunten die invloed hebben op het ontwerp, zoals milieueisen, ruimteclaims of aansluitingen.
+</dd>
+
+
+<dt><dfn data-lt="Prognose|Prognoses">Prognoses</dfn></dt>
+<dd>
+Verwachte ontwikkeling van kosten, prestaties, risico’s of gebruik op basis van historische gegevens, trends of scenario's. Wordt gebruikt bij strategische planning en financiële onderbouwing. Volgens het onderzoek naar de staat en benutting van civiele kunstwerken van TNO: Het doel van een (lange termijn) prognose van de vernieuwingsvraag [voor civiele kunstwerken, red] is doorgaans het in kaart brengen en onderbouwen van benodigde investeringen (budgetbehoefte).
 </dd>
 
 <dt><dfn data-lt="Materiaalgegevens">Materiaalgegevens</dfn></dt>
@@ -242,9 +291,9 @@ Gedetailleerde technische tekeningen die gebruikt worden voor de feitelijke uitv
 Technische beschrijvingen die aangeven hoe werkzaamheden moeten worden uitgevoerd, met aandacht voor kwaliteit, volgorde en controle.
 </dd>
 
-<dt><dfn data-lt="Opleverdocumenten">Opleverdocumenten</dfn></dt>
+<dt><dfn data-lt="Revisiegegevens">Revisiegegevens</dfn></dt>
 <dd>
-Documentatie die bij afronding van een project wordt overhandigd, zoals garanties, testresultaten, tekeningen en goedkeuringen.
+Informatie die bij afronding van een project wordt overhandigd, zoals garanties, testresultaten, realisatietekeningen en goedkeuringen.
 </dd>
 
 
@@ -362,19 +411,7 @@ Verwachte periode waarin een object nog functioneel kan blijven voordat ontmante
 Voorspellingen van de financiële middelen die nodig zijn voor demontage, afvoer, hergebruik of sanering van objecten.
 </dd>
 
-<dl>
-  <dt><dfn data-lt="Risico's">Risico's</dfn></dt>
-  <dd>
-    Binnen de beoordeling van civiele kunstwerken zijn risico’s de kans dat een gebrek, schade of functieverlies zich voordoet in combinatie met de mogelijke gevolgen daarvan voor veiligheid, functionaliteit, beschikbaarheid, milieu of kosten. Risicoanalyse maakt het mogelijk om op gestructureerde wijze prioriteiten te stellen in inspectie, onderhoud en vervanging. Typische risicofactoren zijn materiaalveroudering, overbelasting, gebrekkig onderhoud en externe invloeden zoals verkeer of weersomstandigheden.
-  </dd>
-</dl>
 
-<dl>
-  <dt><dfn data-lt="Levensduurkosten">Levensduurkosten</dfn></dt>
-  <dd>
-    Levensduurkosten zijn alle kosten die gedurende de gehele levenscyclus van een civiel kunstwerk worden gemaakt, vanaf ontwerp en aanleg tot en met beheer, onderhoud, vervanging en sloop. In de beoordeling van civiele kunstwerken vormen levensduurkosten een essentieel criterium om investeringen af te wegen tegen prestaties en risico’s. Door kosten integraal te benaderen (Total Cost of Ownership) kan een optimale balans worden gevonden tussen functionaliteit, duurzaamheid en financiële efficiëntie.
-  </dd>
-</dl>
 
 <dt><dfn data-lt="Plankaarten">Plankaarten</dfn></dt>
 <dd>
@@ -484,33 +521,9 @@ De vijfde processtap binnen het <a>iAMPro model</a>iAMPro model waarin de presta
 De zesde processtap binnen het <a>iAMPro model</a>iAMPro model waarin het assetmanagementproces en het functioneren van het assetsysteem worden geëvalueerd. Dit gebeurt op basis van de aanbevelingsrapportage uit de processtap ‘Monitoren en Analyseren’, waarin ook de stakeholderstevredenheid is meegenomen. </dd>
 
 
-<dt><dfn data-lt="Strategische Organisatiedoelen">Strategische Organisatiedoelen</dfn></dt>
-<dd>
-De lange termijn doelstellingen van een organisatie die de richting en het succes van de gehele organisatie bepalen. Binnen het <a>iAMPro model</a> worden strategische organisatiedoelen geformuleerd, bij voorbeeld veiligheid en mobiliteit, om ervoor te zorgen dat de inrichting van de openbare ruimte en infrastructuur op deze doelen kan worden afgestemd.
-</dd>
 
 
-<dt><dfn data-lt="Assetmanagementdoelen">Assetmanagementdoelen</dfn></dt>
-  <dd>
-    Middellange termijn doelen (meestal 5–10 jaar) die afgeleid zijn van de strategische organisatiedoelen volgens het <a>iAMPro model</a>. Ze sturen het beheer van civiele kunstwerken zodat deze bijdragen aan maatschappelijke waarden. Voorbeelden zijn het verbeteren van verkeersveiligheid of het beperken van storingen aan infrastructuur.
-  </dd>
-
-  <dt><dfn data-lt="Kern Prestatie Indicatoren">Kern Prestatie Indicatoren</dfn></dt>
-  <dd>
-    Meetbare indicatoren die de mate van realisatie van assetmanagementdoelen zichtbaar maken volgens het <a>iAMPro model</a>. Ze bevatten een norm- of grenswaarden voor prestatiebeoordeling.
-  </dd>
-
-  <dt><dfn data-lt="Servicelevels">Servicelevels</dfn></dt>
-  <dd>
-    Gedefinieerde prestatieniveaus die aangeven welk minimum aan prestaties van assets wordt verwacht volgens het <a>iAMPro model</a>. Een combinatie van een kern prestatie indicator met een normwaarde leidt tot een gewenst service level. Dit bepaalt de uitvoeringsnorm voor prestaties op systeem- en objectniveau.
-  </dd>
-
-  <dt><dfn data-lt="Prestatie-indicatoren">Prestatie-indicatoren</dfn></dt>
-  <dd>
-    Onderliggende, concrete meetindicatoren die op functioneel of technisch niveau inzicht geven in de staat en werking van assets volgens het <a>iAMPro model</a>. Ze maken het mogelijk om KPI’s te vertalen naar dagelijkse uitvoering. Functionele indicatoren meten bijvoorbeeld gebruikservaring of beeldkwaliteit; technische indicatoren meten zaken als slijtage, scheurvorming of faalkans.
-  </dd>
-
-  <dt><dfn data-lt="Meerjarenonderhoudsplan">Meerjarenonderhoudsplan</dfn></dt>
+  <dt><dfn data-lt="Meerjarenonderhoudsplan|Meerjarenonderhoudsplanning">Meerjarenonderhoudsplan</dfn></dt>
   <dd>
 Een Meerjarenonderhoudsplan is een strategisch document waarin het verwachte onderhoud aan een object (zoals een brug, kade, gebouw of rioolstelsel) voor een langere periode — meestal 10 tot 50 jaar — wordt gepland en begroot. Het plan bevat een overzicht van te verwachten onderhoudsactiviteiten per jaar, de bijbehorende kosten, de timing van vervangingen, inspecties en renovaties en de relatie met prestatie-eisen of servicelevels.
 </dd>
