@@ -68,123 +68,104 @@ er moet worden gebouwd en waarom, en biedt meetbare criteria voor succes.​
   </dd>
 
 
-<dt><dfn data-lt="Bouwwerklevenscyclus">Bouwwerklevenscyclus</dfn></dt>
-<dd>De bouwwerklevenscyclus beschrijft de opeenvolgende fasen die een bouwwerk doorloopt vanaf het eerste initiatief tot en met de ontmanteling. Deze fasen zijn: ontwikkeling, onderhoud en ontmanteling.  
-Volgens de <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">GEBORA Bouwwerk levenscyclus</a> bestaat elke fase uit vier informatiegebaseerde stappen (functioneel gepland, technisch gepland, technisch gerealiseerd, functioneel gerealiseerd), en herhaalt zich iteratief voor elk fysiek object in de gebouwde omgeving.</dd>
+<dt><dfn data-lt="GEBORA Bouwwerklevenscyclus">GEBORA Bouwwerklevenscyclus</dfn></dt>
+<dd>De GEBORA bouwwerklevenscyclus beschrijft de opeenvolgende fasen die een bouwwerk doorloopt vanaf het eerste initiatief tot en met de ontmanteling. Deze fasen zijn: ontwikkeling, onderhoud en ontmanteling. Elke van deze fasen bestaat uit vier informatiegebaseerde stappen (functioneel gepland, technisch gepland, technisch gerealiseerd, functioneel gerealiseerd), en herhaalt zich iteratief voor elk fysiek object in de gebouwde omgeving. Zie ook <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">dit document</a>. </dd>
 
 
-<dt><dfn data-lt="Functioneel gepland">T1 Functioneel gepland</dfn></dt>
-<dd>T1 is de toestand waarin de entiteit (bijv. bouwwerk of component) een functioneel plan heeft dat gereed is. Deze toestand begint met het initiatief tot plannen en eindigt met het beschikbaar zijn van een gevalideerd functioneel ontwerp of plan.  
-Volgens de <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">GEBORA Bouwwerk levenscyclus</a> vormt deze toestand de eerste stap in de levenscyclus, waarin de behoefte van de gebruiker centraal staat en vertaald wordt naar ruimtelijke en functionele eisen.</dd>
+<dt><dfn data-lt="Functioneel gepland|Functioneel geplande">T1 Functioneel gepland</dfn></dt>
+<dd>T1 is volgens de <a>GEBORA Bouwwerklevenscyclus</a> de toestand waarin de entiteit (bijvoorbeeld een civiel kunstwerk) een functioneel plan heeft dat gereed is. Deze toestand begint met het initiatief tot plannen en eindigt met het beschikbaar zijn van een gevalideerd functioneel ontwerp of plan.</dd>
 
-<dt><dfn data-lt="Technisch gepland">Technisch gepland</dfn></dt>
-<dd>T2 is de toestand waarin de technische uitwerking van het functioneel plan is afgerond. Deze toestand begint bij het starten van het technische ontwerp en eindigt wanneer het ontwerp gereed is voor realisatie.  
-Volgens de <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">GEBORA Bouwwerk levenscyclus</a> betekent dit dat de functionele eisen zijn vertaald naar technische objecten en specificaties, gereed voor uitvoering.</dd>
+<dt><dfn data-lt="Technisch gepland|Technisch geplande">T2 Technisch gepland</dfn></dt>
+<dd>T2 is volgens de <a>GEBORA Bouwwerklevenscyclus</a> de toestand waarin de technische uitwerking van het functioneel plan is afgerond en de  functionele eisen zijn vertaald naar technische objecten en specificaties, gereed voor uitvoering tijdens ontwikkeling, onderhoud en ontmanteling.</dd>
 
-<dt><dfn data-lt="Technisch gerealiseerd">Technisch gerealiseerd</dfn></dt>
-<dd>T3 is de toestand waarin de technische realisatie van de entiteit voltooid is. Dit betreft oplevering volgens technische specificaties, klaar voor functioneel gebruik of validatie.  
-Volgens de <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">GEBORA Bouwwerk levenscyclus</a> houdt dit in dat een object in de fysieke werkelijkheid gerealiseerd is op basis van de technische planning en specificaties.</dd>
+<dt><dfn data-lt="Technisch gerealiseerd|Technisch gerealiseerde">T3 Technisch gerealiseerd</dfn></dt>
+<dd>T3 is volgens de <a>GEBORA Bouwwerklevenscyclus</a> de toestand waarin de technische realisatie van de entiteit voltooid is. De werkzaamheden zijn fysiek uitgevoerd.</dd>
 
-<dt><dfn data-lt="Functioneel gerealiseerd">Functioneel gerealiseerd</dfn></dt>
-<dd>T4 is de toestand waarin de entiteit in gebruik is genomen conform de functionele eisen. Dit markeert het moment waarop een bouwwerk, installatie of onderdeel operationeel beschikbaar is.  
-Volgens de <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">GEBORA Bouwwerk levenscyclus</a> blijft deze toestand ook tijdens gebruiks- en beheerfases gelden als virtuele representatie van het functionele object.</dd>
+<dt><dfn data-lt="Functioneel gerealiseerd|Functioneel gerealiseerde"> T4 Functioneel gerealiseerd</dfn></dt>
+<dd>T4 is volgens de <a>GEBORA Bouwwerklevenscyclus</a> de toestand waarin de entiteit in gebruik is genomen.</dd>
 
-<dt><dfn data-lt="Ontwikkeling">Ontwikkeling</dfn></dt>
-<dd>Ontwikkeling is de eerste fase in de levenscyclus waarin plannen worden gemaakt en gerealiseerd. Denk aan initiatief, ontwerp, engineering en bouw.  
-Volgens de <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">GEBORA Bouwwerk levenscyclus</a> omvat deze fase de overgang van gebruikersbehoefte naar functionele en technische realisatie.</dd>
+<dt><dfn data-lt="Ontwikkelfase">Ontwikkelfase</dfn></dt>
+<dd>Definitie volgens de <a>GEBORA Bouwwerk levenscyclus</a>: De ontwikkelfase in de levenscyclus van een bouwwerk is het beginpunt waar de concepten en plannen voor een nieuw project worden gegenereerd en uitgewerkt. Deze fase is cruciaal omdat het de basis legt voor het gehele project en de referentiearchitectuur van de gebouwde omgeving. Hier worden de doelen, specificaties en ontwerpvereisten vastgelegd, en worden de nodige vergunningen aangevraagd.</dd>
 
-<dt><dfn data-lt="Onderhoud">Onderhoud</dfn></dt>
-<dd>Onderhoud is gericht op het behouden van functionaliteit, veiligheid en prestaties. Deze fase omvat inspecties, renovaties, vervanging en technische updates gedurende de gebruiksperiode.  
-Volgens de <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">GEBORA Bouwwerk levenscyclus</a> worden hierin objecten opnieuw gepland en gerealiseerd op componentniveau, met behoud van informatie.</dd>
+<dt><dfn data-lt="Onderhoudsfase">Onderhoudsfase</dfn></dt>
+<dd>Definitie volgens de <a>GEBORA Bouwwerk levenscyclus</a>:De beheer-en onderhoudsfase in de levenscyclus van een bouwwerk speelt een cruciale rol bij het waarborgen van de functionaliteit, veiligheid en duurzaamheid van het gebouw of infrastructuur. Deze fase volgt op de ontwikkelfase en omvat alle activiteiten die nodig zijn om het bouwwerk in goede staat te houden gedurende zijn gebruiksperiode.</dd>
 
-<dt><dfn data-lt="Ontmanteling">Ontmanteling</dfn></dt>
-<dd>Ontmanteling is de laatste fase van de levenscyclus waarin het bouwwerk (of onderdelen) buiten gebruik wordt gesteld en verwijderd. Hierbij is aandacht voor veiligheid, hergebruik en circulair materiaalbeheer.  
-Volgens de <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">GEBORA Bouwwerk levenscyclus</a> kan deze fase zowel op hoofdniveau als per component plaatsvinden en leidt tot terugkeer naar een toestand zonder bouwwerk ("niets").</dd>
+<dt><dfn data-lt="Ontmantelingsfase">Ontmantelingsfase</dfn></dt>
+<dd>Definitie volgens de <a>GEBORA Bouwwerk levenscyclus</a>: de ontmantelingsfase is de laatste fase in de levenscyclus van een bouwwerk en omvat het proces van het demonteren of slopen van het bouwwerk aan het einde van zijn gebruiksperiode. Deze fase is van groot belang om ervoor te zorgen dat de ontmanteling veilig en milieuvriendelijk gebeurt, met een focus op hergebruik en recycling van materialen.</dd>
+
+<dt><dfn data-lt="GEBORA">GEBORA</dfn></dt>
+  <dd>
+    <abbr title="GEbouwen en BORgring van Rollen en Aansprakelijkheden">GEBORA</abbr> is een standaard rollenmodel voor de gebouwde omgeving dat verantwoordelijkheden en bevoegdheden structureert binnen assetmanagementprocessen. Het model helpt bij het eenduidig vastleggen van rollen, zoals asseteigenaar, beheerder en opdrachtnemer, zodat samenwerking, besluitvorming en informatie-uitwisseling efficiënt en transparant verlopen.
+  </dd>
 
 
-<dt><dfn data-lt="Asset eigenaar">Asset eigenaar</dfn></dt>
-<dd>Een asset eigenaar in de gebouwde omgeving is de persoon of entiteit die verantwoordelijk is voor het strategisch beheer van assets, zoals gebouwen, infrastructuur, en andere fysieke objecten.  
-Volgens het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> stelt de asset eigenaar doelen en kaders vast voor beheer, onderhoud, vervanging en nieuwbouw.</dd>
+  <dt><dfn data-lt="Standaard Rollenmodel">Standaard Rollenmodel</dfn></dt>
+  <dd>
+    Het standaard rollenmodel van <a>GEBORA</a> is een gestructureerde beschrijving van rollen, verantwoordelijkheden en bevoegdheden binnen de gebouwde omgeving. <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a>
+  </dd>
 
-<dt><dfn data-lt="Asset manager">Asset manager</dfn></dt>
-<dd>Een asset manager is verantwoordelijk voor het beheer en de optimalisatie van fysieke assets zoals gebouwen, infrastructuur en andere faciliteiten.  
-In het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> bewaakt deze rol de prestaties en levensduur van assets in operationele zin.</dd>
 
-<dt><dfn data-lt="Architect">Architect</dfn></dt>
-<dd>Een architect in de gebouwde omgeving ontwerpt gebouwen, interieurs, landschappen en stedelijke gebieden met oog op functionaliteit, esthetiek en duurzaamheid.  
-Gedefinieerd in het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> als sleutelrol in ontwerp en planvorming.</dd>
+<dt><dfn data-lt="Asseteigenaar">Asseteigenaar</dfn></dt>
+<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een asseteigenaar in de gebouwde omgeving is de persoon of entiteit die verantwoordelijk is voor het strategisch beheer van assets, zoals gebouwen, infrastructuur, en andere fysieke objecten. De asseteigenaar stelt de doelen en kaders vast voor het beheer en onderhoud van deze assets. De rol van de asseteigenaar is cruciaal omdat deze op strategisch niveau bepaalt wat er nodig is om de assets in optimale staat te houden. Ditomvat het maken van beslissingen over nieuwbouw, vervanging, en onderhoud, evenals het vaststellen van de functionele eisen waaraan de assets moetenvoldoen.</dd>
 
-<dt><dfn data-lt="Bouwbedrijf">Bouwbedrijf</dfn></dt>
-<dd>Een bouwbedrijf is verantwoordelijk voor de uitvoering van bouwprojecten, inclusief renovaties en verbouwingen.  
-Volgens het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> vallen hier ook infrabedrijven, woning- en utiliteitsbouwers onder.</dd>
+<dt><dfn data-lt="Assetmanager">Assetmanager</dfn></dt>
+<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een assetmanager in de gebouwde omgeving is verantwoordelijk voor het beheer en de optimalisatie van fysieke assets zoals gebouwen, infrastructuur en andere faciliteiten. De assetmanager zorgt ervoor dat deze assets veilig, functioneel en kosteneffectief blijven gedurende hun levenscyclus.</dd>
+
 
 <dt><dfn data-lt="Ingenieur">Ingenieur</dfn></dt>
-<dd>Een ingenieur past wetenschappelijke en technische kennis toe bij ontwerp, realisatie en onderhoud van bouwwerken.  
-In het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> ook aangeduid als technisch ontwerper of bestekschrijver.</dd>
+<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een ingenieur in de context van de gebouwde omgeving is een professional die wetenschappelijke en technische kennis toepast om problemen op te lossen en projecten te realiseren die betrekking hebben op de bouw en het onderhoud van infrastructuur, gebouwen en andere constructies.</dd>
+
+<dt><dfn data-lt="Bouwbedrijf">Bouwbedrijf</dfn></dt>
+<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een bouwbedrijf in de context van de gebouwde omgeving is een professional of bedrijf dat verantwoordelijk is voor het coördineren en uitvoeren van bouwprojecten. Dit omvat zowel nieuwbouw als renovaties en verbouwingen.</dd>
+
+
 
 <dt><dfn data-lt="Installateur">Installateur</dfn></dt>
-<dd>Een installateur ontwerpt, installeert en onderhoudt technische installaties zoals HVAC, elektra, sanitair of ICT.  
-Volgens het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> is dit een technische dienstverlener die integraal betrokken is bij bouw en gebruik.</dd>
+<dd>Een installateur ontwerpt, installeert en onderhoudt te is dit een technische dienstverlener die integraal betrokken is bij bouw en gebruik.</dd>
 
 <dt><dfn data-lt="Beheerder">Beheerder</dfn></dt>
-<dd>Een beheerder is verantwoordelijk voor het dagelijkse operationele functioneren van gebouwen of infrastructuur.  
-In het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> zijn er subtypen: facilitair bedrijf (utiliteit) en netwerkbeheerder (infra).</dd>
+<dd>Een beheerder is verantwoordelijk voor het dage zijn er subtypen: facilitair bedrijf (utiliteit) en netwerkbeheerder (infra).</dd>
 
-<dt><dfn data-lt="Gebruiker">Gebruiker</dfn></dt>
-<dd>Een gebruiker is een persoon of organisatie die een gebouw of infrastructuur functioneel benut.  
-Volgens het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Rollenmodel</a> kan dit een bewoner, medewerker of bezoeker zijn.</dd>
 
 <dt><dfn data-lt="Sloopbedrijf">Sloopbedrijf</dfn></dt>
-<dd>Een sloop- en oogstbedrijf voert demontage van bouwwerken uit en wint waardevolle materialen terug voor hergebruik.  
-Binnen het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> draagt dit bij aan circulair bouwen en materiaalbeheer.</dd>
+<dd>Een sloop- en oogstbedrijf voert demontage van bouwwerk draagt dit bij aan circulair bouwen en materiaalbeheer.</dd>
 
 <dt><dfn data-lt="Adviseur">Adviseur</dfn></dt>
-<dd>Een adviseur biedt inhoudelijke begeleiding en ondersteuning aan bouwprojecten om kwaliteit, naleving en efficiëntie te waarborgen.  
-Gedefinieerd in het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> als consultant met specifieke expertise.</dd>
+<dd>Een adviseur biedt inhoudelijke begeleiding en ondersteuning aan bouwprojecten o als consultant met specifieke expertise.</dd>
 
 <dt><dfn data-lt="Leverancier">Leverancier</dfn></dt>
-<dd>Een leverancier levert materialen, onderdelen of producten ten behoeve van bouw- of onderhoudsprojecten.  
-Binnen het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> omvat dit ook tussenhandel, circulaire marktplaatsen en bouwtoeleveranciers.</dd>
+<dd>Een leverancier levert materialen, onderdele omvat dit ook tussenhandel, circulaire marktplaatsen en bouwtoeleveranciers.</dd>
 
 <dt><dfn data-lt="Registrerende instantie">Registrerende instantie</dfn></dt>
 <dd>Een registrerende instantie beheert officiële gegevens over eigendom, gebruik of technische status van objecten.  
 Volgens het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">rollenmodel</a> vallen bijvoorbeeld het Kadaster hieronder.</dd>
 
 <dt><dfn data-lt="Behoeftebepaler">Behoeftebepaler</dfn></dt>
-<dd>De actor die de functionele behoefte en het doel van een bouwwerk initieert en specificeert.  
-Volgens het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> valt deze rol onder de opdrachtgever of asset eigenaar die strategische doelen vertaalt naar functionele eisen.</dd>
+<dd>De actor die de functionele behoe valt deze rol onder de opdrachtgever of asseteigenaar die strategische doelen vertaalt naar functionele eisen.</dd>
 
 <dt><dfn data-lt="Ontwerper">Ontwerper</dfn></dt>
-<dd>De partij die ontwerpkeuzes maakt op basis van de functionele behoefte, regelgeving en technische haalbaarheid.  
-In het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> omvat dit rollen als architect, stedenbouwkundige en ingenieur.</dd>
+<dd>De partij die ontwerpkeuzes maakt op basis van  omvat dit rollen als architect, stedenbouwkundige en ingenieur.</dd>
 
 <dt><dfn data-lt="Toeleverancier">Toeleverancier</dfn></dt>
 <dd>De actor die bouwproducten, componenten of systemen levert die direct worden toegepast in ontwerp, realisatie of onderhoud.  
 In het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">Rollenmodel</a> vallen ook leveranciers, fabrikanten en producenten hieronder.</dd>
 
 <dt><dfn data-lt="Realisator">Realisator</dfn></dt>
-<dd>De partij die verantwoordelijk is voor de fysieke uitvoering van bouw- of installatiewerkzaamheden.  
-Het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> bschrijft deze rol als bouwbedrijf of installateur, die werkt op basis van het technische ontwerp en onder contract van de opdrachtgever.</dd>
+<dd>De partij die verantwoordelijk i bschrijft deze rol als bouwbedrijf of installateur, die werkt op basis van het technische ontwerp en onder contract van de opdrachtgever.</dd>
 
 <dt><dfn data-lt="Toezichthouder">Toezichthouder</dfn></dt>
-<dd>De actor die toezicht houdt op naleving van afspraken, regelgeving en kwaliteit tijdens voorbereiding, uitvoering en gebruik.  
-Volgens het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> vallen hier ook controlerende instanties onder zoals gemeentelijke inspecties of kwaliteitsborgers.</dd>
+<dd>De actor die toezicht houdt op naleving van afspraken, regelgeving vallen hier ook controlerende instanties onder zoals gemeentelijke inspecties of kwaliteitsborgers.</dd>
 
 <dt><dfn data-lt="Beleidvormer">Beleidvormer</dfn></dt>
-<dd>Een publieke of private actor die beleidskaders opstelt met betrekking tot ruimtelijke ordening, duurzaamheid of infrastructuurontwikkeling.  
-Deze rol is binnen het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> verwant aan regievoerders en publieke opdrachtgevers met een beleidsmatige verantwoordelijkheid.</dd>
+<dd>Een publieke of private actor die beleidskaders opstelt met betrekking tot ruimtelijke orden verwant aan regievoerders en publieke opdrachtgevers met een beleidsmatige verantwoordelijkheid.</dd>
 
 <dt><dfn data-lt="Ontmantelaar">Ontmantelaar</dfn></dt>
 <dd>De partij die verantwoordelijk is voor het verwijderen, demonteren of circulair oogsten van objecten of onderdelen van een bouwwerk.  
 Binnen het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">rollenmodel</a> komt dit overeen met sloopbedrijven en circulaire demontagespecialisten.</dd>
 
 <dt><dfn data-lt="Initiatiefnemer">Initiatiefnemer</dfn></dt>
-<dd>De partij die een bouw-, renovatie- of ontwikkelproces in gang zet op basis van een behoefte of kans.  
-Volgens het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a> kan dit de opdrachtgever of asset eigenaar zijn, vaak in combinatie met ontwikkelende partijen.</dd>
+<dd>De partij die een bouw-, renovatie- of ont kan dit de opdrachtgever of asseteigenaar zijn, vaak in combinatie met ontwikkelende partijen.</dd>
 
-<dt><dfn data-lt="Gebiedsregisseur">Gebiedsregisseur</dfn></dt>
-<dd>De actor die de afstemming coördineert tussen verschillende ruimtelijke initiatieven, belanghebbenden en functies binnen een gebied.  
-In het <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Rollenmodel</a> vallen dit vaak publieke partijen of gedelegeerde projectorganisaties met regietaken.</dd>
 
 
 <!-- Standaarden functioneel geplande ontwikkeling -->
@@ -196,11 +177,6 @@ Gegevens die de fysieke en functionele kenmerken van een object beschrijven, zoa
 <dt><dfn data-lt="Gebruiksdata">Gebruiksdata</dfn></dt>
 <dd>
 Informatie over het feitelijke gebruik van objecten of voorzieningen, zoals frequentie, duur en intensiteit. Deze data ondersteunen beleidskeuzes en optimalisatie van functionaliteit.
-</dd>
-
-<dt><dfn data-lt="Prestatie-indicatoren">Prestatie-indicatoren</dfn></dt>
-<dd>
-Meetbare waarden die aangeven in hoeverre objecten of voorzieningen voldoen aan hun beoogde functies of kwaliteitsniveaus. Ze dienen als stuurinformatie in de ontwikkelingsfase.
 </dd>
 
 <dt><dfn data-lt="Meldingen">Meldingen</dfn></dt>
@@ -386,10 +362,19 @@ Verwachte periode waarin een object nog functioneel kan blijven voordat ontmante
 Voorspellingen van de financiële middelen die nodig zijn voor demontage, afvoer, hergebruik of sanering van objecten.
 </dd>
 
-<dt><dfn data-lt="Risicoanalyses">Risicoanalyses</dfn></dt>
-<dd>
-Beoordeling van mogelijke gevaren en impact van de ontmanteling, zoals veiligheidsrisico’s of milieuschade.
-</dd>
+<dl>
+  <dt><dfn data-lt="Risico's">Risico's</dfn></dt>
+  <dd>
+    Binnen de beoordeling van civiele kunstwerken zijn risico’s de kans dat een gebrek, schade of functieverlies zich voordoet in combinatie met de mogelijke gevolgen daarvan voor veiligheid, functionaliteit, beschikbaarheid, milieu of kosten. Risicoanalyse maakt het mogelijk om op gestructureerde wijze prioriteiten te stellen in inspectie, onderhoud en vervanging. Typische risicofactoren zijn materiaalveroudering, overbelasting, gebrekkig onderhoud en externe invloeden zoals verkeer of weersomstandigheden.
+  </dd>
+</dl>
+
+<dl>
+  <dt><dfn data-lt="Levensduurkosten">Levensduurkosten</dfn></dt>
+  <dd>
+    Levensduurkosten zijn alle kosten die gedurende de gehele levenscyclus van een civiel kunstwerk worden gemaakt, vanaf ontwerp en aanleg tot en met beheer, onderhoud, vervanging en sloop. In de beoordeling van civiele kunstwerken vormen levensduurkosten een essentieel criterium om investeringen af te wegen tegen prestaties en risico’s. Door kosten integraal te benaderen (Total Cost of Ownership) kan een optimale balans worden gevonden tussen functionaliteit, duurzaamheid en financiële efficiëntie.
+  </dd>
+</dl>
 
 <dt><dfn data-lt="Plankaarten">Plankaarten</dfn></dt>
 <dd>
@@ -499,6 +484,36 @@ De vijfde processtap binnen het <a>iAMPro model</a>iAMPro model waarin de presta
 De zesde processtap binnen het <a>iAMPro model</a>iAMPro model waarin het assetmanagementproces en het functioneren van het assetsysteem worden geëvalueerd. Dit gebeurt op basis van de aanbevelingsrapportage uit de processtap ‘Monitoren en Analyseren’, waarin ook de stakeholderstevredenheid is meegenomen. </dd>
 
 
+<dt><dfn data-lt="Strategische Organisatiedoelen">Strategische Organisatiedoelen</dfn></dt>
+<dd>
+De lange termijn doelstellingen van een organisatie die de richting en het succes van de gehele organisatie bepalen. Binnen het <a>iAMPro model</a> worden strategische organisatiedoelen geformuleerd, bij voorbeeld veiligheid en mobiliteit, om ervoor te zorgen dat de inrichting van de openbare ruimte en infrastructuur op deze doelen kan worden afgestemd.
+</dd>
+
+
+<dt><dfn data-lt="Assetmanagementdoelen">Assetmanagementdoelen</dfn></dt>
+  <dd>
+    Middellange termijn doelen (meestal 5–10 jaar) die afgeleid zijn van de strategische organisatiedoelen volgens het <a>iAMPro model</a>. Ze sturen het beheer van civiele kunstwerken zodat deze bijdragen aan maatschappelijke waarden. Voorbeelden zijn het verbeteren van verkeersveiligheid of het beperken van storingen aan infrastructuur.
+  </dd>
+
+  <dt><dfn data-lt="Kern Prestatie Indicatoren">Kern Prestatie Indicatoren</dfn></dt>
+  <dd>
+    Meetbare indicatoren die de mate van realisatie van assetmanagementdoelen zichtbaar maken volgens het <a>iAMPro model</a>. Ze bevatten een norm- of grenswaarden voor prestatiebeoordeling.
+  </dd>
+
+  <dt><dfn data-lt="Servicelevels">Servicelevels</dfn></dt>
+  <dd>
+    Gedefinieerde prestatieniveaus die aangeven welk minimum aan prestaties van assets wordt verwacht volgens het <a>iAMPro model</a>. Een combinatie van een kern prestatie indicator met een normwaarde leidt tot een gewenst service level. Dit bepaalt de uitvoeringsnorm voor prestaties op systeem- en objectniveau.
+  </dd>
+
+  <dt><dfn data-lt="Prestatie-indicatoren">Prestatie-indicatoren</dfn></dt>
+  <dd>
+    Onderliggende, concrete meetindicatoren die op functioneel of technisch niveau inzicht geven in de staat en werking van assets volgens het <a>iAMPro model</a>. Ze maken het mogelijk om KPI’s te vertalen naar dagelijkse uitvoering. Functionele indicatoren meten bijvoorbeeld gebruikservaring of beeldkwaliteit; technische indicatoren meten zaken als slijtage, scheurvorming of faalkans.
+  </dd>
+
+  <dt><dfn data-lt="Meerjarenonderhoudsplan">Meerjarenonderhoudsplan</dfn></dt>
+  <dd>
+Een Meerjarenonderhoudsplan is een strategisch document waarin het verwachte onderhoud aan een object (zoals een brug, kade, gebouw of rioolstelsel) voor een langere periode — meestal 10 tot 50 jaar — wordt gepland en begroot. Het plan bevat een overzicht van te verwachten onderhoudsactiviteiten per jaar, de bijbehorende kosten, de timing van vervangingen, inspecties en renovaties en de relatie met prestatie-eisen of servicelevels.
+</dd>
 
 </dl>
 
