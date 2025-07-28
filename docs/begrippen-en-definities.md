@@ -85,13 +85,13 @@ er moet worden gebouwd en waarom, en biedt meetbare criteria voor succes.​
 <dd>T4 is volgens de <a>GEBORA Bouwwerklevenscyclus</a> de toestand waarin de entiteit in gebruik is genomen.</dd>
 
 <dt><dfn data-lt="Ontwikkelfase">Ontwikkelfase</dfn></dt>
-<dd>Definitie volgens de <a>GEBORA Bouwwerk levenscyclus</a>: De ontwikkelfase in de levenscyclus van een bouwwerk is het beginpunt waar de concepten en plannen voor een nieuw project worden gegenereerd en uitgewerkt. Deze fase is cruciaal omdat het de basis legt voor het gehele project en de referentiearchitectuur van de gebouwde omgeving. Hier worden de doelen, specificaties en ontwerpvereisten vastgelegd, en worden de nodige vergunningen aangevraagd.</dd>
+<dd>Definitie volgens de <a>GEBORA Bouwwerklevenscyclus</a>: De ontwikkelfase in de levenscyclus van een bouwwerk is het beginpunt waar de concepten en plannen voor een nieuw project worden gegenereerd en uitgewerkt. Deze fase is cruciaal omdat het de basis legt voor het gehele project en de referentiearchitectuur van de gebouwde omgeving. Hier worden de doelen, specificaties en ontwerpvereisten vastgelegd, en worden de nodige vergunningen aangevraagd.</dd>
 
 <dt><dfn data-lt="Onderhoudsfase">Onderhoudsfase</dfn></dt>
-<dd>Definitie volgens de <a>GEBORA Bouwwerk levenscyclus</a>:De beheer-en onderhoudsfase in de levenscyclus van een bouwwerk speelt een cruciale rol bij het waarborgen van de functionaliteit, veiligheid en duurzaamheid van het gebouw of infrastructuur. Deze fase volgt op de ontwikkelfase en omvat alle activiteiten die nodig zijn om het bouwwerk in goede staat te houden gedurende zijn gebruiksperiode.</dd>
+<dd>Definitie volgens de <a>GEBORA Bouwwerklevenscyclus</a>:De beheer-en onderhoudsfase in de levenscyclus van een bouwwerk speelt een cruciale rol bij het waarborgen van de functionaliteit, veiligheid en duurzaamheid van het gebouw of infrastructuur. Deze fase volgt op de ontwikkelfase en omvat alle activiteiten die nodig zijn om het bouwwerk in goede staat te houden gedurende zijn gebruiksperiode.</dd>
 
 <dt><dfn data-lt="Ontmantelingsfase">Ontmantelingsfase</dfn></dt>
-<dd>Definitie volgens de <a>GEBORA Bouwwerk levenscyclus</a>: de ontmantelingsfase is de laatste fase in de levenscyclus van een bouwwerk en omvat het proces van het demonteren of slopen van het bouwwerk aan het einde van zijn gebruiksperiode. Deze fase is van groot belang om ervoor te zorgen dat de ontmanteling veilig en milieuvriendelijk gebeurt, met een focus op hergebruik en recycling van materialen.</dd>
+<dd>Definitie volgens de <a>GEBORA Bouwwerklevenscyclus</a>: de ontmantelingsfase is de laatste fase in de levenscyclus van een bouwwerk en omvat het proces van het demonteren of slopen van het bouwwerk aan het einde van zijn gebruiksperiode. Deze fase is van groot belang om ervoor te zorgen dat de ontmanteling veilig en milieuvriendelijk gebeurt, met een focus op hergebruik en recycling van materialen.</dd>
 
 <dt><dfn data-lt="GEBORA">GEBORA</dfn></dt>
   <dd>
@@ -101,50 +101,50 @@ er moet worden gebouwd en waarom, en biedt meetbare criteria voor succes.​
 
   <dt><dfn data-lt="Standaard Rollenmodel">Standaard Rollenmodel</dfn></dt>
   <dd>
-    Het standaard rollenmodel van <a>GEBORA</a> is een gestructureerde beschrijving van rollen, verantwoordelijkheden en bevoegdheden binnen de gebouwde omgeving. <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">GEBORA Standaard Rollenmodel</a>
+    Het standaard rollenmodel van <a>GEBORA</a> is een gestructureerde beschrijving van rollen, verantwoordelijkheden en bevoegdheden binnen de gebouwde omgeving. <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">Standaard Rollenmodel</a>
   </dd>
 
 
 <dt><dfn data-lt="Asseteigenaar">Asseteigenaar</dfn></dt>
-<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een asseteigenaar in de gebouwde omgeving is de persoon of entiteit die verantwoordelijk is voor het strategisch beheer van assets, zoals gebouwen, infrastructuur, en andere fysieke objecten. De asseteigenaar stelt de doelen en kaders vast voor het beheer en onderhoud van deze assets. De rol van de asseteigenaar is cruciaal omdat deze op strategisch niveau bepaalt wat er nodig is om de assets in optimale staat te houden. Ditomvat het maken van beslissingen over nieuwbouw, vervanging, en onderhoud, evenals het vaststellen van de functionele eisen waaraan de assets moetenvoldoen.</dd>
+<dd>Definitie uit het <a>Standaard Rollenmodel</a>: Een asseteigenaar in de gebouwde omgeving is de persoon of entiteit die verantwoordelijk is voor het strategisch beheer van assets, zoals gebouwen, infrastructuur, en andere fysieke objecten. De asseteigenaar stelt de doelen en kaders vast voor het beheer en onderhoud van deze assets. De rol van de asseteigenaar is cruciaal omdat deze op strategisch niveau bepaalt wat er nodig is om de assets in optimale staat te houden. Ditomvat het maken van beslissingen over nieuwbouw, vervanging, en onderhoud, evenals het vaststellen van de functionele eisen waaraan de assets moetenvoldoen.</dd>
 
 <dt><dfn data-lt="Assetmanager">Assetmanager</dfn></dt>
-<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een assetmanager in de gebouwde omgeving is verantwoordelijk voor het beheer en de optimalisatie van fysieke assets zoals gebouwen, infrastructuur en andere faciliteiten. De assetmanager zorgt ervoor dat deze assets veilig, functioneel en kosteneffectief blijven gedurende hun levenscyclus.</dd>
+<dd>Definitie uit het <a>Standaard Rollenmodel</a>: Een assetmanager in de gebouwde omgeving is verantwoordelijk voor het beheer en de optimalisatie van fysieke assets zoals gebouwen, infrastructuur en andere faciliteiten. De assetmanager zorgt ervoor dat deze assets veilig, functioneel en kosteneffectief blijven gedurende hun levenscyclus.</dd>
 
 
 <dt><dfn data-lt="Ingenieur">Ingenieur</dfn></dt>
-<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een ingenieur in de context van de gebouwde omgeving is een professional die wetenschappelijke en technische kennis toepast om problemen op te lossen en projecten te realiseren die betrekking hebben op de bouw en het onderhoud van infrastructuur, gebouwen en andere constructies.</dd>
+<dd>Definitie uit het <a>Standaard Rollenmodel</a>: Een ingenieur in de context van de gebouwde omgeving is een professional die wetenschappelijke en technische kennis toepast om problemen op te lossen en projecten te realiseren die betrekking hebben op de bouw en het onderhoud van infrastructuur, gebouwen en andere constructies.</dd>
 
 <dt><dfn data-lt="Bouwbedrijf">Bouwbedrijf</dfn></dt>
-<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een bouwbedrijf in de context van de gebouwde omgeving is een professional of bedrijf dat verantwoordelijk is voor het coördineren en uitvoeren van bouwprojecten. Dit omvat zowel nieuwbouw als renovaties en verbouwingen.</dd>
+<dd>Definitie uit het <a>Standaard Rollenmodel</a>: Een bouwbedrijf in de context van de gebouwde omgeving is een professional of bedrijf dat verantwoordelijk is voor het coördineren en uitvoeren van bouwprojecten. Dit omvat zowel nieuwbouw als renovaties en verbouwingen.</dd>
 
 
 <dt><dfn data-lt="Installateur">Installateur</dfn></dt>
-<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een installateur of technisch dienstverlener in de context van de gebouwde omgeving is een bedrijf/professional die verantwoordelijk is voor het ontwerpen, aanleggen, onderhouden en repareren van technische installaties in gebouwen. Dit kan variëren van verwarmings-en koelsystemen (HVAC), waterleidingen en sanitair, tot elektrische installaties en ict/datanetwerken.</dd>
+<dd>Definitie uit het <a>Standaard Rollenmodel</a>: Een installateur of technisch dienstverlener in de context van de gebouwde omgeving is een bedrijf/professional die verantwoordelijk is voor het ontwerpen, aanleggen, onderhouden en repareren van technische installaties in gebouwen. Dit kan variëren van verwarmings-en koelsystemen (HVAC), waterleidingen en sanitair, tot elektrische installaties en ict/datanetwerken.</dd>
 
 <dt><dfn data-lt="Beheerder">Beheerder</dfn></dt>
-<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>:Een beheerder in de context van de gebouwde omgeving is verantwoordelijk voor het beheer en de optimalisatie van een gebouw of infrastructuur. Dit kan variëren van het beheer van technische installaties tot het coördineren van facilitaire diensten.</dd>
+<dd>Definitie uit het <a>Standaard Rollenmodel</a>:Een beheerder in de context van de gebouwde omgeving is verantwoordelijk voor het beheer en de optimalisatie van een gebouw of infrastructuur. Dit kan variëren van het beheer van technische installaties tot het coördineren van facilitaire diensten.</dd>
 
 
 <dt><dfn data-lt="Sloopbedrijf">Sloopbedrijf</dfn></dt>
-<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een sloop-en oogstbedrijf in de context van de gebouwde omgeving is een gespecialiseerde onderneming die niet alleen gebouwen en structuren veilig en efficiënt sloopt, maar ook waardevolle materialen en componenten uit het sloopproces terugwint (oogst). Deze materialen worden vervolgens gerecycled of hergebruikt in nieuwe bouwprojecten, wat bijdraagt aan duurzaamheid en afvalreductie.</dd>
+<dd>Definitie uit het <a>Standaard Rollenmodel</a>: Een sloop-en oogstbedrijf in de context van de gebouwde omgeving is een gespecialiseerde onderneming die niet alleen gebouwen en structuren veilig en efficiënt sloopt, maar ook waardevolle materialen en componenten uit het sloopproces terugwint (oogst). Deze materialen worden vervolgens gerecycled of hergebruikt in nieuwe bouwprojecten, wat bijdraagt aan duurzaamheid en afvalreductie.</dd>
 
 
 
 <dt><dfn data-lt="Leverancier">Leverancier</dfn></dt>
-<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een leverancier in de context van de gebouwde omgeving is een bedrijf of persoon die bouwmaterialen, apparatuur, en andere benodigdheden levert aan bouwprojecten. Leveranciers spelen een cruciale rol in de bouwsector door ervoor te zorgen dat de benodigde materialen en producten op tijd en in goede staat beschikbaar zijn voor de uitvoering van bouwprojecten</dd>
+<dd>Definitie uit het <a>Standaard Rollenmodel</a>: Een leverancier in de context van de gebouwde omgeving is een bedrijf of persoon die bouwmaterialen, apparatuur, en andere benodigdheden levert aan bouwprojecten. Leveranciers spelen een cruciale rol in de bouwsector door ervoor te zorgen dat de benodigde materialen en producten op tijd en in goede staat beschikbaar zijn voor de uitvoering van bouwprojecten</dd>
 
 <dt><dfn data-lt="Registrerende instantie">Registrerende instantie</dfn></dt>
-<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een registrerende instantie in de context van de gebouwde omgeving is een organisatie die verantwoordelijk is voor het bijhoudenen beheren van officiële registraties van onroerend goed, eigendomsrechten, en andere relevante gegevens. Deze instanties zorgen ervoor dat informatieover eigendom, gebruik en beperkingen van vastgoed nauwkeurig en up-to-date is.</dd>
+<dd>Definitie uit het <a>Standaard Rollenmodel</a>: Een registrerende instantie in de context van de gebouwde omgeving is een organisatie die verantwoordelijk is voor het bijhoudenen beheren van officiële registraties van onroerend goed, eigendomsrechten, en andere relevante gegevens. Deze instanties zorgen ervoor dat informatieover eigendom, gebruik en beperkingen van vastgoed nauwkeurig en up-to-date is.</dd>
 
 
 
 
 <dt><dfn data-lt="Kwaliteitsborger">Kwaliteitsborger</dfn></dt>
-<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Onder de Wet Kwaliteitsborging voor het Bouwen (WKB) is een kwaliteitsborger een onafhankelijke partij die toeziet op de kwaliteit van bouwprojecten. De kwaliteitsborger controleert of de bouwtechnische aspecten van een project voldoen aan de gestelde regels en voorschriften, zoals brandveiligheid, fundering, en energiezuinigheid. Deze controle vindt plaats zowel voor als tijdens de bouw, en de kwaliteitsborger geeft uiteindelijk de finale goedkeuring voordat het project gereedmelding krijgt.</dd>
+<dd>Definitie uit het <a>Standaard Rollenmodel</a>: Onder de Wet Kwaliteitsborging voor het Bouwen (WKB) is een kwaliteitsborger een onafhankelijke partij die toeziet op de kwaliteit van bouwprojecten. De kwaliteitsborger controleert of de bouwtechnische aspecten van een project voldoen aan de gestelde regels en voorschriften, zoals brandveiligheid, fundering, en energiezuinigheid. Deze controle vindt plaats zowel voor als tijdens de bouw, en de kwaliteitsborger geeft uiteindelijk de finale goedkeuring voordat het project gereedmelding krijgt.</dd>
 
 <dt><dfn data-lt="Onderhoudsbedrijf">Onderhoudsbedrijf</dfn></dt>
-<dd>Definitie uit het <a>GEBORA Standaard Rollenmodel</a>: Een onderhoudsbedrijf in de context van de gebouwde omgeving is een onderneming die verantwoordelijk is voor het uitvoeren van onderhouds-en reparatiewerkzaamheden aan gebouwen, installaties en infrastructuur.</dd>
+<dd>Definitie uit het <a>Standaard Rollenmodel</a>: Een onderhoudsbedrijf in de context van de gebouwde omgeving is een onderneming die verantwoordelijk is voor het uitvoeren van onderhouds-en reparatiewerkzaamheden aan gebouwen, installaties en infrastructuur.</dd>
 
 
 
