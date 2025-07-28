@@ -2,9 +2,11 @@
 Use cases vanuit het DOOR programma, waarmee onderzocht wordt welke ontwikkelingen van standaarden nodig zijn om areaalgegevens beter te kunnen uitwisselen.
 
 Beschikbare use cases:
-[Nijmegen](https://docs.crow.nl/use-cases-door/nijmegen/)
+[Gemeente Nijmegen](https://docs.crow.nl/use-cases-door/nijmegen/)
 
 [Uitwisseling project - beheer](https://docs.crow.nl/use-cases-door/project-beheer)
+
+[Gemeente Utrecht](https://docs.crow.nl/use-cases-door/utrecht)
 
 
 
