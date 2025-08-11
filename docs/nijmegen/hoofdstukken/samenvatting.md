@@ -1,12 +1,10 @@
-Dit document beschrijft de use case van Nijmegen voor het uitwisselen van rioleringsinformatie tussen de beheerder en een projectteam (ingenieursbureau, aannemer) in het kader van het [=DOOR-programma=] <br>
-**Inleiding**
+Dit document beschrijft de use case van Nijmegen voor het uitwisselen van rioleringsinformatie tussen de beheerder en een projectteam (ingenieursbureau, aannemer) in het kader van het [=DOOR-programma=] <br><br>
+**Inleiding**<br>
 De DOOR-gemeenten en CROW hebben de handen ineengeslagen om voor de sector assetmanagement te komen tot een gemeenschappelijke informatiebasis, zodat assetmanagers en hun (keten)partners in de openbare ruimte en infrastructuur in 2030 over een samenhangend stelsel objectstandaarden in de leefomgeving om de data over hun beheerde assets efficiënt op orde te houden en uit te wisselen. Dit willen zij bereiken door middel van usecases, die door de DOOR-gemeenten worden aangeleverd. Nijmegen is de eerste gemeente waar een usecase wordt uitgevoerd voor de revisieverwerking. 
 <br><br>
 De usecases zijn erop gericht de informatiebehoefte, die in de praktijk leeft, scherp te krijgen om inzicht te krijgen in de benodigde aanpassingen aan informatiestandaarden zoals IMBOR, GWSW en NLCS of onderlinge verbindingen die tussen deze standaarden moeten worden gemaakt, om informatie beter te kunnen uitwisselen in een keten van partijen die werken met de verschillende standaarden. Hiervoor zijn bij gemeente Nijmegen vijf workshops gehouden. Tijdens deze workshops is vanuit de maatschappelijke opgave het stakeholderveld geïnventariseerd, het huidige en gewenste revisieproces met daarbij gewenste informatiebehoefte in beeld gebracht. Met deze workshopopbrengsten beoogde gemeente Nijmegen en CROW te bouwen aan een logische structuur en data-deel-afspraken die nodig zijn om invulling te geven aan de informatiebehoeften. De volgende stap zou het inrichten van een experimenteeromgeving zijn waar door middel van een prototype de uitwisseling van data en informatie wordt beproefd, in samenwerking met marktpartijen, zodat er werkbare standaarden ontstaan, die softwareleveranciers kunnen toepassen. Dit resultaat wordt vervolgens vastgelegd in de DOOR-referentiearchitectuur.
 
-**Uitkomsten usecase-workshops & advies**
-
-<br>
+**Uitkomsten usecase-workshops & advies**<br>
 Het doel van de use cases van het [=DOOR-programma=] is technisch van aard: het bepalen van aanpassingen aan informatiestandaarden zoals IMBOR, GWSW en NLCS of te maken onderlinge verbindingen tussen deze standaarden, om informatie beter te kunnen uitwisselen in een keten van partijen die werken met de verschillende standaarden. <br>
 <br>
 Bij de uitwerking van de use case Nijmegen is gebleken dat de organisatie nog niet toe is aan het digitaliseren van processen. Uit de usecase-workshops zijn de volgende knelpunten naar voren gekomen:
