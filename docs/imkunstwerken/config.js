@@ -98,7 +98,7 @@ var respecConfig = {
       authors: ["TNO"],
       date: "2023",
       publisher: "TNO",
-      href: "https://publications.tno.nl/publication/34638082/s87EY1/TNO-2021-R10440-vs2.pdf"
+      href: "https://www.tno.nl/nl/newsroom/2023/11/vernieuwing-infrastructuur-essentieel/"
     },
     "NEN2767": {
       title: "Conditiemeting gebouwde omgeving - Deel 1: Methodiek",

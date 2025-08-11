@@ -137,9 +137,6 @@ er moet worden gebouwd en waarom, en biedt meetbare criteria voor succes.​
 <dt><dfn data-lt="Registrerende instantie">Registrerende instantie</dfn></dt>
 <dd>Definitie uit het <a>Standaard Rollenmodel</a>: Een registrerende instantie in de context van de gebouwde omgeving is een organisatie die verantwoordelijk is voor het bijhoudenen beheren van officiële registraties van onroerend goed, eigendomsrechten, en andere relevante gegevens. Deze instanties zorgen ervoor dat informatieover eigendom, gebruik en beperkingen van vastgoed nauwkeurig en up-to-date is.</dd>
 
-
-
-
 <dt><dfn data-lt="Kwaliteitsborger">Kwaliteitsborger</dfn></dt>
 <dd>Definitie uit het <a>Standaard Rollenmodel</a>: Onder de Wet Kwaliteitsborging voor het Bouwen (WKB) is een kwaliteitsborger een onafhankelijke partij die toeziet op de kwaliteit van bouwprojecten. De kwaliteitsborger controleert of de bouwtechnische aspecten van een project voldoen aan de gestelde regels en voorschriften, zoals brandveiligheid, fundering, en energiezuinigheid. Deze controle vindt plaats zowel voor als tijdens de bouw, en de kwaliteitsborger geeft uiteindelijk de finale goedkeuring voordat het project gereedmelding krijgt.</dd>
 
@@ -187,6 +184,17 @@ De lange termijn doelstellingen van een organisatie die de richting en het succe
     Levensduurkosten zijn alle kosten die gedurende de gehele levenscyclus van een civiel kunstwerk worden gemaakt, vanaf ontwerp en aanleg tot en met beheer, onderhoud, vervanging en sloop. In de beoordeling van civiele kunstwerken vormen levensduurkosten een essentieel criterium om investeringen af te wegen tegen prestaties en risico’s. Door kosten integraal te benaderen (Total Cost of Ownership) kan een optimale balans worden gevonden tussen functionaliteit, duurzaamheid en financiële efficiëntie.
   </dd>
 
+  <dt><dfn data-lt="Technische levensduur civiele kunstwerken">Technische levensduur civiele kunstwerken</dfn></dt>
+  <dd>
+     De levensduur waarna het object in theorie vervangen zou moeten worden omdat het technisch niet meer aan de eisen voldoet.  Dit kan door gebruik te maken van kengetallen of door gebruik te maken van inschattingen van experts, al dan niet op basis van tussentijdse inspectie. In het laatste geval zal er doorgaans sprake zijn van een restlevensduur. De technische levensduur zal in de regel per type object en/of hoofdmateriaalsoort verschillen. Bron: TNO [[prognose-vernieuwingsopgave-2023]]
+  </dd>
+
+ <dt><dfn data-lt="Functionele levensduur civiele kunstwerken">Functionele levensduur civiele kunstwerken</dfn></dt>
+  <dd>
+     De levensduur waarna het object vervangen zou moeten worden omdat het qua dimensionering niet meer voldoet aan de gewenste verkeershoeveelheden en belastingen die daarbij optreden.
+  </dd>
+
+
 
 <dt><dfn data-lt="Assetregistratie civiele kunstwerken">Assetregistratie civiele kunstwerken</dfn></dt>
 <dd>
@@ -199,7 +207,7 @@ De lange termijn doelstellingen van een organisatie die de richting en het succe
   <br><br>
 </dd>
 
-<dt><dfn data-lt="BIM-model">BIM-model</dfn></dt>
+<dt><dfn data-lt="BIM-model|BIM-modellen">BIM-model</dfn></dt>
 <dd>
   Een digitaal informatiemodel dat de fysieke en functionele kenmerken van een bouwwerk beschrijft. Voor civiele kunstwerken bevat het gegevens zoals geometrie, materialen, afmetingen en samenhang tussen onderdelen.
 </dd>
@@ -214,10 +222,18 @@ De lange termijn doelstellingen van een organisatie die de richting en het succe
   Informatie over de toegestane belasting op constructies, uitgedrukt in gewichtsklassen of verkeerscategorieën. Wordt gebruikt voor gebruiksbeperkingen en toetsing van functionele geschiktheid.
 </dd>
 
-<dt><dfn data-lt="Constructieve berekening">Constructieve berekening</dfn></dt>
+<dt><dfn data-lt="Constructieberekening|Constructieberekeningen">Constructieberekening</dfn></dt>
 <dd>
   Rekenkundige onderbouwing van de draagkracht en stabiliteit van een constructie, op basis van ontwerp- en materiaaleigenschappen. Is essentieel voor veiligheidsbeoordeling en besluitvorming over maatregelen.
 </dd>
+
+<dt><dfn data-lt="Materialenpaspoort">Materialenpaspoort</dfn></dt>
+<dd>
+Digitaal overzicht van alle toegepaste materialen, producten en componenten in een kunstwerk, inclusief eigenschappen, herkomst, milieuprestaties en hergebruiksmogelijkheden, bedoeld ter ondersteuning van beheer, onderhoud en circulaire demontage gedurende de levenscyclus.
+</dd>
+
+
+
 
 <dt><dfn data-lt="Verkeersdata">Verkeersdata</dfn></dt>
 <dd>
@@ -243,10 +259,7 @@ De lange termijn doelstellingen van een organisatie die de richting en het succe
 
 
 <!-- Standaarden technisch geplande ontwikkeling -->
-<dt><dfn data-lt="Constructieve gegevens">Constructieve gegevens</dfn></dt>
-<dd>
-Technische informatie over de dragende structuur van een bouwwerk of object, zoals funderingen, belastingen en krachtsverdelingen, die noodzakelijk zijn voor het ontwerp.
-</dd>
+
 
 <dt><dfn data-lt="Inspectierapporten">Inspectierapporten</dfn></dt>
 <dd>
@@ -326,7 +339,7 @@ De mate waarin een object of voorziening voldoet aan de gestelde functionele en 
 De actuele fysieke toestand of kwaliteit van een object, vastgesteld aan de hand van visuele inspectie of metingen, met het oog op toekomstige onderhoudsmaatregelen.
 </dd>
 
-<dt><dfn data-lt="Prestaties">Prestaties</dfn></dt>
+<dt><dfn data-lt="Prestatie|Prestaties">Prestaties</dfn></dt>
 <dd>
 Waarden die het huidige functioneren van een object beschrijven, zoals beschikbaarheid, comfort of betrouwbaarheid, als input voor onderhoudsplanning.
 </dd>
@@ -405,6 +418,17 @@ Verslagen waarin het gebruik en functioneren van objecten na onderhoud worden ge
 <dd>
 Verwachte periode waarin een object nog functioneel kan blijven voordat ontmanteling noodzakelijk wordt.
 </dd>
+
+<dt><dfn data-lt="Vervangingswaarde">Vervangingswaarde</dfn></dt>
+<dd>
+De kosten die gepaard gaan met het vervangen van een object. De vervangingswaarde wordt berekend op basis van de fysieke kenmerken van het object, bijvoorbeeld het aantal meters, vierkante meters of kubieke meters, en <a>kostenkengetallen</a> voor het object. 
+</dd>
+
+<dt><dfn data-lt="kostenkengetal|kostenkengetallen">kostenkengetal</dfn></dt>
+<dd>
+De gemiddelde kosten voor de vervanging van een constuctiedeel van een civiel kunstwerk. </dd>
+
+ 
 
 <dt><dfn data-lt="Kostenramingen">Kostenramingen</dfn></dt>
 <dd>
@@ -519,8 +543,6 @@ De vijfde processtap binnen het <a>iAMPro model</a>iAMPro model waarin de presta
 <dt><dfn data-lt="Evalueren en Bijsturen">Evalueren en Bijsturenn</dfn></dt>
 <dd>
 De zesde processtap binnen het <a>iAMPro model</a>iAMPro model waarin het assetmanagementproces en het functioneren van het assetsysteem worden geëvalueerd. Dit gebeurt op basis van de aanbevelingsrapportage uit de processtap ‘Monitoren en Analyseren’, waarin ook de stakeholderstevredenheid is meegenomen. </dd>
-
-
 
 
   <dt><dfn data-lt="Meerjarenonderhoudsplan|Meerjarenonderhoudsplanning">Meerjarenonderhoudsplan</dfn></dt>
