@@ -8,6 +8,8 @@ Beschikbare use cases:
 
 [Gemeente Utrecht](https://docs.crow.nl/use-cases-door/utrecht)
 
+[Verkenning informatiemodel civiele kunstwerken: Informatie voor de vervangings- en renovatieopgave](https://docs.crow.nl/use-cases-door/imkunstwerken)
+
 
 
 
