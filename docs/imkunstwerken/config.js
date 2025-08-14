@@ -100,6 +100,13 @@ var respecConfig = {
       publisher: "TNO",
       href: "https://www.tno.nl/nl/newsroom/2023/11/vernieuwing-infrastructuur-essentieel/"
     },
+      "CROW-CUR-117": {
+      title: "CROW-CUR Aanbeveling 117:2020 - Inspectie en advies civiele kunstwerken",
+      authors: ["CROW"],
+      date: "2023",
+      publisher: "CROW",
+      href: "https://www.tno.nl/nl/newsroom/2023/11/vernieuwing-infrastructuur-essentieel/"
+    },
     "NEN2767": {
       title: "Conditiemeting gebouwde omgeving - Deel 1: Methodiek",
       authors: ["NEN"],

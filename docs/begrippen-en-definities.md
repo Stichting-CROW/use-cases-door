@@ -105,7 +105,7 @@ er moet worden gebouwd en waarom, en biedt meetbare criteria voor succes.​
   </dd>
 
 
-<dt><dfn data-lt="Asseteigenaar">Asseteigenaar</dfn></dt>
+<dt><dfn data-lt="Asseteigenaar|Asseteigenaren">Asseteigenaar</dfn></dt>
 <dd>Definitie uit het <a>Standaard Rollenmodel</a>: Een asseteigenaar in de gebouwde omgeving is de persoon of entiteit die verantwoordelijk is voor het strategisch beheer van assets, zoals gebouwen, infrastructuur, en andere fysieke objecten. De asseteigenaar stelt de doelen en kaders vast voor het beheer en onderhoud van deze assets. De rol van de asseteigenaar is cruciaal omdat deze op strategisch niveau bepaalt wat er nodig is om de assets in optimale staat te houden. Ditomvat het maken van beslissingen over nieuwbouw, vervanging, en onderhoud, evenals het vaststellen van de functionele eisen waaraan de assets moetenvoldoen.</dd>
 
 <dt><dfn data-lt="Assetmanager">Assetmanager</dfn></dt>
@@ -184,12 +184,12 @@ De lange termijn doelstellingen van een organisatie die de richting en het succe
     Levensduurkosten zijn alle kosten die gedurende de gehele levenscyclus van een civiel kunstwerk worden gemaakt, vanaf ontwerp en aanleg tot en met beheer, onderhoud, vervanging en sloop. In de beoordeling van civiele kunstwerken vormen levensduurkosten een essentieel criterium om investeringen af te wegen tegen prestaties en risico’s. Door kosten integraal te benaderen (Total Cost of Ownership) kan een optimale balans worden gevonden tussen functionaliteit, duurzaamheid en financiële efficiëntie.
   </dd>
 
-  <dt><dfn data-lt="Technische levensduur civiele kunstwerken">Technische levensduur civiele kunstwerken</dfn></dt>
+  <dt><dfn data-lt="Technische levensduur">Technische levensduur</dfn></dt>
   <dd>
      De levensduur waarna het object in theorie vervangen zou moeten worden omdat het technisch niet meer aan de eisen voldoet.  Dit kan door gebruik te maken van kengetallen of door gebruik te maken van inschattingen van experts, al dan niet op basis van tussentijdse inspectie. In het laatste geval zal er doorgaans sprake zijn van een restlevensduur. De technische levensduur zal in de regel per type object en/of hoofdmateriaalsoort verschillen. Bron: TNO [[prognose-vernieuwingsopgave-2023]]
   </dd>
 
- <dt><dfn data-lt="Functionele levensduur civiele kunstwerken">Functionele levensduur civiele kunstwerken</dfn></dt>
+ <dt><dfn data-lt="Functionele levensduur">Functionele levensduur</dfn></dt>
   <dd>
      De levensduur waarna het object vervangen zou moeten worden omdat het qua dimensionering niet meer voldoet aan de gewenste verkeershoeveelheden en belastingen die daarbij optreden.
   </dd>
