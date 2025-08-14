@@ -113,6 +113,22 @@ var respecConfig = {
       date: "2019",
       publisher: "NEN",
       href: "https://www.nen.nl/bouw/beheer-en-onderhoud/conditiemeting"
-    }
-  }
+    },
+    "kamerbrieven-vervanging-renovatie": {
+      title: "Rapportages Staat van de infrastructuur van Rijkswaterstaat en ProRail en Prognoserapport Vervanging en Renovatie Rijkswaterstaat",
+      authors: ["IenW"],
+      date: "2022",
+      publisher: "IenW",
+      href: "https://www.tweedekamer.nl/kamerstukken/brieven_regering/detail?id=2022Z23536&did=2022D50716"
+    },
+    "rws-kamerbrief-meerjarenplan-instandhouding": {
+      title: "Meerjarenplan instandhouding Rijkswaterstaat- netwerken 2025-2030",
+      authors: ["IenW"],
+      date: "2022",
+      publisher: "IenW",
+      href: "https://www.tweedekamer.nl/kamerstukken/brieven_regering/detail?id=2025Z13825&did=2025D31342",
+    },
+  },
 };
+
+
