@@ -20,11 +20,14 @@ Het Rijk /  Leger en hulpdiensten / burgers
   * Prognoses zijn onderling niet vergelijkbaar 
   * Data voor beoordeling veiligheid, mobiliteit en bereikbaarheid niet landelijk beschikbaar
 
-Voor de stakeholders geldt een grote mate van versnippering van digitale standaaren en initiatieven. De in dit kader belangrijkste initiatieven waar digitale standaarden ontwikkeld worden zijn:
+Voor de stakeholders geldt een grote mate van versnippering van digitale standaaren en initiatieven. De in dit kader belangrijkste initiatieven waar digitale standaarden of toepassingen daarvan ontwikkeld worden zijn:
 
 * DigiGO beleidsmaatregel 3
 * Informatiemodel NEN2767
 * NEN2767 - IMBOR
 * BIM Basis Infra en NLCS
+* AMS Datagedreven beheer
+
+
 
 
