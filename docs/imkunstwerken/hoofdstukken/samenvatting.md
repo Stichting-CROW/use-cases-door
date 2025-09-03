@@ -28,6 +28,6 @@ Voor de stakeholders geldt een grote mate van versnippering van digitale standaa
 * BIM Basis Infra en NLCS
 * AMS Datagedreven beheer
 
-
-
+<b>Beheervoorwaarden</b>
+Voor beheer is het van belang om diverse stakeholders nauw te betrekken, zoals overheden en marktpartijen, om draagvlak te creëren en gegevensuitwisseling in de hele keten werkbaar te maken. Door middel van lerend ontwikkelen in workshops en experimenteeromgevingen worden gezamenlijke standaarden opgebouwd, gebaseerd op bestaande systemen en praktijkervaring. Het uiteindelijke doel is een uniforme, toegankelijke en schaalbare gegevensuitwisseling die ook voor kleinere partijen haalbaar is, en zo bijdraagt aan een duurzaam informatiesysteem binnen de gebouwde omgeving.
 
