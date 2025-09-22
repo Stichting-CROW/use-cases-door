@@ -55,6 +55,13 @@ er moet worden gebouwd en waarom, en biedt meetbare criteria voor succes.​
     Zie ook <a href="https://www.riool.net/applicaties/gegevenswoordenboek-stedelijk-water-gwsw" target="_blank">deze website</a> en <a href="https://data.gwsw.nl/" target="_blank">deze viewer</a>.
   </dd>
 
+  <dt><dfn data-lt="Informatieleveringsspecificatie">Informatieleveringsspecificatie</dfn></dt>
+  <dd>
+  Een <abbr title="informatieleveringsspecificatie">ILS</abbr> is een contractdocument voor projecten bedoeld om om de informatiecyclus voor assetmanagement goed te laten verlopen. Het bundelt de informatiebehoefte van de asset- en informatiemanagers en de vereisten aan welke deze informatie moet voldoen.  Een ILS bestaat typisch uit een eisenset met bijlagen die betrekking hebben op topografie, areaalgegevens, tekeningen en documenten en waarin wordt beschreven: Welke data geleverd moeten worden; Wanneer deze data geleverd moeten worden; In welke vorm de data geleverd moeten worden; Aan welke standaarden de informatie moet voldoen.  
+  </dd>
+
+  
+
 
   <dt><dfn data-lt="NLCS|Nederlandse CAD standaard">NLCS</dfn></dt>
   <dd>
@@ -229,7 +236,7 @@ De lange termijn doelstellingen van een organisatie die de richting en het succe
 
 <dt><dfn data-lt="Materialenpaspoort">Materialenpaspoort</dfn></dt>
 <dd>
-Digitaal overzicht van alle toegepaste materialen, producten en componenten in een kunstwerk, inclusief eigenschappen, herkomst, milieuprestaties en hergebruiksmogelijkheden, bedoeld ter ondersteuning van beheer, onderhoud en circulaire demontage gedurende de levenscyclus.
+is een dataset waarin alle materialen en grondstoffen van een product worden vastgelegd. Naast de productcompositie kan het ook informatie bevatten over bijvoorbeeld de herkomst van materialen, milieueffecten, losmaakbaarheid en potentieel hergebruik. Een materialenpaspoort bevordert duurzaamheid en de circulaire economie door transparantie en door het faciliteren van hergebruik van materialen.
 </dd>
 
 

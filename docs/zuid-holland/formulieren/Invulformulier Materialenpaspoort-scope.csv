@@ -1,0 +1,32 @@
+﻿Assetgroep;Beheerobject;Element;Bouwdelen;Materialen;Opmerking
+Vaarwegen;Kanaal/rivier;Kerende constructie;Damwand;Staal;
+Vaarwegen;Kanaal/rivier;Kerende constructie;Sloof;Beton, staal;
+Vaarwegen;Kanaal/rivier;Kerende constructie;Anker;Staal;
+VKW;Coupure;Kerende constructie;Damwand;Beton, staal;
+VKW;Coupure;Kerende constructie;Sloof;Beton, staal;
+VKW;Coupure;Kerende constructie;Anker;Beton, staal;
+VKW;Duiker;Hoofddraagconstructie;-;Beton, staal;Koker
+VKW;Duiker;Leuningconstructie;-;Beton, staal;
+VKW;Duiker;Fundering;-;Beton, staal;
+VKW;Grondkering;Kerende constructie;Anker;Beton, staal;
+VKW;Grondkering;Kerende constructie;Damwand;Beton, staal;
+VKW;Grondkering;Kerende constructie;Sloof;Beton, staal;
+VKW;Onderdoorgang;Fundering;-;Beton, staal;
+VKW;Onderdoorgang;Hoofddraagconstructie;-;Beton, staal;Tunnelbak en gesloten gedeelte
+VKW;Overkluizing;Fundering;-;Beton, staal;
+VKW;Overkluizing;Hoofddraagconstructie;-;Beton, staal;
+VKW;Vaste brug of viaduct;Verharding;-;Asfalt;
+VKW;Vaste brug of viaduct;Hoofddraagconstructie;Rijdek;Beton, staal;
+VKW;Vaste brug of viaduct;Leuningconstructie;-;Staal;
+VKW;Vaste brug of viaduct;Steunpunt;-;Beton, staal;
+VKW;Vaste brug of viaduct;Kerende constructie;Damwand;Staal, beton;
+VKW;Vaste brug of viaduct;Kerende constructie;Sloof;Staal;
+VKW;Vaste brug of viaduct;Kerende constructie;Anker;Staal;
+VKW;Vaste brug of viaduct;Fundering;-;Beton, staal;
+Wegen;Weg;Verharding;Deklaag;Asfalt;
+Wegen;Weg;Verharding;Tussenlaag;Asfalt;
+Wegen;Weg;Verharding;Onderlaag;Asfalt;
+Wegen;Weg;Verharding;Funderingslaag;Asfalt;Gebonden en ongebonden
+Wegen;Weg;Verharding;Elementenverharding;Beton;
+Wegen;-;Bebording en bewegwijzering (statisch);Paal;Staal;
+Wegen;-;Bebording en bewegwijzering (statisch);Verkeersbord;Staal;

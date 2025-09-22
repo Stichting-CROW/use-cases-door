@@ -4,9 +4,12 @@ Use cases vanuit het DOOR programma, waarmee onderzocht wordt welke ontwikkeling
 Beschikbare use cases:
 [Gemeente Nijmegen](https://docs.crow.nl/use-cases-door/nijmegen/)
 
-[Uitwisseling project - beheer](https://docs.crow.nl/use-cases-door/project-beheer)
 
 [Gemeente Utrecht](https://docs.crow.nl/use-cases-door/utrecht)
+
+[Provincie Zuid-Holland](https://docs.crow.nl/use-cases-door/zuid-holland/)
+
+[Uitwisseling project - beheer](https://docs.crow.nl/use-cases-door/project-beheer)
 
 [Verkenning informatiemodel civiele kunstwerken: Informatie voor de vervangings- en renovatieopgave](https://docs.crow.nl/use-cases-door/imkunstwerken)
 

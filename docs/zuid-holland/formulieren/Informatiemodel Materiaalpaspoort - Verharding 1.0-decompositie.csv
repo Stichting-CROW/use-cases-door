@@ -1,0 +1,7 @@
+﻿ID Objecttype;Objecttype;ID Onderliggend Objecttype;Onderliggend Objecttype
+8a3c6f8c-dfd0-ef11-b6c3-001dd8d70296;Additief;;
+8448137f-45a7-ef11-b6c0-001dd8d70296;Asfaltmengsel;756d40e9-dfd0-ef11-b6c3-001dd8d70296;Bitumen
+8448137f-45a7-ef11-b6c0-001dd8d70296;Asfaltmengsel;8a3c6f8c-dfd0-ef11-b6c3-001dd8d70296;Additief
+756d40e9-dfd0-ef11-b6c3-001dd8d70296;Bitumen;;
+70811379-45a7-ef11-b6c0-001dd8d70296;Constructielaag;8448137f-45a7-ef11-b6c0-001dd8d70296;Asfaltmengsel
+2fae1673-45a7-ef11-b6c0-001dd8d70296;Verharding;70811379-45a7-ef11-b6c0-001dd8d70296;Constructielaag
