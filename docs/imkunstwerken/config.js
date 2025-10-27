@@ -101,6 +101,13 @@ var respecConfig = {
       publisher: "TNO",
       href: "https://www.tno.nl/nl/newsroom/2023/11/vernieuwing-infrastructuur-essentieel/"
     },
+    "Defensie-Strategie-voor-Industrie-en-Innovatie-2025-2029": {
+      title: "Defensie Strategie voor Industrie en Innovatie 2025-2029",
+      authors: ["Ministerie van Defensie"],
+      date: "2025-04-04",
+      publisher: "Ministerie van Defensie",
+      href: "https://www.defensie.nl/downloads/beleidsnota-s/2025/04/04/defensie-strategie-voor-industrie-en-innovatie-2025-2029"
+    },
       "CROW-CUR-117": {
       title: "CROW-CUR Aanbeveling 117:2020 - Inspectie en advies civiele kunstwerken",
       authors: ["CROW"],
