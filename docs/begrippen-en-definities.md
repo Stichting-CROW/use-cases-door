@@ -193,7 +193,7 @@ De lange termijn doelstellingen van een organisatie die de richting en het succe
 
   <dt><dfn data-lt="Technische levensduur">Technische levensduur</dfn></dt>
   <dd>
-     De levensduur waarna het object in theorie vervangen zou moeten worden omdat het technisch niet meer aan de eisen voldoet.  Dit kan door gebruik te maken van kengetallen of door gebruik te maken van inschattingen van experts, al dan niet op basis van tussentijdse inspectie. In het laatste geval zal er doorgaans sprake zijn van een restlevensduur. De technische levensduur zal in de regel per type object en/of hoofdmateriaalsoort verschillen. Bron: TNO [[prognose-vernieuwingsopgave-2023]]
+     De levensduur waarna het object in theorie vervangen zou moeten worden omdat het technisch niet meer aan de eisen voldoet.  Dit kan door gebruik te maken van kengetallen of door gebruik te maken van inschattingen van experts, al dan niet op basis van tussentijdse inspectie. In het laatste geval zal er doorgaans sprake zijn van een restlevensduur. De technische levensduur zal in de regel per type object en/of hoofdmateriaalsoort verschillen. Bron: TNO, prognose-vernieuwingsopgave-2023
   </dd>
 
  <dt><dfn data-lt="Functionele levensduur">Functionele levensduur</dfn></dt>
