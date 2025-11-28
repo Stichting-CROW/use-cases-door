@@ -1,0 +1,1 @@
+Dit document beschrijft de use case van Zuid-Holland op het gebied van informatiemodellering in een eigen objecttypenbibliotheek op basis van IMBOR. Zuid-Holland deelt hierbij vragen die ze hebben ten behoeve van het [=DOOR=]-programma.
