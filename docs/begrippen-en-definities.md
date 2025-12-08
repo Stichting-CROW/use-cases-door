@@ -17,6 +17,18 @@ De CORE gemeenten, Stichting Rioned en CROW hebben de handen ineen geslagen om v
 <abbr title="Dataharmonisatie Objecten in de Openbare Ruimte">DOOR</abbr> richt zich op de ontwikkeling van de ontbrekende standaards en uitwisselingsprotocollen, zodat een samenhangend stelsel ontstaat.  Zie ook <a href="https://www.crow.nl/Onderwerpen/Assetmanagement-en-beheer-openbare-ruimte/Data-en-informatie/programmadoor/" target="_blank">deze website</a>
 </dd>
 
+<dt><dfn data-lt="PIM">PIM</dfn></dt>
+<dd>
+ 
+<abbr title="Pavement Information System">PIM</abbr> is de gezamenlijke applicatie van wegenbouwers waarmee de inkoop van bouwstoffen, de mengselverhouding van het asfalt en de aanleg van wegen kan worden aangestuurd. Zie ook <a href="https://www.pim-infra.nl/" target="_blank">deze website</a>
+</dd>
+
+<dt><dfn data-lt="NPDW">NPDW</dfn></dt>
+<dd>
+ 
+<abbr title="Nationaal Platform Duurzame Wegverharding">NPDW</abbr> brengt opdrachtgevers, opdrachtnemers en kennisinstellingen samen om kennis te bundelen en samen de beste aanpak te kiezen voor verduurzaming van wegen. Zie ook <a href="https://www.npdwegverharding.nl/" target="_blank">deze website</a>
+</dd>
+
 <dt><dfn data-lt="User story|User Stories">User story</dfn></dt>
 <dd>
 Een user story is een bekend concept in agile softwareontwikkeling en helpt bij het beschrijven van softwarefunctionaliteiten vanuit het oogpunt van de eindgebruiker.​ De user story wordt geformuleerd vanuit het oogpunt van een gebruiker, beschrijft wat deze wil bereiken en met welk doel. Deze structuur helpt het ontwikkelteam en andere belanghebbenden te begrijpen wat ​
