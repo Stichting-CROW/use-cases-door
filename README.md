@@ -7,8 +7,8 @@ Beschikbare use cases:
 
 [Gemeente Utrecht, revisie rioleringen](https://docs.crow.nl/use-cases-door/utrecht)
 
-[Provincie Zuid-Holland, materialenpaspoort asfalt](https://docs.crow.nl/use-cases-door/zuid-holland/)
-[Use case Materialenpaspoort asfalt - Reviewversie 9 oktober 2025](https://docs.crow.nl/use-cases-door/IR-use-cases-door_zuid-holland-20251209.html)
+[Provincie Zuid-Holland, materialenpaspoort asfalt](https://docs.crow.nl/use-cases-door/zuid-holland/)<br>
+[Use case Materialenpaspoort asfalt - Reviewversie 9 oktober 2025](https://docs.crow.nl/use-cases-door/consultationversions/IR-use-cases-door_zuid-holland-20251209.html)
 
 [Uitwisseling project - beheer](https://docs.crow.nl/use-cases-door/project-beheer)
 
