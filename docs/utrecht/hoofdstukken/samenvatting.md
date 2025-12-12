@@ -9,6 +9,12 @@ De usecases zijn erop gericht de informatiebehoefte, die in de praktijk leeft, s
 
 
 **Advies aan Gemeente Utrecht**<br>
+In onderstaande afbeelding staat de geadviseerde dataflow voor projecten in Utrecht, waarbij de centrale assetinformatie op orde wordt gehouden, maar ook bestaande werkprocessen met NLCS-tekeningen uitgevoerd kunnen worden. Beide zijn nodig tijdens projecten.
+
+<figure>
+<img src="../images/advies-utrecht.jpg" alt="visuele weergave van de dataflows van Utrecht" width="100%"> 
+<figcaption>De geadviseerde dataflow voor gemeente Utrecht</figcaption>
+</figure>
 
 
 **Advies aan DOOR**
