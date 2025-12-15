@@ -4,11 +4,68 @@ De DOOR-gemeenten en CROW hebben de handen ineengeslagen om voor de sector asset
 <br><br>
 De usecases zijn erop gericht de informatiebehoefte, die in de praktijk leeft, scherp te krijgen om inzicht te krijgen in de benodigde aanpassingen aan informatiestandaarden zoals IMBOR, GWSW en NLCS of onderlinge verbindingen die tussen deze standaarden moeten worden gemaakt, om informatie beter te kunnen uitwisselen in een keten van partijen die werken met de verschillende standaarden. Hiervoor zijn bij gemeente Utrecht vijf workshops gehouden. Tijdens deze workshops is vanuit de maatschappelijke opgave het stakeholderveld geïnventariseerd, het huidige en gewenste revisieproces met daarbij gewenste informatiebehoefte in beeld gebracht. Met deze workshopopbrengsten is een  experimenteeromgeving ingericht waar door middel van een prototype de uitwisseling van data en informatie is beproefd.
 
-**Uitkomsten usecase-workshops & advies**
+**Uitkomsten usecase-workshops, experimenten & advies**
+
+* Advies Aanleveren beheerinformatie voor ontwerp
+
+<figure>
+<img src="../images/datadienst-beheerinformatie-nlcs.jpg" alt="visuele weergave van de datadienst tussen assetinformatiesysteem met minimale dataset realisatie en ontwerp, uitwisselen dataset van projectgebed en de nlcs-applicatie die deze transformeert naar een NLCS-tekening" width="100%"> 
+<figcaption>Automatisering levering beheerinformatie voor ontwerp</figcaption>
+</figure>
+
+> <b>Conclusie 1</b>. Het is wenselijk om te kunnen controleren of er voldoende informatie beschikbaar is over de assets om te kunnen ontwerpen en realiseren. IMBOR beschrijft welke informatie kán worden vastgelegd, maar stelt bijna niets verplicht. Er is daarom een aanvulling gewenst: het vaststellen van de minimale beheerinformatie die geleverd moet worden aan een project.
+
+<p><b>Aanbeveling Utrecht: </b> Controleer voor elk project of alle gewenste informatie over de assets beschikbaar is. Dit kan worden geautomatiseerd omdat de data beschikaar is via het centrale assetinformatiesysteem. Werk hiervoor samen met de afdeling stadingenieurs, die de datasets en tekeningen als eerste verwerken in een bestekstekening. Zij weten ook welke informatie nodig is om een nieuwe situatie te kunnen ontwerpen of onderhoudswerk te kunnen uitwerken tot een bestekstekening.
+
+
+<p><b>Aanbeveling DOOR-programma:</b> Stel landelijk vast welke informatie over de bestaande situatie nodig is voor het maken van een ontwerp. Maak hiervan een <b>"Minimale dataset assetinformatie voor ontwerp en realisatie"</b> uitgedrukt in IMBOR/GWSW. </p>
+
+
+> <b>Conclusie 2</b>. Het is wenselijk om een selectie van de beheerinformatie te kunnen leveren vanuit een centraal assetinformatiesysteem op basis van de <b>grenzen van het projectgebied</b>.
+
+> <b>Conclusie 3</b>. Het is wenselijk om ook een NLCS-tekening van de bestaande situatie te leveren aan het project, omdat daar detailinformatie op staat en functionaliteit in zit die niet in de assetinformatie met 3D-georepresentatie zit, zoals maatvoeringspijlen of specifieke meetpunten met maten die niet in het assetinformatiesysteem staan. Voor rioleringen zijn dat bijvoorbeeld de huisaansluitingen, waarbij de lengtemetrering langs de hoofdbuis op revisietekeningen wordt gezet.
+
+<p><b>Aanbevelingen Utrecht voor korte termijn</b> <ol><li>Automatiseer de levering van de bestaande situatie vanuit het centrale assetinformatiesysteem, zodat projecten ondersteund worden bij het opstarten. Dit zou kunnen met een export vanuit het assetinformatiesysteem naar een open GIS-bestand die gebruik maakt van het alignment tussen NLCS en IMBOR, zoals in dit experiment is voorgedaan. De gebruiker moet een projectgebied kunnen selecteren en downloaden. Onderzoek welk geo-uitwisselformaat ingelezen kan worden door je huidige NLCS-applicatie om het om te zetten naar een NLCS-tekening.
+<li> Lever de objectinformatie van de bestaande objecten in een eenvoudig formaat mee bij de NLCS-tekening van de bestaande situatie, bijvoorbeeld als tabel of in het open geo-uitwisselformaat waarin de objecten zijn gedownload.</li>
+<li>Zorg dat revisietekeningen uit voorgaande projecten beschikbaar zijn voor de ontwerpers in een nieuw project. Controleer bij het begin van het project of de tekening overeenkomen met de assetinformatie.
+<li>Stel per assettype vast of ook NLCS-tekeningen, BIM-modellen of andere documenten nodig zijn voor het ontwerp. Voor rioleringen, verkeersregelinstallaties en openbare verlichting zijn binnen Utrecht in elk geval CAD-tekeningen nodig. Groen, wegen en civiele kunstwerken lijken geleverd te kunnen worden vanuit het assetinformatiesysteem, dit zal onderzocht moeten worden samen met stadsingenieurs. Voor civiele kunstwerken zijn altijd contstructieberekeningen en detailtekeningen nodig, en voor sommige complexere constructies zijn 3D BIM-modellen nodig. 
+</li></ol> </p>
+
+<p><b>Aanbeveling DOOR-programma voor langere termijn:<br><br></b> Werk samen met de leveranciers van assetbeheersystemen / centrale assetinformatiesystemen en leveranciers van NLCS-software om te zorgen dat zij de startgegevens van de bestaande situatie kunnen aanleveren en ontvangen met een een generieke <b>"Datadienst start project"</b> volgens het Digitaal Stelsel Gebouwde Omgeving. Zo wordt voorkomen dat elke gemeente maatwerk transformaties moet maken van assetinformatie naar NLCS. Er kan zo in elk geval een ruwe NLCS-tekening van de bestaande situatie worden geleverd. Enkele onderdelen, zoals putnummers en BOB-hoogtes van rioleringen komen dan mogelijk niet op een goed leesbare plek in een automatisch gegenereerde tekening, die nabewerkt zal moeten worden als teksten over objecten heen zijn geplaatst.
+
+
+* Advies Detecteren mutaties en bijwerken assetinformatie
+
+<figure>
+<img src="../images/datadienst-revisie.jpg" alt="visuele weergave van de datadienst tussen assetinformatiesysteem met minimale dataset revisie, uitwisselen dataset nieuwe situatie projectgebed en de nlcs-applicatie die een NLCS-revisietekening kan leveren met een revisiedataset erbij" width="100%"> 
+<figcaption>Automatisering levering revisies aan beheerder</figcaption>
+</figure>
+
+
+> <b>Conclusie 4</b>. Bij een NLCS-tekening kan op dit moment geen assetinformatie worden uitgewisseld die niet in de laagnaam zit, omdat door opdrachtnemers met verschillende NLCS-pakketten gewerkt moet kunnen worden die hiervoor onderling geen open uitwisselformaat kennen. Er kan daarmee ook geen koppeling worden gemaakt van de NLCS-tekening naar de objectidentificatie van bestaande objecten in het assetinformatiesysteem.
+
+> <b>Conclusie 5</b>. De NLCS-revisietekening kan niet 100% geautomatiseerd worden omgezet naar objectinformatie. Hierbij is te veel interpretatie van de tekening nodig, en selectie en deselectie van relevante objecten. Het is wenselijk om te zorgen dat bij een object in de NLCS-revisietekening ook een revisiedataset wordt opgesteld. 
+
+> <b>Conclusie 6</b> Naast de NLCS-revisietekening is extra informatie nodig, namelijk de meting in 3D, de koppeling naar objectidentificatie van bestaande assets en kenmerken van het object die de beheerder nodig heeft. 
+
+<b>Aanbeveling Utrecht voor korte termijn:</b>. <ol>
+<li>Vraag de aannemer, naast de revisietekening, een datalevering van de objecten. Ga hierbij niet veel automatiseren maar beperk de hoeveelheid informatie die gevraagd wordt zodat het handmatig invullen van de objectinformatie haalbaar is.
+<li>De opleveringsmeting van de landmeter van de aannemer is de basis voor het opleveren van de revisiedataset. Daaruit volgt de geometrie, met ook z-waardes die niet in een revisietekening staan. Onderzoek of de landmeter of de CAD-specialist van de aannemer ook de overige assetinformatie kan aanleveren, bijvoorbeeld met hulp van de uitvoeringstekening, of dat dit zal moeten gebeuren in een nabewerking van de meting door Stadsingenieurs.
+<li>Onderzoek welke eisen gesteld moeten worden aan de opleveringsmeting, zodat deze ook gebruikt kan worden voor het [=BGT=] proces, zodat er geen extra landmeter vanuit de gemeente naar buiten moet voor een aanvullende meting. Onderzoek of de landmeters die de aannemer inschakelt dit kunnen, of er een extra opleiding of certificering nodig is en zorg voor een goede controle op de meting.  
+<li>Verwijs vanuit de revisiedataset naar de objectidentificatie van het beheerobject in het assetinformatiesysteem.
+<li>Verwijs vanuit de revisiedataset naar het object-ID in de NLCS-revisietekening.
+<li>Zorg ervoor dat bij de bestekstekening in NLCS direct een voorbeeld-revisiedataset beschikbaar is voor de aannemer; als gebouwd wordt volgens het bestek hoeft alleen de gerealiseerde locatie worden te worden ingemeten door de aannemer, en kan de rest van de data onveranderd worden overgenomen in de revisiedataset van de aannemer. 
+<li>Onderzoek of de Objecttypenbibliotheek moet worden meegeleverd in het contract, of alleen alleen de velden die je wenselijk vindt om ingevuld te worden door aannemer. Onderzoek ook welk uitwisselformaat hier het beste voor werkt. </ol>
+
+
+<p><b>Aanbeveling DOOR-programma voor de langere termijn:</b><br><br> Zorg ervoor dat de technische invulling van de levering van een revisiedataset geen maatwerk wordt per gemeente, maar standaardiseer een generieke <b>"Datadienst revisie"</B> samen met de leveranciers van nlcs-applicaties die de dataset aanbieden, en de leveranciers van de beheersystemen die de dataset afnemen. De inhoud van de dataset kan variëren, maar hoe dit wordt uitgewisseld ligt dan vast. Maak afspraken met de NLCS-leveranciers over een <b>NLCS-afspraak objectinformatie bij NLCS-tekening</b> waarmee de objectinformatie samen met de tekening kan worden uitgewisseld. De dataset moet kunnen refereren aan de CAD-objecten in de NLCS-tekening. </p>
 
 
 
-**Advies aan Gemeente Utrecht**<br>
+
+* Dataflow
+
+
 In onderstaande afbeelding staat de geadviseerde dataflow voor projecten in Utrecht, waarbij de centrale assetinformatie op orde wordt gehouden, maar ook bestaande werkprocessen met NLCS-tekeningen uitgevoerd kunnen worden. Beide zijn nodig tijdens projecten.
 
 <figure>
@@ -16,5 +73,3 @@ In onderstaande afbeelding staat de geadviseerde dataflow voor projecten in Utre
 <figcaption>De geadviseerde dataflow voor gemeente Utrecht</figcaption>
 </figure>
 
-
-**Advies aan DOOR**
