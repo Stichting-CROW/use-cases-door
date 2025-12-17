@@ -76,7 +76,7 @@ function indexOfRequirements(config) {
 }
 
 var respecConfig = {
-  specStatus: "CR",
+  specStatus: "DEF",
   pubDomain: "use-cases-door",
   shortName: "project-beheer",
   license: "CC-BY",
@@ -91,7 +91,7 @@ var respecConfig = {
   github: "https://github.com/Stichting-CROW/use-cases-door",
   postProcess: [indexOfRequirements],
   hypothesisComments: false,
-  reviewDateEnd: 20250910,
+  reviewDateEnd: 20251217,
 
   localBiblio: {
     "prognose-vernieuwingsopgave-2023": {
