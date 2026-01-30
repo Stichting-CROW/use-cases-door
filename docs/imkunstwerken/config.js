@@ -76,7 +76,7 @@ function indexOfRequirements(config) {
 }
 
 var respecConfig = {
-  specStatus: "DEF",
+  specStatus: "DOC",
   pubDomain: "use-cases-door",
   shortName: "project-beheer",
   license: "CC-BY",
