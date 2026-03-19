@@ -1,1 +1,1 @@
-Dit document beschrijft de use case van Zuid-Holland
+Dit document beschrijft de use case van Zuid-Holland, die samen met de PIM-wegenbouwers en het NPDW gewerkt heeft aan een asfaltpaspoort.
