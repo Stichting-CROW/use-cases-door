@@ -76,11 +76,11 @@ function indexOfRequirements(config) {
 }
 
 var respecConfig = {
-  specStatus: "DOC",
+  specStatus: "CO",
   pubDomain: "use-cases-door",
-  shortName: "imkunstwerken",
+  shortName: "datasets-kunstwerken",
   license: "CC-BY",
-  subtitle: "Informatie voor de vervangings- en renovatieopgave",
+  subtitle: "Datagedreven instandhouden, renoveren en vervangen",
   lint: { "no-unused-dfns": false },
   editors: [
     {
