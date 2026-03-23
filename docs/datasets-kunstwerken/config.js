@@ -76,7 +76,7 @@ function indexOfRequirements(config) {
 }
 
 var respecConfig = {
-  specStatus: "CO",
+  specStatus: "DRAFT",
   pubDomain: "use-cases-door",
   shortName: "datasets-kunstwerken",
   license: "CC-BY",
