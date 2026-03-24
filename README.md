@@ -25,6 +25,8 @@ Beschikbare use cases:
 
 [Dataspecificaties inspecties en onderzoeken civiele kunstwerken](https://docs.crow.nl/use-cases-door/datasets-kunstwerken)
 
+[Dataspecificatie familiebenadering kunstwerken voor constructieve veiligheid](https://docs.crow.nl/use-cases-door/families-kunstwerken)
+
 
 ## Informatiemanagement
 
