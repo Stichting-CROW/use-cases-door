@@ -1,0 +1,2853 @@
+<!DOCTYPE html><html lang="nl"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 32.3.0">
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:MuseoSans,"Museo Sans",Museo,sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+<link rel="stylesheet" href="https://docs.crow.nl/webfonts/webfonts.css">
+<link rel="stylesheet" href="https://docs.crow.nl/respec-design/stichting-crow/base.min.css">
+<link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://docs.crow.nl/respec-design/stichting-crow/dark.min.css">
+  
+  
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+  
+  
+  
+<title>Dataspecificatie familiebenadering kunstwerken voor constructieve veiligheid</title>
+  
+  
+  
+<style>
+
+@media ( prefers-reduced-motion: no-preference ) {
+  @keyframes animateheader {
+    0% { background-color: unset; }
+    20%   { background-color: #ffff0020; }
+    100% { background-color: unset; }
+  }
+}
+
+:target {
+  animation: animateheader 1s ease-in-out ;
+}
+.toc-labeled>li li {
+  margin-left: 0;
+  list-style: disc;
+  margin-left: 1rem;
+}
+:not(li)>.toc-labeled {
+  margin-left: 0;
+}
+.toc-labeled {
+  font-size: 0.9rem;
+  line-height: inherit;
+}
+
+</style>
+
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000;color:var(--toclink-text)}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<link rel="icon" href="https://docs.crow.nl/respec-design/logos/crow.ico">
+<style>
+ul.index{columns:30ch;column-gap:1.5em}
+ul.index li{list-style:inherit}
+ul.index li span{color:inherit;cursor:pointer;white-space:normal}
+#index-defined-here ul.index li{font-size:.9rem}
+ul.index code{color:inherit}
+#index-defined-here .print-only{display:none}
+@media print{
+#index-defined-here .print-only{display:initial}
+}
+</style>
+<meta name="description" content="placeholder">
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "specStatus": "IR",
+  "pubDomain": "use-cases-door",
+  "shortName": "families-kunstwerken",
+  "license": "CC-BY",
+  "subtitle": "Datagedreven instandhouden, renoveren en vervangen",
+  "lint": {
+    "no-unused-dfns": false
+  },
+  "editors": [
+    {
+      "name": "Elisabeth De Vries",
+      "company": "CROW"
+    }
+  ],
+  "github": "https://github.com/Stichting-CROW/use-cases-door",
+  "postProcess": [
+    null
+  ],
+  "hypothesisComments": true,
+  "reviewDateEnd": 20260530,
+  "localBiblio": {
+    "prognose-vernieuwingsopgave-2023": {
+      "title": "Vernieuwingsopgave infrastructuur: Landelijk prognoserapport 2023",
+      "authors": [
+        "TNO"
+      ],
+      "date": "2023",
+      "publisher": "TNO",
+      "href": "https://www.tno.nl/nl/newsroom/2023/11/vernieuwing-infrastructuur-essentieel/"
+    },
+    "Defensie-Strategie-voor-Industrie-en-Innovatie-2025-2029": {
+      "title": "Defensie Strategie voor Industrie en Innovatie 2025-2029",
+      "authors": [
+        "Ministerie van Defensie"
+      ],
+      "date": "2025-04-04",
+      "publisher": "Ministerie van Defensie",
+      "href": "https://www.defensie.nl/downloads/beleidsnota-s/2025/04/04/defensie-strategie-voor-industrie-en-innovatie-2025-2029"
+    },
+    "CROW-CUR-117": {
+      "title": "CROW-CUR Aanbeveling 117:2020 - Inspectie en advies civiele kunstwerken",
+      "authors": [
+        "CROW"
+      ],
+      "date": "2023",
+      "publisher": "CROW",
+      "href": "https://www.tno.nl/nl/newsroom/2023/11/vernieuwing-infrastructuur-essentieel/"
+    },
+    "NEN2767": {
+      "title": "Conditiemeting gebouwde omgeving - Deel 1: Methodiek",
+      "authors": [
+        "NEN"
+      ],
+      "date": "2019",
+      "publisher": "NEN",
+      "href": "https://www.nen.nl/bouw/beheer-en-onderhoud/conditiemeting"
+    },
+    "kamerbrieven-vervanging-renovatie": {
+      "title": "Rapportages Staat van de infrastructuur van Rijkswaterstaat en ProRail en Prognoserapport Vervanging en Renovatie Rijkswaterstaat",
+      "authors": [
+        "IenW"
+      ],
+      "date": "2022",
+      "publisher": "IenW",
+      "href": "https://www.tweedekamer.nl/kamerstukken/brieven_regering/detail?id=2022Z23536&did=2022D50716"
+    },
+    "rws-kamerbrief-meerjarenplan-instandhouding": {
+      "title": "Meerjarenplan instandhouding Rijkswaterstaat- netwerken 2025-2030",
+      "authors": [
+        "IenW"
+      ],
+      "date": "2022",
+      "publisher": "IenW",
+      "href": "https://www.tweedekamer.nl/kamerstukken/brieven_regering/detail?id=2025Z13825&did=2025D31342"
+    }
+  },
+  "publishISODate": "2026-04-23T00:00:00.000Z",
+  "generatedSubtitle": "CROW, referentieversie 23 april 2026"
+}</script></head>
+
+<body class="h-entry informative" style="background-image: url(&quot;https://docs.crow.nl/respec-design/stichting-crow/status-nl/IR.svg&quot;);"><div class="head">
+    <p class="logos"><a class="logo" href="https://www.crow.nl"><img crossorigin="" alt="CROW" height="75" src="https://docs.crow.nl/respec-design/stichting-crow/logo/crow.svg" width="150">
+  </a></p>
+    <h1 id="title" class="title">Dataspecificatie familiebenadering kunstwerken voor constructieve veiligheid</h1> <h2 id="subtitle" class="subtitle">Datagedreven instandhouden, renoveren en vervangen</h2>
+    <p id="w3c-state">CROW,
+  referentieversie <time style="white-space: pre;" class="dt-published" datetime="2026-04-23">23 april 2026</time></p>
+    <details open="">
+      <summary>Meer informatie over dit document</summary>
+      <dl>
+        
+        
+        
+        <dt>Laatste werkversie:</dt><dd><a href="https://docs.crow.nl/use-cases-door/families-kunstwerken">https://docs.crow.nl/use-cases-door/families-kunstwerken</a></dd>
+        <dt>Geschiedenis:</dt><dd>
+                    <a href="https://github.com/Stichting-CROW/use-cases-door/commits/">Wijzigingsgeschiedenis</a>
+                  </dd>
+        
+        
+        
+        <dt>Redacteur:</dt><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Elisabeth De Vries</span> (<span class="p-org org h-org">CROW</span>)
+  </dd>
+        
+        
+        <dt>Feedback:</dt><dd>
+        <a href="https://github.com/Stichting-CROW/use-cases-door/">GitHub Stichting-CROW/use-cases-door</a>
+        (<a href="https://github.com/Stichting-CROW/use-cases-door/pulls/">wijzigingsverzoeken</a>,
+        <a href="https://github.com/Stichting-CROW/use-cases-door/issues/new/choose">nieuw issue</a>,
+        <a href="https://github.com/Stichting-CROW/use-cases-door/issues/">openstaande issues</a>)
+      </dd><dd id="annotation-service-placeholder">
+        <button type="button" data-load-annotation-service="">
+          Laad annotaties
+        </button>
+        <span><small>Annotaties door <a href="https://web.hypothes.is">Hypothes.is</a> (<a href="https://web.hypothes.is/privacy">privacybeleid</a>).</small></span>
+      </dd><dd hidden="" id="annotation-service-loaded">
+        <span data-hypothesis-annotation-count="">...</span> annotatie(s) met <em>Hypothes.is</em>
+        <button type="button" data-hypothesis-trigger="">
+          Toon annotatiebalk
+        </button>
+        <button type="button" data-unload-annotation-service="">
+          Verberg
+        </button>
+      </dd>
+        
+        
+      </dl>
+    </details>
+    
+    <p class="copyright">
+    Copyright ©
+    2026
+    
+    <a href="https://www.crow.nl">CROW</a>.
+    CROW
+    <a href="https://www.crow.nl/disclaimer">disclaimer</a>
+      van toepassing en gedistribueerd onder
+      <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" title="Creative Commons Naamsvermelding">CC BY 4.0</a>
+  </p>
+    <hr title="Separator for header">
+  </div>
+  
+  <section id="abstract" data-format="markdown" class="introductory"><h2>Samenvatting</h2><p>placeholder</p>
+</section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aanleiding"><bdi class="secno">1.1 </bdi>Aanleiding</a></li><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">1.2 </bdi>Context</a></li><li class="tocline"><a class="tocxref" href="#doel"><bdi class="secno">1.3 </bdi>Doel</a></li><li class="tocline"><a class="tocxref" href="#scope"><bdi class="secno">1.4 </bdi>Scope</a></li><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.5 </bdi>Leeswijzer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#families"><bdi class="secno">2. </bdi>Families</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-0"><bdi class="secno">2.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#objecttypes"><bdi class="secno">2.2 </bdi>Objecttypes</a></li><li class="tocline"><a class="tocxref" href="#onderscheidende-kenmerken"><bdi class="secno">2.3 </bdi>Onderscheidende kenmerken</a></li><li class="tocline"><a class="tocxref" href="#overzicht-families"><bdi class="secno">2.4 </bdi>Overzicht families</a></li><li class="tocline"><a class="tocxref" href="#basiskenmerken-imbor-beheerobject"><bdi class="secno">2.5 </bdi>Basiskenmerken <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>-beheerobject</a></li><li class="tocline"><a class="tocxref" href="#aanvullende-kenmerken"><bdi class="secno">2.6 </bdi>Aanvullende kenmerken</a></li></ol></li><li class="tocline"><a class="tocxref" href="#toepassing"><bdi class="secno">3. </bdi>Toepassing</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-1"><bdi class="secno">3.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#imbor-2025"><bdi class="secno">3.2 </bdi><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>-2025</a></li><li class="tocline"><a class="tocxref" href="#dataspecificatie"><bdi class="secno">3.3 </bdi>Dataspecificatie</a></li><li class="tocline"><a class="tocxref" href="#voorbeeld-dataset"><bdi class="secno">3.4 </bdi>Voorbeeld dataset</a></li></ol></li><li class="tocline"><a class="tocxref" href="#aanbevelingen"><bdi class="secno">4. </bdi>Aanbevelingen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bronhouders-areaalinformatie"><bdi class="secno">4.1 </bdi>Bronhouders areaalinformatie</a></li><li class="tocline"><a class="tocxref" href="#collectief-platform"><bdi class="secno">4.2 </bdi>Collectief platform</a></li></ol></li><li class="tocline"><a class="tocxref" href="#definities"><bdi class="secno">5. </bdi>Definities</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Termen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Termen gedefinieerd door referentie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">B.1 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+  
+  
+  
+  
+  <section data-format="markdown" id="inleiding"><div class="header-wrapper"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding</h2><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></div>
+<section id="aanleiding"><div class="header-wrapper"><h3 id="x1-1-aanleiding"><bdi class="secno">1.1 </bdi>Aanleiding</h3><a class="self-link" href="#aanleiding" aria-label="Permalink for Section 1.1"></a></div>
+<p>Samen Slimmer Renoveren en Vervangen (SSRV) is een samenwerkingsprogramma van Noord-Hollandse gemeenten, Rijkswaterstaat, provincie Noord-Holland, ProRail en de Vervoerregio Amsterdam. Samen pakken zij de groeiende opgave aan om de ruim 10.000 bruggen en viaducten in de provincie te renoveren of te vervangen in een tijd waarin mensen en middelen schaars zijn. Door kennis, data en capaciteit te bundelen, kan de vervanging en renovatie met minder middelen en menskracht in gang worden gezet en blijven alle delen van Noord-Holland voor inwoners, bedrijven en reizigers bereikbaar.<br><br>
+Deze samenwerking heeft geleid tot de ontwikkeling van een areaalbenadering van kunstwerken, waarmee het mogelijk is om voor families van kunstwerken groepsgewijs berekeningen uit te voeren om de constructieve veiligheid van deze kunstwerken te bepalen. Deze benadering biedt een efficiënte manier om de vervangings- en renovatiebehoefte in kaart te brengen voor prioritering en planning van werkzaamheden en biedt beheerders snel inzicht in de te verwachten werkzaamheden voor de komende jaren. Deze areaalbenadering is gemaakt voor kademuren en civiele constructies.<br><br>
+Binnen SSRV hebben de betrokken partijen datasets van hun kunstwerken gedeeld, de meesten in Excel-formaat, die zijn samengebracht in een kaart van Noord-Holland die alle kunstwerken met hun typen visualiseert en een snel beeld kan geven welke kunstwerken qua constructieve veiligheid snel nader onderzocht moeten worden en mogelijk vervangen. Amsterdam heeft bij elke familiegroep een paar typerende voorbeelden constructief doorberekend en de groep beoordeeld. Andere beheerders kunnen deze kennis hergebruiken om snel te filteren welke kunstwerken een constructief risico (kunnen) vormen. </p>
+</section><section id="context"><div class="header-wrapper"><h3 id="x1-2-context"><bdi class="secno">1.2 </bdi>Context</h3><a class="self-link" href="#context" aria-label="Permalink for Section 1.2"></a></div>
+<p>Het <abbr title="Dataharmonisatie Objecten in de Openbare Ruimte">DOOR</abbr>-programma heeft vanuit de de <a href="https://docs.crow.nl/use-cases-door/imkunstwerken/">Verkenning informatiemodel civiele kunstwerken</a> de areaalbenadering geselecteerd voor opschaling, naast een project waarmee de uitwisseling van inspectie- en onderzoeksdata wordt gestandaardiseerd (zie <a href="https://docs.crow.nl/use-cases-door/datasets-kunstwerken/">Dataspecificaties inspecties en onderzoeken civiele kunstwerken</a>). 
+Het samenwerkingsverband SSRV heeft zich aangenmeld als een proeftuin in het project "Datagedreven Beheer" van het Consortium Toekomstbestendige Leefomgeving Infra. CROW werkt samen met het consortium aan één werkwijze en strategie voor de opschaling van datagedrweven beheer. </p>
+</section><section id="doel"><div class="header-wrapper"><h3 id="x1-3-doel"><bdi class="secno">1.3 </bdi>Doel</h3><a class="self-link" href="#doel" aria-label="Permalink for Section 1.3"></a></div>
+<p>De familiebenadering wordt gestandaardiseerd door de families in te delen met behulp van het Informatiemodel Beheer Openbare Ruimte (<abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>). Voor elke familie wordt een "dataspecificatie" opgesteld waarmee kunstwerken kunnen worden herkend die bij die familie horen. Zo kan uit beheerinformatie op basis van <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> worden herkend welke kunstwerken in het areaal bij welke groep horen. Doel is om hiermee de areaalbenadering beschikbaar te maken voor alle beheerders in Nederland die gebruik maken van de <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>-standaard. </p>
+</section><section id="scope"><div class="header-wrapper"><h3 id="x1-4-scope"><bdi class="secno">1.4 </bdi>Scope</h3><a class="self-link" href="#scope" aria-label="Permalink for Section 1.4"></a></div>
+<p>De volgende families vallen binnen de scope: </p>
+<ul>
+<li>Plaatbruggen (&amp; viaducten)</li>
+<li>Prefab liggerbruggen (&amp; viaducten) </li>
+<li>Boogbruggen</li>
+<li>Duikerbruggen &amp; onderdoorgangen (kokervormige betonnen objecten)</li>
+<li>Bruggen op houten palen</li>
+<li>Bruggen met stalen langsliggers</li>
+<li>Integraalconstructies (betonnen landhoofd en rijdek monoliet verboden)</li>
+<li>Houten bruggen (houten liggers)</li>
+</ul>
+<p>Voor de beweegbare bruggen kunnen direct de verschijningsvormen uit <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> worden gebruikt: Basculebrug, Draaibrug,Dubbele basculebrug,Dubbele draaibrug,Dubbele ophaalbrug,Hefbrug,Klapbrug,Ophaalbrug, Tafelbrug, Rolbrug, Vlotbrug.</p>
+<p>Daarnaast worden de families opgedeeld naar modaliteit: fiets- en voetgangers of verkeer. </p>
+</section><section id="leeswijzer"><div class="header-wrapper"><h3 id="x1-5-leeswijzer"><bdi class="secno">1.5 </bdi>Leeswijzer</h3><a class="self-link" href="#leeswijzer" aria-label="Permalink for Section 1.5"></a></div>
+<ul>
+<li>In <strong>hoofdstuk 2</strong> staat de toelichting op de gebruikte objecttypes en onderscheidende kenmerken uit het <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> om de families te kunnen herkennen.    </li>
+<li>In <strong>hoofdstuk 3</strong> staat beschreven hoe de dataspecificaties gebruikt kunnen worden met een voorbeeld van een dataset</li>
+<li>In <strong>hoofdstuk 4</strong> staan aanbevelingen voor het vervolg.</li>
+</ul>
+</section></section>
+  <section data-format="markdown" id="families"><div class="header-wrapper"><h2 id="x2-families"><bdi class="secno">2. </bdi>Families</h2><a class="self-link" href="#families" aria-label="Permalink for Section 2."></a></div>
+<section id="inleiding-0"><div class="header-wrapper"><h3 id="x2-1-inleiding"><bdi class="secno">2.1 </bdi>Inleiding</h3><a class="self-link" href="#inleiding-0" aria-label="Permalink for Section 2.1"></a></div>
+<p>In dit hoofdstuk staat de toelichting op de gebruikte objecttypes en onderscheidende kenmerken uit het <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> om de families uit de <a href="#scope" data-matched-text="[[[#scope]]]" class="sec-ref"><bdi class="secno">1.4 </bdi>Scope</a> te kunnen herkennen. Daarnaast wordt uitgelegd welke basiskenmerken van een beheerobject altijd verplicht bekend moeten zijn volgens <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>, en welke informatie wordt toegevoegd om in een dashbordomgeving selecties te kunnen maken. </p>
+</section><section id="objecttypes"><div class="header-wrapper"><h3 id="x2-2-objecttypes"><bdi class="secno">2.2 </bdi>Objecttypes</h3><a class="self-link" href="#objecttypes" aria-label="Permalink for Section 2.2"></a></div>
+<p>De volgende objecttypes uit <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> worden gebruikt om onderscheid te kunnen maken: </p>
+<ul>
+<li>Duiker</li>
+<li>Beweegbare brug - met de verschijningsvormen: Basculebrug, Draaibrug,Dubbele basculebrug,Dubbele draaibrug,Dubbele ophaalbrug,Hefbrug,Klapbrug,Ophaalbrug, Tafelbrug, Rolbrug, Vlotbrug.</li>
+<li>Vaste brug - met de verschijningsvormen: Boogbrug, Drijvende brug, Duikerbrug, Gewone normale vaste brug, Hangbrug, Kraneschipbrug, Liggerbrug, Plaatbrug, Tuibrug, Vakwerkbrug.</li>
+</ul>
+<p>Families worden ook onderscheiden op basis van de bouwdelen waaruit een kunstwerk bestaat. In technische termen: een bouwdeel heeft een "partOf" relatie naar het civiele kunstwerk. De volgende objecttypen uit <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> zijn nodig voor de samenstelling:</p>
+<ul>
+<li>Dek</li>
+<li>Landhoofd</li>
+<li>Fundering</li>
+<li>Langsligger</li>
+<li>Liggertype</li>
+</ul>
+</section><section id="onderscheidende-kenmerken"><div class="header-wrapper"><h3 id="x2-3-onderscheidende-kenmerken"><bdi class="secno">2.3 </bdi>Onderscheidende kenmerken</h3><a class="self-link" href="#onderscheidende-kenmerken" aria-label="Permalink for Section 2.3"></a></div>
+<p>De volgende zaken moeten van een object of bouwdeel bekend zijn voor indeling in de juiste familie:</p>
+<ul>
+<li>Modaliteit (per kunstwerk). De de families worden opgedeeld naar modaliteit: fiets- en voetgangers of verkeer. In <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> staan meer soorten modaliteit, in een dashbord kunnen deze types worden samengevoegd voor de tweedeling die hier nodig is. </li>
+<li>Materiaal (per bouwdeel)</li>
+<li>Vorm (ronde vorm van een duiker)</li>
+</ul>
+</section><section id="overzicht-families"><div class="header-wrapper"><h3 id="x2-4-overzicht-families"><bdi class="secno">2.4 </bdi>Overzicht families</h3><a class="self-link" href="#overzicht-families" aria-label="Permalink for Section 2.4"></a></div>
+<style>
+
+  table.crow-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  table.crow-table th,
+  table.crow-table td {
+    border: 1px solid #005AA7; /* CROW-blauw */
+    padding: 6px 8px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  table.crow-table thead th {
+    background-color: #005AA7; /* CROW-blauw */
+    color: #ffffff;            /* wit */
+  }
+
+</style>
+
+<table class="crow-table">
+  <thead>
+    <tr>
+      <th>Familie</th>
+      <th>Objecttype</th>
+      <th>Verschijningsvorm</th>
+      <th>Attribuut</th>
+      <th>Bouwdeel</th>
+      <th>Materiaal Bouwdeel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Plaatbrug (&amp; viaducten)</td>
+      <td>Vaste Brug</td>
+      <td>Plaatbrug</td>
+      <td></td>
+      <td>Dek</td>
+      <td>Beton, Composiet, Staal, Hout</td>
+    </tr>
+    <tr>
+      <td>Prefab liggerbruggen (&amp; viaducten)</td>
+      <td>Vaste Brug</td>
+      <td>Liggerbrug</td>
+      <td></td>
+       <td>Dek</td>
+  <td>Beton</td>
+    </tr>
+    <tr>
+      <td>Boogbruggen</td>
+      <td>Vaste Brug</td>
+      <td></td>
+      <td></td>
+      <td>Boog is geen apart bouwdeel</td>
+      <td>Beton en/of metselwerk of staal</td>
+    </tr>
+    <tr>
+      <td>Duikerbruggen &amp; onderdoorgangen (kokervormige betonnen objecten)</td>
+      <td>Vaste Brug</td>
+      <td>Duikerbrug</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+   <tr>
+      <td>Duikerbruggen &amp; onderdoorgangen (kokervormige betonnen objecten)</td>
+      <td>Onderdoorgang</td>
+      <td></td>
+      <td>Vorm: Rond</td>
+      <td></td>
+      <td></td>
+    </tr>
+      <tr>
+      <td>Duikerbruggen &amp; onderdoorgangen (kokervormige betonnen objecten)</td>
+      <td>Duiker</td>
+      <td></td>
+      <td>Vorm: Rond</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+    </tr><tr>
+      <td>Bruggen op houten palen</td>
+      <td>Vaste Brug</td>
+      <td></td>
+      <td></td>
+      <td>Paalfundering</td>
+      <td>Hout</td>
+    </tr>
+    <tr>
+      <td>Bruggen met stalen langsliggers</td>
+      <td>Vaste Brug</td>
+      <td></td>
+      <td></td>
+      <td>Hiaat in <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>: langsligger</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Integraalconstructies (betonnen landhoofd en rijdek monoliet verboden)</td>
+       <td>Vaste Brug</td>
+      <td></td>
+      <td></td>
+      <td>Landhoofd (type niet bekend in <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Houten bruggen (houten liggers)</td>
+      <td>Vaste Brug</td>
+      <td></td>
+      <td></td>
+      <td>Hiaat in <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>: ligger</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Indeling beweegbare bruggen</td>
+      <td>Beweegbare brug</td>
+      <td>
+        Basculebrug, Draaibrug, Dubbele basculebrug, Dubbele draaibrug,
+        Dubbele ophaalbrug, Hefbrug, Klapbrug, Ophaalbrug,
+        Tafelbrug, Rolbrug, Vlotbrug
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<p>Merk op dat de volgende onderscheiden niet gemaakt kunnen worden met <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>:</p>
+<ul>
+<li>Verbundträger. Is een Plaatbrug</li>
+<li>Integraalconstructie.  Is een Plaatbrug</li>
+<li>Bouwdelen:<ul>
+<li>Langsligger. Zit nu niet in <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>. Dit zijn echter wel onderdelen van Bruggen. Hier moet <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> op aangevuld worden. </li>
+<li>Ligger en liggertype (prefab - zip/koker/preflex/plaat/rail /"U" (waco)/overig/volstort) zit niet in <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>.</li>
+<li>Buispalen, damwand &gt; stond wel in de lijst maar hoe passen deze bij de families? </li>
+<li>Landhoofd - type zit niet in <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>: betonnen L-wand, gewichtsmuur, damwand, hooggelegen landhoofd, overig</li>
+</ul>
+</li>
+</ul>
+</section><section id="basiskenmerken-imbor-beheerobject"><div class="header-wrapper"><h3 id="x2-5-basiskenmerken-imbor-beheerobject"><bdi class="secno">2.5 </bdi>Basiskenmerken <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>-beheerobject</h3><a class="self-link" href="#basiskenmerken-imbor-beheerobject" aria-label="Permalink for Section 2.5"></a></div>
+<p>In <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> zijn een paar basiskenmerken verplicht bij elk beheerobject.</p>
+<figure id="fig-de-minimale-onderdelen-van-de-assetregistratie-van-een-beheerobject-in-imbor">
+<img src="../images/basiskenmerken-imbor-beheerobject.drawio.svg" alt="visuele weergave van de basiskenmerken">
+<figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">De minimale onderdelen van de assetregistratie van een beheerobject in <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>. 
+</span></figcaption></figure>
+
+
+<ol>
+<li>Identificatie: Een unieke identifier voor het object</li>
+<li>Domein: Het beheerdomein waartoe het object behoort (bijv. Wegen, Groen, Water, Kunstwerken)</li>
+<li>Status: De status van het object (bijv. "in gebruik", "gepland", "buiten gebruik")</li>
+</ol>
+<p>Daarnaast is impliciet altijd nodig:</p>
+<ol start="4">
+<li>Objecttype — het object moet een instantie zijn van een specifiek <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>-objecttype (bijv. imbor:Boom, imbor:Rioolput, imbor:Brug). Zonder typering kan <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> geen structuur bieden. </li>
+<li>Geometrie — <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> heeft een geometrie-addendum waarin per objecttype staat welke geometrie gewenst is. Eén geometrierepresentatie is verplicht, de rest optioneel.</li>
+</ol>
+</section><section id="aanvullende-kenmerken"><div class="header-wrapper"><h3 id="x2-6-aanvullende-kenmerken"><bdi class="secno">2.6 </bdi>Aanvullende kenmerken</h3><a class="self-link" href="#aanvullende-kenmerken" aria-label="Permalink for Section 2.6"></a></div>
+<p>De volgende kenmerken  moeten worden toegevoegd aan de datasets om handig een regionaal of nationaal dashbord te kunnen inrichten en daarbij kaartselecties te kunnen maken voor een specifieke beheerder of op basis van leeftijd: </p>
+<ul>
+<li>Organisatie. In <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>-termen: Object &gt; Rol &gt; Eigenaar</li>
+<li>Objectnummer. In <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>-termen: Attribuut = nummer</li>
+<li>Jaar van aanleg. In <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>-termen: Attribuut = aanlegjaar</li>
+</ul>
+</section></section>
+  <section data-format="markdown" id="toepassing"><div class="header-wrapper"><h2 id="x3-toepassing"><bdi class="secno">3. </bdi>Toepassing</h2><a class="self-link" href="#toepassing" aria-label="Permalink for Section 3."></a></div>
+<section id="inleiding-1"><div class="header-wrapper"><h3 id="x3-1-inleiding"><bdi class="secno">3.1 </bdi>Inleiding</h3><a class="self-link" href="#inleiding-1" aria-label="Permalink for Section 3.1"></a></div>
+<p>Het concrete technische product bij deze rapportage is een dataspecificatie. Dit hoofdstuk beschrijft hoe de dataspecificaties gebruikt kunnen worden met een voorbeeld van een dataset. </p>
+</section><section id="imbor-2025"><div class="header-wrapper"><h3 id="x3-2-imbor-2025"><bdi class="secno">3.2 </bdi><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>-2025</h3><a class="self-link" href="#imbor-2025" aria-label="Permalink for Section 3.2"></a></div>
+<p>Een beheerder die zijn assetinformatie beschikbaar heeft op basis van <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>-2025, kan deze dataspecificatie gebruiken om te controleren of er voldoende gegevens zijn om mee te doen met het SSRV-dashboard, en deze gegevens vervolgens te leveren. </p>
+</section><section id="dataspecificatie"><div class="header-wrapper"><h3 id="x3-3-dataspecificatie"><bdi class="secno">3.3 </bdi>Dataspecificatie</h3><a class="self-link" href="#dataspecificatie" aria-label="Permalink for Section 3.3"></a></div>
+<p>Het <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> is een ontologie die van objecten in de openbare ruimte beschrijft welke informatie nodig kan zijn voor beheer. Een kunstwerk kan in <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> wel honderd relaties en attributen hebben. Deze zijn niet voor elk proces noodzakelijk.
+Een dataspecificatie is een nauwkeurig afgebakende verzameling gegevens die essentieel zijn voor een specifiek proces, programma of beleidsvraag. De gegevens worden gespecificeerd op basis van een datastandaard, in dit geval het <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>.
+De dataspecificatie is gemaakt voor de groepering van kunstwerken in families voor de beoordeling van de onstructieve veiligheid. Doel is dat alle beheerders in Nederland de informatie over families kunnen delen in een landelijk dashbord, en gezamenlijk kennis kunnen opbouwen over de vervangings- en renovatieopgave. 
+De dataspecificatie staat <a href="https://github.com/Stichting-CROW/use-cases-door/tree/main/experimenten/">hier</a>.</p>
+<p>De dataspecificatie gebruikt de standaard [<cite><a class="bibref" data-link-type="biblio" href="#bib-shacl" title="Shapes Constraint Language (SHACL)">shacl</a></cite>]. </p>
+</section><section id="voorbeeld-dataset"><div class="header-wrapper"><h3 id="x3-4-voorbeeld-dataset"><bdi class="secno">3.4 </bdi>Voorbeeld dataset</h3><a class="self-link" href="#voorbeeld-dataset" aria-label="Permalink for Section 3.4"></a></div>
+<p>De voorbeeld dataset staat <a href="https://github.com/Stichting-CROW/use-cases-door/tree/main/experimenten/">hier</a>.</p>
+<p>Er is voor opschaling van het SSRV-dashbord naar een landelijk platform nog geen uitwisselafspraak gemaakt in termen van een directe koppeling vanuit een systeem, of een uitwisselformaat. Bij deze dataspecificatie is een voorbeeld dataset gemaakt in [<cite><a class="bibref" data-link-type="biblio" href="#bib-turtle" title="RDF 1.1 Turtle">turtle</a></cite>].</p>
+</section></section>
+    <section data-format="markdown" id="aanbevelingen"><div class="header-wrapper"><h2 id="x4-aanbevelingen"><bdi class="secno">4. </bdi>Aanbevelingen</h2><a class="self-link" href="#aanbevelingen" aria-label="Permalink for Section 4."></a></div>
+<p>Het consortium Toekomstbestendige Leefomgeving en het samenwerkingsverband SSRv willen alle beheerders van kunstwerken in Nederland in staat stellen om mee te doen met de familiebenadering van kunstwerken en de bijbehorende kaart. Om op deze schaal data te kunnen delen en verwerken voor een gezamenlijke kaart kan niet meer gewerkt worden met het delen van downloads in verschillende structuren zoals in de eerste ontwikkelfase. </p>
+<section id="bronhouders-areaalinformatie"><div class="header-wrapper"><h3 id="x4-1-bronhouders-areaalinformatie"><bdi class="secno">4.1 </bdi>Bronhouders areaalinformatie</h3><a class="self-link" href="#bronhouders-areaalinformatie" aria-label="Permalink for Section 4.1"></a></div>
+<p>De areaalgegevens van de meeste gemeentelijke en provinciale beheerders worden bijgehouden in areaalbeheersystemen. Aanbeveling is om een samenwerking op te starten met de leveranciers van deze systemen om te onderzoeken in welke vorm zij de gegevenes kunnen leveren.  </p>
+<p>De verwachting is, dat de komende jaren steeds vaker gegevens worden uitgewisseld op basis van dataspecificaties. Bij het <abbr title="Dataharmonisatie Objecten in de Openbare Ruimte">DOOR</abbr>-programma wordt bijvoorbeeld gekeken naar het revisieproces en het leveren van mutaties in de assetinformatie uit projecten. Voor een collectieve bomenkansenkaart zoals DMI ontwikkeld heeft samen met gemeente Dronten worden weer andere gegevens gevraagd. Om een steeds wisselende uitsnede uit de assetinformatie te kunnen leveren, is de technologie van semantisch web en linked data de meest flexibele, waarbij de hoogste vorm van interoperabiliteit bereikt wordt als de assetinformatie kan worden doorzocht met gerichte vragen ([<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-sparql-query" title="SPARQL Query Language for RDF">rdf-sparql-query</a></cite>]) op een sparql-endpoint met [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-sparql-protocol" title="SPARQL Protocol for RDF">rdf-sparql-protocol</a></cite>]. </p>
+<p>De vraag is, of de leveranciers van areaalbeheerpakketten al toe zijn aan het beschikbaar stellen van de areaalgegevens voor de families op een sparql-endpoint, of dat dit te vroeg komt en er een andere vorm en uitwisseling moet worden afgesproken.</p>
+<p>Qua autenticatie en authorisatie moet afgesproken worden met welk digitaal stelsel de gegevens worden uitgewisseld, tenzij het open data betreft. Omdat <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> wodt gebruikt in combinatie met de keten van toeleveranciers en aannemers in de bouwsector wordt aanbevolen om hiervoor het Digitaal Stelsel Gebouwde Omgeving te gebruikten. </p>
+</section><section id="collectief-platform"><div class="header-wrapper"><h3 id="x4-2-collectief-platform"><bdi class="secno">4.2 </bdi>Collectief platform</h3><a class="self-link" href="#collectief-platform" aria-label="Permalink for Section 4.2"></a></div>
+<p>Pas als duidelijk is wat de mogelijkheden zijn van de leveranciers van de datasets kan het collectieve platform worden geselecteerd.</p>
+</section></section>
+  <section data-format="markdown" id="definities"><div class="header-wrapper"><h2 id="x5-definities"><bdi class="secno">5. </bdi>Definities</h2><a class="self-link" href="#definities" aria-label="Permalink for Section 5."></a></div>
+<dl data-sort=""><dt><dfn data-lt="Asseteigenaar|Asseteigenaren" id="dfn-asseteigenaar" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Asseteigenaar</dfn></dt>
+<dd>Definitie uit het <a href="#dfn-standaard-rollenmodel" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-standaard-rollenmodel-1">Standaard Rollenmodel</a>: Een asseteigenaar in de gebouwde omgeving is de persoon of entiteit die verantwoordelijk is voor het strategisch beheer van assets, zoals gebouwen, infrastructuur, en andere fysieke objecten. De asseteigenaar stelt de doelen en kaders vast voor het beheer en onderhoud van deze assets. De rol van de asseteigenaar is cruciaal omdat deze op strategisch niveau bepaalt wat er nodig is om de assets in optimale staat te houden. Ditomvat het maken van beslissingen over nieuwbouw, vervanging, en onderhoud, evenals het vaststellen van de functionele eisen waaraan de assets moetenvoldoen.</dd>
+
+<dt><dfn data-lt="Assetmanagementdoelen" id="dfn-assetmanagementdoelen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Assetmanagementdoelen</dfn></dt>
+  <dd>
+    Middellange termijn doelen (meestal 5–10 jaar) die afgeleid zijn van de strategische organisatiedoelen volgens het <a href="#dfn-iampro-model" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-iampro-model-1">iAMPro model</a>. Ze sturen het beheer van civiele kunstwerken zodat deze bijdragen aan maatschappelijke waarden. Voorbeelden zijn het verbeteren van verkeersveiligheid of het beperken van storingen aan infrastructuur.
+  </dd>
+
+  <dt><dfn data-lt="Assetmanager" id="dfn-assetmanager" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Assetmanager</dfn></dt>
+<dd>Definitie uit het <a href="#dfn-standaard-rollenmodel" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-standaard-rollenmodel-2">Standaard Rollenmodel</a>: Een assetmanager in de gebouwde omgeving is verantwoordelijk voor het beheer en de optimalisatie van fysieke assets zoals gebouwen, infrastructuur en andere faciliteiten. De assetmanager zorgt ervoor dat deze assets veilig, functioneel en kosteneffectief blijven gedurende hun levenscyclus.</dd>
+
+
+<dt><dfn data-lt="Assetregistratie civiele kunstwerken" id="dfn-assetregistratie-civiele-kunstwerken" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Assetregistratie civiele kunstwerken</dfn></dt>
+<dd>
+  Een gestructureerde vastlegging van gegevens over civiele kunstwerken, zoals bruggen, viaducten, tunnels, kademuren en sluizen. De assetregistratie bevat informatie over locatie, type, bouwjaar, materiaal, conditie en onderhoudstoestand van deze objecten. Deze registratie ondersteunt het beheer, onderhoud, inspectie en de besluitvorming over investeringen in de openbare ruimte.
+</dd>
+
+<dt><dfn data-lt="Beheerder" id="dfn-beheerder" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Beheerder</dfn></dt>
+<dd>Definitie uit het <a href="#dfn-standaard-rollenmodel" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-standaard-rollenmodel-3">Standaard Rollenmodel</a>:Een beheerder in de context van de gebouwde omgeving is verantwoordelijk voor het beheer en de optimalisatie van een gebouw of infrastructuur. Dit kan variëren van het beheer van technische installaties tot het coördineren van facilitaire diensten.</dd>
+
+
+<dt><dfn data-lt="Beheren en Programmeren" id="dfn-beheren-en-programmeren" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Beheren en Programmeren</dfn></dt>
+<dd>
+De tweede processtap binnen het <a href="#dfn-iampro-model" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-iampro-model-2">iAMPro model</a>iAMPro model waarin meerjaren-maatregelenprogramma's worden opgesteld voor assets. De maatregelen kunnen eenmalig zijn (bijvoorbeeld een vervanging) of met regelmaat terugkeren (bijvoorbeeld een onderhoudsbeurt). 
+</dd>
+
+<dt><dfn data-lt="Beleid en strategie" id="dfn-beleid-en-strategie" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Beleid en strategie</dfn></dt>
+<dd>
+De eerste processtap binnen het <a href="#dfn-iampro-model" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-iampro-model-3">iAMPro model</a>iAMPro model waarin strategische doelen worden vastgesteld en vertaald naar uitgangspunten voor assetmanagement. Dit wordt vastgelegd in het Strategisch Asset Management Plan (SAMP).
+</dd>
+
+<dt><dfn data-lt="BGT|Basisregistratie Grootschalige Topografie" id="dfn-bgt" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn"><abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr></dfn></dt>
+<dd><abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr> is een digitale kaart van Nederland waarop gebouwen, wegen, waterlopen, terreinen en spoorlijnen eenduidig zijn vastgelegd met een nauwkeurigheid van 20 centimeter. De informatie wordt aangeleverd door de beheerders van de objecten. Wegen zijn hierin opgenomen als 2D-vlakobjecten, terwijl verkeersborden als 2D-punten van het type <q>bord</q> worden geregistreerd, conform het <abbr title="Informatiemodel Grootschalige Geografie">IMGeo</abbr>
+</dd>
+
+
+<dt><dfn data-lt="BIM Basis Infra" id="dfn-bim-basis-infra" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">BIM Basis Infra</dfn></dt>
+  <dd>
+  Samenwerkingsverband bij DigiGO met gelijknamige richtlijn. Opdrachtgever, opdrachtnemer, leverancier en onderaannemer in de infrastructuur beschikken met de BIM Basis Infra over een gemeenschappelijke taal voor 3D-modelleren. Deze richtlijn geeft antwoord op de vraag: hoe gaan we digitale informatie in de infra gestructureerd en eenduidig uitwisselen?  
+    Zie ook <a href="https://www.digigo.nu/ilsen-en-richtlijnen/bim-basis-infra/" target="_blank">deze website</a>.
+  </dd>
+
+
+  <dt><dfn data-lt="BIM-model|BIM-modellen" id="dfn-bim-model" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">BIM-model</dfn></dt>
+<dd>
+  Een digitaal informatiemodel dat de fysieke en functionele kenmerken van een bouwwerk beschrijft. Voor civiele kunstwerken bevat het gegevens zoals geometrie, materialen, afmetingen en samenhang tussen onderdelen.
+</dd>
+
+<dt><dfn data-lt="Bouwbedrijf" id="dfn-bouwbedrijf" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Bouwbedrijf</dfn></dt>
+<dd>Definitie uit het <a href="#dfn-standaard-rollenmodel" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-standaard-rollenmodel-4">Standaard Rollenmodel</a>: Een bouwbedrijf in de context van de gebouwde omgeving is een professional of bedrijf dat verantwoordelijk is voor het coördineren en uitvoeren van bouwprojecten. Dit omvat zowel nieuwbouw als renovaties en verbouwingen.</dd>
+
+
+<dt><dfn data-lt="Bouwen en Onderhouden" id="dfn-bouwen-en-onderhouden" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Bouwen en Onderhouden</dfn></dt>
+<dd>
+De vierde processtap binnen het <a href="#dfn-iampro-model" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-iampro-model-4">iAMPro model</a>iAMPro model waarin de fysieke uitvoering plaatsvindt van werkzaamheden die in eerdere stappen zijn voorbereid. Denk aan het bouwen van nieuwe objecten, uitvoeren van groot onderhoud of het aanpassen van bestaande assets. In deze stap is ook toezicht inbegrepen, waarbij gecontroleerd wordt of de uitvoering voldoet aan specificaties en afspraken.
+</dd>
+
+<dt><dfn data-lt="Certificaten" id="dfn-certificaten" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Certificaten</dfn></dt>
+<dd>
+Officiële documenten die de conformiteit van materialen, processen of objecten aantonen met erkende normen of standaarden.
+</dd>
+
+
+<dt><dfn data-lt="Conditiemeting" id="dfn-conditiemeting" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Conditiemeting</dfn></dt>
+<dd>
+  Objectieve beoordeling van de fysieke staat van een asset of component, meestal op basis van visuele inspectie of meting. Wordt gebruikt om onderhoudsbehoefte en vervangingsnoodzaak vast te stellen.
+</dd>
+
+<dt><dfn data-lt="Condities" id="dfn-condities" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Condities</dfn></dt>
+<dd>
+De actuele fysieke toestand of kwaliteit van een object, vastgesteld aan de hand van visuele inspectie of metingen, met het oog op toekomstige onderhoudsmaatregelen.
+</dd>
+
+<dt><dfn data-lt="Conformiteit" id="dfn-conformiteit" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Conformiteit</dfn></dt>
+<dd>
+De mate waarin een object of voorziening voldoet aan de gestelde functionele en beleidsmatige eisen.
+</dd>
+
+
+
+
+<dt><dfn data-lt="Constructieberekening|Constructieberekeningen" id="dfn-constructieberekening" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Constructieberekening</dfn></dt>
+<dd>
+  Rekenkundige onderbouwing van de draagkracht en stabiliteit van een constructie, op basis van ontwerp- en materiaaleigenschappen. Is essentieel voor veiligheidsbeoordeling en besluitvorming over maatregelen.
+</dd>
+
+<dt><dfn data-lt="Controlelijsten" id="dfn-controlelijsten" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Controlelijsten</dfn></dt>
+<dd>
+Lijsten met acties, controles en registraties die moeten worden uitgevoerd om een veilige en volledige demontage te garanderen.
+</dd>
+
+<dt><dfn data-lt="Dataspecificatie" id="dfn-dataspecificatie" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Dataspecificatie</dfn></dt>
+<dd>
+Een nauwkeurig afgebakende verzameling gegevens die essentieel zijn voor een specifiek proces, programma of beleidsvraag. De gegevens worden gespecificeerd op basis van een datastandaard.
+</dd>
+
+<dt><dfn data-lt="DOOR|DOOR-programma" id="dfn-door" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn"><abbr title="Dataharmonisatie Objecten in de Openbare Ruimte">DOOR</abbr></dfn></dt>
+<dd>
+De CORE gemeenten, Stichting Rioned en CROW hebben de handen ineen geslagen om voor de sector assetmanagement ​te komen tot een gemeenschappelijke informatiebasis met het volgende doel: ​In 2030 beschikken Assetmanagers en hun (keten)partners in de openbare ruimte en infrastructuur over een samenhangend stelsel objectstandaarden in de leefomgeving om de data over hun beheerde assets efficiënt op orde te houden en uit te wisselen.​
+<abbr title="Dataharmonisatie Objecten in de Openbare Ruimte">DOOR</abbr> richt zich op de ontwikkeling van de ontbrekende standaards en uitwisselingsprotocollen, zodat een samenhangend stelsel ontstaat.  Zie ook <a href="https://www.crow.nl/Onderwerpen/Assetmanagement-en-beheer-openbare-ruimte/Data-en-informatie/programmadoor/" target="_blank">deze website</a>
+</dd>
+
+<dt><dfn data-lt="Eigendomsinformatie" id="dfn-eigendomsinformatie" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Eigendomsinformatie</dfn></dt>
+<dd>
+Gegevens over de juridische eigendom en eventuele beperkingen, rechten of plichten die relevant zijn voor ontmanteling.
+</dd>
+
+<dt><dfn data-lt="Evalueren en Bijsturen|Evalueren en Bijsturenn" id="dfn-evalueren-en-bijsturen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Evalueren en Bijsturenn</dfn></dt>
+<dd>
+De zesde processtap binnen het <a href="#dfn-iampro-model" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-iampro-model-5">iAMPro model</a>iAMPro model waarin het assetmanagementproces en het functioneren van het assetsysteem worden geëvalueerd. Dit gebeurt op basis van de aanbevelingsrapportage uit de processtap ‘Monitoren en Analyseren’, waarin ook de stakeholderstevredenheid is meegenomen. </dd>
+
+
+  <dt><dfn data-lt="Functionele levensduur" id="dfn-functionele-levensduur" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Functionele levensduur</dfn></dt>
+  <dd>
+     De levensduur waarna het object vervangen zou moeten worden omdat het qua dimensionering niet meer voldoet aan de gewenste verkeershoeveelheden en belastingen die daarbij optreden.
+  </dd>
+
+
+
+<dt><dfn data-lt="Gebiedsplannen" id="dfn-gebiedsplannen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Gebiedsplannen</dfn></dt>
+<dd>
+Plannen voor de herontwikkeling, herinrichting of tijdelijke invulling van vrijkomende ruimte na ontmanteling.
+</dd>
+
+<dt><dfn data-lt="GEBORA" id="dfn-gebora" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn"><abbr title="GEbouwen en BORgring van Rollen en Aansprakelijkheden">GEBORA</abbr></dfn></dt>
+  <dd>
+    <abbr title="GEbouwen en BORgring van Rollen en Aansprakelijkheden">GEBORA</abbr> is een standaard rollenmodel voor de gebouwde omgeving dat verantwoordelijkheden en bevoegdheden structureert binnen assetmanagementprocessen. Het model helpt bij het eenduidig vastleggen van rollen, zoals asseteigenaar, beheerder en opdrachtnemer, zodat samenwerking, besluitvorming en informatie-uitwisseling efficiënt en transparant verlopen.
+  </dd>
+
+
+  <dt><dfn data-lt="GEBORA Bouwwerklevenscyclus" id="dfn-gebora-bouwwerklevenscyclus" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn"><abbr title="GEbouwen en BORgring van Rollen en Aansprakelijkheden">GEBORA</abbr> Bouwwerklevenscyclus</dfn></dt>
+<dd>De <abbr title="GEbouwen en BORgring van Rollen en Aansprakelijkheden">GEBORA</abbr> bouwwerklevenscyclus beschrijft de opeenvolgende fasen die een bouwwerk doorloopt vanaf het eerste initiatief tot en met de ontmanteling. Deze fasen zijn: ontwikkeling, onderhoud en ontmanteling. Elke van deze fasen bestaat uit vier informatiegebaseerde stappen (functioneel gepland, technisch gepland, technisch gerealiseerd, functioneel gerealiseerd), en herhaalt zich iteratief voor elk fysiek object in de gebouwde omgeving. Zie ook <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">dit document</a>. </dd>
+
+
+<dt><dfn data-lt="Gebruiksrapportages" id="dfn-gebruiksrapportages" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Gebruiksrapportages</dfn></dt>
+<dd>
+Verslagen waarin het gebruik en functioneren van objecten na onderhoud worden geëvalueerd, op basis van metingen, observaties of gebruikersfeedback.
+</dd>
+
+
+
+<dt><dfn data-lt="Gebruiksstatus" id="dfn-gebruiksstatus" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Gebruiksstatus</dfn></dt>
+<dd>
+De actuele toestand van een object in termen van beschikbaarheid, functioneren en toegankelijkheid voor gebruikers.
+</dd>
+
+<dt><dfn data-lt="GWSW|Gegevenswoordenboek Stedelijk Water" id="dfn-gwsw" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn"><abbr title="Gegevenswoordenboek Stedelijk Water">GWSW</abbr></dfn></dt>
+  <dd>
+    Het <abbr title="Gegevenswoordenboek Stedelijk Water">GWSW</abbr> is een gestandaardiseerd informatiemodel voor het vastleggen, beheren en uitwisselen van gegevens over stedelijk waterbeheer. Het bevat eenduidige definities en semantische afspraken voor objecten zoals rioleringen, watergangen en bergingsvoorzieningen. Het model zorgt voor een betere interoperabiliteit tussen verschillende partijen, zoals gemeenten, waterschappen en ingenieursbureaus.  
+    Zie ook <a href="https://www.riool.net/applicaties/gegevenswoordenboek-stedelijk-water-gwsw" target="_blank">deze website</a> en <a href="https://data.gwsw.nl/" target="_blank">deze viewer</a>.
+  </dd>
+
+  <dt><dfn data-lt="iAMPro model" id="dfn-iampro-model" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">iAMPro model</dfn></dt>
+<dd>
+Het iAMPro model voor assetmanagement voorziet in de benodigde activiteiten, informatie en randvoorwaarden die een (overheids)organisatie nodig heeft om invulling te geven aan professioneel assetmanagement. Het model bestaat uit drie pijlers:  
+<ol><li><strong>Processtappen</strong>: zes opeenvolgende stappen die het assetmanagementproces structureren,  
+</li><li><strong>Data en informatie</strong>: betrouwbare, actuele en gestandaardiseerde gegevens als basis voor besluitvorming,  
+</li><li><strong>Mens en organisatie</strong>: randvoorwaarden voor competenties, rollen en cultuur binnen de organisatie.</li></ol>
+Zie ook <a href="https://essit.nl/over-assetmanagement/wat-is-het-iampro-model-voor-assetmanagement">deze link</a>
+</dd>
+
+<dt><dfn data-lt="IMBOR|Informatiemodel Beheer Openbare Ruimte" id="dfn-imbor" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn"><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></dfn></dt>
+  <dd>
+    Het <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> beschrijft de objecttypen die voorkomen in de openbare ruimte en de vaste objectgegevens die nodig zijn voor het beheer hiervan. 
+    Zie ook <a href="https://www.crow.nl/thema-s/openbare-ruimte/imbor" target="_blank">deze website</a> en <a href="https://imbor-viewer.apps.crow.nl/" target="_blank">deze viewer</a>.
+  </dd>
+
+
+<dt><dfn data-lt="Incidenten" id="dfn-incidenten" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Incidenten</dfn></dt>
+<dd>
+Onvoorziene gebeurtenissen die de werking van een object verstoren of schade veroorzaken. Ze vormen een signaal voor structurele onderhoudsbehoefte.
+</dd>
+
+<dt><dfn data-lt="Informatieleveringsspecificatie" id="dfn-informatieleveringsspecificatie" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Informatieleveringsspecificatie</dfn></dt>
+  <dd>
+  Een <abbr title="informatieleveringsspecificatie">ILS</abbr> is een contractdocument voor projecten bedoeld om om de informatiecyclus voor assetmanagement goed te laten verlopen. Het bundelt de informatiebehoefte van de asset- en informatiemanagers en de vereisten aan welke deze informatie moet voldoen.  Een <abbr title="informatieleveringsspecificatie">ILS</abbr> bestaat typisch uit een eisenset met bijlagen die betrekking hebben op topografie, areaalgegevens, tekeningen en documenten en waarin wordt beschreven: Welke data geleverd moeten worden; Wanneer deze data geleverd moeten worden; In welke vorm de data geleverd moeten worden; Aan welke standaarden de informatie moet voldoen.  
+  </dd>
+
+  
+
+
+  <dt><dfn data-lt="Ingenieur" id="dfn-ingenieur" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Ingenieur</dfn></dt>
+<dd>Definitie uit het <a href="#dfn-standaard-rollenmodel" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-standaard-rollenmodel-5">Standaard Rollenmodel</a>: Een ingenieur in de context van de gebouwde omgeving is een professional die wetenschappelijke en technische kennis toepast om problemen op te lossen en projecten te realiseren die betrekking hebben op de bouw en het onderhoud van infrastructuur, gebouwen en andere constructies.</dd>
+
+<dt><dfn data-lt="Inspectierapporten" id="dfn-inspectierapporten" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Inspectierapporten</dfn></dt>
+<dd>
+Verslagen van technische beoordelingen van bestaande objecten of systemen. Deze vormen input voor technische planning en beoordeling van ontwerpbehoeften.
+</dd>
+
+<dt><dfn data-lt="Installateur" id="dfn-installateur" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Installateur</dfn></dt>
+<dd>Definitie uit het <a href="#dfn-standaard-rollenmodel" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-standaard-rollenmodel-6">Standaard Rollenmodel</a>: Een installateur of technisch dienstverlener in de context van de gebouwde omgeving is een bedrijf/professional die verantwoordelijk is voor het ontwerpen, aanleggen, onderhouden en repareren van technische installaties in gebouwen. Dit kan variëren van verwarmings-en koelsystemen (HVAC), waterleidingen en sanitair, tot elektrische installaties en ict/datanetwerken.</dd>
+
+<dt><dfn data-lt="Kern Prestatie Indicatoren" id="dfn-kern-prestatie-indicatoren" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Kern Prestatie Indicatoren</dfn></dt>
+  <dd>
+    Meetbare indicatoren die de mate van realisatie van assetmanagementdoelen zichtbaar maken volgens het <a href="#dfn-iampro-model" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-iampro-model-6">iAMPro model</a>. Ze bevatten een norm- of grenswaarden voor prestatiebeoordeling.
+  </dd>
+
+  <dt><dfn data-lt="Keuringseisen" id="dfn-keuringseisen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Keuringseisen</dfn></dt>
+<dd>
+Vereisten waaraan objecten moeten voldoen na onderhoud om opnieuw in gebruik genomen te worden, vaak inclusief functionele en veiligheidscontroles.
+</dd>
+
+
+<dt><dfn data-lt="KLIC|Kabels en Leidingen Informatieportaal" id="dfn-klic" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn"><abbr title="Kabels en Leidingen Informatieportaal">KLIC</abbr></dfn></dt>
+  <dd>
+    Een digitaal systeem waarin netbeheerders informatie over ondergrondse kabels en leidingen registreren. Het portaal wordt beheerd door het Kadaster en maakt het mogelijk om via een <abbr title="Kabels en Leidingen Informatieportaal">KLIC</abbr>-melding gegevens op te vragen over de ligging van kabels en leidingen. Dit is verplicht bij graafwerkzaamheden om schade te voorkomen en de veiligheid te waarborgen.
+  </dd>
+
+
+
+<dt><dfn data-lt="Kosten" id="dfn-kosten" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Kosten</dfn></dt>
+<dd>
+Verwachte of begrote financiële uitgaven voor gepland onderhoud, inclusief materiaalkosten, arbeidsloon en risicoreserveringen.
+</dd>
+
+<dt><dfn data-lt="kostenkengetal|kostenkengetallen" id="dfn-kostenkengetal" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">kostenkengetal</dfn></dt>
+<dd>
+De gemiddelde kosten voor de vervanging van een constuctiedeel van een civiel kunstwerk. </dd>
+
+ 
+
+<dt><dfn data-lt="Kostenramingen" id="dfn-kostenramingen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Kostenramingen</dfn></dt>
+<dd>
+Voorspellingen van de financiële middelen die nodig zijn voor demontage, afvoer, hergebruik of sanering van objecten.
+</dd>
+
+
+
+<dt><dfn data-lt="Kwaliteitsborger" id="dfn-kwaliteitsborger" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Kwaliteitsborger</dfn></dt>
+<dd>Definitie uit het <a href="#dfn-standaard-rollenmodel" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-standaard-rollenmodel-7">Standaard Rollenmodel</a>: Onder de Wet Kwaliteitsborging voor het Bouwen (WKB) is een kwaliteitsborger een onafhankelijke partij die toeziet op de kwaliteit van bouwprojecten. De kwaliteitsborger controleert of de bouwtechnische aspecten van een project voldoen aan de gestelde regels en voorschriften, zoals brandveiligheid, fundering, en energiezuinigheid. Deze controle vindt plaats zowel voor als tijdens de bouw, en de kwaliteitsborger geeft uiteindelijk de finale goedkeuring voordat het project gereedmelding krijgt.</dd>
+
+<dt><dfn data-lt="Levensduurkosten" id="dfn-levensduurkosten" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Levensduurkosten</dfn></dt>
+  <dd>
+    Levensduurkosten zijn alle kosten die gedurende de gehele levenscyclus van een civiel kunstwerk worden gemaakt, vanaf ontwerp en aanleg tot en met beheer, onderhoud, vervanging en sloop. In de beoordeling van civiele kunstwerken vormen levensduurkosten een essentieel criterium om investeringen af te wegen tegen prestaties en risico’s. Door kosten integraal te benaderen (Total Cost of Ownership) kan een optimale balans worden gevonden tussen functionaliteit, duurzaamheid en financiële efficiëntie.
+  </dd>
+
+  <dt><dfn data-lt="Leverancier" id="dfn-leverancier" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Leverancier</dfn></dt>
+<dd>Definitie uit het <a href="#dfn-standaard-rollenmodel" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-standaard-rollenmodel-8">Standaard Rollenmodel</a>: Een leverancier in de context van de gebouwde omgeving is een bedrijf of persoon die bouwmaterialen, apparatuur, en andere benodigdheden levert aan bouwprojecten. Leveranciers spelen een cruciale rol in de bouwsector door ervoor te zorgen dat de benodigde materialen en producten op tijd en in goede staat beschikbaar zijn voor de uitvoering van bouwprojecten</dd>
+
+<dt><dfn data-lt="Maatregelen" id="dfn-maatregelen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Maatregelen</dfn></dt>
+<dd>
+  Geplande acties gericht op het instandhouden of ontwikkelen van de functionaliteit van infrastructuurobjecten, zoals civiele kunstwerken. 
+  <br><br>
+</dd>
+
+<dt><dfn data-lt="Materiaalgegevens" id="dfn-materiaalgegevens" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Materiaalgegevens</dfn></dt>
+<dd>
+Informatie over fysische, chemische en mechanische eigenschappen van te gebruiken materialen in de ontwerp- en planningsfase.
+</dd>
+
+<dt><dfn data-lt="Materiaalinformatie" id="dfn-materiaalinformatie" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Materiaalinformatie</dfn></dt>
+<dd>
+Overzicht van de materialen die vrijkomen bij de sloop of demontage, inclusief bestemming, classificatie en verwerkingsmethoden.
+</dd>
+
+<dt><dfn data-lt="Materiaalstaten" id="dfn-materiaalstaten" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Materiaalstaten</dfn></dt>
+<dd>
+Overzicht van materialen die gebruikt zijn of nodig zijn voor onderhoud, inclusief vervangingsfrequentie en voorraadbeheer.
+</dd>
+
+<dt><dfn data-lt="Materialenpaspoort" id="dfn-materialenpaspoort" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Materialenpaspoort</dfn></dt>
+<dd>
+is een dataset waarin alle materialen en grondstoffen van een product worden vastgelegd. Naast de productcompositie kan het ook informatie bevatten over bijvoorbeeld de herkomst van materialen, milieueffecten, losmaakbaarheid en potentieel hergebruik. Een materialenpaspoort bevordert duurzaamheid en de circulaire economie door transparantie en door het faciliteren van hergebruik van materialen.
+</dd>
+
+
+
+
+<dt><dfn data-lt="Maximale belastingsklassen" id="dfn-maximale-belastingsklassen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Maximale belastingsklassen</dfn></dt>
+<dd>
+  Informatie over de toegestane belasting op constructies, uitgedrukt in gewichtsklassen of verkeerscategorieën. Wordt gebruikt voor gebruiksbeperkingen en toetsing van functionele geschiktheid.
+</dd>
+
+<dt><dfn data-lt="Meerjarenonderhoudsplan|Meerjarenonderhoudsplanning" id="dfn-meerjarenonderhoudsplan" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Meerjarenonderhoudsplan</dfn></dt>
+  <dd>
+Een Meerjarenonderhoudsplan is een strategisch document waarin het verwachte onderhoud aan een object (zoals een brug, kade, gebouw of rioolstelsel) voor een langere periode — meestal 10 tot 50 jaar — wordt gepland en begroot. Het plan bevat een overzicht van te verwachten onderhoudsactiviteiten per jaar, de bijbehorende kosten, de timing van vervangingen, inspecties en renovaties en de relatie met prestatie-eisen of servicelevels.
+</dd><dt><dfn data-lt="Meldingen van defecten en verstoringen" id="dfn-meldingen-van-defecten-en-verstoringen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Meldingen van defecten en verstoringen</dfn></dt>
+<dd>
+Informatie afkomstig van gebruikers of beheerders over afwijkingen in de werking of schade aan objecten, ter ondersteuning van onderhoudsplanning.
+</dd>
+
+
+<dt><dfn data-lt="Milieueisen" id="dfn-milieueisen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Milieueisen</dfn></dt>
+<dd>
+Vereisten met betrekking tot milieu-impact, afvalverwerking en hergebruik bij de sloop of ontmanteling van objecten.
+</dd>
+
+
+<dt><dfn data-lt="Minimale dataset" id="dfn-minimale-dataset" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Minimale dataset</dfn></dt>
+  <dd>Een minimale dataset is de kleinst mogelijk verzameling gegevens (dataspecificatie) die nodig is om de gegevens van een bepaald proces of informatieproduct vast te leggen. 
+    Zie ook <a href="https://begrippen.crow.nl/ombk/nl/page/?uri=https%3A%2F%2Fdata.crow.nl%2Ftech-term%2Fterm%2FTT004" target="_blank">begrippen.crow.nl</a>.
+  </dd>
+
+
+<dt><dfn data-lt="Monitoren en analyseren" id="dfn-monitoren-en-analyseren" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Monitoren en analyseren</dfn></dt>
+<dd>
+De vijfde processtap binnen het <a href="#dfn-iampro-model" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-iampro-model-7">iAMPro model</a>iAMPro model waarin de prestaties van het assetsysteem worden gemonitord en de resultaten geanalyseerd. Hierbij wordt bekeken in hoeverre de servicelevels uit de processtap ‘Beleid en Strategie’ zijn gehaald en wat de belangrijkste oorzaken zijn van eventuele afwijkingen. De onderhoudsactiviteiten worden gemonitord aan de hand van klachten en storingen; de conditie van de assets aan de hand van uitgevoerde inspecties. 
+</dd>
+
+<dt><dfn data-lt="Netwerkmodel" id="dfn-netwerkmodel" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Netwerkmodel</dfn></dt>
+<dd>
+  Een abstracte weergave van het verkeersnetwerk met relaties tussen knooppunten, routes en capaciteit. Wordt gebruikt voor analyse van doorstroming, routealternatieven en robuustheid van het netwerk.
+</dd>
+
+<dt><dfn data-lt="NLCS|Nederlandse CAD standaard" id="dfn-nlcs" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn"><abbr title="Nederlandse CAD Standaard">NLCS</abbr></dfn></dt>
+  <dd>
+    De <abbr title="Nederlandse CAD Standaard">NLCS</abbr> is een 2D-tekenstandaard voor de openbare ruimte en infrastructuur. Deze open standaard bevat afspraken voor het omgaan met metadata, digitaal tekenen, het uiterlijk van de tekening en de coderingssystematiek en lagenstructuur van tekenwerk.
+    Zie ook <a href="https://www.digigo.nu/standaarden/nlcs/" target="_blank">deze website</a>.
+  </dd>
+
+<dt><dfn data-lt="Normen" id="dfn-normen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Normen</dfn></dt>
+<dd>
+Technische richtlijnen of standaarden die aangeven aan welke prestaties, condities of eigenschappen objecten moeten voldoen tijdens hun levensduur.
+</dd>
+
+<dt><dfn data-lt="NPDW" id="dfn-npdw" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn"><abbr title="Nationaal Platform Duurzame Wegverharding">NPDW</abbr></dfn></dt>
+<dd>
+ 
+<p><abbr title="Nationaal Platform Duurzame Wegverharding">NPDW</abbr> brengt opdrachtgevers, opdrachtnemers en kennisinstellingen samen om kennis te bundelen en samen de beste aanpak te kiezen voor verduurzaming van wegen. Zie ook <a href="https://www.npdwegverharding.nl/" target="_blank">deze website</a></p>
+</dd>
+
+<dt><dfn data-lt="Onderhoudsbedrijf" id="dfn-onderhoudsbedrijf" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Onderhoudsbedrijf</dfn></dt>
+<dd>Definitie uit het <a href="#dfn-standaard-rollenmodel" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-standaard-rollenmodel-9">Standaard Rollenmodel</a>: Een onderhoudsbedrijf in de context van de gebouwde omgeving is een onderneming die verantwoordelijk is voor het uitvoeren van onderhouds-en reparatiewerkzaamheden aan gebouwen, installaties en infrastructuur.</dd>
+
+
+
+
+
+
+<dt><dfn data-lt="Onderhoudsfase" id="dfn-onderhoudsfase" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Onderhoudsfase</dfn></dt>
+<dd>Definitie volgens de <a href="#dfn-gebora-bouwwerklevenscyclus" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-gebora-bouwwerklevenscyclus-1"><abbr title="GEbouwen en BORgring van Rollen en Aansprakelijkheden">GEBORA</abbr> Bouwwerklevenscyclus</a>:De beheer-en onderhoudsfase in de levenscyclus van een bouwwerk speelt een cruciale rol bij het waarborgen van de functionaliteit, veiligheid en duurzaamheid van het gebouw of infrastructuur. Deze fase volgt op de ontwikkelfase en omvat alle activiteiten die nodig zijn om het bouwwerk in goede staat te houden gedurende zijn gebruiksperiode.</dd>
+
+<dt><dfn data-lt="Onderhoudsinstructies" id="dfn-onderhoudsinstructies" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Onderhoudsinstructies</dfn></dt>
+<dd>
+Gedetailleerde richtlijnen voor het uitvoeren van onderhoud, inclusief werkwijze, gereedschappen, veiligheidsmaatregelen en frequentie.
+</dd>
+
+<dt><dfn data-lt="Ontmantelingsfase" id="dfn-ontmantelingsfase" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Ontmantelingsfase</dfn></dt>
+<dd>Definitie volgens de <a href="#dfn-gebora-bouwwerklevenscyclus" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-gebora-bouwwerklevenscyclus-2"><abbr title="GEbouwen en BORgring van Rollen en Aansprakelijkheden">GEBORA</abbr> Bouwwerklevenscyclus</a>: de ontmantelingsfase is de laatste fase in de levenscyclus van een bouwwerk en omvat het proces van het demonteren of slopen van het bouwwerk aan het einde van zijn gebruiksperiode. Deze fase is van groot belang om ervoor te zorgen dat de ontmanteling veilig en milieuvriendelijk gebeurt, met een focus op hergebruik en recycling van materialen.</dd>
+
+<dt><dfn data-lt="Ontwerpregels" id="dfn-ontwerpregels" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Ontwerpregels</dfn></dt>
+<dd>
+Vastgestelde richtlijnen of parameters waarmee technische ontwerpen moeten voldoen, zoals afmetingen, toleranties of functionele eisen.
+</dd>
+
+<dt><dfn data-lt="Ontwikkelfase" id="dfn-ontwikkelfase" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Ontwikkelfase</dfn></dt>
+<dd>Definitie volgens de <a href="#dfn-gebora-bouwwerklevenscyclus" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-gebora-bouwwerklevenscyclus-3"><abbr title="GEbouwen en BORgring van Rollen en Aansprakelijkheden">GEBORA</abbr> Bouwwerklevenscyclus</a>: De ontwikkelfase in de levenscyclus van een bouwwerk is het beginpunt waar de concepten en plannen voor een nieuw project worden gegenereerd en uitgewerkt. Deze fase is cruciaal omdat het de basis legt voor het gehele project en de referentiearchitectuur van de gebouwde omgeving. Hier worden de doelen, specificaties en ontwerpvereisten vastgelegd, en worden de nodige vergunningen aangevraagd.</dd>
+
+<dt><dfn data-lt="Opvolgingsscenario’s" id="dfn-opvolgingsscenario-s" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Opvolgingsscenario’s</dfn></dt>
+<dd>
+Uitgewerkte toekomstscenario’s voor de invulling van het gebied of de functie van het ontmantelde object, inclusief afwegingen.
+</dd>
+
+<dt><dfn data-lt="PIM" id="dfn-pim" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn"><abbr title="Pavement Information System">PIM</abbr></dfn></dt>
+<dd>
+ 
+<p><abbr title="Pavement Information System">PIM</abbr> is de gezamenlijke applicatie van wegenbouwers waarmee de inkoop van bouwstoffen, de mengselverhouding van het asfalt en de aanleg van wegen kan worden aangestuurd. Zie ook <a href="https://www.pim-infra.nl/" target="_blank">deze website</a></p>
+</dd>
+
+<dt><dfn data-lt="Plankaarten" id="dfn-plankaarten" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Plankaarten</dfn></dt>
+<dd>
+Kaarten waarop de geplande ontmanteling of herontwikkeling van objecten of gebieden is ingetekend.
+</dd>
+
+<dt><dfn data-lt="Plannen en Voorbereiden" id="dfn-plannen-en-voorbereiden" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Plannen en Voorbereiden</dfn></dt>
+<dd>
+De derde processtap binnen het <a href="#dfn-iampro-model" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-iampro-model-8">iAMPro model</a>iAMPro model waarin nieuwbouwplannen, herstructureringen en instandhoudingsmaatregelen worden uitgewerkt tot ontwerpoplossingen en bestekken. Daarbij horen ook planningen. Verder komen in deze stap aan de orde het opstellen van specificaties, het uitwerken van ontwerpen, het voorbereiden van contracten en het maken van een keuze tussen zelf doen en uitbesteden. Het resultaat bestaat uit contracten en inrichtingsplannen (ontwerpen).
+</dd>
+
+<dt><dfn data-lt="Prestatie-indicatoren" id="dfn-prestatie-indicatoren" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Prestatie-indicatoren</dfn></dt>
+  <dd>
+    Onderliggende, concrete meetindicatoren die op functioneel of technisch niveau inzicht geven in de staat en werking van assets volgens het <a href="#dfn-iampro-model" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-iampro-model-9">iAMPro model</a>. Ze maken het mogelijk om KPI’s te vertalen naar dagelijkse uitvoering. Functionele indicatoren meten bijvoorbeeld gebruikservaring of beeldkwaliteit; technische indicatoren meten zaken als slijtage, scheurvorming of faalkans.
+  </dd>
+
+  <dt><dfn data-lt="Prestatie|Prestaties" id="dfn-prestatie" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Prestaties</dfn></dt>
+<dd>
+Waarden die het huidige functioneren van een object beschrijven, zoals beschikbaarheid, comfort of betrouwbaarheid, als input voor onderhoudsplanning.
+</dd>
+
+<dt><dfn data-lt="Produkteigenschappen" id="dfn-produkteigenschappen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Produkteigenschappen</dfn></dt>
+<dd>
+Technische kenmerken van gebruikte producten of componenten, zoals afmetingen, duurzaamheid, prestatie of onderhoudsvereisten.
+</dd>
+
+<dt><dfn data-lt="Prognose|Prognoses" id="dfn-prognose" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Prognoses</dfn></dt>
+<dd>
+Verwachte ontwikkeling van kosten, prestaties, risico’s of gebruik op basis van historische gegevens, trends of scenario's. Wordt gebruikt bij strategische planning en financiële onderbouwing. Volgens het onderzoek naar de staat en benutting van civiele kunstwerken van TNO: Het doel van een (lange termijn) prognose van de vernieuwingsvraag [voor civiele kunstwerken, red] is doorgaans het in kaart brengen en onderbouwen van benodigde investeringen (budgetbehoefte).
+</dd>
+
+<dt><dfn data-lt="Regelgeving" id="dfn-regelgeving" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Regelgeving</dfn></dt>
+<dd>
+Wettelijke eisen en normen waaraan technische ontwerpen moeten voldoen, zoals bouwbesluiten, veiligheidsvoorschriften of milieuregels.
+</dd>
+
+
+<dt><dfn data-lt="Registratie-eisen" id="dfn-registratie-eisen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Registratie-eisen</dfn></dt>
+<dd>
+Vastgelegde verplichtingen voor documentatie van de uitgevoerde demontage en verwijdering van materialen.
+</dd>
+
+
+<dt><dfn data-lt="Registrerende instantie" id="dfn-registrerende-instantie" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Registrerende instantie</dfn></dt>
+<dd>Definitie uit het <a href="#dfn-standaard-rollenmodel" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-standaard-rollenmodel-10">Standaard Rollenmodel</a>: Een registrerende instantie in de context van de gebouwde omgeving is een organisatie die verantwoordelijk is voor het bijhoudenen beheren van officiële registraties van onroerend goed, eigendomsrechten, en andere relevante gegevens. Deze instanties zorgen ervoor dat informatieover eigendom, gebruik en beperkingen van vastgoed nauwkeurig en up-to-date is.</dd>
+
+<dt><dfn data-lt="Restlevensduur" id="dfn-restlevensduur" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Restlevensduur</dfn></dt>
+<dd>
+Verwachte periode waarin een object nog functioneel kan blijven voordat ontmanteling noodzakelijk wordt.
+</dd>
+
+<dt><dfn data-lt="Revisiegegevens" id="dfn-revisiegegevens" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Revisiegegevens</dfn></dt>
+<dd>
+Informatie die bij afronding van een project wordt overhandigd, zoals garanties, testresultaten, realisatietekeningen en goedkeuringen.
+</dd>
+
+
+<dt><dfn data-lt="Risico's" id="dfn-risico-s" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Risico's</dfn></dt>
+  <dd>
+    Binnen de beoordeling van civiele kunstwerken zijn risico’s de kans dat een gebrek, schade of functieverlies zich voordoet in combinatie met de mogelijke gevolgen daarvan voor veiligheid, functionaliteit, beschikbaarheid, milieu of kosten. Risicoanalyse maakt het mogelijk om op gestructureerde wijze prioriteiten te stellen in inspectie, onderhoud en vervanging. Typische risicofactoren zijn materiaalveroudering, overbelasting, gebrekkig onderhoud en externe invloeden zoals verkeer of weersomstandigheden.
+  </dd>
+
+  <dt><dfn data-lt="Risico’s" id="dfn-risico-s-0" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Risico’s</dfn></dt>
+<dd>
+Inschatting van mogelijke ongewenste gebeurtenissen tijdens gebruik of onderhoud, inclusief de kans en impact ervan, gebruikt voor onderhoudsbeslissingen.
+</dd>
+
+
+<dt><dfn data-lt="Risicogegevens" id="dfn-risicogegevens" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Risicogegevens</dfn></dt>
+<dd>
+Technische data over mogelijke veiligheidsrisico’s bij ontmanteling, zoals instortingsgevaar, schadelijke stoffen of explosiegevaar.
+</dd>
+
+
+<dt><dfn data-lt="Routes en alternatieve routes" id="dfn-routes-en-alternatieve-routes" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Routes en alternatieve routes</dfn></dt>
+<dd>
+  Informatie over bestaande en beschikbare omleidingsroutes bij uitval of onderhoud van delen van het netwerk. Van belang voor bereikbaarheidsanalyse en planning van maatregelen.
+</dd>
+
+
+
+<dt><dfn data-lt="Servicelevels" id="dfn-servicelevels" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Servicelevels</dfn></dt>
+  <dd>
+    Gedefinieerde prestatieniveaus die aangeven welk minimum aan prestaties van assets wordt verwacht volgens het <a href="#dfn-iampro-model" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-iampro-model-10">iAMPro model</a>. Een combinatie van een kern prestatie indicator met een normwaarde leidt tot een gewenst service level. Dit bepaalt de uitvoeringsnorm voor prestaties op systeem- en objectniveau.
+  </dd>
+
+  <dt><dfn data-lt="Sloopbedrijf" id="dfn-sloopbedrijf" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Sloopbedrijf</dfn></dt>
+<dd>Definitie uit het <a href="#dfn-standaard-rollenmodel" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-standaard-rollenmodel-11">Standaard Rollenmodel</a>: Een sloop-en oogstbedrijf in de context van de gebouwde omgeving is een gespecialiseerde onderneming die niet alleen gebouwen en structuren veilig en efficiënt sloopt, maar ook waardevolle materialen en componenten uit het sloopproces terugwint (oogst). Deze materialen worden vervolgens gerecycled of hergebruikt in nieuwe bouwprojecten, wat bijdraagt aan duurzaamheid en afvalreductie.</dd>
+
+
+
+<dt><dfn data-lt="Standaard Rollenmodel" id="dfn-standaard-rollenmodel" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Standaard Rollenmodel</dfn></dt>
+  <dd>
+    Het standaard rollenmodel van <a href="#dfn-gebora" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-gebora-1"><abbr title="GEbouwen en BORgring van Rollen en Aansprakelijkheden">GEBORA</abbr></a> is een gestructureerde beschrijving van rollen, verantwoordelijkheden en bevoegdheden binnen de gebouwde omgeving. <a href="https://www.digigo.nu/gebora-standaard-rollenmodel/" target="_blank">Standaard Rollenmodel</a>
+  </dd>
+
+
+<dt><dfn data-lt="Statuswijzigingen" id="dfn-statuswijzigingen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Statuswijzigingen</dfn></dt>
+<dd>
+Formele registratie van de overgang van objecten naar een nieuwe status, zoals buiten gebruik, gesloopt of herbestemd.
+</dd>
+
+<dt><dfn data-lt="Strategische Organisatiedoelen" id="dfn-strategische-organisatiedoelen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Strategische Organisatiedoelen</dfn></dt>
+<dd>
+De lange termijn doelstellingen van een organisatie die de richting en het succes van de gehele organisatie bepalen. Binnen het <a href="#dfn-iampro-model" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-iampro-model-11">iAMPro model</a> worden strategische organisatiedoelen geformuleerd, bij voorbeeld veiligheid en mobiliteit, om ervoor te zorgen dat de inrichting van de openbare ruimte en infrastructuur op deze doelen kan worden afgestemd.
+</dd>
+
+
+<dt><dfn data-lt="Functioneel gepland|Functioneel geplande|T1 Functioneel gepland" id="dfn-functioneel-gepland" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">T1 Functioneel gepland</dfn></dt>
+<dd>T1 is volgens de <a href="#dfn-gebora-bouwwerklevenscyclus" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-gebora-bouwwerklevenscyclus-4"><abbr title="GEbouwen en BORgring van Rollen en Aansprakelijkheden">GEBORA</abbr> Bouwwerklevenscyclus</a> de toestand waarin de entiteit (bijvoorbeeld een civiel kunstwerk) een functioneel plan heeft dat gereed is. Deze toestand begint met het initiatief tot plannen en eindigt met het beschikbaar zijn van een gevalideerd functioneel ontwerp of plan.</dd>
+
+<dt><dfn data-lt="Technisch gepland|Technisch geplande|T2 Technisch gepland" id="dfn-technisch-gepland" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">T2 Technisch gepland</dfn></dt>
+<dd>T2 is volgens de <a href="#dfn-gebora-bouwwerklevenscyclus" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-gebora-bouwwerklevenscyclus-5"><abbr title="GEbouwen en BORgring van Rollen en Aansprakelijkheden">GEBORA</abbr> Bouwwerklevenscyclus</a> de toestand waarin de technische uitwerking van het functioneel plan is afgerond en de  functionele eisen zijn vertaald naar technische objecten en specificaties, gereed voor uitvoering tijdens ontwikkeling, onderhoud en ontmanteling.</dd>
+
+<dt><dfn data-lt="Technisch gerealiseerd|Technisch gerealiseerde|T3 Technisch gerealiseerd" id="dfn-technisch-gerealiseerd" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">T3 Technisch gerealiseerd</dfn></dt>
+<dd>T3 is volgens de <a href="#dfn-gebora-bouwwerklevenscyclus" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-gebora-bouwwerklevenscyclus-6"><abbr title="GEbouwen en BORgring van Rollen en Aansprakelijkheden">GEBORA</abbr> Bouwwerklevenscyclus</a> de toestand waarin de technische realisatie van de entiteit voltooid is. De werkzaamheden zijn fysiek uitgevoerd.</dd>
+
+<dt><dfn data-lt="Functioneel gerealiseerd|Functioneel gerealiseerde|T4 Functioneel gerealiseerd" id="dfn-functioneel-gerealiseerd" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn"> T4 Functioneel gerealiseerd</dfn></dt>
+<dd>T4 is volgens de <a href="#dfn-gebora-bouwwerklevenscyclus" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-gebora-bouwwerklevenscyclus-7"><abbr title="GEbouwen en BORgring van Rollen en Aansprakelijkheden">GEBORA</abbr> Bouwwerklevenscyclus</a> de toestand waarin de entiteit in gebruik is genomen.</dd>
+
+<dt><dfn data-lt="Technische degradatie" id="dfn-technische-degradatie" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Technische degradatie</dfn></dt>
+<dd>
+Proces waarbij materialen of systemen in kwaliteit afnemen door slijtage, veroudering of belasting. Deze informatie bepaalt het technisch onderhoudsplan.
+</dd>
+
+<dt><dfn data-lt="Technische levensduur" id="dfn-technische-levensduur" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Technische levensduur</dfn></dt>
+  <dd>
+     De levensduur waarna het object in theorie vervangen zou moeten worden omdat het technisch niet meer aan de eisen voldoet.  Dit kan door gebruik te maken van kengetallen of door gebruik te maken van inschattingen van experts, al dan niet op basis van tussentijdse inspectie. In het laatste geval zal er doorgaans sprake zijn van een restlevensduur. De technische levensduur zal in de regel per type object en/of hoofdmateriaalsoort verschillen. Bron: TNO, prognose-vernieuwingsopgave-2023
+  </dd>
+
+ <dt><dfn data-lt="Technische randvoorwaarden" id="dfn-technische-randvoorwaarden" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Technische randvoorwaarden</dfn></dt>
+<dd>
+Vooraf bepaalde technische vereisten, beperkingen of uitgangspunten die invloed hebben op het ontwerp, zoals milieueisen, ruimteclaims of aansluitingen.
+</dd>
+
+
+<dt><dfn data-lt="Technische specificaties" id="dfn-technische-specificaties" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Technische specificaties</dfn></dt>
+<dd>
+Inhoudelijke beschrijving van hoe technische demontage moet plaatsvinden, inclusief procedures, toleranties en materialen.
+</dd>
+
+
+<dt><dfn data-lt="Uitvoeringsplanning" id="dfn-uitvoeringsplanning" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Uitvoeringsplanning</dfn></dt>
+<dd>
+  Operationele planning van concrete werkzaamheden, inclusief fasering, uitvoeringsmomenten en benodigde capaciteit. Wordt gebruikt voor aansturing van uitvoering en afstemming met stakeholders.
+</dd>
+
+
+
+
+
+<dt><dfn data-lt="Uitvoeringsspecificaties" id="dfn-uitvoeringsspecificaties" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Uitvoeringsspecificaties</dfn></dt>
+<dd>
+Technische beschrijvingen die aangeven hoe werkzaamheden moeten worden uitgevoerd, met aandacht voor kwaliteit, volgorde en controle.
+</dd>
+
+<dt><dfn data-lt="Use case|Use Cases|Use Case" id="dfn-use-case" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Use Case</dfn></dt>
+<dd>
+Een **use case** binnen het **<a href="#dfn-door" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-door-1"><abbr title="Dataharmonisatie Objecten in de Openbare Ruimte">DOOR</abbr>-programma</a>** beschrijft een proces vanuit het perspectief van de betrokken partijen (actoren) en hoe zij informatie met elkaar uitwisselen. Het gaat hierbij niet om het ontwikkelen van software, maar om het waarborgen van een **interoperabele** en **eenduidige uitwisseling van informatie** tussen ketenpartners.  
+
+<p>De use case beschrijft <strong>wie</strong> betrokken is bij de informatie-uitwisseling (actoren), <strong>wat</strong> het doel is en <strong>hoe</strong> de interactie verloopt in een reeks logische stappen. Actoren kunnen personen, organisaties of systemen zijn die gegevens aanleveren, verwerken of gebruiken. De focus ligt op het creëren van een gestroomlijnd proces waarin data betrouwbaar en reproduceerbaar wordt gedeeld, zodat alle partijen effectief kunnen samenwerken bij werkzaamheden in de openbare ruimte en infrastructuur.</p>
+</dd>
+
+
+<dt><dfn data-lt="User story|User Stories" id="dfn-user-story" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">User story</dfn></dt>
+<dd>
+Een user story is een bekend concept in agile softwareontwikkeling en helpt bij het beschrijven van softwarefunctionaliteiten vanuit het oogpunt van de eindgebruiker.​ De user story wordt geformuleerd vanuit het oogpunt van een gebruiker, beschrijft wat deze wil bereiken en met welk doel. Deze structuur helpt het ontwikkelteam en andere belanghebbenden te begrijpen wat ​
+er moet worden gebouwd en waarom, en biedt meetbare criteria voor succes.​
+</dd>
+
+<dt><dfn data-lt="Vastgelegde normen" id="dfn-vastgelegde-normen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Vastgelegde normen</dfn></dt>
+<dd>
+Documenten waarin de vereiste prestatie- of conditiespecificaties zijn vastgelegd waaraan een object na onderhoud moet voldoen.
+</dd>
+
+<dt><dfn data-lt="Veiligheidsprotocollen" id="dfn-veiligheidsprotocollen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Veiligheidsprotocollen</dfn></dt>
+<dd>
+Procedures en richtlijnen om de veiligheid te waarborgen tijdens de uitvoering van de ontmanteling.
+</dd>
+
+<dt><dfn data-lt="Veiligheidsregels" id="dfn-veiligheidsregels" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Veiligheidsregels</dfn></dt>
+<dd>
+Voorschriften die gevolgd moeten worden tijdens onderhoud om risico’s voor personeel, omgeving en gebruikers te beperken.
+</dd>
+
+<dt><dfn data-lt="Verkeersdata" id="dfn-verkeersdata" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Verkeersdata</dfn></dt>
+<dd>
+  Informatie over verkeersstromen, intensiteiten, wachttijden en snelheden. Wordt gebruikt om bereikbaarheid, mobiliteit en knelpunten in het netwerk te analyseren.
+</dd>
+
+<dt><dfn data-lt="Vervangingswaarde" id="dfn-vervangingswaarde" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Vervangingswaarde</dfn></dt>
+<dd>
+De kosten die gepaard gaan met het vervangen van een object. De vervangingswaarde wordt berekend op basis van de fysieke kenmerken van het object, bijvoorbeeld het aantal meters, vierkante meters of kubieke meters, en <a href="#dfn-kostenkengetal" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-kostenkengetal-1">kostenkengetallen</a> voor het object. 
+</dd>
+
+<dt><dfn data-lt="Werktekeningen" id="dfn-werktekeningen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Werktekeningen</dfn></dt>
+<dd>
+Gedetailleerde technische tekeningen die gebruikt worden voor de feitelijke uitvoering van een ontwerp, inclusief maatvoering en materiaaltoepassing.
+</dd>
+
+
+<dt><dfn data-lt="Werkvoorbereiding" id="dfn-werkvoorbereiding" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Werkvoorbereiding</dfn></dt>
+<dd>
+Documentatie en planningsinformatie die nodig is om onderhoudswerkzaamheden effectief en veilig uit te voeren, zoals tijdsplanning en taakverdeling.
+</dd>
+
+<dt><dfn data-lt="Wettelijke kaders" id="dfn-wettelijke-kaders" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Wettelijke kaders</dfn></dt>
+<dd>
+Regelgeving en beleidskaders die van toepassing zijn op de ontmanteling van objecten, inclusief milieuwetten, eigendomsrecht en vergunningen.
+</dd>
+
+</dl></section>  
+  <section id="index" class="appendix"><div class="header-wrapper"><h2 id="a-index"><bdi class="secno">A. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix A."></a></div><section id="index-defined-here"><div class="header-wrapper"><h3 id="a-1-termen-gedefinieerd-door-deze-specificatie"><bdi class="secno">A.1 </bdi>Termen gedefinieerd door deze specificatie</h3><a class="self-link" href="#index-defined-here" aria-label="Permalink for Appendix A.1"></a></div>
+    
+    <ul class="index">
+    <li>
+      <a class="index-term" href="#dfn-asseteigenaar">Asseteigenaar</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-assetmanagementdoelen">Assetmanagementdoelen</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-assetmanager">Assetmanager</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-assetregistratie-civiele-kunstwerken">Assetregistratie civiele kunstwerken</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-beheerder">Beheerder</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-beheren-en-programmeren">Beheren en Programmeren</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-beleid-en-strategie">Beleid en strategie</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-bgt">BGT</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-bim-basis-infra">BIM Basis Infra</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-bim-model">BIM-model</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-bouwbedrijf">Bouwbedrijf</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-bouwen-en-onderhouden">Bouwen en Onderhouden</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-certificaten">Certificaten</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-conditiemeting">Conditiemeting</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-condities">Condities</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-conformiteit">Conformiteit</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-constructieberekening">Constructieberekening</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-controlelijsten">Controlelijsten</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-dataspecificatie">Dataspecificatie</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-door">DOOR</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-eigendomsinformatie">Eigendomsinformatie</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-evalueren-en-bijsturen">Evalueren en Bijsturenn</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-functionele-levensduur">Functionele levensduur</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-gebiedsplannen">Gebiedsplannen</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-gebora">GEBORA</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-gebora-bouwwerklevenscyclus">GEBORA Bouwwerklevenscyclus</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-gebruiksrapportages">Gebruiksrapportages</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-gebruiksstatus">Gebruiksstatus</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-gwsw">GWSW</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-iampro-model">iAMPro model</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-imbor">IMBOR</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-incidenten">Incidenten</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-informatieleveringsspecificatie">Informatieleveringsspecificatie</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-ingenieur">Ingenieur</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-inspectierapporten">Inspectierapporten</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-installateur">Installateur</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-kern-prestatie-indicatoren">Kern Prestatie Indicatoren</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-keuringseisen">Keuringseisen</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-klic">KLIC</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-kosten">Kosten</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-kostenkengetal">kostenkengetal</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-kostenramingen">Kostenramingen</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-kwaliteitsborger">Kwaliteitsborger</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-levensduurkosten">Levensduurkosten</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-leverancier">Leverancier</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-maatregelen">Maatregelen</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-materiaalgegevens">Materiaalgegevens</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-materiaalinformatie">Materiaalinformatie</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-materiaalstaten">Materiaalstaten</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-materialenpaspoort">Materialenpaspoort</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-maximale-belastingsklassen">Maximale belastingsklassen</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-meerjarenonderhoudsplan">Meerjarenonderhoudsplan</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-meldingen-van-defecten-en-verstoringen">Meldingen van defecten en verstoringen</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-milieueisen">Milieueisen</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-minimale-dataset">Minimale dataset</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-monitoren-en-analyseren">Monitoren en analyseren</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-netwerkmodel">Netwerkmodel</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-nlcs">NLCS</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-normen">Normen</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-npdw">NPDW</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-onderhoudsbedrijf">Onderhoudsbedrijf</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-onderhoudsfase">Onderhoudsfase</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-onderhoudsinstructies">Onderhoudsinstructies</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-ontmantelingsfase">Ontmantelingsfase</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-ontwerpregels">Ontwerpregels</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-ontwikkelfase">Ontwikkelfase</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-opvolgingsscenario-s">Opvolgingsscenario’s</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-pim">PIM</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-plankaarten">Plankaarten</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-plannen-en-voorbereiden">Plannen en Voorbereiden</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-prestatie-indicatoren">Prestatie-indicatoren</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-prestatie">Prestaties</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-produkteigenschappen">Produkteigenschappen</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-prognose">Prognoses</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-regelgeving">Regelgeving</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-registratie-eisen">Registratie-eisen</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-registrerende-instantie">Registrerende instantie</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-restlevensduur">Restlevensduur</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-revisiegegevens">Revisiegegevens</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-risico-s">Risico's</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-risico-s-0">Risico’s</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-risicogegevens">Risicogegevens</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-routes-en-alternatieve-routes">Routes en alternatieve routes</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-servicelevels">Servicelevels</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-sloopbedrijf">Sloopbedrijf</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-standaard-rollenmodel">Standaard Rollenmodel</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-statuswijzigingen">Statuswijzigingen</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-strategische-organisatiedoelen">Strategische Organisatiedoelen</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-functioneel-gepland">T1 Functioneel gepland</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-technisch-gepland">T2 Technisch gepland</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-technisch-gerealiseerd">T3 Technisch gerealiseerd</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-functioneel-gerealiseerd">T4 Functioneel gerealiseerd</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-technische-degradatie">Technische degradatie</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-technische-levensduur">Technische levensduur</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-technische-randvoorwaarden">Technische randvoorwaarden</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-technische-specificaties">Technische specificaties</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-uitvoeringsplanning">Uitvoeringsplanning</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-uitvoeringsspecificaties">Uitvoeringsspecificaties</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-use-case">Use Case</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-user-story">User story</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-vastgelegde-normen">Vastgelegde normen</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-veiligheidsprotocollen">Veiligheidsprotocollen</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-veiligheidsregels">Veiligheidsregels</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-verkeersdata">Verkeersdata</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-vervangingswaarde">Vervangingswaarde</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-werktekeningen">Werktekeningen</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-werkvoorbereiding">Werkvoorbereiding</a> 
+    <span class="print-only">§5.</span></li><li>
+      <a class="index-term" href="#dfn-wettelijke-kaders">Wettelijke kaders</a> 
+    <span class="print-only">§5.</span></li>
+  </ul>
+  </section><section id="index-defined-elsewhere"><div class="header-wrapper"><h3 id="a-2-termen-gedefinieerd-door-referentie"><bdi class="secno">A.2 </bdi>Termen gedefinieerd door referentie</h3><a class="self-link" href="#index-defined-elsewhere" aria-label="Permalink for Appendix A.2"></a></div>
+    
+    <ul class="index">
+    
+  </ul>
+  </section></section>
+
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+
+<script id="annotation-service-runtime">(() => {
+// @ts-check
+const SETTING_KEY = "annotation-service-hypothesis";
+const SETTING_VALUE_ALLOWED = "allowed";
+const hClientDefault = {
+  openSidebar: false,
+  showHighlights: true,
+  theme: "classic",
+  branding: {
+    accentColor: "rgb(0, 157, 224)",
+    appBackgroundColor: "white",
+    ctaBackgroundColor: "rgb(255, 110, 26)",
+    ctaTextColor: "white",
+    selectionFontFamily: "'Museo Sans', Museo, Helvetica, Arial, sans serif",
+    annotationFontFamily: "'Museo Sans', Museo, Helvetica, Arial, sans serif",
+  },
+};
+
+if (document.respec) {
+  document.respec.ready.then(render);
+} else {
+  render();
+}
+
+/** Render the placeholder (Load Service Button) or annotation info (# annotations, Show Annotation Button). */
+function render() {
+  if (localStorage.getItem(SETTING_KEY) == SETTING_VALUE_ALLOWED) {
+    renderAnnotationServiceInfo();
+  } else {
+    renderPlaceholder();
+  }
+}
+
+/** Render Load Service Button, with privacy info. */
+function renderPlaceholder() {
+  localStorage.removeItem(SETTING_KEY);
+
+  /** @type {HTMLElement} */
+  const placeholder = document.querySelector("#annotation-service-placeholder");
+  placeholder.hidden = false;
+
+  const listener = loadButtonListener();
+  document
+    .querySelector("[data-load-annotation-service]")
+    .addEventListener("keydown", listener);
+  document
+    .querySelector("[data-load-annotation-service]")
+    .addEventListener("click", listener);
+
+  /** @type {HTMLElement} */
+  const serviceInfo = document.querySelector("#annotation-service-loaded");
+  serviceInfo.hidden = true;
+}
+
+function loadButtonListener() {
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLButtonElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    target.disabled = true;
+    localStorage.setItem(SETTING_KEY, SETTING_VALUE_ALLOWED);
+    renderAnnotationServiceInfo();
+  };
+}
+
+function unloadButtonListener() {
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLButtonElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    target.disabled = true;
+    localStorage.removeItem(SETTING_KEY);
+    removeHScript();
+  };
+}
+
+function renderAnnotationServiceInfo() {
+  addHConfig(document);
+  addHScript(document);
+}
+
+/**
+ *
+ * @param {Document} doc
+ * @param {*} conf
+ */
+function addHScript(doc, conf) {
+  const script = doc.createElement("script");
+  script.src = "https://hypothes.is/embed.js";
+  script.async = true;
+  doc.body.appendChild(script);
+
+  script.addEventListener("load", event => {
+    /** @type {HTMLElement} */
+    const placeholder = document.querySelector(
+      "#annotation-service-placeholder"
+    );
+    placeholder.hidden = true;
+
+    /** @type {HTMLElement} */
+    const serviceInfo = document.querySelector("#annotation-service-loaded");
+    serviceInfo.hidden = false;
+
+    const unloadListener = unloadButtonListener();
+    document
+      .querySelector("[data-unload-annotation-service]")
+      .addEventListener("keydown", unloadListener);
+    document
+      .querySelector("[data-unload-annotation-service]")
+      .addEventListener("click", unloadListener);
+  });
+}
+
+/**
+ * Retract Hypothesis permission.
+ */
+function removeHScript() {
+  // Deleting the hypothesis-script, does not undo its changes, listeners etc.
+  // Instead, reload the frame.
+  window.location.reload();
+}
+
+/**
+ *
+ * @param {Document} doc
+ * @param {*} conf
+ */
+function addHConfig(doc, conf) {
+  const script = doc.createElement("script");
+  script.className = "js-hypothesis-config";
+  script.type = "application/json";
+  script.innerText = JSON.stringify(hClientDefault);
+  doc.body.appendChild(script);
+}
+})()</script><section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-referenties"><bdi class="secno">B. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="informatieve-referenties"><div class="header-wrapper"><h3 id="b-1-informatieve-referenties"><bdi class="secno">B.1 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix B.1"></a></div>
+    
+    <dl class="bibliography"><dt id="bib-rdf-sparql-protocol">[rdf-sparql-protocol]</dt><dd>
+      <a href="https://www.w3.org/TR/rdf-sparql-protocol/"><cite>SPARQL Protocol for RDF</cite></a>. Kendall Clark; Lee Feigenbaum; Elias Torres.  W3C. 15 January 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/rdf-sparql-protocol/">https://www.w3.org/TR/rdf-sparql-protocol/</a>
+    </dd><dt id="bib-rdf-sparql-query">[rdf-sparql-query]</dt><dd>
+      <a href="https://www.w3.org/TR/rdf-sparql-query/"><cite>SPARQL Query Language for RDF</cite></a>. Eric Prud'hommeaux; Andy Seaborne.  W3C. 15 January 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/rdf-sparql-query/">https://www.w3.org/TR/rdf-sparql-query/</a>
+    </dd><dt id="bib-shacl">[shacl]</dt><dd>
+      <a href="https://www.w3.org/TR/shacl/"><cite>Shapes Constraint Language (SHACL)</cite></a>. Holger Knublauch; Dimitris Kontokostas.  W3C. 20 July 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/shacl/">https://www.w3.org/TR/shacl/</a>
+    </dd><dt id="bib-turtle">[turtle]</dt><dd>
+      <a href="https://www.w3.org/TR/turtle/"><cite>RDF 1.1 Turtle</cite></a>. Eric Prud'hommeaux; Gavin Carothers.  W3C. 25 February 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/turtle/">https://www.w3.org/TR/turtle/</a>
+    </dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-asseteigenaar" aria-label="Links in this document to definition: Asseteigenaar">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-asseteigenaar" aria-label="Permalink for definition: Asseteigenaar. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-assetmanagementdoelen" aria-label="Links in this document to definition: Assetmanagementdoelen">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-assetmanagementdoelen" aria-label="Permalink for definition: Assetmanagementdoelen. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-assetmanager" aria-label="Links in this document to definition: Assetmanager">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-assetmanager" aria-label="Permalink for definition: Assetmanager. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-assetregistratie-civiele-kunstwerken" aria-label="Links in this document to definition: Assetregistratie civiele kunstwerken">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-assetregistratie-civiele-kunstwerken" aria-label="Permalink for definition: Assetregistratie civiele kunstwerken. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-beheerder" aria-label="Links in this document to definition: Beheerder">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-beheerder" aria-label="Permalink for definition: Beheerder. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-beheren-en-programmeren" aria-label="Links in this document to definition: Beheren en Programmeren">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-beheren-en-programmeren" aria-label="Permalink for definition: Beheren en Programmeren. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-beleid-en-strategie" aria-label="Links in this document to definition: Beleid en strategie">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-beleid-en-strategie" aria-label="Permalink for definition: Beleid en strategie. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-bgt" aria-label="Links in this document to definition: BGT">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-bgt" aria-label="Permalink for definition: BGT. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-bim-basis-infra" aria-label="Links in this document to definition: BIM Basis Infra">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-bim-basis-infra" aria-label="Permalink for definition: BIM Basis Infra. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-bim-model" aria-label="Links in this document to definition: BIM-model">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-bim-model" aria-label="Permalink for definition: BIM-model. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-bouwbedrijf" aria-label="Links in this document to definition: Bouwbedrijf">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-bouwbedrijf" aria-label="Permalink for definition: Bouwbedrijf. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-bouwen-en-onderhouden" aria-label="Links in this document to definition: Bouwen en Onderhouden">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-bouwen-en-onderhouden" aria-label="Permalink for definition: Bouwen en Onderhouden. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-certificaten" aria-label="Links in this document to definition: Certificaten">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-certificaten" aria-label="Permalink for definition: Certificaten. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-conditiemeting" aria-label="Links in this document to definition: Conditiemeting">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-conditiemeting" aria-label="Permalink for definition: Conditiemeting. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-condities" aria-label="Links in this document to definition: Condities">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-condities" aria-label="Permalink for definition: Condities. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-conformiteit" aria-label="Links in this document to definition: Conformiteit">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-conformiteit" aria-label="Permalink for definition: Conformiteit. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-constructieberekening" aria-label="Links in this document to definition: Constructieberekening">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-constructieberekening" aria-label="Permalink for definition: Constructieberekening. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-controlelijsten" aria-label="Links in this document to definition: Controlelijsten">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-controlelijsten" aria-label="Permalink for definition: Controlelijsten. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-dataspecificatie" aria-label="Links in this document to definition: Dataspecificatie">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-dataspecificatie" aria-label="Permalink for definition: Dataspecificatie. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-door" aria-label="Links in this document to definition: DOOR">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-door" aria-label="Permalink for definition: DOOR. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-door-1" title="§ 5. Definities">§ 5. Definities</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-eigendomsinformatie" aria-label="Links in this document to definition: Eigendomsinformatie">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-eigendomsinformatie" aria-label="Permalink for definition: Eigendomsinformatie. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-evalueren-en-bijsturen" aria-label="Links in this document to definition: Evalueren en Bijsturenn">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-evalueren-en-bijsturen" aria-label="Permalink for definition: Evalueren en Bijsturenn. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-functionele-levensduur" aria-label="Links in this document to definition: Functionele levensduur">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-functionele-levensduur" aria-label="Permalink for definition: Functionele levensduur. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-gebiedsplannen" aria-label="Links in this document to definition: Gebiedsplannen">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-gebiedsplannen" aria-label="Permalink for definition: Gebiedsplannen. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-gebora" aria-label="Links in this document to definition: GEBORA">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-gebora" aria-label="Permalink for definition: GEBORA. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-gebora-1" title="§ 5. Definities">§ 5. Definities</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-gebora-bouwwerklevenscyclus" aria-label="Links in this document to definition: GEBORA Bouwwerklevenscyclus">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-gebora-bouwwerklevenscyclus" aria-label="Permalink for definition: GEBORA Bouwwerklevenscyclus. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-gebora-bouwwerklevenscyclus-1" title="§ 5. Definities">§ 5. Definities</a> <a href="#ref-for-dfn-gebora-bouwwerklevenscyclus-2" title="Reference 2">(2)</a> <a href="#ref-for-dfn-gebora-bouwwerklevenscyclus-3" title="Reference 3">(3)</a> <a href="#ref-for-dfn-gebora-bouwwerklevenscyclus-4" title="Reference 4">(4)</a> <a href="#ref-for-dfn-gebora-bouwwerklevenscyclus-5" title="Reference 5">(5)</a> <a href="#ref-for-dfn-gebora-bouwwerklevenscyclus-6" title="Reference 6">(6)</a> <a href="#ref-for-dfn-gebora-bouwwerklevenscyclus-7" title="Reference 7">(7)</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-gebruiksrapportages" aria-label="Links in this document to definition: Gebruiksrapportages">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-gebruiksrapportages" aria-label="Permalink for definition: Gebruiksrapportages. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-gebruiksstatus" aria-label="Links in this document to definition: Gebruiksstatus">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-gebruiksstatus" aria-label="Permalink for definition: Gebruiksstatus. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-gwsw" aria-label="Links in this document to definition: GWSW">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-gwsw" aria-label="Permalink for definition: GWSW. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-iampro-model" aria-label="Links in this document to definition: iAMPro model">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-iampro-model" aria-label="Permalink for definition: iAMPro model. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-iampro-model-1" title="§ 5. Definities">§ 5. Definities</a> <a href="#ref-for-dfn-iampro-model-2" title="Reference 2">(2)</a> <a href="#ref-for-dfn-iampro-model-3" title="Reference 3">(3)</a> <a href="#ref-for-dfn-iampro-model-4" title="Reference 4">(4)</a> <a href="#ref-for-dfn-iampro-model-5" title="Reference 5">(5)</a> <a href="#ref-for-dfn-iampro-model-6" title="Reference 6">(6)</a> <a href="#ref-for-dfn-iampro-model-7" title="Reference 7">(7)</a> <a href="#ref-for-dfn-iampro-model-8" title="Reference 8">(8)</a> <a href="#ref-for-dfn-iampro-model-9" title="Reference 9">(9)</a> <a href="#ref-for-dfn-iampro-model-10" title="Reference 10">(10)</a> <a href="#ref-for-dfn-iampro-model-11" title="Reference 11">(11)</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-imbor" aria-label="Links in this document to definition: IMBOR">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-imbor" aria-label="Permalink for definition: IMBOR. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-incidenten" aria-label="Links in this document to definition: Incidenten">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-incidenten" aria-label="Permalink for definition: Incidenten. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-informatieleveringsspecificatie" aria-label="Links in this document to definition: Informatieleveringsspecificatie">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-informatieleveringsspecificatie" aria-label="Permalink for definition: Informatieleveringsspecificatie. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-ingenieur" aria-label="Links in this document to definition: Ingenieur">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-ingenieur" aria-label="Permalink for definition: Ingenieur. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-inspectierapporten" aria-label="Links in this document to definition: Inspectierapporten">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-inspectierapporten" aria-label="Permalink for definition: Inspectierapporten. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-installateur" aria-label="Links in this document to definition: Installateur">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-installateur" aria-label="Permalink for definition: Installateur. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-kern-prestatie-indicatoren" aria-label="Links in this document to definition: Kern Prestatie Indicatoren">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-kern-prestatie-indicatoren" aria-label="Permalink for definition: Kern Prestatie Indicatoren. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-keuringseisen" aria-label="Links in this document to definition: Keuringseisen">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-keuringseisen" aria-label="Permalink for definition: Keuringseisen. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-klic" aria-label="Links in this document to definition: KLIC">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-klic" aria-label="Permalink for definition: KLIC. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-kosten" aria-label="Links in this document to definition: Kosten">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-kosten" aria-label="Permalink for definition: Kosten. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-kostenkengetal" aria-label="Links in this document to definition: kostenkengetal">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-kostenkengetal" aria-label="Permalink for definition: kostenkengetal. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-kostenkengetal-1" title="§ 5. Definities">§ 5. Definities</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-kostenramingen" aria-label="Links in this document to definition: Kostenramingen">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-kostenramingen" aria-label="Permalink for definition: Kostenramingen. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-kwaliteitsborger" aria-label="Links in this document to definition: Kwaliteitsborger">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-kwaliteitsborger" aria-label="Permalink for definition: Kwaliteitsborger. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-levensduurkosten" aria-label="Links in this document to definition: Levensduurkosten">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-levensduurkosten" aria-label="Permalink for definition: Levensduurkosten. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-leverancier" aria-label="Links in this document to definition: Leverancier">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-leverancier" aria-label="Permalink for definition: Leverancier. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-maatregelen" aria-label="Links in this document to definition: Maatregelen">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-maatregelen" aria-label="Permalink for definition: Maatregelen. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-materiaalgegevens" aria-label="Links in this document to definition: Materiaalgegevens">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-materiaalgegevens" aria-label="Permalink for definition: Materiaalgegevens. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-materiaalinformatie" aria-label="Links in this document to definition: Materiaalinformatie">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-materiaalinformatie" aria-label="Permalink for definition: Materiaalinformatie. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-materiaalstaten" aria-label="Links in this document to definition: Materiaalstaten">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-materiaalstaten" aria-label="Permalink for definition: Materiaalstaten. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-materialenpaspoort" aria-label="Links in this document to definition: Materialenpaspoort">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-materialenpaspoort" aria-label="Permalink for definition: Materialenpaspoort. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-maximale-belastingsklassen" aria-label="Links in this document to definition: Maximale belastingsklassen">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-maximale-belastingsklassen" aria-label="Permalink for definition: Maximale belastingsklassen. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-meerjarenonderhoudsplan" aria-label="Links in this document to definition: Meerjarenonderhoudsplan">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-meerjarenonderhoudsplan" aria-label="Permalink for definition: Meerjarenonderhoudsplan. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-meldingen-van-defecten-en-verstoringen" aria-label="Links in this document to definition: Meldingen van defecten en verstoringen">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-meldingen-van-defecten-en-verstoringen" aria-label="Permalink for definition: Meldingen van defecten en verstoringen. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-milieueisen" aria-label="Links in this document to definition: Milieueisen">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-milieueisen" aria-label="Permalink for definition: Milieueisen. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-minimale-dataset" aria-label="Links in this document to definition: Minimale dataset">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-minimale-dataset" aria-label="Permalink for definition: Minimale dataset. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-monitoren-en-analyseren" aria-label="Links in this document to definition: Monitoren en analyseren">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-monitoren-en-analyseren" aria-label="Permalink for definition: Monitoren en analyseren. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-netwerkmodel" aria-label="Links in this document to definition: Netwerkmodel">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-netwerkmodel" aria-label="Permalink for definition: Netwerkmodel. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-nlcs" aria-label="Links in this document to definition: NLCS">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-nlcs" aria-label="Permalink for definition: NLCS. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-normen" aria-label="Links in this document to definition: Normen">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-normen" aria-label="Permalink for definition: Normen. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-npdw" aria-label="Links in this document to definition: NPDW">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-npdw" aria-label="Permalink for definition: NPDW. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-onderhoudsbedrijf" aria-label="Links in this document to definition: Onderhoudsbedrijf">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-onderhoudsbedrijf" aria-label="Permalink for definition: Onderhoudsbedrijf. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-onderhoudsfase" aria-label="Links in this document to definition: Onderhoudsfase">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-onderhoudsfase" aria-label="Permalink for definition: Onderhoudsfase. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-onderhoudsinstructies" aria-label="Links in this document to definition: Onderhoudsinstructies">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-onderhoudsinstructies" aria-label="Permalink for definition: Onderhoudsinstructies. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-ontmantelingsfase" aria-label="Links in this document to definition: Ontmantelingsfase">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-ontmantelingsfase" aria-label="Permalink for definition: Ontmantelingsfase. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-ontwerpregels" aria-label="Links in this document to definition: Ontwerpregels">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-ontwerpregels" aria-label="Permalink for definition: Ontwerpregels. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-ontwikkelfase" aria-label="Links in this document to definition: Ontwikkelfase">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-ontwikkelfase" aria-label="Permalink for definition: Ontwikkelfase. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-opvolgingsscenario-s" aria-label="Links in this document to definition: Opvolgingsscenario’s">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-opvolgingsscenario-s" aria-label="Permalink for definition: Opvolgingsscenario’s. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-pim" aria-label="Links in this document to definition: PIM">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-pim" aria-label="Permalink for definition: PIM. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-plankaarten" aria-label="Links in this document to definition: Plankaarten">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-plankaarten" aria-label="Permalink for definition: Plankaarten. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-plannen-en-voorbereiden" aria-label="Links in this document to definition: Plannen en Voorbereiden">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-plannen-en-voorbereiden" aria-label="Permalink for definition: Plannen en Voorbereiden. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-prestatie-indicatoren" aria-label="Links in this document to definition: Prestatie-indicatoren">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-prestatie-indicatoren" aria-label="Permalink for definition: Prestatie-indicatoren. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-prestatie" aria-label="Links in this document to definition: Prestaties">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-prestatie" aria-label="Permalink for definition: Prestaties. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-produkteigenschappen" aria-label="Links in this document to definition: Produkteigenschappen">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-produkteigenschappen" aria-label="Permalink for definition: Produkteigenschappen. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-prognose" aria-label="Links in this document to definition: Prognoses">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-prognose" aria-label="Permalink for definition: Prognoses. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-regelgeving" aria-label="Links in this document to definition: Regelgeving">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-regelgeving" aria-label="Permalink for definition: Regelgeving. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-registratie-eisen" aria-label="Links in this document to definition: Registratie-eisen">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-registratie-eisen" aria-label="Permalink for definition: Registratie-eisen. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-registrerende-instantie" aria-label="Links in this document to definition: Registrerende instantie">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-registrerende-instantie" aria-label="Permalink for definition: Registrerende instantie. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-restlevensduur" aria-label="Links in this document to definition: Restlevensduur">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-restlevensduur" aria-label="Permalink for definition: Restlevensduur. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-revisiegegevens" aria-label="Links in this document to definition: Revisiegegevens">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-revisiegegevens" aria-label="Permalink for definition: Revisiegegevens. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-risico-s" aria-label="Links in this document to definition: Risico's">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-risico-s" aria-label="Permalink for definition: Risico's. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-risico-s-0" aria-label="Links in this document to definition: Risico’s">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-risico-s-0" aria-label="Permalink for definition: Risico’s. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-risicogegevens" aria-label="Links in this document to definition: Risicogegevens">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-risicogegevens" aria-label="Permalink for definition: Risicogegevens. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-routes-en-alternatieve-routes" aria-label="Links in this document to definition: Routes en alternatieve routes">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-routes-en-alternatieve-routes" aria-label="Permalink for definition: Routes en alternatieve routes. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-servicelevels" aria-label="Links in this document to definition: Servicelevels">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-servicelevels" aria-label="Permalink for definition: Servicelevels. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-sloopbedrijf" aria-label="Links in this document to definition: Sloopbedrijf">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-sloopbedrijf" aria-label="Permalink for definition: Sloopbedrijf. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-standaard-rollenmodel" aria-label="Links in this document to definition: Standaard Rollenmodel">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-standaard-rollenmodel" aria-label="Permalink for definition: Standaard Rollenmodel. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-standaard-rollenmodel-1" title="§ 5. Definities">§ 5. Definities</a> <a href="#ref-for-dfn-standaard-rollenmodel-2" title="Reference 2">(2)</a> <a href="#ref-for-dfn-standaard-rollenmodel-3" title="Reference 3">(3)</a> <a href="#ref-for-dfn-standaard-rollenmodel-4" title="Reference 4">(4)</a> <a href="#ref-for-dfn-standaard-rollenmodel-5" title="Reference 5">(5)</a> <a href="#ref-for-dfn-standaard-rollenmodel-6" title="Reference 6">(6)</a> <a href="#ref-for-dfn-standaard-rollenmodel-7" title="Reference 7">(7)</a> <a href="#ref-for-dfn-standaard-rollenmodel-8" title="Reference 8">(8)</a> <a href="#ref-for-dfn-standaard-rollenmodel-9" title="Reference 9">(9)</a> <a href="#ref-for-dfn-standaard-rollenmodel-10" title="Reference 10">(10)</a> <a href="#ref-for-dfn-standaard-rollenmodel-11" title="Reference 11">(11)</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-statuswijzigingen" aria-label="Links in this document to definition: Statuswijzigingen">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-statuswijzigingen" aria-label="Permalink for definition: Statuswijzigingen. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-strategische-organisatiedoelen" aria-label="Links in this document to definition: Strategische Organisatiedoelen">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-strategische-organisatiedoelen" aria-label="Permalink for definition: Strategische Organisatiedoelen. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-functioneel-gepland" aria-label="Links in this document to definition: T1 Functioneel gepland">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-functioneel-gepland" aria-label="Permalink for definition: T1 Functioneel gepland. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-technisch-gepland" aria-label="Links in this document to definition: T2 Technisch gepland">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-technisch-gepland" aria-label="Permalink for definition: T2 Technisch gepland. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-technisch-gerealiseerd" aria-label="Links in this document to definition: T3 Technisch gerealiseerd">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-technisch-gerealiseerd" aria-label="Permalink for definition: T3 Technisch gerealiseerd. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-functioneel-gerealiseerd" aria-label="Links in this document to definition: T4 Functioneel gerealiseerd">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-functioneel-gerealiseerd" aria-label="Permalink for definition: T4 Functioneel gerealiseerd. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-technische-degradatie" aria-label="Links in this document to definition: Technische degradatie">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-technische-degradatie" aria-label="Permalink for definition: Technische degradatie. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-technische-levensduur" aria-label="Links in this document to definition: Technische levensduur">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-technische-levensduur" aria-label="Permalink for definition: Technische levensduur. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-technische-randvoorwaarden" aria-label="Links in this document to definition: Technische randvoorwaarden">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-technische-randvoorwaarden" aria-label="Permalink for definition: Technische randvoorwaarden. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-technische-specificaties" aria-label="Links in this document to definition: Technische specificaties">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-technische-specificaties" aria-label="Permalink for definition: Technische specificaties. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-uitvoeringsplanning" aria-label="Links in this document to definition: Uitvoeringsplanning">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-uitvoeringsplanning" aria-label="Permalink for definition: Uitvoeringsplanning. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-uitvoeringsspecificaties" aria-label="Links in this document to definition: Uitvoeringsspecificaties">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-uitvoeringsspecificaties" aria-label="Permalink for definition: Uitvoeringsspecificaties. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-use-case" aria-label="Links in this document to definition: Use Case">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-use-case" aria-label="Permalink for definition: Use Case. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-user-story" aria-label="Links in this document to definition: User story">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-user-story" aria-label="Permalink for definition: User story. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-vastgelegde-normen" aria-label="Links in this document to definition: Vastgelegde normen">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-vastgelegde-normen" aria-label="Permalink for definition: Vastgelegde normen. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-veiligheidsprotocollen" aria-label="Links in this document to definition: Veiligheidsprotocollen">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-veiligheidsprotocollen" aria-label="Permalink for definition: Veiligheidsprotocollen. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-veiligheidsregels" aria-label="Links in this document to definition: Veiligheidsregels">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-veiligheidsregels" aria-label="Permalink for definition: Veiligheidsregels. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-verkeersdata" aria-label="Links in this document to definition: Verkeersdata">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-verkeersdata" aria-label="Permalink for definition: Verkeersdata. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-vervangingswaarde" aria-label="Links in this document to definition: Vervangingswaarde">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-vervangingswaarde" aria-label="Permalink for definition: Vervangingswaarde. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-werktekeningen" aria-label="Links in this document to definition: Werktekeningen">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-werktekeningen" aria-label="Permalink for definition: Werktekeningen. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-werkvoorbereiding" aria-label="Links in this document to definition: Werkvoorbereiding">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-werkvoorbereiding" aria-label="Permalink for definition: Werkvoorbereiding. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-wettelijke-kaders" aria-label="Links in this document to definition: Wettelijke kaders">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-wettelijke-kaders" aria-label="Permalink for definition: Wettelijke kaders. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://docs.crow.nl/respec-design/fixup.js"></script></body></html>
