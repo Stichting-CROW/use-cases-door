@@ -1,0 +1,33 @@
+@prefix imbor: <https://data.crow.nl/imbor/def/> .
+@prefix nen2660: <https://w3id.org/nen2660/def#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+imbor:6156ad75-a23c-4b5f-8095-c773cd6ebffe
+    sh:property [
+        sh:path [ sh:inversePath imbor:heeftBetrekkingOp ] ;
+        sh:qualifiedValueShape [
+            sh:class imbor:7dc78de4-02e4-41c8-974f-585066e09225
+        ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "Elke Vaste brug moet minimaal 1 Eigenaar hebben (via rol)"@nl
+    ] ;
+    sh:property [
+        sh:path imbor:a6424f8a-080e-4f85-a160-6fa4f0848ed8 ;
+        sh:minCount 1 ;
+        sh:message "Vaste brug moet een nummer hebben"@nl
+    ] ;
+    sh:property [
+        sh:path imbor:534f07b8-9243-4848-a3d0-6ebeb321784c ;
+        sh:minCount 1 ;
+        sh:message "Vaste brug moet een aanlegjaar hebben"@nl
+    ] ;
+    sh:property [
+        sh:path nen2660:isDescribedBy ;
+        sh:qualifiedValueShape [
+            sh:class imbor:76c74447-0325-4276-9809-bdc7215380a1 ;
+            sh:property imbor:afa7fecf-daca-4126-a906-c91c8c7f1c8a
+        ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "Elke Vaste brug moet minimaal 1 Modaliteit-informatie hebben"@nl
+    ] .

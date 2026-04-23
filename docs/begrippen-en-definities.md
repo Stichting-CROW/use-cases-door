@@ -29,6 +29,11 @@ De CORE gemeenten, Stichting Rioned en CROW hebben de handen ineen geslagen om v
 <abbr title="Nationaal Platform Duurzame Wegverharding">NPDW</abbr> brengt opdrachtgevers, opdrachtnemers en kennisinstellingen samen om kennis te bundelen en samen de beste aanpak te kiezen voor verduurzaming van wegen. Zie ook <a href="https://www.npdwegverharding.nl/" target="_blank">deze website</a>
 </dd>
 
+<dt><dfn data-lt="Dataspecificatie">Dataspecificatie</dfn></dt>
+<dd>
+Een nauwkeurig afgebakende verzameling gegevens die essentieel zijn voor een specifiek proces, programma of beleidsvraag. De gegevens worden gespecificeerd op basis van een datastandaard.
+</dd>
+
 <dt><dfn data-lt="User story|User Stories">User story</dfn></dt>
 <dd>
 Een user story is een bekend concept in agile softwareontwikkeling en helpt bij het beschrijven van softwarefunctionaliteiten vanuit het oogpunt van de eindgebruiker.​ De user story wordt geformuleerd vanuit het oogpunt van een gebruiker, beschrijft wat deze wil bereiken en met welk doel. Deze structuur helpt het ontwikkelteam en andere belanghebbenden te begrijpen wat ​
