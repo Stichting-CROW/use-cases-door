@@ -9,3 +9,5 @@ Archief met gereviewde versies of oudere versies van documenten:
 [Gemeente Utrecht, reviewversie 15 december 2025](https://docs.crow.nl/use-cases-door/consultationversions/CR-use-cases-door_utrecht-20251215.html)
 
 [Use case Materialenpaspoort asfalt - Reviewversie 9 december 2025](https://docs.crow.nl/use-cases-door/consultationversions/IR-use-cases-door_zuid-holland-20251209.html)
+
+[Interne review CROW: Familiebenqadering kunstwerken](https://docs.crow.nl/use-cases-door/consultationversions/IR-use-cases-door_families-kunstwerken-20260423.html)
