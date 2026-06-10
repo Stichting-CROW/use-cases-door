@@ -1,0 +1,304 @@
+@prefix : <file:///c%3A/Users/100288/CROW/KO571%20Datagedreven%20beheer%20constructieve%20veiligheid%20van%20kunstwerken%20-%20Algemeen/03%20Uitvoeringsfase/2026/05%20Producten/Dataspecificatie_KunstwerkenVasteBrug.ttl#> .
+@prefix gwsw: <http://data.gwsw.nl/1.6/totaal/> .
+@prefix imbor: <https://data.crow.nl/imbor/def/> .
+@prefix imbor-domeinwaarden: <https://data.crow.nl/imbor/id/domeinwaarden/> .
+@prefix nen2660: <https://w3id.org/nen2660/def#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:DataspecificatieSRVV a owl:Ontology ;
+    rdfs:label "DataSpecificatie SRVV"@nl ;
+    rdfs:comment """
+Deze dataspecificatie beschrijft de minimumeisen waaraan areaaldata over kunstwerken moet voldoen
+in het kader van de Systematische Risicobeoordeling Veiligheid Vaste bruggen (SRVV).
+De regels zijn opgebouwd van algemeen naar specifiek. Tenzij anders vermeld zijn eisen hard (violation);
+aandachtspunten zijn zachte eisen (warning).
+
+Gemeenschappelijke eisen (voor alle kunstwerken: Vaste brug, Beweegbare brug, Viaduct, Onderdoorgang):
+  - Gekoppeld aan minimaal één eigenaar via een eigendomsrol (verplicht).
+  - Exact één objectnummer, uitgedrukt als tekst (verplicht).
+  - Exact één aanlegjaar, uitgedrukt als xsd:gYear (aandachtspunt bij ontbreken).
+  - Exact één Modaliteit-informatie (via isDescribedBy), van het juiste IMBOR-type,
+    met het modaliteitsattribuut ingevuld als een URI (verplicht).
+  - Minimaal één Landhoofd als onderdeel (via hasPart) (aandachtspunt bij ontbreken).
+  - Minimaal één Fundering op staal of Paalfundering als onderdeel (via hasPart) (aandachtspunt bij ontbreken),
+    bestaande uit Staal, Beton of Hout (via consistsOf) (verplicht).
+  - Een Damwand als onderdeel is optioneel toegestaan.
+
+Vaste brug — type-specifieke eisen:
+  - Verschijningsvorm verplicht ingevuld (elke waarde toegestaan).
+  - Als de verschijningsvorm één van de vier bekende typen is, gelden aanvullende eisen:
+      • Plaatbrug: verplicht minimaal één Dek als onderdeel (via hasPart), met materiaal (via consistsOf).
+      • Liggerbrug: minimaal één Dek aanbevolen (aandachtspunt bij ontbreken); materiaal via consistsOf.
+      • Boogbrug: geen Dek vereist; de brug zelf moet via consistsOf gekoppeld zijn aan minimaal één materiaal.
+      • Duikerbrug: geen aanvullende type-specifieke eisen.
+  - Bij een andere (niet-gedefinieerde) verschijningsvorm gelden alleen de gemeenschappelijke eisen.
+
+Viaduct:
+  - Verplicht minimaal één Dek als onderdeel (via hasPart), waarbij het materiaal is aangegeven
+    (via consistsOf).
+
+Beweegbare brug:
+  - Verschijningsvorm verplicht ingevuld met één van de tien toegestane waarden:
+    Basculebrug, Draaibrug, Dubbele basculebrug, Dubbele draaibrug, Dubbele ophaalbrug,
+    Hefbrug, Klapbrug, Ophaalbrug, Rolbrug of Vlotbrug.
+
+Onderdoorgang:
+  - Geen aanvullende type-specifieke eisen; alleen de gemeenschappelijke eisen zijn van toepassing.
+    """@nl .
+
+
+# =============================================================================
+# Gemeenschappelijke constraints voor alle Kunstwerken
+# =============================================================================
+
+:KunstwerkShape a sh:NodeShape ;
+    sh:targetClass imbor:6156ad75-a23c-4b5f-8095-c773cd6ebffe ; # Vaste brug
+    sh:targetClass imbor:366207df-0b72-46a6-8e10-000085d60151 ; # Beweegbare brug
+    sh:targetClass imbor:914127ef-670f-44ff-b64f-883596e3244b ; # Onderdoorgang
+    sh:targetClass imbor:e13e2867-bc61-462a-bcba-a8570c863a75 ; # Viaduct
+
+    sh:property [
+        sh:path [ sh:inversePath imbor:heeftBetrekkingOp ] ;
+        sh:qualifiedValueShape [
+            sh:class imbor:7dc78de4-02e4-41c8-974f-585066e09225
+        ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "Elk kunstwerk moet gekoppeld zijn aan minimaal één eigenaar via een eigendomsrol."@nl
+    ] ;
+    sh:property [
+        sh:path imbor:a6424f8a-080e-4f85-a160-6fa4f0848ed8 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Elk kunstwerk moet exact één objectnummer hebben, uitgedrukt als tekst."@nl
+    ] ;
+    sh:property [
+        sh:path imbor:534f07b8-9243-4848-a3d0-6ebeb321784c ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:gYear ;
+        sh:severity sh:Warning ;
+        sh:message "Elk kunstwerk moet exact één aanlegjaar hebben, uitgedrukt als een jaartal (xsd:gYear). Een ontbrekend aanlegjaar is een aandachtspunt."@nl
+    ] ;
+    sh:property [
+        sh:path nen2660:isDescribedBy ;
+        sh:qualifiedValueShape [
+            sh:class imbor:76c74447-0325-4276-9809-bdc7215380a1 ;
+            sh:property [
+                sh:path imbor:962110b3-46ad-46b8-85c6-f40539a21ee3 ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:message "Modaliteit-informatie moet attribuut 'modaliteit' bevatten en uitgedrukt zin in een URI"@nl
+            ]
+        ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedMaxCount 1 ;
+        sh:message "Elk kunstwerk moet gekoppeld zijn aan één geldige Modaliteit-informatie (via isDescribedBy), met het modaliteitsattribuut ingevuld als een URI."@nl
+    ] ;
+    sh:property [
+        sh:path nen2660:hasPart ;
+        sh:qualifiedValueShape [
+            sh:class imbor:b572dae1-fc8c-43e9-b31c-7123abd151d8 # Landhoofd
+        ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Elk kunstwerk heeft doorgaans minimaal één Landhoofd als onderdeel (via hasPart). Een ontbrekend landhoofd is een aandachtspunt."@nl
+    ] ;
+    sh:property [
+        sh:path nen2660:hasPart ;
+        sh:qualifiedValueShape [
+            sh:or (
+                [ sh:class gwsw:OpStaal ]                                   # Fundering op staal
+                [ sh:class imbor:8b7bbb81-3498-49a0-8e08-fe77b2db7657 ]     # Paalfundering
+            ) ;
+            sh:property [
+                sh:path nen2660:consistsOf ;
+                sh:qualifiedValueShape [
+                    sh:or (
+                        [ sh:class imbor:ce8aa2ed-1ec2-4ba9-adda-2fdb57dd39d9 ] # Staal
+                        [ sh:class imbor:52ab27f2-fb67-4752-8cfc-ac4f3638df4e ] # Beton
+                        [ sh:class imbor:1b78d861-6b96-4bd5-8a3a-82c68e6eeced ] # Hout
+                    )
+                ] ;
+                sh:qualifiedMinCount 1 ;
+                sh:message "Elke fundering moet bestaan uit minimaal één materiaal: Staal, Beton of Hout (via consistsOf)."@nl
+            ]
+        ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Elk kunstwerk moet minimaal één Fundering op staal of Paalfundering hebben als onderdeel (via hasPart), waarbij het materiaal aangegeven is."@nl
+    ] ;
+    sh:property [
+        sh:path nen2660:hasPart ;
+        sh:qualifiedValueShape [
+            sh:class imbor:8298e24e-2d79-48c5-a80c-74503dfdc588 # Damwand
+        ] ;
+        sh:qualifiedMinCount 0 ; # optioneel
+        sh:message "Als een Damwand aanwezig is, moet deze van het juiste type zijn"@nl
+    ] .
+
+
+# =============================================================================
+# Constraints voor Vaste brug (gemeenschappelijk voor alle verschijningsvormen)
+# =============================================================================
+
+:VasteBrugShape a sh:NodeShape ;
+    sh:targetClass imbor:6156ad75-a23c-4b5f-8095-c773cd6ebffe ; # Vaste brug
+
+    # --- Verschijningsvorm verplicht ---
+    sh:property [
+        sh:path imbor:e3e112b3-e46f-45c4-b2c9-b152e6f805a1 ;
+        sh:minCount 1 ;
+        sh:message "Elke vaste brug moet een verschijningsvorm hebben."@nl
+    ] ;
+
+    # --- Type-specifiek: precies één verschijningsvorm (bekende typen + overige) ---
+    sh:message "Als de verschijningsvorm Plaatbrug, Liggerbrug, Boogbrug of Duikerbrug is, gelden aanvullende type-specifieke eisen."@nl ;
+    sh:xone (
+        :PlaatbrugSpecifiek
+        :BoogbrugSpecifiek
+        :LiggerbrugSpecifiek
+        :DuikerbrugSpecifiek
+        :AndereVerschijningsvormSpecifiek
+    ) .
+
+
+# =============================================================================
+# Type-specifieke shapes (geen sh:targetClass — worden via sh:xone toegepast)
+# =============================================================================
+
+:PlaatbrugSpecifiek a sh:NodeShape ;
+    sh:property [
+        sh:path imbor:e3e112b3-e46f-45c4-b2c9-b152e6f805a1 ;
+        sh:hasValue imbor-domeinwaarden:caf30391-b503-4d56-a0f1-b722244d9ca5 ;
+        sh:message "Plaatbrug moet verschijningsvorm 'Plaatbrug' hebben"@nl
+    ] ;
+    sh:property [
+        sh:path nen2660:hasPart ;
+        sh:qualifiedValueShape [
+            sh:class imbor:f3202a49-5227-45e2-92d0-826ce6cf5974 ; # Dek
+            sh:property [
+                sh:path nen2660:consistsOf ;
+                sh:minCount 1 ;
+                sh:message "Elk dek moet via consistsOf gekoppeld zijn aan minimaal één materiaal."@nl
+            ]
+        ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "Elke Plaatbrug moet minimaal 1 Dek hebben (via hasPart)"@nl
+    ] .
+
+
+:LiggerbrugSpecifiek a sh:NodeShape ;
+    sh:property [
+        sh:path imbor:e3e112b3-e46f-45c4-b2c9-b152e6f805a1 ;
+        sh:hasValue imbor-domeinwaarden:f7f0b55a-0473-43c1-9164-171ef5fed1a7 ;
+        sh:message "Een Liggerbrug moet verschijningsvorm 'Liggerbrug' hebben"@nl
+    ] ;
+    sh:property [
+        sh:path nen2660:hasPart ;
+        sh:qualifiedValueShape [
+            sh:class imbor:f3202a49-5227-45e2-92d0-826ce6cf5974 ; # Dek
+            sh:property [
+                sh:path nen2660:consistsOf ;
+                sh:minCount 1 ;
+                sh:message "Elk dek moet moet via consistsOf gekoppeld zijn aan minimaal één materiaal."@nl
+            ]
+        ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Een Liggerbrug heeft doorgaans minimaal 1 Dek als onderdeel (via hasPart). Een ontbrekend dek is een aandachtspunt."@nl
+    ] .
+
+
+:BoogbrugSpecifiek a sh:NodeShape ;
+    sh:property [
+        sh:path imbor:e3e112b3-e46f-45c4-b2c9-b152e6f805a1 ;
+        sh:hasValue imbor-domeinwaarden:73823aff-386b-42a5-9e27-7cd0782643a6 ;
+        sh:message "Een Boogbrug moet verschijningsvorm 'Boogbrug' hebben"@nl
+    ] ;
+    sh:property [
+        sh:path nen2660:consistsOf ;
+        sh:minCount 1 ;
+        sh:message "Elke boogbrug moet via consistsOf gekoppeld zijn aan minimaal één materiaal.."@nl
+    ] .
+
+:DuikerbrugSpecifiek a sh:NodeShape ;
+    sh:property [
+        sh:path imbor:e3e112b3-e46f-45c4-b2c9-b152e6f805a1 ;
+        sh:hasValue imbor-domeinwaarden:94affc1a-933b-43a4-a5fe-21dc483afa6c ;
+        sh:message "Een Duikerbrug moet verschijningsvorm 'Duikerbrug' hebben"@nl
+    ] ;
+    .
+
+:AndereVerschijningsvormSpecifiek a sh:NodeShape ;
+    sh:not [
+        sh:property [
+            sh:path imbor:e3e112b3-e46f-45c4-b2c9-b152e6f805a1 ;
+            sh:in (
+                imbor-domeinwaarden:caf30391-b503-4d56-a0f1-b722244d9ca5  # Plaatbrug
+                imbor-domeinwaarden:73823aff-386b-42a5-9e27-7cd0782643a6  # Boogbrug
+                imbor-domeinwaarden:f7f0b55a-0473-43c1-9164-171ef5fed1a7  # Liggerbrug
+                imbor-domeinwaarden:94affc1a-933b-43a4-a5fe-21dc483afa6c  # Duikerbrug
+            )
+        ]
+    ] .
+
+
+# =============================================================================
+# Constraints voor Viaduct
+# =============================================================================
+
+:ViaductShape a sh:NodeShape ;
+    sh:targetClass imbor:e13e2867-bc61-462a-bcba-a8570c863a75 ; # Viaduct
+
+    sh:property [
+        sh:path nen2660:hasPart ;
+        sh:qualifiedValueShape [
+            sh:class imbor:f3202a49-5227-45e2-92d0-826ce6cf5974 ; # Dek
+            sh:property [
+                sh:path nen2660:consistsOf ;
+                sh:minCount 1 ;
+                sh:message "Het dek van een viaduct moet via consistsOf gekoppeld zijn aan minimaal één materiaal."@nl
+            ]
+        ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "Elk viaduct moet minimaal één Dek hebben als onderdeel (via hasPart), waarbij het materiaal is aangegeven."@nl
+    ] .
+
+
+# =============================================================================
+# Constraints voor Beweegbare brug
+# =============================================================================
+
+:BeweegbareBrugShape a sh:NodeShape ;
+    sh:targetClass imbor:366207df-0b72-46a6-8e10-000085d60151 ; # Beweegbare brug
+
+    sh:property [
+        sh:path imbor:e3e112b3-e46f-45c4-b2c9-b152e6f805a1 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in (
+            imbor-domeinwaarden:dff73c6b-2c8d-466d-9129-bf26416fe739  # Basculebrug
+            imbor-domeinwaarden:3fae41e4-889c-4e99-810e-7f9768c54968  # Draaibrug
+            imbor-domeinwaarden:b9831c9a-15c3-42e6-9ac1-be6afb160200  # Dubbele basculebrug
+            imbor-domeinwaarden:005e451d-7ef6-4798-a3b7-303c32075771  # Dubbele draaibrug
+            imbor-domeinwaarden:1652e321-3692-435b-b06b-515b01539e00  # Dubbele ophaalbrug
+            imbor-domeinwaarden:67824a0e-3f3b-4645-8018-ce577f441f17  # Hefbrug
+            imbor-domeinwaarden:c62334c3-7474-4fc9-ba1c-0705a8bae34e  # Klapbrug
+            imbor-domeinwaarden:a0bed370-607c-4cf4-a5e3-ba748e1f202a  # Ophaalbrug
+            imbor-domeinwaarden:a37fcdce-e467-44c5-a491-cb295a57994f  # Rolbrug
+            imbor-domeinwaarden:1817c419-bca4-41d5-a81c-4c050bc715c2  # Vlotbrug
+        ) ;
+        sh:message "Elke Beweegbare brug moet één geldige verschijningsvorm hebben"@nl
+    ] .
+
+
+# =============================================================================
+# Constraints voor Onderdoorgang
+# =============================================================================
+
+:OnderdoorgangShape a sh:NodeShape ;
+    sh:targetClass imbor:914127ef-670f-44ff-b64f-883596e3244b . # Onderdoorgang — geen aanvullende constraints
