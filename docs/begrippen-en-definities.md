@@ -29,6 +29,12 @@ De CORE gemeenten, Stichting Rioned en CROW hebben de handen ineen geslagen om v
 <abbr title="Nationaal Platform Duurzame Wegverharding">NPDW</abbr> brengt opdrachtgevers, opdrachtnemers en kennisinstellingen samen om kennis te bundelen en samen de beste aanpak te kiezen voor verduurzaming van wegen. Zie ook <a href="https://www.npdwegverharding.nl/" target="_blank">deze website</a>
 </dd>
 
+<dt><dfn data-lt="Decompositie|Samenstelling">Decompositie</dfn></dt>
+<dd>
+Een decompositie is de samenstelling van een object, in technische termen: een bouwdeel heeft een "partOf" relatie naar het civiele kunstwerk.
+</dd>
+
+
 <dt><dfn data-lt="Dataspecificatie">Dataspecificatie</dfn></dt>
 <dd>
 Een nauwkeurig afgebakende verzameling gegevens die essentieel zijn voor een specifiek proces, programma of beleidsvraag. De gegevens worden gespecificeerd op basis van een datastandaard.
