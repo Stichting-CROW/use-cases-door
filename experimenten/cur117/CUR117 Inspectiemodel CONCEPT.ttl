@@ -1,0 +1,1054 @@
+﻿PREFIX dcterms:  <http://purl.org/dc/terms/>
+PREFIX geo:      <http://www.opengis.net/ont/geosparql#>
+PREFIX imbor:    <https://data.crow.nl/imbor/def/>
+PREFIX nen2660:  <https://w3id.org/nen2660/def#>
+PREFIX nen3610:  <http://modellen.geostandaarden.nl/def/nen3610-2022#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+PREFIX qudt:     <http://qudt.org/schema/qudt/>
+PREFIX rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sh:       <http://www.w3.org/ns/shacl#>
+PREFIX skos:     <http://www.w3.org/2004/02/skos/core#>
+PREFIX sosa:     <http://www.w3.org/ns/sosa/>
+PREFIX unit:     <http://qudt.org/vocab/unit/>
+PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
+PREFIX insp:     <https://example.org/def/inspectiemodel#>
+
+insp:  rdf:type          owl:Ontology ;
+       rdfs:label        "Generiek model Inspectie en Waarneming v2"@nl ;
+       rdfs:comment      """Dataspecificatie voor kunstwerkinspecties o.b.v. CROW-CUR 117:2020 en NEN 2767,
+aangesloten op NEN 2660-2, NEN 3610 en IMBOR. Versie 2 introduceert de drielaagse decompositie
+Object → Element → Bouwdeel, volledige paspoortgegevens, maatregeladviezen per gebrek, en
+aanvullende inspectiekenmerken conform het CUR117-rapporttemplate.
+Controle van aangeleverde informatie uit beheersysteem en de controle daarvan is buiten scope gelaten.
+Afleidbare attributen zijn, conform IMBOR, weggelaten. Voorbeeld betreft 'Gemeente'."""@nl ;
+       owl:imports       sh: ;
+       owl:imports       nen2660: ;
+       owl:versionInfo   "2.0" ;
+       dcterms:source    "CROW-CUR Aanbeveling 117:2020 'Inspectie en advies kunstwerken'; NEN 2767-1+C1:2019"^^xsd:string .
+
+#################################################################
+# GEMEENSCHAPPELIJKE SHAPE: KWANTITEIT (omvang én hoeveelheid)
+#################################################################
+
+insp:QuantityShape
+        rdf:type         sh:NodeShape ;
+        rdfs:label       "Kwantiteit (hoeveelheidswaarde)"@nl ;
+        sh:property      [ rdf:type    sh:PropertyShape ;
+                           sh:path     qudt:numericValue ;
+                           sh:datatype xsd:decimal ;
+                           sh:minCount 1 ;
+                           sh:maxCount 1 ;
+                           sh:message  "Een kwantiteit moet exact één numerieke waarde hebben."@nl ] ;
+        sh:property      [ rdf:type    sh:PropertyShape ;
+                           sh:path     qudt:unit ;
+                           sh:in       ( unit:M unit:M2 unit:M3 unit:MilliM unit:PERCENT unit:NUM ) ;
+                           sh:minCount 1 ;
+                           sh:maxCount 1 ;
+                           sh:message  "Een kwantiteit moet exact één eenheid hebben (m, m², m³, mm, % of stuks)."@nl ] .
+
+#################################################################
+# 1. OBJECT (het kunstwerk — paspoort + decompositiewortel)
+#################################################################
+
+insp:Object
+        rdf:type         rdfs:Class , sh:NodeShape ;
+        sh:targetClass   insp:Object ;
+        rdfs:subClassOf  nen2660:PhysicalObject ;
+        rdfs:label       "Object"@nl ;
+        skos:definition  "Een civieltechnisch bouwwerk en/of installatie rond de natte en/of droge infrastructuur dat een of meer functies vervult; functiehomogeen onderdeel van de infrastructuur. (CUR 117 Bijlage I: 'Kunstwerk')"@nl ;
+        rdfs:comment     "Waarom: Onderwerp van inspectie"@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Paspoortgegevens"^^xsd:string ;
+
+        # — Identificatie (NEN 3610) —
+        sh:property      insp:Object-identificatie ;
+        sh:property      insp:Object-domein ;
+
+        # — Administratief (IMBOR) —
+        sh:property      insp:Object-naam ;
+        sh:property      insp:Object-objectnummer ;
+        sh:property      insp:Object-eigenaar ;
+        sh:property      insp:Object-beheerder ;
+
+        # — Locatie —
+        sh:property      insp:Object-geometrie ;
+        sh:property      insp:Object-locatieaanduiding ;
+
+        # — Kenmerken —
+        sh:property      insp:Object-bouwjaar ;
+
+        # — Constructief —
+        sh:property      insp:Object-belastingklasse ;
+        sh:property      insp:Object-beoordelingsniveau ;
+        sh:property      insp:Object-referentieperiode ;
+        sh:property      insp:Object-constructieveUitkomst ;
+
+        # — Materiaal en foto —
+        sh:property      insp:Object-consistsOf ;
+        sh:property      insp:Object-aanzichtfoto ;
+        sh:property      insp:Object-beschrijving ;
+
+        # — Decompositie —
+        sh:property      insp:Object-heeftElement .
+
+# ── Identificatie ──────────────────────────────────────────────
+insp:Object-identificatie
+        rdf:type         sh:PropertyShape ;
+        sh:path          nen3610:identificatie ;
+        sh:name          "identificatie"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elk object moet exact één NEN 3610-identificatie hebben."@nl ;
+        dcterms:source   "NEN 3610:2022"^^xsd:string ;
+        rdfs:comment     "Waarom: NEN 3610-eis voor alle geo-objecten."@nl .
+
+insp:Object-domein
+        rdf:type         sh:PropertyShape ;
+        sh:path          nen3610:domein ;
+        sh:name          "domein"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elk object moet exact één domein hebben (NEN 3610)."@nl ;
+        dcterms:source   "NEN 3610:2022"^^xsd:string ;
+        rdfs:comment     "Waarom: NEN 3610-eis voor alle geo-objecten."@nl .
+
+# ── Administratief ─────────────────────────────────────────────
+insp:Object-naam
+        rdf:type         sh:PropertyShape ;
+        sh:path          imbor:ee97b257-d3b8-4d0c-9a42-c07d88b36d9f ;
+        sh:name          "objectnaam"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elk object moet exact één naam hebben."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage II (Paspoortgegevens: Objectnaam)"^^xsd:string ;
+        rdfs:comment     "Waarom: paspoortgegeven; identificeert het object in rapportage."@nl .
+
+insp:Object-objectnummer
+        rdf:type         sh:PropertyShape ;
+        sh:path          imbor:a6424f8a-080e-4f85-a160-6fa4f0848ed8 ;
+        sh:name          "objectnummer"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elk object moet exact één objectnummer (objectcode) hebben."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage II (Paspoortgegevens: Objectcode)"^^xsd:string ;
+        rdfs:comment     "Waarom: sleutel voor identificatie in beheersysteem en inspectierapport."@nl .
+
+insp:Object-eigenaar
+        rdf:type              sh:PropertyShape ;
+        sh:path               [ sh:inversePath imbor:heeftBetrekkingOp ] ;
+        sh:name               "eigenaar (via eigendomsrol)"@nl ;
+        skos:definition       "(Rechts)persoon die het meest omvattend recht op een zaak heeft."@nl ;
+        sh:qualifiedValueShape [ sh:class imbor:7dc78de4-02e4-41c8-974f-585066e09225 ] ;
+        sh:qualifiedMinCount  1 ;
+        sh:message            "Elk object moet gekoppeld zijn aan minimaal één eigenaar via een IMBOR EigendomsRol."@nl ;
+        dcterms:source        "CROW-CUR 117:2020, Bijlage I en Bijlage II (Paspoortgegevens: Eigenaar)"^^xsd:string ;
+        rdfs:comment          "Waarom: eigenaar is de opdrachtgevende partij; nodig voor context van inspectieverplichting."@nl .
+
+insp:Object-beheerder
+        rdf:type              sh:PropertyShape ;
+        sh:path               [ sh:inversePath imbor:heeftBetrekkingOp ] ;
+        sh:name               "beheerder (via beheerrol)"@nl ;
+        skos:definition       "Een publiekrechtelijke instantie of (rechts)persoon die toeziet op de instandhouding van onder andere een constructie, kunstwerk of waterstaatswerk."@nl ;
+        sh:qualifiedValueShape [ sh:class imbor:8cb1bf27-67aa-47f5-a85c-b3b19e3f2ef2 ] ;
+        sh:qualifiedMinCount  1 ;
+        sh:severity           sh:Warning ;
+        sh:message            "Elk object heeft bij voorkeur een beheerder via een IMBOR BeheerRol; ontbrekende beheerder is een aandachtspunt."@nl ;
+        dcterms:source        "CROW-CUR 117:2020, Bijlage I en Bijlage II (Paspoortgegevens: Beheerder)"^^xsd:string ;
+        rdfs:comment          "Waarom: beheerder is de uitvoerende beheerpartij; onderscheid met eigenaar is relevant voor contractbeheer."@nl .
+
+# ── Locatie ────────────────────────────────────────────────────
+insp:Object-geometrie
+        rdf:type         sh:PropertyShape ;
+        sh:path          geo:hasGeometry ;
+        sh:name          "geometrie"@nl ;
+        sh:minCount      1 ;
+        sh:message       "Elk object moet een geometrie (locatie) hebben."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage II (Paspoortgegevens: GPS-coördinaten)"^^xsd:string ;
+        rdfs:comment     "Waarom: X,Y is paspoortgegeven."@nl .
+
+insp:Object-locatieaanduiding
+        rdf:type         sh:PropertyShape ;
+        sh:path          imbor:42bd5202-c033-4807-81dd-c8abe49032e5 ;
+        sh:name          "locatieaanduiding"@nl ;
+        sh:datatype      xsd:string ;
+        sh:maxCount      1 ;
+        sh:message       "Een object mag hoogstens één nader locatie aanduiding hebben. Dit kan bijvoorbeeld huisnummer of hectometer zijn"@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage II (Paspoortgegevens: Hectometerweg)"^^xsd:string ;
+        rdfs:comment     "Waarom: bijvoorbeeld koppeling aan NWB-wegennet via hectometreringsstelsel of precieze kilometerlocatie op de weg, nodig voor verkeerskundige maatregelen."@nl .
+
+# ── Kenmerken ─────────────────────────────────────────────────
+insp:Object-bouwjaar
+        rdf:type         sh:PropertyShape ;
+        sh:path          imbor:dc1d1d42-b5d4-4efb-9b9d-761651b29759 ;
+        sh:name          "bouwjaar"@nl ;
+        skos:definition  "Vaste gegeven: kenmerkend objectgegeven dat tijdens de gebruiksfase niet wijzigt. Basis voor levensduurverwachting: de verwachte restlevensduur waarbij een kunstwerk functioneert binnen de gestelde eisen, op basis van de huidige onderhoudsstaat."@nl ;
+        sh:datatype      xsd:gYear ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elk object heeft een bouwjaar."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage I en Bijlage II (Paspoortgegevens: Bouwjaar)"^^xsd:string ;
+        rdfs:comment     "Waarom: leeftijd is de belangrijkste context voor conditiebeoordelingen; input voor degradatiemodellering en restlevensduurberekening."@nl .
+
+# ── Constructief ───────────────────────────────────────────────
+insp:Object-belastingklasse
+        rdf:type         sh:PropertyShape ;
+        sh:path          imbor:d5098738-76c0-48b7-a318-faeb9ed7b468 ;
+        sh:name          "huidige belastingklasse"@nl ;
+        skos:definition  "Bepalend voor de constructieve veiligheid: de veiligheid zoals vastgelegd in het vigerende Bouwbesluit die een bouwwerk bezit tegen bezwijken."@nl ;
+        sh:datatype      xsd:string ;
+        sh:maxCount      1 ;
+        sh:message       "Een object mag hoogstens één (originele) belastingklasse hebben."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage I en Bijlage II (Paspoortgegevens: Constructief)"^^xsd:string ;
+        rdfs:comment     "Waarom: de Huidige belastingklasse, Beoordelingsniveau, Referentieperiode en Constructieve uitkomst zijn resultaten constructieve herberekeningen. Afwijkend van IMBOR is dit een xsd:string."@nl .
+
+insp:Object-beoordelingsniveau
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:beoordelingsniveau ;
+        sh:name          "beoordelingsniveau"@nl ;
+        sh:datatype      xsd:string ;
+        sh:maxCount      1 ;
+        sh:message       "Een object mag hoogstens één beoordelingsniveau hebben."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage II (Paspoortgegevens: Constructief)"^^xsd:string ;
+        rdfs:comment     "Waarom: de Huidige belastingklasse, Beoordelingsniveau, Referentieperiode en Constructieve uitkomst zijn resultaten constructieve herberekeningen."@nl .
+
+insp:Object-referentieperiode
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:referentieperiode ;
+        sh:name          "referentieperiode"@nl ;
+        sh:datatype      xsd:integer ;
+        sh:maxCount      1 ;
+        sh:message       "Een object mag hoogstens één referentieperiode hebben (in jaren)."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage II (Paspoortgegevens: Constructief)"^^xsd:string ;
+        rdfs:comment     "Waarom: de Huidige belastingklasse, Beoordelingsniveau, Referentieperiode en Constructieve uitkomst zijn resultaten constructieve herberekeningen."@nl .
+
+insp:Object-constructieveUitkomst
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:constructieveUitkomst ;
+        sh:name          "constructieve uitkomst"@nl ;
+        sh:datatype      xsd:string ;
+        sh:maxCount      1 ;
+        sh:message       "Een object mag hoogstens één constructieve uitkomst hebben."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage II (Paspoortgegevens: Constructief)"^^xsd:string ;
+        rdfs:comment     "Waarom: de Huidige belastingklasse, Beoordelingsniveau, Referentieperiode en Constructieve uitkomst zijn resultaten constructieve herberekeningen."@nl .
+
+# ── Materiaal, foto en beschrijving ───────────────────────────
+insp:Object-consistsOf
+        rdf:type         sh:PropertyShape ;
+        sh:path          nen2660:consistsOf ;
+        sh:name          "hoofdmateriaal"@nl ;
+        sh:minCount      1 ;
+        sh:severity      sh:Warning ;
+        sh:message       "Elk object heeft bij voorkeur minimaal één materiaal (via nen2660:consistsOf); ontbrekend materiaal is een aandachtspunt want materiaal staat (ook) bij bouwdeel."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage II (Paspoortgegevens: Hoofdmateriaal)"^^xsd:string ;
+        rdfs:comment     "Waarom: materiaal bepaalt relevante gebrekenlijst (NEN 2767) en degradatiepatroon."@nl .
+
+insp:Object-aanzichtfoto
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:aanzichtfoto ;
+        sh:name          "aanzichtfoto"@nl ;
+        sh:nodeKind      sh:IRI ;
+        sh:minCount      1 ;
+        sh:severity      sh:Warning ;
+        sh:message       "Elk object heeft bij voorkeur minimaal één aanzichtfoto; ontbrekende foto is een aandachtspunt."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage II (Paspoortgegevens: Kunstwerkfoto's — aanzichtfoto en overzichtsfoto diagonaal over het dek)"^^xsd:string ;
+        rdfs:comment     "Waarom: standaardfoto's voor herkenning."@nl .
+
+insp:Object-beschrijving
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:objectBeschrijving ;
+        sh:name          "beschrijving constructie"@nl ;
+        sh:datatype      xsd:string ;
+        sh:maxCount      1 ;
+        sh:message       "Een object mag hoogstens één constructiebeschrijving hebben."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage II (Paspoortgegevens: Beschrijving van de constructie)"^^xsd:string ;
+        rdfs:comment     "Waarom: vrije tekst die de constructievorm beschrijft; context voor de inspecteur bij herinspectie."@nl .
+
+# ── Decompositie ───────────────────────────────────────────────
+insp:Object-heeftElement
+        rdf:type              sh:PropertyShape ;
+        sh:path               nen2660:hasPart ;
+        sh:name               "heeft element"@nl ;
+        sh:qualifiedValueShape [ sh:class insp:Element ] ;
+        sh:qualifiedMinCount  1 ;
+        sh:severity           sh:Warning ;
+        sh:message            "Een object heeft bij voorkeur minimaal één element als onderdeel (via nen2660:hasPart); ontbrekende decompositie is een aandachtspunt."@nl ;
+        dcterms:source        "NEN 2767-4 (decompositie: Object → Element → Bouwdeel); CROW-CUR 117:2020, hfst. 3"^^xsd:string ;
+        rdfs:comment          "Waarom: de NEN 2767-decompositie is de basis voor conditiebeoordeling per onderdeel; zonder elementen kunnen conditiescores niet correct worden geaggregeerd."@nl .
+
+#################################################################
+# 2. ELEMENT (NEN 2767-decompositieniveau 1: bijv. Hoofddraagconstructie)
+#################################################################
+
+insp:Element
+        rdf:type         rdfs:Class , sh:NodeShape ;
+        sh:targetClass   insp:Element ;
+        rdfs:subClassOf  nen2660:PhysicalObject ;
+        rdfs:label       "Element"@nl ;
+        skos:definition  "Functioneel onderdeel van een object op NEN 2767-elementniveau, bijv. Hoofddraagconstructie (147) of Voegovergang (233). Decompositie (CUR 117 Bijlage I): het ontleden van een bouwwerk/object/constructie in zijn samenstellende delen/componenten."@nl ;
+        rdfs:comment     "Waarom: het elementniveau groepeert bouwdelen die samen één functie vervullen; conditiescores worden op elementniveau gerapporteerd."@nl ;
+        dcterms:source   "NEN 2767-4 (elementen- en bouwdelenlijst infrastructuur); CROW-CUR 117:2020, hfst. 3"^^xsd:string ;
+        sh:property      insp:Element-elementNummer ;
+        sh:property      insp:Element-naam ;
+        sh:property      insp:Element-heeftBouwdeel .
+
+insp:Element-elementNummer
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:elementNummer ;
+        sh:name          "elementnummer (NEN 2767)"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elk element moet exact één NEN 2767-elementnummer hebben (bijv. '147')."@nl ;
+        dcterms:source   "NEN 2767-4 (genummerde elementenlijst)"^^xsd:string ;
+        rdfs:comment     "Waarom: het NEN 2767-nummer koppelt het element aan de gestandaardiseerde gebrekenlijst en maakt benchmarking mogelijk."@nl .
+
+insp:Element-naam
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:elementNaam ;
+        sh:name          "elementnaam"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elk element moet exact één naam hebben."@nl ;
+        dcterms:source   "NEN 2767-4 (elementen- en bouwdelenlijst)"^^xsd:string ;
+        rdfs:comment     "Waarom: leesbare naam naast het nummer."@nl .
+
+
+insp:Element-heeftBouwdeel
+        rdf:type              sh:PropertyShape ;
+        sh:path               nen2660:hasPart ;
+        sh:name               "heeft bouwdeel"@nl ;
+        sh:qualifiedValueShape [ sh:class insp:Bouwdeel ] ;
+        sh:qualifiedMinCount  1 ;
+        sh:severity           sh:Warning ;
+        sh:message            "Een element heeft bij voorkeur minimaal één bouwdeel als onderdeel (via nen2660:hasPart); ontbrekend bouwdeel is een aandachtspunt."@nl ;
+        dcterms:source        "NEN 2767-4 (decompositie Element > Bouwdeel)"^^xsd:string ;
+        rdfs:comment          "Waarom: gebreken worden op bouwdeelniveau geregistreerd; zonder bouwdelen kan geen NEN 2767-conditiemeting worden uitgevoerd."@nl .
+
+#################################################################
+# 3. BOUWDEEL (NEN 2767-decompositieniveau 2: bijv. Rijdek, Kolom)
+#################################################################
+
+insp:Bouwdeel
+        rdf:type         rdfs:Class , sh:NodeShape ;
+        sh:targetClass   insp:Bouwdeel ;
+        rdfs:subClassOf  nen2660:PhysicalObject ;
+        rdfs:label       "Bouwdeel"@nl ;
+        skos:definition  "Fysiek onderdeel van een element op NEN 2767-bouwdeelniveau, bijv. Rijdek (1461) of Kolom (1679). Eenheid voor conditiemeting."@nl ;
+        rdfs:comment     "Waarom: NEN 2767 registreert gebreken per bouwdeel; dit is de kleinste eenheid van conditiebeoordeling."@nl ;
+        dcterms:source   "NEN 2767-4 (elementen- en bouwdelenlijst infrastructuur); CROW-CUR 117:2020, hfst. 3"^^xsd:string ;
+        sh:property      insp:Bouwdeel-bouwdeelNummer ;
+        sh:property      insp:Bouwdeel-naam ;
+        sh:property      insp:Bouwdeel-consistsOf ;
+        sh:property      insp:Bouwdeel-hoeveelheid ;
+        sh:property      insp:Bouwdeel-foto ;
+        sh:property      insp:Bouwdeel-bijzonderheden ;
+        sh:property      insp:Bouwdeel-functioneleToestand .
+
+insp:Bouwdeel-bouwdeelNummer
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:bouwdeelNummer ;
+        sh:name          "bouwdeelnummer (NEN 2767)"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elk bouwdeel moet exact één NEN 2767-bouwdeelnummer hebben (bijv. '1461')."@nl ;
+        dcterms:source   "NEN 2767-4 (genummerde bouwdelenlijst)"^^xsd:string ;
+        rdfs:comment     "Waarom: het NEN 2767-nummer koppelt het bouwdeel aan de gestandaardiseerde gebrekenlijst."@nl .
+
+insp:Bouwdeel-naam
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:bouwdeelNaam ;
+        sh:name          "bouwdeelnaam"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elk bouwdeel moet exact één naam hebben."@nl ;
+        dcterms:source   "NEN 2767-4"^^xsd:string ;
+        rdfs:comment     "Waarom: leesbare naam naast het nummer."@nl .
+
+insp:Bouwdeel-consistsOf
+        rdf:type         sh:PropertyShape ;
+        sh:path          nen2660:consistsOf ;
+        sh:name          "materiaalsoort"@nl ;
+        sh:minCount      1 ;
+        sh:message       "Elk bouwdeel moet bestaan uit minimaal één materiaal (via nen2660:consistsOf)."@nl ;
+        dcterms:source   "NEN 2767-4 (materiaalsoort per bouwdeel); CROW-CUR 117:2020, hfst. 3"^^xsd:string ;
+        rdfs:comment     "Waarom: het materiaal bepaalt welke NEN 2767-gebrekenlijst van toepassing is."@nl .
+
+insp:Bouwdeel-hoeveelheid
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:hoeveelheid ;
+        sh:name          "hoeveelheid"@nl ;
+        sh:node          insp:QuantityShape ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:severity      sh:Warning ;
+        sh:message       "Elk bouwdeel heeft bij voorkeur een hoeveelheid (met eenheid); ontbrekende hoeveelheid is een aandachtspunt."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 3 (Decompositietabel: Hoeveelheid en eenheid)"^^xsd:string ;
+        rdfs:comment     "Waarom: hoeveelheid met eenheid (m, m², stuks) is nodig voor schadeomvangberekeningen en kostenramingen."@nl .
+
+insp:Bouwdeel-foto
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:fotoBouwdeel ;
+        sh:name          "foto bouwdeel"@nl ;
+        sh:nodeKind      sh:IRI ;
+        sh:minCount      1 ;
+        sh:severity      sh:Warning ;
+        sh:message       "Elk bouwdeel heeft bij voorkeur een referentiefoto; ontbrekende foto is een aandachtspunt."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 3 (Decompositietabel: Foto bouwdeel)"^^xsd:string ;
+        rdfs:comment     "Waarom: referentiefoto."@nl .
+
+insp:Bouwdeel-bijzonderheden
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:bijzonderheden ;
+        sh:name          "bijzonderheden"@nl ;
+        sh:datatype      xsd:string ;
+        sh:maxCount      1 ;
+        sh:message       "Een bouwdeel mag hoogstens één bijzonderhedenopmerking hebben."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 3 (Decompositietabel: Bijzonderheden)"^^xsd:string ;
+        rdfs:comment     "Waarom: vrij tekstveld voor bijzondere kenmerken (bijv. 'niet onder handbereik geïnspecteerd')."@nl .
+
+insp:Bouwdeel-functioneleToestand
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:functioneleToestand ;
+        sh:name          "functionele toestand"@nl ;
+        sh:datatype      xsd:string ;
+        sh:maxCount      1 ;
+        skos:definition  "De mate waarin de onderhoudsstaat van het kunstwerk tegemoet komt aan de impliciet of expliciet gestelde prestatie-eisen."@nl ;
+        sh:message       "Als een functionele toestand is opgegeven, moet deze een geldige waarde hebben."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage I en hfst. 5 (Overzicht decompositie en Conditiemeting: Functionele toestand per onderdeel)"^^xsd:string ;
+        rdfs:comment     "Waarom: samenvatting van de functionele werking per bouwdeel; wordt naast de conditiescore gerapporteerd."@nl .
+
+
+#################################################################
+# 4. INSPECTIE (de inspectieopdracht en -uitvoering)
+#################################################################
+
+insp:Inspectie
+        rdf:type         rdfs:Class , sh:NodeShape ;
+        sh:targetClass   insp:Inspectie ;
+        rdfs:subClassOf  nen2660:Activity ;
+        rdfs:label       "Inspectie"@nl ;
+        skos:definition  "Het beoordelen of het in stand te houden object voldoet aan de functionele eisen."@nl ;
+        rdfs:comment     "Waarom: de inspectie bundelt alle waarnemingen van één uitvoeringsmoment en koppelt deze aan categorie, inspecteur en omstandigheden."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage I (definitie inspectie) en §1.2 (Kenmerken inspectie)"^^xsd:string ;
+        sh:property      insp:Inspectie-identificatie ;
+        sh:property      insp:Inspectie-domein ;
+        sh:property      insp:Inspectie-categorie ;
+        sh:property      insp:Inspectie-datum ;
+        sh:property      insp:Inspectie-hoofdinspecteur ;
+        sh:property      insp:Inspectie-subinspecteur ;
+        sh:property      insp:Inspectie-omstandigheden ;
+        sh:property      insp:Inspectie-temperatuur ;
+        sh:property      insp:Inspectie-vkmKenmerk ;
+        sh:property      insp:Inspectie-betreftObject ;
+        sh:property      insp:Inspectie-heeftWaarneming .
+
+insp:Inspectie-identificatie
+        rdf:type         sh:PropertyShape ;
+        sh:path          nen3610:identificatie ;
+        sh:name          "identificatie"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke inspectie moet exact één identificatie hebben."@nl ;
+        dcterms:source   "NEN 3610:2022; CROW-CUR 117:2020, Bijlage II (rapportkenmerk)"^^xsd:string ;
+        rdfs:comment     "Waarom: NEN 3610-eis voor alle (geo-)objecten."@nl .
+
+insp:Inspectie-domein
+        rdf:type         sh:PropertyShape ;
+        sh:path          nen3610:domein ;
+        sh:name          "domein"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke inspectie moet exact één domein hebben (NEN 3610)."@nl ;
+        dcterms:source   "NEN 3610:2022"^^xsd:string ;
+        rdfs:comment     "Waarom: NEN 3610-eis voor alle (geo-)objecten."@nl .
+
+insp:Inspectie-categorie
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:inspectiecategorie ;
+        sh:name          "inspectie- en adviescategorie"@nl ;
+        sh:in            ( "A1" "B1" "B2" "B3" "B4" "B5"
+                           "C1" "C2" "C3" "C4"
+                           "D1" "D2" "D3" "D4" ) ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke inspectie moet exact één geldige categorie hebben (A1 t/m D4 conform CROW-CUR 117:2020)."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, §2.2 t/m §2.11"^^xsd:string ;
+        rdfs:comment     "Waarom: categorie bepaalt diepgang en vergelijkbaarheid."@nl .
+
+insp:Inspectie-datum
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:inspectiemoment ;
+        sh:name          "inspectiemoment"@nl ;
+        sh:datatype      xsd:dateTime ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke inspectie moet exact één inspectiemoment hebben."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, §1.2 (Kenmerken inspectie: Inspectiemoment)"^^xsd:string ;
+        rdfs:comment     "Waarom: belangrijk onderdeel inspectierapport."@nl .
+
+insp:Inspectie-hoofdinspecteur
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:hoofdinspecteur ;
+        sh:name          "hoofdinspecteur"@nl ;
+        skos:definition  "Persoon die informatie inwint, verwerkt en interpreteert om van een kunstwerk de huidige en/of toekomstige toestand vast te stellen."@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke inspectie moet exact één hoofdinspecteur vermelden. Afwijkend van IMBOR is dit een xsd:string."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, §1.2 (Kenmerken inspectie: Inspecteurs — hoofd)"^^xsd:string ;
+        rdfs:comment     "Waarom: de hoofdinspecteur is eindverantwoordelijk voor het rapport; deskundigheidseisen gelden per categorie."@nl .
+
+insp:Inspectie-subinspecteur
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:subinspecteur ;
+        sh:name          "subinspecteur"@nl ;
+        sh:datatype      xsd:string ;
+        sh:message       "Als subinspecteurs zijn vermeld, moeten deze als string zijn uitgedrukt. Afwijkend van IMBOR is dit een xsd:string."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, §1.2 (Kenmerken inspectie: Inspecteurs — sub)"^^xsd:string ;
+        rdfs:comment     "Waarom: meerdere inspecteurs zijn mogelijk bij grote objecten; vastleggen voor aantoonbaarheid."@nl .
+
+insp:Inspectie-omstandigheden
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:omstandigheden ;
+        sh:name          "weersomstandigheden"@nl ;
+        sh:datatype      xsd:string ;
+        sh:maxCount      1 ;
+        sh:message       "De weersomstandigheden mogen hoogstens één keer per inspectie worden geregistreerd."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, §1.2 (Kenmerken inspectie: Weersgesteldheid)"^^xsd:string ;
+        rdfs:comment     "Waarom: omstandigheden beïnvloeden zichtbaarheid van gebreken; context voor interpretatie."@nl .
+
+insp:Inspectie-temperatuur
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:temperatuur ;
+        sh:name          "temperatuur (°C)"@nl ;
+        sh:datatype      xsd:decimal ;
+        sh:maxCount      1 ;
+        sh:message       "De temperatuur mag hoogstens één keer per inspectie worden geregistreerd."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, §1.2 (Kenmerken inspectie: Temperatuur)"^^xsd:string ;
+        rdfs:comment     "Waarom: temperatuur beïnvloedt beoordeelde resultaten."@nl .
+
+insp:Inspectie-vkmKenmerk
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:vkmKenmerk ;
+        sh:name          "VKM-kenmerk"@nl ;
+        sh:datatype      xsd:string ;
+        sh:maxCount      1 ;
+        sh:message       "Het VKM-kenmerk mag hoogstens één keer per inspectie worden geregistreerd."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, §1.2 (Kenmerken inspectie: Toegepaste verkeersmaatregelen — CROW NR)"^^xsd:string ;
+        rdfs:comment     "Waarom: het vkm-kenmerk (bijv. L109c) bepaalt de verkeershinder; relevant voor kostenraming."@nl .
+
+insp:Inspectie-betreftObject
+        rdf:type         sh:PropertyShape ;
+        sh:path          nen2660:transforms ;
+        sh:name          "betreft object"@nl ;
+        sh:class         insp:Object ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke inspectie moet gekoppeld zijn aan exact één object."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage II (koppeling inspectierapport aan object)"^^xsd:string ;
+        rdfs:comment     "Waarom: de kernrelatie die inspectiedata aan het areaal hangt."@nl .
+
+insp:Inspectie-heeftWaarneming
+        rdf:type         sh:PropertyShape ;
+        sh:path          nen2660:triggers        ;
+        sh:name          "heeft waarneming"@nl ;
+        sh:class         insp:Waarneming ;
+        sh:message       "Als waarnemingen zijn gekoppeld, moeten deze van het type insp:Waarneming zijn."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 4 (Geconstateerde schaden)"^^xsd:string ;
+        rdfs:comment     "Waarom: een inspectie kan nul of meer waarnemingen bevatten; nul is geldig bij geen afwijkingen."@nl .
+
+#################################################################
+# 5. WAARNEMING (de geconstateerde schade of toestand)
+#################################################################
+
+insp:Waarneming
+        rdf:type         rdfs:Class , sh:NodeShape ;
+        sh:targetClass   insp:Waarneming ;
+        rdfs:subClassOf  nen2660:Event, sosa:Observation ;
+        rdfs:label       "Waarneming"@nl ;
+        skos:definition  "Uitkomst van een onderzoek of waarneming (CUR 117 Bijlage I: 'Bevinding'). Geconstateerde afwijking of toestand op een bouwdeel, element of object tijdens een inspectie."@nl ;
+        rdfs:comment     "Waarom: de waarneming is de kleinste vergelijkbare data-eenheid."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 1 (waarnemen–registreren–analyseren–kwalificeren) en hfst. 4 (Geconstateerde schaden)"^^xsd:string ;
+        sh:property      insp:Waarneming-identificatie ;
+        sh:property      insp:Waarneming-domein ;
+        sh:property      insp:Waarneming-waargenomenOp ;
+        sh:property      insp:Waarneming-beschrijving ;
+        sh:property      insp:Waarneming-locatieaanduiding ;
+        sh:property      insp:Waarneming-omvang ;
+        sh:property      insp:Waarneming-foto ;
+        sh:property      insp:Waarneming-opmerking ;
+        sh:property      insp:Waarneming-kwalificatie ;
+        sh:property      insp:Waarneming-oorzaak ;
+        sh:property      insp:Waarneming-gevolg ;
+        sh:property      insp:Waarneming-maatregeladvies ;
+        sh:property      insp:Waarneming-conditiemeting .
+
+insp:Waarneming-identificatie
+        rdf:type         sh:PropertyShape ;
+        sh:path          nen3610:identificatie ;
+        sh:name          "identificatie"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke waarneming moet exact één identificatie hebben."@nl ;
+        dcterms:source   "NEN 3610:2022"^^xsd:string ;
+        rdfs:comment     "Waarom: waarnemingen moeten individueel refereerbaar zijn voor verwijzing bij herinspectie."@nl .
+
+insp:Waarneming-domein
+        rdf:type         sh:PropertyShape ;
+        sh:path          nen3610:domein ;
+        sh:name          "domein"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke waarneming moet exact één domein hebben (NEN 3610)."@nl ;
+        dcterms:source   "NEN 3610:2022"^^xsd:string ;
+        rdfs:comment     "Waarom: NEN 3610-eis voor alle (geo-)objecten."@nl .
+
+insp:Waarneming-waargenomenOp
+        rdf:type         sh:PropertyShape ;
+        sh:path          sosa:hasFeatureOfInterest ;
+        sh:name          "waargenomen op"@nl ;
+        sh:or            ( [ sh:class insp:Bouwdeel ]
+                           [ sh:class insp:Element ]
+                           [ sh:class insp:Object ] ) ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke waarneming moet betrekking hebben op exact één bouwdeel, element of object."@nl ;
+        dcterms:source   "NEN 2767-1 (registratie per bouwdeel); CROW-CUR 117:2020, hfst. 4"^^xsd:string ;
+        rdfs:comment     "Waarom: bouwdeel is de voorkeur (NEN 2767), element of object als terugval wanneer decompositie ontbreekt."@nl .
+
+insp:Waarneming-beschrijving
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:beschrijving ;
+        sh:name          "beschrijving schade"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke waarneming moet exact één beschrijving hebben."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 1 ('registreren') en hfst. 4 (Schaderegistratie: Schade)"^^xsd:string ;
+        rdfs:comment     "Waarom: de feitelijke, oordeelvrije omschrijving."@nl .
+
+insp:Waarneming-locatieaanduiding
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:locatieaanduiding ;
+        sh:name          "locatieaanduiding"@nl ;
+        sh:datatype      xsd:string ;
+        sh:maxCount      1 ;
+        sh:message       "Een locatieaanduiding mag hoogstens één keer per waarneming worden geregistreerd."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 4 (Schaderegistratie: Locatie)"^^xsd:string ;
+        rdfs:comment     "Waarom: locatie (bijv. 'onderzijde uitkraging noordzijde') is nodig voor terugvinden bij herinspectie."@nl .
+
+insp:Waarneming-omvang
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:omvang ;
+        sh:name          "schadeomvang"@nl ;
+        sh:node          insp:QuantityShape ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "De schadeomvang mag hoogstens één keer per waarneming worden geregistreerd."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 4 (Schaderegistratie: Schadeomvang)"^^xsd:string ;
+        rdfs:comment     "Waarom: gemeten omvang met eenheid (QUDT) i.p.v. vrije tekst."@nl .
+
+insp:Waarneming-foto
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:fotoregistratie ;
+        sh:name          "kenmerkende schadefoto"@nl ;
+        sh:nodeKind      sh:IRI ;
+        sh:minCount      1 ;
+        sh:severity      sh:Warning ;
+        sh:message       "Elke waarneming heeft bij voorkeur minimaal één schadefoto; ontbrekende foto is een aandachtspunt."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, §2.8.2 en hfst. 4 (Schaderegistratie: Kenmerkende schadefoto's)"^^xsd:string ;
+        rdfs:comment     "Waarom: visuale referentie."@nl .
+
+insp:Waarneming-opmerking
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:opmerking ;
+        sh:name          "opmerking"@nl ;
+        sh:datatype      xsd:string ;
+        sh:maxCount      1 ;
+        sh:message       "Een opmerking mag hoogstens één keer per waarneming worden geregistreerd."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 4 (Schaderegistratie: Opmerking inspecteur)"^^xsd:string ;
+        rdfs:comment     "Waarom: vrij tekstveld voor aanvullende context van de inspecteur."@nl .
+
+insp:Waarneming-kwalificatie
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:kwalificatie ;
+        sh:name          "kwalificatie"@nl ;
+        sh:class         insp:Kwalificatie ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Als een kwalificatie is opgegeven, moet deze een geldige waarde hebben (gebrek, schade, tekortkoming of geen afwijking)."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 1 ('kwalificeren')"^^xsd:string ;
+        rdfs:comment     "Waarom: de kwalificatie is het stuurkenmerk."@nl .
+
+insp:Waarneming-oorzaak
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:oorzaak ;
+        sh:name          "oorzaak"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke waarneming moet exact één oorzaak vermelden."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 4 (Schaderegistratie: Oorzaak)"^^xsd:string ;
+        rdfs:comment     "Waarom: eerste duiding van de oorzaak door de inspecteur."@nl .
+
+insp:Waarneming-gevolg
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:gevolg ;
+        sh:name          "gevolg"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke waarneming moet exact één gevolg vermelden."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 4 (Schaderegistratie: Gevolg) en Bijlage I"^^xsd:string ;
+        rdfs:comment     "Waarom: het gevolg onderscheidt 'schade' (met functioneel gevolg) van 'gebrek' (zonder)."@nl .
+
+insp:Waarneming-maatregeladvies
+        rdf:type         sh:PropertyShape ;
+        sh:path          nen2660:isDescribedBy ;
+        sh:name          "maatregeladvies"@nl ;
+        sh:node          insp:Maatregeladvies ;
+        sh:maxCount      1 ;
+        sh:message       "Een waarneming mag hoogstens één maatregeladvies bevatten."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 4 (Maatregeladvies)"^^xsd:string ;
+        rdfs:comment     "Waarom: het maatregeladvies koppelt de waarneming aan de meerjarenplanning; genest voor coherentie."@nl .
+
+insp:Waarneming-conditiemeting
+        rdf:type         sh:PropertyShape ;
+        sh:path          sosa:hasResult ;
+        sh:name          "NEN 2767 conditiemeting"@nl ;
+        sh:node          insp:Conditiemeting ;
+        sh:maxCount      1 ;
+        sh:message       "Een waarneming mag hoogstens één NEN 2767-conditiemeting bevatten."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, §2.8.2 (B2 conform NEN 2767); hfst. 4 (NEN 2767 Conditiescore)"^^xsd:string ;
+        rdfs:comment     "Waarom: ernst × intensiteit × omvang vormen één meting (sosa:hasResult); genest voor integriteit van de conditiematrix."@nl .
+
+#################################################################
+# 6. MAATREGELADVIES (per waarneming — basis meerjarenplanning)
+#################################################################
+
+insp:Maatregeladvies
+        rdf:type         rdfs:Class , sh:NodeShape ;
+        sh:targetClass   insp:Maatregeladvies ;
+        rdfs:subClassOf  nen2660:InformationObject ;
+        rdfs:label       "Maatregeladvies"@nl ;
+        skos:definition  "De maatregelen die nodig zijn om de achteruitgang van het kunstwerk teniet te doen, terug te brengen in een bepaalde functionele staat en/of een risico te verkleinen (CUR 117 Bijlage I: 'Herstelmaatregelen'). Basis voor de meerjarenonderhoudsplanning."@nl ;
+        rdfs:comment     "Waarom: het maatregeladvies per gebrek is de bouwsteen van de meerjarenplanning."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 4 (Maatregeladvies) en hfst. 7 (Meerjarenplanning)"^^xsd:string ;
+        sh:property      insp:Maatregeladvies-hersteladvies ;
+        sh:property      insp:Maatregeladvies-benodigdeVkm ;
+        sh:property      insp:Maatregeladvies-bereikbaarheidsVoorzieningen ;
+        sh:property      insp:Maatregeladvies-milieuMaatregelen ;
+        sh:property      insp:Maatregeladvies-planJaar ;
+        sh:property      insp:Maatregeladvies-spreiding ;
+        sh:property      insp:Maatregeladvies-interval ;
+        sh:property      insp:Maatregeladvies-onderhoudscategorie ;
+        sh:property      insp:Maatregeladvies-werksoort .
+
+insp:Maatregeladvies-hersteladvies
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:hersteladvies ;
+        sh:name          "hersteladvies"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elk maatregeladvies moet exact één hersteladvies hebben."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 4 (Maatregeladvies: Hersteladvies)"^^xsd:string ;
+        rdfs:comment     "Waarom: het hersteladvies is de kern van het maatregeladvies; geeft aan welke actie nodig is."@nl .
+
+insp:Maatregeladvies-benodigdeVkm
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:benodigdeVkm ;
+        sh:name          "benodigde VKM"@nl ;
+        sh:datatype      xsd:string ;
+        sh:maxCount      1 ;
+        sh:message       "De benodigde VKM mag hoogstens één keer per maatregeladvies worden geregistreerd."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 4 (Maatregeladvies: Benodigde VKM)"^^xsd:string ;
+        rdfs:comment     "Waarom: vkm-keuze beïnvloedt kosten en hinder; nodig voor meerjarenraming."@nl .
+
+insp:Maatregeladvies-bereikbaarheidsVoorzieningen
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:bereikbaarheidsVoorzieningen ;
+        sh:name          "benodigde bereikbaarheidsvoorzieningen"@nl ;
+        skos:definition  "Middel om de te inspecteren of te onderzoeken onderdelen op een veilige wijze te bereiken."@nl ;
+        sh:datatype      xsd:string ;
+        sh:maxCount      1 ;
+        sh:message       "De bereikbaarheidsvoorzieningen mogen hoogstens één keer per maatregeladvies worden geregistreerd."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage I en hfst. 4 (Maatregeladvies: Benodigde bereikbaarheidsvoorzieningen)"^^xsd:string ;
+        rdfs:comment     "Waarom: bereikbaarheidskosten (steiger, hoogwerker, duiker) zijn vaak groter dan herstelkosten zelf."@nl .
+
+insp:Maatregeladvies-milieuMaatregelen
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:milieuMaatregelen ;
+        sh:name          "benodigde milieu-afschermende maatregelen"@nl ;
+        skos:definition  "Maatregelen die de impact van de uitvoering van inspectie of onderhoud beperken."@nl ;
+        sh:datatype      xsd:string ;
+        sh:maxCount      1 ;
+        sh:message       "De milieu-afschermende maatregelen mogen hoogstens één keer per maatregeladvies worden geregistreerd."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage I en hfst. 4 (Maatregeladvies: Benodigde milieu-afschermende maatregelen)"^^xsd:string ;
+        rdfs:comment     "Waarom: milieumaatregelen (waterafschermend zeildoek, loodnet) beïnvloeden planning en kosten."@nl .
+
+insp:Maatregeladvies-planJaar
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:planJaar ;
+        sh:name          "planjaar"@nl ;
+        skos:definition  "Onderdeel van de meerjarenonderhoudsplanning: een planning voor de uitvoering van noodzakelijk onderhoud met een beschrijving van het kunstwerk/areaal, de periode en de uit te voeren taken."@nl ;
+        sh:datatype      xsd:gYear ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elk maatregeladvies moet exact één planjaar hebben."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, Bijlage I en hfst. 4 (Maatregeladvies: Planjaar) en hfst. 7 (Meerjarenplanning)"^^xsd:string ;
+        rdfs:comment     "Waarom: het planjaar is de basis voor de meerjarenplanning en -raming."@nl .
+
+insp:Maatregeladvies-spreiding
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:spreiding ;
+        sh:name          "spreiding (jaren)"@nl ;
+        sh:datatype      xsd:integer ;
+        sh:maxCount      1 ;
+        sh:message       "De spreiding mag hoogstens één keer per maatregeladvies worden geregistreerd (geheel getal in jaren)."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 4 (Maatregeladvies: Spreiding)"^^xsd:string ;
+        rdfs:comment     "Waarom: spreiding geeft de bandbreedte in jaren waarbinnen de maatregel kan worden uitgevoerd."@nl .
+
+insp:Maatregeladvies-interval
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:interval ;
+        sh:name          "interval (jaren)"@nl ;
+        sh:datatype      xsd:integer ;
+        sh:maxCount      1 ;
+        sh:message       "Het interval mag hoogstens één keer per maatregeladvies worden geregistreerd (geheel getal in jaren)."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 4 (Maatregeladvies: Interval)"^^xsd:string ;
+        rdfs:comment     "Waarom: interval geeft de terugkeerfrequentie bij terugkerend onderhoud (TAO)."@nl .
+
+insp:Maatregeladvies-onderhoudscategorie
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:onderhoudscategorie ;
+        sh:name          "onderhoudscategorie"@nl ;
+        sh:class         insp:Onderhoudscategorie ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elk maatregeladvies moet exact één onderhoudscategorie hebben (SAO of TAO)."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 4 (Maatregeladvies: Categorie — Eenmalig onderhoud SAO / Meerjaarlijks onderhoud TAO)"^^xsd:string ;
+        rdfs:comment     "Waarom: SAO (eenmalig) vs. TAO (terugkerend) is bepalend voor de begrotingssystematiek."@nl .
+
+insp:Maatregeladvies-werksoort
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:werksoort ;
+        sh:name          "werksoort"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elk maatregeladvies moet exact één werksoort hebben."@nl ;
+        dcterms:source   "CROW-CUR 117:2020, hfst. 4 (Maatregeladvies: Werksoort)"^^xsd:string ;
+        rdfs:comment     "Waarom: werksoort (bijv. Betononderhoud, Markering, Inspectie) bepaalt de discipline en aanbesteding."@nl .
+
+#################################################################
+# 7. CONDITIEMETING (NEN 2767, volledig)
+#################################################################
+
+insp:Conditiemeting
+        rdf:type         rdfs:Class , sh:NodeShape ;
+        sh:targetClass   insp:Conditiemeting ;
+        rdfs:subClassOf  sosa:Result ;
+        rdfs:label       "NEN 2767 Conditiemeting"@nl ;
+        rdfs:comment     "Waarom: de conditiemeting legt het gebrek en de NEN 2767-matrixscores vast; meetresultaat van de waarneming als sosa:Result."@nl ;
+        skos:definition  "Registratie van een gebrek conform NEN 2767: NEN-gebreekcode, ernst, intensiteit, omvangklasse en conditiescore. Vertegenwoordigt het meetresultaat (sosa:Result) van de waarneming (sosa:Observation)."@nl ;
+        dcterms:source   "NEN 2767-1+C1:2019; CROW-CUR 117:2020, §2.8.2 en hfst. 4 (NEN 2767 Conditiescore)"^^xsd:string ;
+        sh:property      insp:Conditiemeting-nenGebreekCode ;
+        sh:property      insp:Conditiemeting-soortGebrek ;
+        sh:property      insp:Conditiemeting-ernst ;
+        sh:property      insp:Conditiemeting-intensiteit ;
+        sh:property      insp:Conditiemeting-omvangklasse ;
+        sh:property      insp:Conditiemeting-conditiescore ;
+        sh:property      insp:Conditiemeting-verzorgingsscore .
+
+insp:Conditiemeting-nenGebreekCode
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:nenGebreekCode ;
+        sh:name          "NEN-gebreekcode"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke conditiemeting moet exact één NEN 2767-gebreekcode hebben (bijv. 'G-160')."@nl ;
+        dcterms:source   "NEN 2767-1 (gebrekenlijsten: code G-xxx)"^^xsd:string ;
+        rdfs:comment     "Waarom: de NEN-code koppelt het gebrek aan de gestandaardiseerde gebrekenlijst."@nl .
+
+insp:Conditiemeting-soortGebrek
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:soortGebrek ;
+        sh:name          "soort gebrek"@nl ;
+        sh:datatype      xsd:string ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke conditiemeting moet exact één soort gebrek hebben."@nl ;
+        dcterms:source   "NEN 2767-1 (gebrekenlijsten per materiaal/bouwdeel)"^^xsd:string ;
+        rdfs:comment     "Waarom: gestandaardiseerde gebreknaam maakt tellen en vergelijken per gebreksoort mogelijk."@nl .
+
+insp:Conditiemeting-ernst
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:ernst ;
+        sh:name          "ernst"@nl ;
+        sh:class         insp:Ernstklasse ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke conditiemeting moet exact één ernst hebben (ernstig, serieus of gering)."@nl ;
+        dcterms:source   "NEN 2767-1 (indeling gebreken naar ernst)"^^xsd:string ;
+        rdfs:comment     "Waarom: NEN2767 berekening."@nl .
+
+insp:Conditiemeting-intensiteit
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:intensiteit ;
+        sh:name          "intensiteit"@nl ;
+        sh:class         insp:Intensiteitsklasse ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke conditiemeting moet exact één intensiteit hebben (beginstadium, gevorderd stadium of eindstadium)."@nl ;
+        dcterms:source   "NEN 2767-1 (intensiteit: beginstadium, gevorderd stadium, eindstadium)"^^xsd:string ;
+        rdfs:comment     "Waarom: geeft degradatiestadium en -snelheid aan."@nl .
+
+insp:Conditiemeting-omvangklasse
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:omvangklasse ;
+        sh:name          "omvangklasse"@nl ;
+        sh:class         insp:Omvangklasse ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke conditiemeting moet exact één omvangklasse hebben."@nl ;
+        dcterms:source   "NEN 2767-1 (omvangklassen 1 t/m 5)"^^xsd:string ;
+        rdfs:comment     "Waarom: genormaliseerd als % van het bouwdeel, vergelijkbaar tussen objecten."@nl .
+
+insp:Conditiemeting-conditiescore
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:conditiescore ;
+        sh:name          "conditiescore"@nl ;
+        sh:datatype      xsd:integer ;
+        sh:minInclusive  1 ;
+        sh:maxInclusive  6 ;
+        sh:minCount      1 ;
+        sh:maxCount      1 ;
+        sh:message       "Elke conditiemeting moet exact één conditiescore hebben (1 t/m 6)."@nl ;
+        dcterms:source   "NEN 2767-1 (conditiematrix: score 1 'uitstekend' t/m 6 'zeer slecht')"^^xsd:string ;
+        rdfs:comment     "Waarom: de genormaliseerde vergelijkingsgrootheid; volgt deterministisch uit de drie anderen."@nl .
+
+insp:Conditiemeting-verzorgingsscore
+        rdf:type         sh:PropertyShape ;
+        sh:path          insp:verzorgingsscore ;
+        sh:name          "verzorgingsscore"@nl ;
+        sh:datatype      xsd:integer ;
+        sh:minInclusive  1 ;
+        sh:maxInclusive  6 ;
+        sh:maxCount      1 ;
+        sh:message       "Als een verzorgingsscore is opgegeven, moet deze een waarde 1 t/m 6 hebben."@nl ;
+        dcterms:source   "NEN 2767-1 (verzorgingsmeting, gescheiden van conditiemeting)"^^xsd:string ;
+        rdfs:comment     "Waarom: NEN 2767 houdt verzorging bewust buiten de conditiescore."@nl .
+
+#################################################################
+# 8. WAARDELIJSTEN (NEN 2660-2 EnumerationType)
+#################################################################
+
+# ── Kwalificatie ───────────────────────────────────────────────
+insp:Kwalificatie  a  nen2660:EnumerationType ;
+        rdfs:label      "Kwalificatie van een waarneming"@nl ;
+        dcterms:source  "CROW-CUR 117:2020, Bijlage I"^^xsd:string .
+
+insp:Gebrek  a  insp:Kwalificatie ;
+        rdfs:label      "Gebrek"@nl ;
+        skos:definition "Een onregelmatigheid en/of afwijking in het materiaal of de structuur door een bepaalde oorzaak, waardoor een bouwwerk verzwakt of verminderd functioneert; een afwijking ten opzichte van een normale toestand. Term wordt vaak gebruikt in het kader van de NEN 2767 conditiemeting."@nl ;
+        dcterms:source  "CROW-CUR 117:2020, Bijlage I"^^xsd:string .
+
+insp:Schade  a  insp:Kwalificatie ;
+        rdfs:label      "Schade"@nl ;
+        skos:definition "Een afwijking van een normale toestand met gevolg voor het functioneren als gevolg van een interne of externe oorzaak."@nl ;
+        dcterms:source  "CROW-CUR 117:2020, Bijlage I"^^xsd:string .
+
+insp:Tekortkoming  a  insp:Kwalificatie ;
+        rdfs:label      "Tekortkoming"@nl ;
+        skos:definition "Datgene waarin iets niet aan de eisen of verwachtingen voldoet. Een onvolkomenheid hoeft (nog) geen gevolgen te hebben voor het functioneren."@nl ;
+        dcterms:source  "CROW-CUR 117:2020, Bijlage I"^^xsd:string .
+
+insp:GeenAfwijking  a  insp:Kwalificatie ;
+        rdfs:label      "Geen afwijking"@nl ;
+        skos:definition "Positieve constatering, vastgelegd t.b.v. aantoonbaarheid."@nl ;
+        dcterms:source  "CROW-CUR 117:2020, §2.7 (A1-Schouw)"^^xsd:string .
+
+# ── Ernst ──────────────────────────────────────────────────────
+insp:Ernstklasse  a  nen2660:EnumerationType ;
+        rdfs:label  "Ernst van het gebrek (NEN 2767)"@nl .
+
+insp:ErnstigGebrek  a  insp:Ernstklasse ;
+        rdfs:label      "Ernstig gebrek"@nl ;
+        skos:notation   "1"^^xsd:string ;
+        skos:definition "Gebrek dat direct afbreuk doet aan de functionaliteit van het bouwdeel."@nl .
+
+insp:SerieusGebrek  a  insp:Ernstklasse ;
+        rdfs:label      "Serieus gebrek"@nl ;
+        skos:notation   "2"^^xsd:string ;
+        skos:definition "Gebrek dat een degradatie betekent zonder de functionaliteit direct aan te tasten."@nl .
+
+insp:GeringGebrek  a  insp:Ernstklasse ;
+        rdfs:label      "Gering gebrek"@nl ;
+        skos:notation   "3"^^xsd:string ;
+        skos:definition "Gebrek dat geen afbreuk doet aan de functionaliteit van het bouwdeel."@nl .
+
+# ── Intensiteit ────────────────────────────────────────────────
+insp:Intensiteitsklasse  a  nen2660:EnumerationType ;
+        rdfs:label  "Intensiteit van het gebrek (NEN 2767)"@nl .
+
+insp:Beginstadium  a  insp:Intensiteitsklasse ;
+        rdfs:label    "Beginstadium"@nl ;
+        skos:notation "1"^^xsd:string .
+
+insp:GevorderdStadium  a  insp:Intensiteitsklasse ;
+        rdfs:label    "Gevorderd stadium"@nl ;
+        skos:notation "3"^^xsd:string .
+
+insp:Eindstadium  a  insp:Intensiteitsklasse ;
+        rdfs:label    "Eindstadium"@nl ;
+        skos:notation "5"^^xsd:string .
+
+# ── Omvangklasse ───────────────────────────────────────────────
+insp:Omvangklasse  a  nen2660:EnumerationType ;
+        rdfs:label  "Omvangklasse van het gebrek (NEN 2767)"@nl .
+
+insp:OmvangIncidenteel  a  insp:Omvangklasse ;
+        rdfs:label    "Incidenteel (< 2%)"@nl ;
+        skos:notation "1"^^xsd:string .
+
+insp:OmvangPlaatselijk  a  insp:Omvangklasse ;
+        rdfs:label    "Plaatselijk (2–10%)"@nl ;
+        skos:notation "2"^^xsd:string .
+
+insp:OmvangRegelmatig  a  insp:Omvangklasse ;
+        rdfs:label    "Regelmatig (10–30%)"@nl ;
+        skos:notation "3"^^xsd:string .
+
+insp:OmvangAanzienlijk  a  insp:Omvangklasse ;
+        rdfs:label    "Aanzienlijk (30–70%)"@nl ;
+        skos:notation "4"^^xsd:string .
+
+insp:OmvangAlgemeen  a  insp:Omvangklasse ;
+        rdfs:label    "Algemeen (> 70%)"@nl ;
+        skos:notation "5"^^xsd:string .
+
+# ── Onderhoudscategorie (SAO / TAO) ───────────────────────────
+insp:Onderhoudscategorie  a  nen2660:EnumerationType ;
+        rdfs:label      "Onderhoudscategorie (meerjarenplanning)"@nl ;
+        dcterms:source  "CROW-CUR 117:2020, hfst. 4 (Maatregeladvies: Categorie)"^^xsd:string .
+
+insp:SAO  a  insp:Onderhoudscategorie ;
+        rdfs:label      "Eenmalig onderhoud (SAO)"@nl ;
+        skos:definition "Sanering Aanvullend Onderhoud: eenmalige, correctieve onderhoudsactiviteit."@nl .
+
+insp:TAO  a  insp:Onderhoudscategorie ;
+        rdfs:label      "Meerjaarlijks onderhoud (TAO)"@nl ;
+        skos:definition "Terugkerend Aanvullend Onderhoud: cyclische onderhoudsactiviteit met een vast interval."@nl .
