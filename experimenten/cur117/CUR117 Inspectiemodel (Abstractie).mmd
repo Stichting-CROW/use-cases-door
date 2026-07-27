@@ -1,0 +1,103 @@
+classDiagram
+    direction TB
+
+    class Object {
+        identificatie · domein
+        naam · objectnummer
+        eigenaar · beheerder
+        geometrie · locatieaanduiding
+        bouwjaar · belastingklasse
+        beoordelingsniveau · referentieperiode
+        constructieveUitkomst
+        consistsOf (materiaal)
+        aanzichtfoto · beschrijving
+    }
+
+    class Element {
+        identificatie · domein
+        elementNummer · elementNaam
+    }
+
+    class Bouwdeel {
+        identificatie · domein
+        bouwdeelNummer · bouwdeelNaam
+        consistsOf (materiaal)
+        hoeveelheid · foto
+        bijzonderheden · functioneleToestand
+    }
+
+    class Inspectie {
+        identificatie · domein
+        inspectiecategorie (A1–D4)
+        inspectiemoment
+        hoofdinspecteur · subinspecteur
+        omstandigheden · temperatuur
+        vkmKenmerk
+    }
+
+    class Waarneming {
+        <<sosa Observation>>
+        identificatie · domein
+        beschrijving
+        locatieaanduiding · omvang
+        oorzaak · gevolg
+        foto · opmerking
+    }
+
+    class Maatregeladvies {
+        hersteladvies · werksoort
+        planJaar · spreiding · interval
+        benodigdeVKM
+        bereikbaarheidsvoorzieningen
+        milieu-maatregelen
+    }
+
+    class Conditiemeting {
+        <<sosa Result>>
+        nenGebreekCode (G-xxx)
+        soortGebrek
+        conditiescore (1–6)
+        verzorgingsscore (1–6)
+    }
+
+    class Kwalificatie {
+        <<EnumerationType>>
+        Gebrek · Schade
+        Tekortkoming · GeenAfwijking
+    }
+
+    class Ernstklasse {
+        <<EnumerationType>>
+        ErnstigGebrek (1) · SerieusGebrek (2) · GeringGebrek (3)
+    }
+
+    class Intensiteitsklasse {
+        <<EnumerationType>>
+        Beginstadium (1) · GevorderdStadium (3) · Eindstadium (5)
+    }
+
+    class Omvangklasse {
+        <<EnumerationType>>
+        Incidenteel (1) · Plaatselijk (2) · Regelmatig (3)
+        Aanzienlijk (4) · Algemeen (5)
+    }
+
+    class Onderhoudscategorie {
+        <<EnumerationType>>
+        SAO · TAO
+    }
+
+    Object "1" --> "1..*" Element               : hasPart
+    Element "1" --> "1..*" Bouwdeel             : hasPart
+    Inspectie "1" --> "1" Object                : transforms
+    Inspectie "1" --> "0..*" Waarneming         : triggers
+    Waarneming --> "1" Bouwdeel                 : hasFeatureOfInterest
+    Waarneming ..> Element                      : hasFeatureOfInterest (alt)
+    Waarneming ..> Object                       : hasFeatureOfInterest (alt)
+    Waarneming --> "0..1" Maatregeladvies       : isDescribedBy
+    Waarneming --> "0..1" Conditiemeting        : hasResult
+    Waarneming --> "0..1" Kwalificatie          : kwalificatie
+    Conditiemeting --> "1" Ernstklasse          : ernst
+    Conditiemeting --> "1" Intensiteitsklasse   : intensiteit
+    Conditiemeting --> "1" Omvangklasse         : omvangklasse
+    Maatregeladvies --> "1" Onderhoudscategorie : onderhoudscategorie
