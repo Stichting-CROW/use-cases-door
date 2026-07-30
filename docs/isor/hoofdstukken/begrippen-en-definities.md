@@ -3,32 +3,66 @@
 <dl data-sort>
 <!-- data-sort zorgt voor automatische sortering van de <dt> (Definition Term)s -->
 
+<dt><dfn data-lt="Programma Dataharmonisatie Objecten in de Openbare Ruimte|DOOR-programma">DOOR-programma</dfn></dt>
+<dd>
+<abbr title="Programma Dataharmonisatie Objecten in de Openbare Ruimte">DOOR</abbr> is een programma waarin gemeenten en provincies samen met stichting CROW en Stichting Rioned werken aan het verbinden van objectenstandaarden die in de openbare ruimte en infrastructuur gebruikt worden, zodat het integraal plannen, inrichten en beheren van de openbare ruimte mogelijk wordt. <a href="https://dmi-ecosysteem.nl/" target="_blank">deze website</a>
+</dd>
 
-<dt><dfn data-lt="ISOR|Platform ISOR">ISOR</dfn></dt>
+<dt><dfn data-lt="parametrisch ontwerpen">parametrisch ontwerpen</dfn></dt>
+<dd>
+Parametrisch ontwerpen is een verzamelterm voor een aantal zaken: In een ontwerp niet handmatig objecten tekenen, maar een object plaatsen op basis van een achterliggende berekening, een script dat ontwerpnormen toepast of door het invullen van geometrische waarden of met een afstand ten opzichte van een ander object. 
+</dd>
+
+<dt><dfn data-lt="datagedreven ontwerpen">datagedreven ontwerpen</dfn></dt>
+<dd>
+Datagedreven ontwerpen is een parapluterm voor het gebruiken van assetinformatie, sensordata en omgevingsinformatie om een ontwerp te maken en in te passen in een bestaande omgeving; ook kunnen bij datagedreven ontwerpen ontwerpstandaarden en beleidsdoelen zijn vertaal in rekenregels waarmee parameters worden ingevuld of getoetst. Parametrisch ontwerpen is daarmee een deel van datagedreven ontwerpen. 
+</dd>
+
+
+
+<dt><dfn data-lt="DMI">DMI</dfn></dt>
+<dd>
+<abbr title="Dutch Mobility Infrastructure">DMI</abbr> is een ecosysteem van publieke en private partners en kennisinstellingen gericht op het maximaal benutten van beschikbare data en informatietechnologie. Om steden versneld duurzaam te verdichten en mobiliteit te vernieuwen. Vooral bezig met geodata en Digital Twins voor beleidsopgaven van overheden in de openbare ruimte en infrastructuur.  <a href="https://dmi-ecosysteem.nl/" target="_blank">deze website</a>
+</dd>
+
+<dt><dfn data-lt="ISOR|Platform ISOR|">ISOR</dfn></dt>
 <dd>
 Platform van samenwerkende overheden, ontstaan ujit de CityDeal Openbare Ruimte. 
 <abbr title="Integraal samenwerken in de Openbare Ruimte">ISOR</abbr> richt zich op een integrale aanpak voor stedelijke transitieopgaven. <a href="https://www.platformisor.nl/" target="_blank">deze website</a>
 </dd>
 
-
-
-<dt><dfn data-lt="DOOR|DOOR-programma">DOOR</dfn></dt>
+<dt><dfn data-lt="Nationaal Programma Bodem, Ondergrond en Grondwater|BOG">Nationaal Programma Bodem, Ondergrond en Grondwater</dfn></dt>
 <dd>
-De CORE gemeenten, Stichting Rioned en CROW hebben de handen ineen geslagen om voor de sector assetmanagement ​te komen tot een gemeenschappelijke informatiebasis met het volgende doel: ​In 2030 beschikken Assetmanagers en hun (keten)partners in de openbare ruimte en infrastructuur over een samenhangend stelsel objectstandaarden in de leefomgeving om de data over hun beheerde assets efficiënt op orde te houden en uit te wisselen.​
-<abbr title="Dataharmonisatie Objecten in de Openbare Ruimte">DOOR</abbr> richt zich op de ontwikkeling van de ontbrekende standaards en uitwisselingsprotocollen, zodat een samenhangend stelsel ontstaat.  Zie ook <a href="https://www.crow.nl/Onderwerpen/Assetmanagement-en-beheer-openbare-ruimte/Data-en-informatie/programmadoor/" target="_blank">deze website</a>
+Het <abbr title="Nationaal Programma Bodem, Ondergrond en Grondwater">BOG</abbr> van het ministerie van Infrastructuur en Waterstaat (IenW) met doel het duurzaam, veilig en efficiënt gebruiken van bodem, ondergrond en grondwater in Nederland. 
 </dd>
 
 
-
-<dt><dfn data-lt="NPDW">NPDW</dfn></dt>
+<dt><dfn data-lt="Nationaal groeifonds toekomstbestendige Leefomgeving - Infra|TBL-i">Nationaal groeifonds toekomstbestendige Leefomgeving - Infra</dfn></dt>
 <dd>
- 
-<abbr title="Nationaal Platform Duurzame Wegverharding">NPDW</abbr> brengt opdrachtgevers, opdrachtnemers en kennisinstellingen samen om kennis te bundelen en samen de beste aanpak te kiezen voor verduurzaming van wegen. Zie ook <a href="https://www.npdwegverharding.nl/" target="_blank">deze website</a>
-
+Het <abbr title="Nationaal groeifonds toekomstbestendige Leefomgeving - Infra">TBL-i</abbr> heeft als doel een goed functionerend, zichzelf versterkend, innovatie-ecosysteem te realiseren dat partijen met elkaar laat innoveren en een continue stroom van (ver)nieuwe(nde) technologieën, producten, diensten en aanbestedingsvormen produceert in de ontwerp-, bouw- en technieksector.
 </dd>
+
+
+<dt><dfn data-lt="Netherlands3D">Netherlands3D</dfn></dt>
+<dd>
+Open-source Digital Twin-framework voor Nederland. Doel: 3D visualisatie van binnenstedelijk gebied ondersteunen. Maakt gebruik van geo-datastandaarden als GeoJSON en WFS. Zie <a href="https://netherlands3d.eu/" target="_blank">deze website</a>
+</dd>
+
+<dt><dfn data-lt="UOB|Uniforme Objecten Bibliotheek">Uniforme Objecten Bibliotheek</dfn></dt>
+<dd>
+De <abbr title="Uniforme Objecten Bibliotheek">UOB</abbbr> is hét platform met objecten voor het 3D-modelleren van E&W-installaties in BIM-software. De 3D-templates zijn gevuld met ETIM MC geclassificeerde generieke of specifieke fabrikantendata. <a href="https://www.openuob.nl/" target="_blank">deze website</a>
+</dd>
+
+
+<dt><dfn data-lt="
+Bestuursakkoord digitale ketensamenwerking in de gebouwde omgeving|Bestuursakkoord">Bestuursakkoord digitale ketensamenwerking in de gebouwde omgeving</dfn></dt>
+<dd>
+Meer dan 40 publieke en private partijen hebben in het Bestuursakkoord afspraken gemaakt om digitale ketensamenwerking in de Gebouwde Omgeving te versnellen. Focus: Gebouwen en openbare ruimte en infrastructuur, een digitaal stelsel. Zie <a href="https://www.digigo.nu/wat-is-het-bestuursakkoord-27/" target="_blank">deze website</a>
+</dd>
+
 
 <dt><dfn data-lt="BGT|Basisregistratie Grootschalige Topografie">BGT</dfn></dt>
-<dd><abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr> is een digitale kaart van Nederland waarop gebouwen, wegen, waterlopen, terreinen en spoorlijnen eenduidig zijn vastgelegd met een nauwkeurigheid van 20 centimeter. De informatie wordt aangeleverd door de beheerders van de objecten. Wegen zijn hierin opgenomen als 2D-vlakobjecten, terwijl verkeersborden als 2D-punten van het type <q>bord</q> worden geregistreerd, conform het <abbr title="Informatiemodel Grootschalige Geografie">IMGeo</abbr>
+<dd><abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr> is een digitale kaart van Nederland waarop gebouwen, wegen, waterlopen, terreinen en spoorlijnen eenduidig zijn vastgelegd met een nauwkeurigheid van 20 centimeter. De informatie wordt aangeleverd door de beheerders van de objecten. Het achterliggende geo-informatiemodel is het <abbr title="Informatiemodel Grootschalige Geografie">IMGeo</abbr>
 </dd>
 
 
