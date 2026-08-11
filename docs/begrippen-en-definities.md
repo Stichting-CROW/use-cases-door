@@ -3,6 +3,106 @@
 <dl data-sort>
 <!-- data-sort zorgt voor automatische sortering van de <dt> (Definition Term)s -->
 
+<dt><dfn data-lt="Digitaal Stelsel|Digitale stelsels">Digitaal Stelsel</dfn></dt>
+<dd>
+Een geïntegreerd systeem dat technologieën, gegevens, processen en standaarden combineert om informatie-uitwisseling en samenwerking binnen een bepaald domein te faciliteren.
+</dd>
+
+<dt><dfn data-lt="DigiGO">DigiGO</dfn></dt>
+<dd>
+DigiGO maakt en beheert standaarden voor de gebouwde omgeving, waaronder de met het informatiemodel samenhangende standaard [=NLCS=] en het [DSGO]-stelsel. Website.</dd>
+
+<dt><dfn data-lt="DSGO|Digitaal stelsel gebouwde omgeving">DSGO</dfn></dt>
+<dd>
+Het Digitaal Stelsel Gebouwde Omgeving (<abbr title="Digitaal Stelsel Gebouwde Omgeving">DSGO</abbr>) maakt een set van uniforme afspraken die zorgt voor veilige, betrouwbare en gecontroleerde toegang tot data in de gebouwde omgeving. Dit stelsel wordt ontwikkeld en beheerd door [=DigiGO=] Doel: Met deze uniforme afspraken maken alle ketenpartners die actief zijn in de verschillende fases van de levenscyclus van een bouwwerk makkelijk en veilig gebruik van reeds beschikbare data. Waardoor zij in staat zijn om hun onderlinge – digitale - samenwerking te verbeteren, en efficiënter en duurzamer te werken.</dd>
+
+<dt><dfn data-lt="Bestuursakkoord digitale ketensamenwerking in de gebouwde omgeving|Bestuursakkoord">Bestuursakkoord digitale ketensamenwerking in de gebouwde omgeving</dfn></dt>
+<dd>
+Meer dan 40 publieke en private partijen hebben in het Bestuursakkoord afspraken gemaakt om digitale ketensamenwerking in de Gebouwde Omgeving te versnellen. Focus: Gebouwen en openbare ruimte en infrastructuur, een digitaal stelsel. Zie <a href="https://www.digigo.nu/wat-is-het-bestuursakkoord-27/" target="_blank">deze website</a>
+</dd>
+
+<dt><dfn data-lt="DMI|DMI-Ecosysteem">DMI</dfn></dt>
+<dd>
+<abbr title="Dutch Mobility Infrastructure">DMI</abbr> is een ecosysteem van publieke en private partners en kennisinstellingen gericht op het maximaal benutten van beschikbare data en informatietechnologie. Om steden versneld duurzaam te verdichten en mobiliteit te vernieuwen. Vooral bezig met geodata en Digital Twins voor beleidsopgaven van overheden in de openbare ruimte en infrastructuur.  <a href="https://dmi-ecosysteem.nl/" target="_blank">deze website</a>
+</dd>
+
+<dt><dfn data-lt="Federatief Datastelsel|FDS">Federatief datastelsel</dfn></dt>
+<dd>
+Het Federatief Datastelsel (<abbr title="Federatief Datastelsel">FDS</abbr>) is een afsprakenstelsel dat overheden en organisaties met een publieke taak in staat stelt om data veilig en verantwoord met elkaar te delen en te gebruiken. De gezamenlijke afspraken zijn erop gericht dat overheden werken op basis van dezelfde standaarden, waardoor ze op een uniforme manier met data omgaan. Het FDS is een concrete uitwerking binnen de Interbestuurlijke Datastrategie (IBDS).  <a href="https://federatief.datastelsel.nl/" target="_blank">deze website</a>
+</dd>
+
+
+
+<dt><dfn data-lt="Nationaal Programma Bodem, Ondergrond en Grondwater|BOG">Nationaal Programma Bodem, Ondergrond en Grondwater</dfn></dt>
+<dd>
+Het <abbr title="Nationaal Programma Bodem, Ondergrond en Grondwater">BOG</abbr> van het ministerie van Infrastructuur en Waterstaat (IenW) met doel het duurzaam, veilig en efficiënt gebruiken van bodem, ondergrond en grondwater in Nederland. 
+</dd>
+
+
+<dt><dfn data-lt="IMKL">IMKL</dfn></dt>
+  <dd>
+    Het Informatiemodel Kabel en Leidingen (<abbr title="Informatiemodel Kabel en Leidingen">IMKL</abbr>) biedt een gemeenschappelijk begrippenkader voor gegevensuitwisseling voor werkzaamheden aan Kabels en Leidingen. De bijbehorende gegevens worden gedeeld via het KLIC portaal. Het informatiemodel is gebaseerd op NEN 3610 en daarmee onderdeel van de NEN 3610 familie. In beheer bij Geonovum. 
+  </dd>
+
+<dt><dfn data-lt="Fysische|Fysische gegevens">Fysische gegevens</dfn></dt>
+  <dd>
+    Gegevens over de fysieke opbouw en dynamiek, zoals grondwaterkwantiteit, (nationale) grondwaterreserves, bodembeweging, zettingsgevoeligheid, verdichting en geologie.
+  </dd>
+
+  <dt><dfn data-lt="Biologische|Biologische gegevens">Biologische gegevens</dfn></dt>
+  <dd>
+    Gegevens over het bodemecosysteem, zoals bodemleven, organische stof, biodiversiteit in de bodem en bodemafdekking.
+  </dd>
+
+ <dt><dfn data-lt="Chemische|Chemische gegevens">Chemische gegevens</dfn></dt>
+  <dd>
+    Gegevens over de samenstelling, zoals bodem- en grondwaterkwaliteit (verontreinigingen, nutriënten, PFAS).
+  </dd>
+
+ <dt><dfn data-lt="Assets|Fysieke assets">Fysieke assets</dfn></dt>
+  <dd>
+    Gegevens over de ruimtelijke ordening en objecten, zoals civieltechnische infrastructuur (kabels, leidingen/netwerken), archeologie, bodemenergiesystemen (WKO) en ondergrondse bouwwerken. Gegevens over de ruimtelijke ordening en objecten, zoals civieltechnische infrastructuur (kabels, leidingen/netwerken), archeologie, bodemenergiesystemen (WKO) en ondergrondse bouwwerken. 
+  </dd>
+
+   <dt><dfn data-lt="Federatief delen van assetinformatie">Federatief delen van assetinformatie</dfn></dt>
+  <dd>
+  Federatief data delen door de overheid is een manier waarop overheidsorganisaties gegevens delen zonder alles op één plek op te slaan. Het draait om samenwerking en het soepel laten aansluiten van verschillende systemen, zodat informatie makkelijk en veilig beschikbaar is. In een federatief stelsel spelen landelijke registraties een centrale rol als betrouwbare bronnen van assetinformatie. Ze vormen het fundament waarop andere overheidsorganisaties en marktpartijen kunnen aansluiten.
+  </dd>
+
+
+
+<dt><dfn data-lt="parametrisch ontwerpen">parametrisch ontwerpen</dfn></dt>
+<dd>
+Parametrisch ontwerpen is een verzamelterm voor een aantal zaken: In een ontwerp niet handmatig objecten tekenen, maar een object plaatsen op basis van een achterliggende berekening, een script dat ontwerpnormen toepast of door het invullen van geometrische waarden of met een afstand ten opzichte van een ander object. 
+</dd>
+
+<dt><dfn data-lt="datagedreven ontwerpen">datagedreven ontwerpen</dfn></dt>
+<dd>
+Datagedreven ontwerpen is een parapluterm voor het gebruiken van assetinformatie, sensordata en omgevingsinformatie om een ontwerp te maken en in te passen in een bestaande omgeving; ook kunnen bij datagedreven ontwerpen ontwerpstandaarden en beleidsdoelen zijn vertaal in rekenregels waarmee parameters worden ingevuld of getoetst. Parametrisch ontwerpen is daarmee een deel van datagedreven ontwerpen. 
+</dd>
+
+
+
+<dt><dfn data-lt="ISOR|Platform ISOR|">ISOR</dfn></dt>
+<dd>
+Platform van samenwerkende overheden, ontstaan ujit de CityDeal Openbare Ruimte. 
+<abbr title="Integraal samenwerken in de Openbare Ruimte">ISOR</abbr> richt zich op een integrale aanpak voor stedelijke transitieopgaven. <a href="https://www.platformisor.nl/" target="_blank">deze website</a>
+</dd>
+
+<dt><dfn data-lt="Rekenregels"></dfn></dt>
+<dd>
+Computerleesbare specificaties waarmee gevalideerd kan worden of een ontwerp voldoet aan beleidsdoelen, bijvoorbeeld de 3-30-300 regel voor groen of voorkomen van overstromingen, en of een ontwerp voldoet normen en standaarden vanuit wetgeving, NEN, Stichting CROW, Norminstituut Bomen enzovoorts, bijvoorbeeld bufferruimtes tussen kabels, veiligheidsnormen en groeiplaatsen voor bomen. 
+</dd>
+
+<dt><dfn data-lt="parametrische symbolen en objecten"></dfn></dt>
+<dd>Standaard bouwblokken in ontwerptooling, digital twins of visualisatieprogramma's waarmee een object op basis van parameters of rekenregels vorm krijgt. 
+</dd>
+
+<dt><dfn data-lt="standaard inrichtingsprofielen">/dfn></dt>
+<dd> Een standaard oplossing, bijvoorbeeld een langs- of dwarsprofiel of een 3D bouwblok voor de inpassing van alle soorten objecten wat direct beschikbaar is in de ontwerpsoftware. Een voorbeeld is een standaard inrichting van een binnenstedelijke straat met aan één zijde woningen en aan de andere zijde een kademuur.
+</dd>
+
+
 <dt><dfn data-lt="Use case|Use Cases">Use Case</dfn></dt>
 <dd>
 Een **use case** binnen het **<a>DOOR-programma</a>** beschrijft een proces vanuit het perspectief van de betrokken partijen (actoren) en hoe zij informatie met elkaar uitwisselen. Het gaat hierbij niet om het ontwikkelen van software, maar om het waarborgen van een **interoperabele** en **eenduidige uitwisseling van informatie** tussen ketenpartners.  
@@ -49,6 +149,10 @@ er moet worden gebouwd en waarom, en biedt meetbare criteria voor succes.​
 <dt><dfn data-lt="BGT|Basisregistratie Grootschalige Topografie">BGT</dfn></dt>
 <dd><abbr title="Basisregistratie Grootschalige Topografie">BGT</abbr> is een digitale kaart van Nederland waarop gebouwen, wegen, waterlopen, terreinen en spoorlijnen eenduidig zijn vastgelegd met een nauwkeurigheid van 20 centimeter. De informatie wordt aangeleverd door de beheerders van de objecten. Wegen zijn hierin opgenomen als 2D-vlakobjecten, terwijl verkeersborden als 2D-punten van het type <q>bord</q> worden geregistreerd, conform het <abbr title="Informatiemodel Grootschalige Geografie">IMGeo</abbr>
 </dd>
+
+<dt><dfn data-lt="IMGeo">IMGeo</dfn></dt>
+<dd>
+Het Informatiemodel ontwikkeld voor objectgerichte geografische informatie in de [=BGT=]. Wegen zijn hierin opgenomen als 2D vlakobject. Verkeersborden zijn hierin opgenomen als 2D punt van het type "bord".</dd>
 
 
 <dt><dfn data-lt="KLIC|Kabels en Leidingen Informatieportaal">KLIC</dfn></dt>
