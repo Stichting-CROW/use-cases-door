@@ -160,6 +160,20 @@ Het Informatiemodel ontwikkeld voor objectgerichte geografische informatie in de
     Een digitaal systeem waarin netbeheerders informatie over ondergrondse kabels en leidingen registreren. Het portaal wordt beheerd door het Kadaster en maakt het mogelijk om via een <abbr title="Kabels en Leidingen Informatieportaal">KLIC</abbr>-melding gegevens op te vragen over de ligging van kabels en leidingen. Dit is verplicht bij graafwerkzaamheden om schade te voorkomen en de veiligheid te waarborgen.
   </dd>
 
+<dt><dfn data-lt="IFC">IFC</dfn></dt>
+  <dd>
+  Open internationale BIM-standaard voor de uitwisseling van informatie over objecten, eigenschappen en geometrische relaties van gebouwen en infrastructuur.
+  </dd>
+
+  <dt><dfn data-lt="Aquo">Aquo</dfn></dt>
+  <dd>
+  De standaard voor gegevensuitwisseling over beheer van oppervlaktewater, grondwater en afvalwater, beheerd door Informatiehuis Water.
+  </dd>
+
+   <dt><dfn data-lt="CityGML">CityGML</dfn></dt>
+  <dd>
+  Open standaard voor de opslag en uitwisseling van semantische 3D-geo-informatie over de gebouwde en natuurlijke omgeving.
+  </dd>
 
 
 <dt><dfn data-lt="IMBOR|Informatiemodel Beheer Openbare Ruimte">IMBOR</dfn></dt>
