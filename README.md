@@ -32,7 +32,9 @@ Beschikbare use cases:
 
 [Provincie Zuid-Holland, OTL modellering met IMBOR](https://docs.crow.nl/use-cases-door/imbor-otl)
 
+## Opschaling van datagedreven werken
 
+[Analyse en projectplan datagedreven integraal samenwerken in de openbare ruimte](https://docs.crow.nl/use-cases-door/isor)
 
 
 
