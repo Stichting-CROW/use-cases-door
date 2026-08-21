@@ -89,16 +89,16 @@ Platform van samenwerkende overheden, ontstaan ujit de CityDeal Openbare Ruimte.
 <abbr title="Integraal samenwerken in de Openbare Ruimte">ISOR</abbr> richt zich op een integrale aanpak voor stedelijke transitieopgaven. <a href="https://www.platformisor.nl/" target="_blank">deze website</a>
 </dd>
 
-<dt><dfn data-lt="Rekenregels"></dfn></dt>
+<dt><dfn data-lt="Rekenregels">Rekenregels</dfn></dt>
 <dd>
 Computerleesbare specificaties waarmee gevalideerd kan worden of een ontwerp voldoet aan beleidsdoelen, bijvoorbeeld de 3-30-300 regel voor groen of voorkomen van overstromingen, en of een ontwerp voldoet normen en standaarden vanuit wetgeving, NEN, Stichting CROW, Norminstituut Bomen enzovoorts, bijvoorbeeld bufferruimtes tussen kabels, veiligheidsnormen en groeiplaatsen voor bomen. 
 </dd>
 
-<dt><dfn data-lt="parametrische symbolen en objecten"></dfn></dt>
+<dt><dfn data-lt="parametrische symbolen en objecten">parametrische symbolen en objecten</dfn></dt>
 <dd>Standaard bouwblokken in ontwerptooling, digital twins of visualisatieprogramma's waarmee een object op basis van parameters of rekenregels vorm krijgt. 
 </dd>
 
-<dt><dfn data-lt="standaard inrichtingsprofielen">/dfn></dt>
+<dt><dfn data-lt="standaard inrichtingsprofielen">Standaard inrichtingsprofiel</dfn></dt>
 <dd> Een standaard oplossing, bijvoorbeeld een langs- of dwarsprofiel of een 3D bouwblok voor de inpassing van alle soorten objecten wat direct beschikbaar is in de ontwerpsoftware. Een voorbeeld is een standaard inrichting van een binnenstedelijke straat met aan één zijde woningen en aan de andere zijde een kademuur.
 </dd>
 
