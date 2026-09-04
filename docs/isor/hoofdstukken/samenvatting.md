@@ -2,11 +2,13 @@
 [=Platform ISOR=] heeft aan CROW gevraagd om een projectplan op te stellen voor een verkenningstraject rondom datagedreven samenwerken in de openbare ruimte en infrastructuur, met focus op de binnenstedelijke ondergrond. Doel van dit document:
 
 1. Een analyse van de ontwikkelingsbehoefte in Nederland de komende 5 – 10 jaar, te agenderen op de strategietafel ISOR 28 okt, met als agendapunt eigenaarschap voor de vervolgstappen op niveau van het Rijk.
-2. Een projectvoorstel met vervolgstappen. 
+2. Een projectvoorstel met vervolgstappen.
+
+Samenvatting van de samenvatting: technisch is alles mogelijk, de vraag is (a) focus: welke werkzaamheden / beleidsbeslissingen moeten datagedreven worden om met een krimpend arbeidsaanbod toch alle overheidstaken goed uit te voeren en (b) of gemeenten bereid zijn hun werkprocessen, software en data te standaardiseren omdat digitale innovaties schaalgrootte nodig hebben en alle investeringen nu naar maatwerk op ouderwetse software gaan in plaats van naar innovaties voor alle gemeenten.
 
 
 **Scope**
-De aanpak focust zich op vijf ingredienten voor succesvol samenwerken in de openbare ruimte en infrastructuur: het datafundament; rekenregels; tooling voor datagedreven ontwerp; open uitwisseling van planstudies en ontwerpen, en collectieve analysemiddelen. Van elk onderdeel volgt een probleemanalyse, de ontwikkelingsbehoefte, een ontwikkelingsstrategie en vervolgstappen opgedeeld over vijf jaar.
+De aanpak focust zich op vijf ingredienten voor succesvol samenwerken in de openbare ruimte en infrastructuur: het datafundament; rekenregels; tooling voor datagedreven ontwerp; open uitwisseling van planstudies en ontwerpen, en collectieve analysemiddelen. Van elk onderdeel volgt een probleemanalyse, de ontwikkelingsbehoefte, een ontwikkelingsstrategie en vervolgstappen opgedeeld over vijf jaar. 
 Om focus aan te brengen wordt voorgesteld om binnen ISOR verband steeds te werken vanuit eenn concrete beleidsopgave. Deze opgave wordt behapbaar door steeds van één asset of assettype alle ingrediënten uit te werken. Dit zorgt voor een concrete en schaalbare bijdrage aan datagedreven werken. Tegelijkertijd moet gewerkt worden aan bestuurlijke randvoorwaarden op nationaal niveau, omdat datagedreven werken allang kan, maar onbetaalbaar is zonder standaardisatie van data en werkprocessen. Voorstel voor eerste onderwerpen waar ISOR zich op zou kunnen richten:
 
 1. De ontwerpoplossingen van gemeente Amsterdam voor de inpassing van warmtenetten in binnenstedelijke straten.
