@@ -4,9 +4,14 @@
 1. Een analyse van de ontwikkelingsbehoefte in Nederland de komende 5 – 10 jaar, te agenderen op de strategietafel ISOR 28 okt, met als agendapunt eigenaarschap voor de vervolgstappen op niveau van het Rijk.
 2. Een projectvoorstel met vervolgstappen. 
 
+
 **Scope**
 De aanpak focust zich op vijf ingredienten voor succesvol samenwerken in de openbare ruimte en infrastructuur: het datafundament; rekenregels; tooling voor datagedreven ontwerp; open uitwisseling van planstudies en ontwerpen, en collectieve analysemiddelen. Van elk onderdeel volgt een probleemanalyse, de ontwikkelingsbehoefte, een ontwikkelingsstrategie en vervolgstappen opgedeeld over vijf jaar.
-Om focus aan te brengen wordt voorgesteld om binnen ISOR verband te werken vanuit één concrete beleidsopgave: de inpassing van warmtenetten in een bestaande straat in een binnenstad; deze opgave wordt behapbaar door steeds van één asset of assettype alle ingrediënten uit te werken. Dit zorgt voor een concrete en schaalbare bijdrage aan datagedreven werken. Tegelijkertijd moet gewerkt worden aan bestuurlijke randvoorwaarden op nationaal niveau.
+Om focus aan te brengen wordt voorgesteld om binnen ISOR verband steeds te werken vanuit eenn concrete beleidsopgave. Deze opgave wordt behapbaar door steeds van één asset of assettype alle ingrediënten uit te werken. Dit zorgt voor een concrete en schaalbare bijdrage aan datagedreven werken. Tegelijkertijd moet gewerkt worden aan bestuurlijke randvoorwaarden op nationaal niveau, omdat datagedreven werken allang kan, maar onbetaalbaar is zonder standaardisatie van data en werkprocessen. Voorstel voor eerste onderwerpen waar ISOR zich op zou kunnen richten:
+
+1. De ontwerpoplossingen van gemeente Amsterdam voor de inpassing van warmtenetten in binnenstedelijke straten.
+2. Ruimte voor boomgroeiplaatsen in de ondergrond; op basis van de digital Twin bij gemeente Dronten waarin onder meer gezocht wordt naar potentiële locatie waar extra bomen geplaatst kunnen worden; en van bestaande bomen wordt berekend wat het maximale boomkroonvolume is wat bereikt kan worden. 
+3. Wateroverlast bij extreme piekbuien. Gemeente Amsterdam heeft een klimaat- en biodiversiteitsscan ontwikkeld waarbij op basis van landelijke registraties van verhard oppervlak en gebouwen ook een kaart is gemaakt die de max. waterdiepte na een extreme bui van 70 mm in één uur toont. En mooie casus waarbij de analyse beter gemaakt kan worden met assetinformatie, omdat de afvoercapaciteit van de riolering kan worden meegenomen in de berekening. 
 
 
 **Datafundament**<br><br>
@@ -58,26 +63,9 @@ De voorgestelde aanpak is om te investeren in afspraken en tooling voor open uit
 
 
 **Collectieve analysemiddelen**<br><br>
-Collectieve analysemiddelen maken het mogelijk om maatschappelijke opgaven zoals klimaatadaptatie, energietransitie, woningbouw en verduurzaming efficiënter en consistenter uit te voeren. Hoewel veel overheden al beschikken over lokale digitale tweelingen en analysetools, zijn deze vaak gebaseerd op niet-gestandaardiseerde data en lokaal ontwikkelde rekenregels, waardoor opschaling en hergebruik beperkt blijven. De voorgestelde aanpak is om te investeren in collectieve analysetools op nationale schaal. Dit zorgt ervoor, dat het delen van assetinformatie uit eigen systemen meteen zichtbare meerwaarde oplevert omdat de collectieve analysetools beschikbaar zijn. Een voorbeeld is: een gemeente die rioleringsinformatie weet te delen, krijgt direct betere informatie over locaties waar wateroverlast is bij hevige buien; een gemeente die informatie deelt over ondergrondse infra en bomen, ziet meteen waar kansen zijn om meer bomen te plaatsen en juist waar knelpunten liggen. 
+Collectieve analysemiddelen maken het mogelijk om maatschappelijke opgaven zoals klimaatadaptatie, energietransitie, woningbouw en verduurzaming efficiënter en consistenter uit te voeren. Hoewel veel overheden al beschikken over lokale digitale tweelingen en analysetools, zijn deze vaak gebaseerd op niet-gestandaardiseerde data en lokaal ontwikkelde rekenregels, waardoor opschaling en hergebruik beperkt blijven. 
 
 
+De voorgestelde aanpak is om te investeren in collectieve analysetools op nationale schaal. Dit zorgt ervoor, dat het delen van assetinformatie uit eigen systemen meteen zichtbare meerwaarde oplevert omdat de collectieve analysetools beschikbaar zijn. De input bestaat uit de digitale tweelingen die steden reeds ontwikkelen, onder meer bij DMI, maar dan op een schaalbare en uniforme wijze. 
 
-**Programmapplan ISOR**
-
-**Bijdragen aan het datafundament**
-Hoewel het datafundament om nationale regie en collectieve keuzes vraagt, kan vanuit het ISOR-programma wel worden gebouwd aan basiselementen. Dit zijn:
-* **Delen assetinformatie**. Een project om samen te werken met de leveranciers van beheersoftware om assetinformatie beschikbaar te maken voor collectieve analysemiddelen, waarbij geoefend wordt met het uitwisselen van semantische data op basis van IMBOR. Start met kabels, leidingen en rioleringen met basisinformatie als ligging (2D of 3D), objecttype, materiaal en afmeting. 
-* **Mutatieprotocol tussen beheer en ontwerp** Een project om samen te werken met de leveranciers van beheersoftware en NLCS-ontwerpsoftware om assetinformatie te kunnen leveren voor het ontwerp, en mutaties te kunnen ontvangen vanuit revisie. 
-
-**Generiek Projectplan**
-Voor het ISOR-programma is een generiek projectplan beschikbaar, wat herhaald kan worden toegepast. Elk project levert een collectieve analysetool op met geharmoniseerde datastandaarden, rekenregels en ontwerptooling. 
-
-
-1. Selecteer een bestaande lokale digital twin die voor elke gemeente in Nederland beschikbaar moet zijn en standaardiseer de rekenregels. 
-2. Bepaal welke asset-, ontwerp- en omgevingsinformatie nodig is voor de analyse.
-3. Stel een informatieleveringsspecificatie op voor deze informatie, uitgedrukt in datastandaarden voor ontwerp en beheer.
-4. Indien dit nodig is, maak een wijzigingsvoorstel om de datastanaarden te harmoniseren.
-5. Richt de collectieve analysetool in met openbare databronnen en rekenregels. 
-6. Werk samen met de leverancier van het beheerpakket van één of meer deelnemende gemeenten in ISOR-verband om de assetinformatie direct in te lezen in de collectieve analysetool.
-7. Gebruik een bestaande planstudie en maak hiervan een voorbeeld-ontwerpdataset; bij voorkeur in 3D IFC én CityGML met daarbij 2D CAD overzichten, langs- en dwarsdoorsnedes en bijbehorende ontwerptooling zoals een objectenbibliotheek of principe-oplossingen.
-8. Nodig andere gemeenten in Nederland uit om mee te doen in de collectieve analyse en voila: keten gesloten voor één voorbeeld. 
+Werk per digitale tweeling de hele keten uit: zorg dat standaarden samenhangen, zorg dat beheersystemen of ontwerppakketten de data kunnen leveren, maak de rekenregels en ontwerptooling beschikbaar. 
