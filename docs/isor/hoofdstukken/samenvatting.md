@@ -4,7 +4,7 @@
 1. Een analyse van de ontwikkelingsbehoefte in Nederland de komende 5 – 10 jaar, te agenderen op de strategietafel ISOR 28 okt, met als agendapunt eigenaarschap voor de vervolgstappen op niveau van het Rijk.
 2. Een projectvoorstel met vervolgstappen.
 
-Samenvatting van de samenvatting: technisch is alles mogelijk, de vraag is (a) focus: welke werkzaamheden / beleidsbeslissingen moeten datagedreven worden om met een krimpend arbeidsaanbod toch alle overheidstaken goed uit te voeren en (b) of gemeenten bereid zijn hun werkprocessen, software en data te standaardiseren omdat digitale innovaties schaalgrootte nodig hebben en alle investeringen nu naar maatwerk op ouderwetse software gaan in plaats van naar innovaties voor alle gemeenten.
+Samenvatting van de samenvatting: technisch is alles mogelijk, de vraag is (a) focus: welke werkzaamheden / beleidsbeslissingen moeten datagedreven worden om met een krimpend arbeidsaanbod toch alle overheidstaken goed uit te voeren en (b) of gemeenten bereid zijn hun werkprocessen, software en data te standaardiseren omdat digitale innovaties schaalgrootte nodig hebben en veel investeringen nu naar maatwerk op ouderwetse software gaan in plaats van naar innovaties voor alle gemeenten.
 
 
 **Scope**
