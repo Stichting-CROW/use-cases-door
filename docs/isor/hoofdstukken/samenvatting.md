@@ -8,8 +8,8 @@ Samenvatting van de samenvatting: technisch is alles mogelijk, de vraag is (a) f
 
 
 **Scope**
-De aanpak focust zich op vijf ingredienten voor succesvol samenwerken in de openbare ruimte en infrastructuur: het datafundament; rekenregels; tooling voor datagedreven ontwerp; open uitwisseling van planstudies en ontwerpen, en collectieve analysemiddelen. Van elk onderdeel volgt een probleemanalyse, de ontwikkelingsbehoefte, een ontwikkelingsstrategie en vervolgstappen opgedeeld over vijf jaar. 
-Om focus aan te brengen wordt voorgesteld om binnen ISOR verband steeds te werken vanuit eenn concrete beleidsopgave. Deze opgave wordt behapbaar door steeds van één asset of assettype alle ingrediënten uit te werken. Dit zorgt voor een concrete en schaalbare bijdrage aan datagedreven werken. Tegelijkertijd moet gewerkt worden aan bestuurlijke randvoorwaarden op nationaal niveau, omdat datagedreven werken allang kan, maar onbetaalbaar is zonder standaardisatie van data en werkprocessen. Voorstel voor eerste onderwerpen waar ISOR zich op zou kunnen richten:
+De aanpak focust zich op vijf ingrediënten voor succesvol samenwerken in de openbare ruimte en infrastructuur: het datafundament; rekenregels; tooling voor datagedreven ontwerp; open uitwisseling van planstudies en ontwerpen, en collectieve analysemiddelen. Van elk onderdeel volgt een probleemanalyse, de ontwikkelingsbehoefte, een ontwikkelingsstrategie en vervolgstappen opgedeeld over vijf jaar. 
+Om focus aan te brengen wordt voorgesteld om binnen ISOR verband steeds te werken vanuit een concrete beleidsopgave. Deze opgave wordt behapbaar door steeds van één asset of assettype alle ingrediënten uit te werken. Dit zorgt voor een concrete en schaalbare bijdrage aan datagedreven werken. Tegelijkertijd moet gewerkt worden aan bestuurlijke randvoorwaarden op nationaal niveau, omdat datagedreven werken allang kan, maar onbetaalbaar is zonder standaardisatie van data en werkprocessen. Voorstel voor eerste onderwerpen waar ISOR zich op zou kunnen richten:
 
 1. De ontwerpoplossingen van gemeente Amsterdam voor de inpassing van warmtenetten in binnenstedelijke straten.
 2. Ruimte voor boomgroeiplaatsen in de ondergrond; op basis van de digital Twin bij gemeente Dronten waarin onder meer gezocht wordt naar potentiële locatie waar extra bomen geplaatst kunnen worden; en van bestaande bomen wordt berekend wat het maximale boomkroonvolume is wat bereikt kan worden. 
@@ -28,7 +28,7 @@ Platform ISOR kan dit niet vormgeven, maar zal het probleem bestuurlijk moeten a
 Zonder nationale samenwerking en regie is het ontwikkelen van oplossingen voor datagedreven samenwerken verspilling van publiek geld. Versterk bestaande datastandaarden, zorg voor structurele financiering, kies één federatief datastelsel en zorg dat nationale basisregistraties het vliegwiel vormen voor een betere informatiebasis. Platform ISOR kan hier alleen een beïnvloedende rol spelen door de noodzaak aan te kaarten bij de vijf ministeries. Focuspunt van deze lobby: werk aan het vliegwiel waarbij nationale registraties gevoed gaan worden vanuit één bron, de locale assetinformatie, in 3D. Begin met de aansluiting van de BGT op de gemeentelijke beheersystemen, daarna de KLIC. Beslis op nationaal niveau welke assetinformatie openbaar beschikbaar moet komen, en welke alleen voor de asseteigenaren en hun opdrachtnemers binnen een projectgebied (bouw / beheerwerkzaamheden) en voor hulpdiensten en leger.
 
 2. Werkt als lokale overheden samen met bestaande leveranciers
-De leveranciers van beheerpakketten zijn op dit moment een cruciale speler, deze pakketten zijn voor het grootste deel van de gemeentes en andere overheden de bron van assetinformatie. Onderzoek als platform ISOR met deze leveranciers of zij een 3D assetregistratie kunnen faciliteren, met als afgeleide uit de brondata een 2D kaart voor uitvoering van het bestaande 2D-georienteerde beheerproces, waarbij de assetinformatie op basis van IMBOR en GWSW vastgelegd wordt. Werk als platform ISOR met de NLCS-beheerorganisatie en NLCS-softwareleveranciers samen om te zorgen voor een uitwisseling met de beheerpakketten: heen bestaande assetinformatie, terug mutaties van bestaande assets. Zo kan op lokaal niveau al gebouwd worden aan een 3D registratie.
+De leveranciers van beheerpakketten zijn op dit moment een cruciale speler, deze pakketten zijn voor het grootste deel van de gemeentes en andere overheden de bron van assetinformatie. Onderzoek als platform ISOR met deze leveranciers of zij een 3D assetregistratie kunnen faciliteren, met als afgeleide uit de brondata een 2D kaart voor uitvoering van het bestaande 2D-georiënteerde beheerproces, waarbij de assetinformatie op basis van IMBOR en GWSW vastgelegd wordt. Werk als platform ISOR met de NLCS-beheerorganisatie en NLCS-softwareleveranciers samen om te zorgen voor een uitwisseling met de beheerpakketten: heen bestaande assetinformatie, terug mutaties van bestaande assets. Zo kan op lokaal niveau al gebouwd worden aan een 3D registratie.
 
 3. Werk aan nationale informatieleveringsspecificaties
 Werk per assettype de samenhang uit tussen de ontwerp- en beheerstandaarden (start met [=IMGeo=], [=IMBOR=] en [=NLCS=] plus BIM/Geo standaarden) en maak informatieleveringsspecificaties per asset, zodat ontwerpbureaus, bouwaannemers en inspectiebureaus weten welke informatie verwacht wordt bij start ontwerp, oplevering ontwerp en bij oplevering van revisiegegevens na de uitvoering van beheer- of bouwwerkzaamheden. Werk dit uit in zowel 2D als 3D standaarden, zodat kosteneffectief gewerkt kan worden.
@@ -42,7 +42,7 @@ Rekenregels vertalen beleidsdoelen voor onder meer de energietransitie, klimaata
 <br><br> 
 
 **Actieplan rekenregels**<br>
-De rekenregels worden mee-ontwikkeld met de door beleidsvraagstukken angedreven collectieve analysetools.
+De rekenregels worden mee-ontwikkeld met de door beleidsvraagstukken aangedreven collectieve analysetools.
 
 
 **Tooling voor datagedreven ontwerpen**<br><br>
@@ -50,7 +50,7 @@ Datagedreven ontwerpen in de openbare ruimte wordt niet primair beperkt door een
 <br><br>
 
 **Actieplan tooling voor datagedreven ontwerpen**<br>
-De tooling voor datagedreven ontwerpen worden mee-ontwikkeld met de door beleidsvraagstukken angedreven collectieve analysetools em de ontwerpoplossingen die daarvoor nodig zijn. De eerste ontwikkelingsstap is het maken en delen van standaard ontwerpoplossingen voor diverse soorten tooling (BIM, Geo en CAD) en objecten en symbolen.
+De tooling voor datagedreven ontwerpen worden mee-ontwikkeld met de door beleidsvraagstukken aangedreven collectieve analysetools en de ontwerpoplossingen die daarvoor nodig zijn. De eerste ontwikkelingsstap is het maken en delen van standaard ontwerpoplossingen voor diverse soorten tooling (BIM, Geo en CAD) en objecten en symbolen.
 
 **Open uitwisseling planstudies en ontwerpen**<br><br>
 De uitwisseling van ontwerpinformatie tussen beheer-, ontwerp- en analysesystemen wordt momenteel belemmerd door een versnipperd softwarelandschap en het ontbreken van open standaarden voor objectgerichte gegevensuitwisseling tussen de grote groepen pakketten (BIM, GIS, CAD). 
@@ -61,7 +61,7 @@ De voorgestelde aanpak is om te investeren in afspraken en tooling voor open uit
 
 1. Uitwerking van een open uitwisselformaat bij de NLCS. Dit kan als losstaand project worden opgestart. Voor implementatie in de software zal voldoende investeringsperspectief geboden moeten worden. Aanname: de uitwisseling zal gebeuren in 2D geo-formaat, zodat in de 2D-samenwerkingsketen geen sprake hoeft te zijn van datatransformaties. 
 2. Informatieleveringsspecificaties uit het datafundament (per asset type) vertalen naar dataspecificaties in CityGML (3DGeo), GeoJSON, IDS (BIM), en NLCS.
-3. Onderzoeken of de informatie uit ontwerp en fabrikage, bouw en montage vanuit zware, informatie-dichte BIM-modellen geutomatiseerd kan worden omgezet naar lichtere modellen in CityGML waarmee integrale ruimtelijke analyses en inzichten kunnen worden gecreeerd in collectieve analysemiddelen. Als dit goed werkt kan open source tooling ontwikkeld worden waarmee datatransformaties gedaan kunnen worden. 
+3. Onderzoeken of de informatie uit ontwerp en fabricage, bouw en montage vanuit zware, informatie-dichte BIM-modellen geautomatiseerd kan worden omgezet naar lichtere modellen in CityGML waarmee integrale ruimtelijke analyses en inzichten kunnen worden gecreëerd in collectieve analysemiddelen. Als dit goed werkt kan open source tooling ontwikkeld worden waarmee datatransformaties gedaan kunnen worden. 
 
 
 **Collectieve analysemiddelen**<br><br>
