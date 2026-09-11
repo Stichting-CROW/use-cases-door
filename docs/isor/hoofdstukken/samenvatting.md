@@ -2,7 +2,7 @@
 [=Platform ISOR=] heeft aan CROW gevraagd om een projectplan op te stellen voor een verkenningstraject rondom datagedreven samenwerken in de openbare ruimte en infrastructuur, met focus op de binnenstedelijke ondergrond. Doel van dit document:
 
 1. Een analyse van de ontwikkelingsbehoefte in Nederland de komende 5 – 10 jaar, te agenderen op de strategietafel ISOR 28 okt, met als agendapunt eigenaarschap voor de vervolgstappen op niveau van het Rijk.
-2. Een projectvoorstel met vervolgstappen.
+2. Een projectvoorstel met vervolgstappen; zie hiervoor hoofdstuk 8.
 
 Samenvatting van de samenvatting: technisch is alles mogelijk, de vraag is (a) focus: welke werkzaamheden / beleidsbeslissingen moeten datagedreven worden om met een krimpend arbeidsaanbod toch alle overheidstaken goed uit te voeren en (b) of gemeenten bereid zijn hun werkprocessen, software en data te standaardiseren omdat digitale innovaties schaalgrootte nodig hebben en veel investeringen nu naar maatwerk op ouderwetse software gaan in plaats van naar innovaties voor alle gemeenten.
 
@@ -24,7 +24,7 @@ Platform ISOR kan dit niet vormgeven, maar zal het probleem bestuurlijk moeten a
 **Actieplan datafundament**
 
 
-1. Lobby voor bestuurlijke randvoorwaarden
+1. Samenwerken aan bestuurlijke randvoorwaarden
 Zonder nationale samenwerking en regie is het ontwikkelen van oplossingen voor datagedreven samenwerken verspilling van publiek geld. Versterk bestaande datastandaarden, zorg voor structurele financiering, kies één federatief datastelsel en zorg dat nationale basisregistraties het vliegwiel vormen voor een betere informatiebasis. Platform ISOR kan hier alleen een beïnvloedende rol spelen door de noodzaak aan te kaarten bij de vijf ministeries. Focuspunt van deze lobby: werk aan het vliegwiel waarbij nationale registraties gevoed gaan worden vanuit één bron, de locale assetinformatie, in 3D. Begin met de aansluiting van de BGT op de gemeentelijke beheersystemen, daarna de KLIC. Beslis op nationaal niveau welke assetinformatie openbaar beschikbaar moet komen, en welke alleen voor de asseteigenaren en hun opdrachtnemers binnen een projectgebied (bouw / beheerwerkzaamheden) en voor hulpdiensten en leger.
 
 2. Werkt als lokale overheden samen met bestaande leveranciers
@@ -71,3 +71,5 @@ Collectieve analysemiddelen maken het mogelijk om maatschappelijke opgaven zoals
 De voorgestelde aanpak is om te investeren in collectieve analysetools op nationale schaal. Dit zorgt ervoor, dat het delen van assetinformatie uit eigen systemen meteen zichtbare meerwaarde oplevert omdat de collectieve analysetools beschikbaar zijn. De input bestaat uit de digitale tweelingen die steden reeds ontwikkelen, onder meer bij DMI, maar dan op een schaalbare en uniforme wijze. 
 
 Werk per digitale tweeling de hele keten uit: zorg dat standaarden samenhangen, zorg dat beheersystemen of ontwerppakketten de data kunnen leveren, maak de rekenregels en ontwerptooling beschikbaar. 
+
+In hoofdstuk 8 staan de concrete projecten uitgewerkt met richtbedragen voor het reserveren van middelen vanaf 2027. 
