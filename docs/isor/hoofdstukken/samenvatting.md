@@ -4,7 +4,18 @@
 1. Een analyse van de ontwikkelingsbehoefte in Nederland de komende 5 – 10 jaar, te agenderen op de strategietafel ISOR 28 okt, met als agendapunt eigenaarschap voor de vervolgstappen op niveau van het Rijk.
 2. Een projectvoorstel met vervolgstappen; zie hiervoor hoofdstuk 8.
 
-Samenvatting van de samenvatting: technisch is alles mogelijk, de vraag is (a) focus: welke werkzaamheden / beleidsbeslissingen moeten datagedreven worden om met een krimpend arbeidsaanbod toch alle overheidstaken goed uit te voeren en (b) of gemeenten bereid zijn hun werkprocessen, software en data te standaardiseren omdat digitale innovaties schaalgrootte nodig hebben en veel investeringen nu naar maatwerk op ouderwetse software gaan in plaats van naar innovaties voor alle gemeenten.
+<div class="note">
+Het verhaal in dit rapport is heel technisch.
+
+Het bovenliggende probleem is niet technisch van aard, maar politiek, bestuurlijk en organisatorisch. We hebben de komende jaren nog de menskracht, nog de middelen om alle uitdagingen in de openbare ruimte het hoofd te bieden: woningbouw, klimaatadaptatie, energietransitie, stikstof, enzovoorts. Daarom hebben we innovaties nodig, ook op gebied van datagedreven werken.
+
+Vijf ministeries en 400 lagere overheden, gemeenten, provincies, waterschappen, nutsbedrijven, nationale en lokale programma's en minstens zes standaardisatie-organisaties proberen al jaren om te komen tot een beter datafundament, zonder centrale regie. Dat zorgt voor veel puzzelstukjes die niet goed op elkaar passen. De grotere gemeenten geven vervolgens veel geld uit aan lokale oplossingen, die niet herbruikbaar zijn bij andere overheden.
+
+Alle maatwerk oplossingen remmen vernieuwing van standaarden en innovaties bij softwareleveranciers.
+
+De nationale overheid is aan zet om deze impasse te doorbreken, met een goede strategie voor consolidatie van datastandaarden en landelijke registraties, waarbij het cruciaal is om de bestaande, meest gedetailleerde databronnen van lokale beheerders te benutten en de juiste schaalgrootte te bereiken voor digitale innovaties.
+</div>
+
 
 
 **Scope**
