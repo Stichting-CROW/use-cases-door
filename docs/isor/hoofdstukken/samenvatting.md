@@ -13,7 +13,7 @@ Vijf ministeries en 400 lagere overheden, gemeenten, provincies, waterschappen, 
 
 Alle maatwerk oplossingen remmen vernieuwing van standaarden en innovaties bij softwareleveranciers.
 
-De nationale overheid is aan zet om deze impasse te doorbreken, met een goede strategie voor consolidatie van datastandaarden en landelijke registraties, waarbij het cruciaal is om de bestaande, meest gedetailleerde databronnen van lokale beheerders te benutten en de juiste schaalgrootte te bereiken voor digitale innovaties.
+De nationale overheid is aan zet om deze impasse te doorbreken. Zonder nationale samenwerking en regie is het ontwikkelen van oplossingen voor datagedreven samenwerken verspilling van publiek geld. Versterk bestaande datastandaarden, zorg voor structurele financiering, kies één federatief datastelsel en zorg dat nationale basisregistraties het vliegwiel vormen voor een betere informatiebasis. Dat is de basis om de  juiste schaalgrootte te bereiken voor digitale innovaties.
 </div>
 
 
