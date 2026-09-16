@@ -7,13 +7,13 @@
 <div class="note">
 Het verhaal in dit rapport is heel technisch.
 
-Het bovenliggende probleem is niet technisch van aard, maar politiek, bestuurlijk en organisatorisch. We hebben de komende jaren nog de menskracht, nog de middelen om alle uitdagingen in de openbare ruimte het hoofd te bieden: woningbouw, klimaatadaptatie, energietransitie, stikstof, enzovoorts. Daarom hebben we innovaties nodig, ook op gebied van datagedreven werken.
+Het bovenliggende probleem is niet technisch van aard, maar politiek, bestuurlijk en organisatorisch. We hebben de komende jaren noch de menskracht, noch de middelen om alle uitdagingen in de openbare ruimte het hoofd te bieden: woningbouw, klimaatadaptatie, energietransitie, stikstof, enzovoorts. Daarom hebben we innovaties nodig, ook op het gebied van datagedreven werken.
 
 Vijf ministeries en 400 lagere overheden, gemeenten, provincies, waterschappen, nutsbedrijven, nationale en lokale programma's en minstens zes standaardisatie-organisaties proberen al jaren om te komen tot een beter datafundament, zonder centrale regie. Dat zorgt voor veel puzzelstukjes die niet goed op elkaar passen. De grotere gemeenten geven vervolgens veel geld uit aan lokale oplossingen, die niet herbruikbaar zijn bij andere overheden.
 
-Alle maatwerk oplossingen remmen vernieuwing van standaarden en innovaties bij softwareleveranciers.
+Alle maatwerkoplossingen remmen vernieuwing van standaarden en innovaties bij softwareleveranciers.
 
-De nationale overheid is aan zet om deze impasse te doorbreken. Zonder nationale samenwerking en regie is het ontwikkelen van oplossingen voor datagedreven samenwerken verspilling van publiek geld. Versterk bestaande datastandaarden, zorg voor structurele financiering, kies één federatief datastelsel en zorg dat nationale basisregistraties het vliegwiel vormen voor  betere data. Dat is de basis om de  juiste schaalgrootte te bereiken voor digitale innovaties.
+De nationale overheid is aan zet om deze impasse te doorbreken. Zonder nationale samenwerking en regie is het ontwikkelen van oplossingen voor datagedreven samenwerken verspilling van publiek geld. Versterk bestaande datastandaarden, zorg voor structurele financiering, kies één federatief datastelsel en zorg dat nationale basisregistraties het vliegwiel vormen voor betere data. Dat is de basis om de juiste schaalgrootte te bereiken voor digitale innovaties.
 </div>
 
 
@@ -24,7 +24,7 @@ Om focus aan te brengen wordt voorgesteld om binnen ISOR verband steeds te werke
 
 1. De ontwerpoplossingen van gemeente Amsterdam voor de inpassing van warmtenetten in binnenstedelijke straten.
 2. Ruimte voor boomgroeiplaatsen in de ondergrond; op basis van de digital Twin bij gemeente Dronten waarin onder meer gezocht wordt naar potentiële locatie waar extra bomen geplaatst kunnen worden; en van bestaande bomen wordt berekend wat het maximale boomkroonvolume is wat bereikt kan worden. 
-3. Wateroverlast bij extreme piekbuien. Gemeente Amsterdam heeft een klimaat- en biodiversiteitsscan ontwikkeld waarbij op basis van landelijke registraties van verhard oppervlak en gebouwen ook een kaart is gemaakt die de max. waterdiepte na een extreme bui van 70 mm in één uur toont. En mooie casus waarbij de analyse beter gemaakt kan worden met assetinformatie, omdat de afvoercapaciteit van de riolering kan worden meegenomen in de berekening. 
+3. Wateroverlast bij extreme piekbuien. Gemeente Amsterdam heeft een klimaat- en biodiversiteitsscan ontwikkeld waarbij op basis van landelijke registraties van verhard oppervlak en gebouwen ook een kaart is gemaakt die de max. waterdiepte na een extreme bui van 70 mm in één uur toont. Een mooie casus waarbij de analyse beter gemaakt kan worden met assetinformatie, omdat de afvoercapaciteit van de riolering kan worden meegenomen in de berekening. 
 
 
 **Datafundament**<br><br>
@@ -36,9 +36,9 @@ Platform ISOR kan dit niet vormgeven, maar zal het probleem bestuurlijk moeten a
 
 
 1. Samenwerken aan bestuurlijke randvoorwaarden
-Zonder nationale samenwerking en regie is het ontwikkelen van oplossingen voor datagedreven samenwerken verspilling van publiek geld. Versterk bestaande datastandaarden, zorg voor structurele financiering, kies één federatief datastelsel en zorg dat nationale basisregistraties het vliegwiel vormen voor een betere informatiebasis. Platform ISOR kan hier alleen een beïnvloedende rol spelen door de noodzaak aan te kaarten bij de vijf ministeries. Focuspunt van deze lobby: werk aan het vliegwiel waarbij nationale registraties gevoed gaan worden vanuit één bron, de locale assetinformatie, in 3D. Begin met de aansluiting van de BGT op de gemeentelijke beheersystemen, daarna de KLIC. Beslis op nationaal niveau welke assetinformatie openbaar beschikbaar moet komen, en welke alleen voor de asseteigenaren en hun opdrachtnemers binnen een projectgebied (bouw / beheerwerkzaamheden) en voor hulpdiensten en leger.
+Zonder nationale samenwerking en regie is het ontwikkelen van oplossingen voor datagedreven samenwerken verspilling van publiek geld. Versterk bestaande datastandaarden, zorg voor structurele financiering, kies één federatief datastelsel en zorg dat nationale basisregistraties het vliegwiel vormen voor een betere informatiebasis. Platform ISOR kan hier alleen een beïnvloedende rol spelen door de noodzaak aan te kaarten bij de vijf ministeries. Focuspunt van deze lobby: werk aan het vliegwiel waarbij nationale registraties gevoed gaan worden vanuit één bron, de lokale assetinformatie, in 3D. Begin met de aansluiting van de BGT op de gemeentelijke beheersystemen, daarna de KLIC. Beslis op nationaal niveau welke assetinformatie openbaar beschikbaar moet komen, en welke alleen voor de asseteigenaren en hun opdrachtnemers binnen een projectgebied (bouw / beheerwerkzaamheden) en voor hulpdiensten en leger.
 
-2. Werkt als lokale overheden samen met bestaande leveranciers
+2. Werk als lokale overheden samen met bestaande leveranciers
 De leveranciers van beheerpakketten zijn op dit moment een cruciale speler, deze pakketten zijn voor het grootste deel van de gemeentes en andere overheden de bron van assetinformatie. Onderzoek als platform ISOR met deze leveranciers of zij een 3D assetregistratie kunnen faciliteren, met als afgeleide uit de brondata een 2D kaart voor uitvoering van het bestaande 2D-georiënteerde beheerproces, waarbij de assetinformatie op basis van IMBOR en GWSW vastgelegd wordt. Werk als platform ISOR met de NLCS-beheerorganisatie en NLCS-softwareleveranciers samen om te zorgen voor een uitwisseling met de beheerpakketten: heen bestaande assetinformatie, terug mutaties van bestaande assets. Zo kan op lokaal niveau al gebouwd worden aan een 3D registratie.
 
 3. Werk aan nationale informatieleveringsspecificaties
