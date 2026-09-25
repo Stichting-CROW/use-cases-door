@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Risicomatrix FMECA</title>
+<style>
+  :root{ --crow-petrol:#007e84; --crow-blue:#005a9c; --zebra:#eaf3ff; }
+  *{box-sizing:border-box;}
+  body{font-family:"Segoe UI",Arial,sans-serif;margin:0;padding:24px;color:#1a1a1a;background:#fff;}
+  h1{color:var(--crow-petrol);font-size:22px;margin:0 0 4px;}
+  h2{color:var(--crow-petrol);font-size:16px;margin:26px 0 8px;}
+  p.sub{margin:0 0 16px;color:#555;font-size:14px;}
+  .meta{font-size:13px;color:#666;margin-bottom:14px;}
+  .tablewrap{overflow-x:auto;}
+  table.matrix{border-collapse:collapse;font-size:13px;margin-bottom:6px;}
+  table.matrix td{border:1px solid var(--crow-blue);padding:6px 8px;vertical-align:top;text-align:left;min-width:70px;max-width:230px;}
+  table.matrix td.hd{background:var(--crow-petrol);color:#fff;font-weight:600;text-align:center;vertical-align:middle;}
+  table.matrix td.sub{background:var(--zebra);font-style:italic;color:#333;}
+  table.matrix td.axis{background:var(--crow-petrol);color:#fff;font-weight:700;text-align:center;vertical-align:middle;min-width:34px;}
+  table.matrix td.score{min-width:34px;}
+  .legend{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 4px;font-size:13px;align-items:center;}
+  .legend span.item{display:inline-flex;align-items:center;gap:6px;}
+  .swatch{display:inline-block;width:16px;height:16px;border:1px solid var(--crow-blue);border-radius:2px;}
+</style>
+</head>
+<body>
+  <h1>Risicomatrix FMECA</h1>
+  <p class="sub">VOR / Klein Committee – risicomatrix op basis van faalfrequentie en gevolg</p>
+  <div class="meta">Bron: 20250721 Risicomatrix VOR CC.xlsx. Getrouwe weergave van het werkblad; de scorevakjes zijn gekleurd naar risicoklasse.</div>
+  <div class='legend'><strong>Risicoscore (frequentie + ernst):</strong><span class='item'><span class='swatch' style='background:hsl(120,68%,72%)'></span>laag (2)</span><span class='item'><span class='swatch' style='background:hsl(80,68%,72%)'></span></span><span class='item'><span class='swatch' style='background:hsl(40,68%,72%)'></span></span><span class='item'><span class='swatch' style='background:hsl(0,68%,72%)'></span>hoog (12)</span></div>
+  <div class="tablewrap">
+  <table class='matrix'><tbody>
+<tr>
+<td class="hd"></td>
+<td class="hd"></td>
+<td class="hd"></td>
+<td class="hd"></td>
+<td class="hd"></td>
+<td class="hd"></td>
+<td class="hd"></td>
+<td class="hd">t &gt; 30 jaar</td>
+<td class="hd">30 jaar &gt; t &gt;  10 jaar</td>
+<td class="hd">10 jaar &gt; t &gt;1 jaar</td>
+<td class="hd">1 jaar &gt; t &gt; 1 maand</td>
+<td class="hd">1 maand &gt; t &gt; 1 week</td>
+<td class="hd">1 week &gt; t</td>
+<td class="hd">Veroudering (MTTF)</td>
+</tr>
+<tr>
+<td class="hd"></td>
+<td colspan="2" class="hd">Functionaliteit</td>
+<td class="hd">Duurzaamheid</td>
+<td class="hd">Kostenefficiency</td>
+<td class="hd">Aantrekkelijkheid</td>
+<td class="hd"></td>
+<td class="hd">minder dan 1 x per 30 jaar</td>
+<td class="hd">1 x per 30 jaar  tot 10 x per jaar</td>
+<td class="hd">1 x per 10 jaar  tot 1 x per jaar</td>
+<td class="hd">1 x per jaar tot 1 x per maand</td>
+<td class="hd">1 x per maand tot 1 x per week</td>
+<td class="hd">1 x per week</td>
+<td class="hd">constante faalfrequentie</td>
+</tr>
+<tr>
+<td class="hd"></td>
+<td class="hd">Beschikbaarheid</td>
+<td class="hd">Veiligheid</td>
+<td class="hd">Milieu</td>
+<td class="hd">Gevolgkosten</td>
+<td class="hd">Verzorgingsniveau</td>
+<td class="hd">Imago</td>
+<td class="hd">1</td>
+<td class="hd">2</td>
+<td class="hd">3</td>
+<td class="hd">4</td>
+<td class="hd">5</td>
+<td class="hd">6</td>
+<td class="hd"></td>
+</tr>
+<tr>
+<td class="sub"></td>
+<td class="sub">fractie van tijd dat object niet functioneert</td>
+<td class="sub">ARBO- en verkeersveiligheid</td>
+<td class="sub">Negatief effect op  leefomgeving (natuur en mens)</td>
+<td class="sub">De totale corectieve kosten inclusief herstel schade derde/omgeving</td>
+<td class="sub">Beeldkwalitieit van het object</td>
+<td class="sub">Media en politieke aandacht</td>
+<td class="sub"></td>
+<td class="sub"></td>
+<td class="sub"></td>
+<td class="sub"></td>
+<td class="sub"></td>
+<td class="sub"></td>
+<td class="sub"></td>
+</tr>
+<tr>
+<td class="axis">1</td>
+<td>Langzaam verkeer: &lt; 2 uur <br>Auto- en Busverkeer: &lt; 1 uur<br> Tram en Beroepsvaart:, natte functies  &lt; 0,5 uur</td>
+<td>Geen veiligheidsincident</td>
+<td>Geen gevolgen</td>
+<td>Geen kosten</td>
+<td>Conform ambitieniveau</td>
+<td>Geen imagoschade</td>
+<td class="score" style="background:hsl(120,68%,72%);text-align:center;font-weight:700;">2</td>
+<td class="score" style="background:hsl(108,68%,72%);text-align:center;font-weight:700;">3</td>
+<td class="score" style="background:hsl(96,68%,72%);text-align:center;font-weight:700;">4</td>
+<td class="score" style="background:hsl(84,68%,72%);text-align:center;font-weight:700;">5</td>
+<td class="score" style="background:hsl(72,68%,72%);text-align:center;font-weight:700;">6</td>
+<td class="score" style="background:hsl(60,68%,72%);text-align:center;font-weight:700;">7</td>
+<td></td>
+</tr>
+<tr>
+<td class="axis">2</td>
+<td>Langzaam verkeer: 2 - 4 uur <br>Auto- en Busverkeer: 1 - 2 uur<br> Tram en Beroepsvaart:, natte functies  0,5 - 1 uur</td>
+<td>Ongeval/incident zonder letsel</td>
+<td>Gevolgen voor milieu beperkt, lokaal en beheersbaar.</td>
+<td>lager dan € 1.000</td>
+<td>Asset scoort 1 <br>niveau lager dan ambitieniveau</td>
+<td>Negatieve berichtgeving in lokale media<br>AM moet zich verantwoorden naar Ambtelijk opdrachtgever (AO)<br>Interne verdeeldheid binnen een<br>bestuurslaag</td>
+<td class="score" style="background:hsl(108,68%,72%);text-align:center;font-weight:700;">3</td>
+<td class="score" style="background:hsl(96,68%,72%);text-align:center;font-weight:700;">4</td>
+<td class="score" style="background:hsl(84,68%,72%);text-align:center;font-weight:700;">5</td>
+<td class="score" style="background:hsl(72,68%,72%);text-align:center;font-weight:700;">6</td>
+<td class="score" style="background:hsl(60,68%,72%);text-align:center;font-weight:700;">7</td>
+<td class="score" style="background:hsl(48,68%,72%);text-align:center;font-weight:700;">8</td>
+<td></td>
+</tr>
+<tr>
+<td class="axis">3</td>
+<td>Langzaam verkeer: &gt; 4 uur &lt; 2 dagen<br>Auto- en Busverkeer: &gt; 2 uur &lt; 1 dag<br> Tram en Beroepsvaart:, natte functies &gt; 1 uur &lt;  2 uur</td>
+<td>Ongeval met middelmatig letsel</td>
+<td>Gevolgen voor milieu lokaal, lichte verontreiniging</td>
+<td>€ 1.000<br>tot € 10.000</td>
+<td>Asset scoort 2 niveau&#x27;s lager dan ambitieniveau</td>
+<td>Negatieve berichtgeving in lokale media<br>AO moet zich verantwoorden naar staf wethouders<br>Georganiseerde ontevredenheid binnen een bestuurslaag</td>
+<td class="score" style="background:hsl(96,68%,72%);text-align:center;font-weight:700;">4</td>
+<td class="score" style="background:hsl(84,68%,72%);text-align:center;font-weight:700;">5</td>
+<td class="score" style="background:hsl(72,68%,72%);text-align:center;font-weight:700;">6</td>
+<td class="score" style="background:hsl(60,68%,72%);text-align:center;font-weight:700;">7</td>
+<td class="score" style="background:hsl(48,68%,72%);text-align:center;font-weight:700;">8</td>
+<td class="score" style="background:hsl(36,68%,72%);text-align:center;font-weight:700;">9</td>
+<td></td>
+</tr>
+<tr>
+<td class="axis">4</td>
+<td>Langzaam verkeer: &gt; 2 dagen &lt; 2 weken<br>Auto- en Busverkeer: &gt; 1 dag &lt; 1 week<br> Tram en Beroepsvaart:, natte functies &gt; 2 uur &lt;  12 uur</td>
+<td>Ongeval met niet blijvend zwaar letsel</td>
+<td>Gevolgen voor milieu lokaal, verontreiniging die sanering behoeft.</td>
+<td>€ 10.000<br>tot € 100.000</td>
+<td>Achterstallig Onderhoud</td>
+<td>Negatieve berichtgeving in regionale media<br>Wethouder moet zich verantwoorden naar collega B&amp;W<br>Georganiseerde ontevredenheid tussen<br>meerdere bestuurslagen</td>
+<td class="score" style="background:hsl(84,68%,72%);text-align:center;font-weight:700;">5</td>
+<td class="score" style="background:hsl(72,68%,72%);text-align:center;font-weight:700;">6</td>
+<td class="score" style="background:hsl(60,68%,72%);text-align:center;font-weight:700;">7</td>
+<td class="score" style="background:hsl(48,68%,72%);text-align:center;font-weight:700;">8</td>
+<td class="score" style="background:hsl(36,68%,72%);text-align:center;font-weight:700;">9</td>
+<td class="score" style="background:hsl(24,68%,72%);text-align:center;font-weight:700;">10</td>
+<td></td>
+</tr>
+<tr>
+<td class="axis">5</td>
+<td>Langzaam verkeer: &gt; 2 weken &lt; 2 maanden<br>Auto- en Busverkeer: &gt; 1 week &lt; 1 maand<br> Tram en Beroepsvaart:, natte functies &gt; 12 uur  &lt; 1 week</td>
+<td>Ongeval met blijvend letsel</td>
+<td>Grootschalige verontreiniging bodem/water,  maatregelen nodig.</td>
+<td>€ 100.000  tot € 1 miljoen</td>
+<td>nvt</td>
+<td>Negatieve berichtgeving in landelijke media<br>College B&amp;W moet zich verantwoorden naar de Gemeenteraad<br>Geen overeenstemming tussen<br>bestuurslagen</td>
+<td class="score" style="background:hsl(72,68%,72%);text-align:center;font-weight:700;">6</td>
+<td class="score" style="background:hsl(60,68%,72%);text-align:center;font-weight:700;">7</td>
+<td class="score" style="background:hsl(48,68%,72%);text-align:center;font-weight:700;">8</td>
+<td class="score" style="background:hsl(36,68%,72%);text-align:center;font-weight:700;">9</td>
+<td class="score" style="background:hsl(24,68%,72%);text-align:center;font-weight:700;">10</td>
+<td class="score" style="background:hsl(12,68%,72%);text-align:center;font-weight:700;">11</td>
+<td></td>
+</tr>
+<tr>
+<td class="axis">6</td>
+<td>Langzaam verkeer: &gt; 2 maanden<br>Auto- en Busverkeer: &gt; 1 maand<br> Tram en Beroepsvaart:, natte functies &gt; 1 week</td>
+<td>Dodelijk ongeval</td>
+<td>Ernstige milieuschade. Ingrijpende herstellende maatregelen nodig met (mogelijk) blijvende schade Impact/ hinder voor regio (gebied &gt; 5 km)</td>
+<td>&gt; € 1 miljoen</td>
+<td>nvt</td>
+<td>Negatieve berichtgeving in internationale media<br>Kamervragen</td>
+<td class="score" style="background:hsl(60,68%,72%);text-align:center;font-weight:700;">7</td>
+<td class="score" style="background:hsl(48,68%,72%);text-align:center;font-weight:700;">8</td>
+<td class="score" style="background:hsl(36,68%,72%);text-align:center;font-weight:700;">9</td>
+<td class="score" style="background:hsl(24,68%,72%);text-align:center;font-weight:700;">10</td>
+<td class="score" style="background:hsl(12,68%,72%);text-align:center;font-weight:700;">11</td>
+<td class="score" style="background:hsl(0,68%,72%);text-align:center;font-weight:700;">12</td>
+<td></td>
+</tr>
+</tbody></table>
+  </div>
+  
+</body>
+</html>
