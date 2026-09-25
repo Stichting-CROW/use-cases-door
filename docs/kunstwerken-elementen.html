@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elementen – vervangingsfactoren</title>
+<style>
+  :root{
+    --crow-petrol:#007e84; --crow-petrol-dark:#00666b;
+    --crow-blue:#005a9c; --zebra:#eaf3ff; --hover:#d1edfd;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:"Segoe UI",Arial,sans-serif;margin:0;padding:24px;color:#1a1a1a;background:#fff;}
+  h1{color:var(--crow-petrol);font-size:22px;margin:0 0 4px;}
+  p.sub{margin:0 0 16px;color:#555;font-size:14px;}
+  .meta{font-size:13px;color:#666;margin-bottom:12px;}
+  .tablewrap{overflow-x:auto;max-height:80vh;border:1px solid var(--crow-blue);border-radius:4px;}
+  table{border-collapse:collapse;width:100%;font-size:14px;}
+  th,td{border:1px solid var(--crow-blue);padding:7px 10px;text-align:left;vertical-align:top;}
+  thead th{background:var(--crow-petrol);color:#fff;position:sticky;top:0;z-index:2;}
+  th .th-label{cursor:pointer;user-select:none;display:flex;align-items:center;gap:6px;font-weight:600;}
+  th .arrow{font-size:11px;opacity:.8;}
+  th input{width:100%;margin-top:6px;padding:4px 6px;border:1px solid #cfd8e3;border-radius:3px;font-size:13px;}
+  td.num{text-align:right;white-space:nowrap;}
+  tbody tr:nth-child(even){background:var(--zebra);}
+  tbody tr:hover{background:var(--hover);}
+  .count{margin:10px 2px 0;font-size:13px;color:#555;}
+  .noresult{padding:14px;color:#a00;font-style:italic;}
+</style>
+</head>
+<body>
+  <h1>Elementen – vervangingsfactoren</h1>
+  <p class="sub">NEN 2767 v1.5, tabblad Elementen</p>
+  <div class="meta">Bron: NEN 2767 v1.5 (incl. vervangingsfactor). Typ in een kolomveld om te filteren; klik op de kolomnaam om te sorteren.</div>
+  <div class="tablewrap">
+    <table id="tbl"><thead><tr id="hrow"></tr></thead><tbody id="body"></tbody></table>
+  </div>
+  <div class="count" id="count"></div>
+<script>
+const LABELS=["Code", "Element", "Vervangingswaarde"], NUMERIC=[true, false, true], DATA=[[101, "Aandrijving en bewegingswerk (elektrohydraulisch)", 10], [102, "Aandrijving en bewegingswerk (elektromechanisch)", 10], [103, "Aandrijving en bewegingswerk (mechanisch)", 10], [104, "Aanrijbalk", 1], [105, "Aarding- en bliksembeveiligingsinstallatie", 5], [106, "Afmeervoorziening", 5], [107, "Afsluitboominstallatie", 5], [110, "Antivandalismevoorziening", 3], [111, "Bebording en bewegwijzering (statisch)", 3], [112, "Bedienings- en besturingsinstallatie", 5], [113, "Kabel", 3], [114, "Berm", 2], [115, "Binnenverlichting", 1], [116, "Bodem", 2], [117, "Bodembescherming", 2], [118, "Bovenbouwconstructie", 10], [119, "Brandblusinstallatie", 5], [120, "Brandmeld- en ontruimingsinstallatie (BMI)", 3], [121, "Calamiteiten Doorsteek installatie (CADO)", 0], [122, "Closed Circuit TeleVision installatie (CCTV)", 3], [123, "Compressorinstallatie", 0], [124, "Transmissie-installatie", 0], [126, "Doorlaatkoker", 8], [127, "Drainage", 0], [128, "Duin", 0], [129, "Duurzame energiebron", 0], [130, "Dynamische bewegwijzering en informatie systemen", 3], [131, "Fauna uittreedplaats", 3], [132, "Folieconstructie", 6], [133, "Fundering", 10], [134, "Gasdetectie-installatie (LEL)", 3], [136, "Geleideconstructie", 3], [137, "Geluidbeperkende constructie", 5], [138, "Gestrekte oever (natuurvriendelijk)", 5], [139, "Gestrekte oever (talud)", 5], [140, "Gladheidsmeldsysteem", 3], [142, "Havendam", 5], [143, "Heftoren", 8], [144, "Hemelwaterafvoer (HWA)", 5], [145, "Hoog Frequent installatie (HF)", 5], [146, "Hijs- en hefinstallatie", 3], [147, "Hoofddraagconstructie", 10], [148, "Hoofddraaipunt", 10], [149, "Hoogspanningsinstallatie", 5], [150, "Hoogtedetectie-installatie", 3], [152, "Inspectiewagen", 5], [153, "Intercominstallatie", 3], [154, "Informatie en Volgsysteem Scheepvaart 1990 (IVS90)", 0], [155, "Kabel- en leidingtunnel", 10], [156, "Kabeldraagconstructie", 3], [157, "Kerende constructie", 8], [158, "Klepconstructie", 0], [159, "Krib", 0], [160, "Kribvak", 0], [162, "Laagspanningsinstallatie", 5], [163, "Leiding", 2], [165, "Lift-installatie", 5], [166, "Loopbrug", 3], [167, "Mantelbuis", 1], [168, "Marifooninstallatie", 3], [169, "Wegkantsysteem (WKS)", 0], [170, "Nautofooninstallatie", 3], [171, "Noodstroominstallatie (roterend)", 3], [172, "Noodstroominstallatie (statisch)", 3], [173, "Objectverlichting", 1], [174, "Oeverbescherming", 3], [175, "Omroepinstallatie", 2], [176, "Onderbouw", 8], [177, "Onderbouwconstructie", 8], [178, "Onderhoudsvoorziening", 5], [179, "Openbare verlichting (OV)", 2], [180, "Oplegging", 5], [181, "Opstal", 8], [182, "Over- en onderdrukinstallatie", 5], [183, "Overgangsconstructie", 4], [184, "Personenzoekinstallatie (PZI)", 0], [186, "Pompinstallatie", 3], [187, "Pompkelder", 10], [188, "Portaal", 1], [189, "Radarinstallatie", 5], [190, "Remming- en geleidewerk", 6], [192, "Roltrapinstallatie", 0], [193, "Schampkant", 3], [194, "Scheepvaartdetectie-installatie", 4], [195, "Scheepverkeersbeseining", 3], [196, "Schuifconstructie", 4], [198, "Sluisdeur (hef, punt, rol)", 8], [199, "Sluishoofd", 10], [200, "Sluiskolk", 10], [201, "Steiger", 5], [202, "Steunpunt", 10], [203, "Strandhoofd", 0], [204, "Strekdam", 5], [205, "Keringschuif", 0], [206, "Telefooninstallatie", 3], [207, "Telemetrie-installatie", 3], [208, "Erf", 0], [209, "Toegangshek", 3], [210, "Tracing", 0], [211, "Trambaan", 0], [212, "Tunnelbuis", 10], [213, "Ventilatie-installatie", 6], [215, "Uithouder", 1], [216, "Vaarwegmarkering", 0], [217, "Vangconstructie", 0], [218, "Verankering", 3], [219, "Verharding wegtype 1 (hoofdwegennet)", 4], [220, "Verharding wegtype 2 (zwaarbelaste weg)", 4], [221, "Verharding wegtype 3 (gemiddeld belaste weg)", 4], [222, "Verharding wegtype 4 (licht belast)", 4], [223, "Verharding wegtype 5 (weg in woongebied)", 4], [224, "Verharding wegtype 6 (weg in verblijfsgebied)", 4], [225, "Verharding wegtype 7 (fietspaden)", 3], [226, "Verkeersdetectie-installatie", 5], [227, "Verkeersregelinstallatie (VRI)", 5], [229, "Verplaatsbare Vangrail installatie (VEVA)", 3], [230, "Vijzelinstallatie", 5], [231, "Vluchthaven Aanwezigheidsdetectie installatie (VAD)", 3], [232, "Vluchtweginstallatie", 5], [233, "Voegovergang", 4], [238, "Wegmarkering", 1], [239, "Weigh In Motion", 2], [240, "Werk-spreekverbinding", 0], [242, "Zinker", 10], [247, "Basculekelder", 10], [248, "Centrale Antenne Installatie (CAI)", 0], [249, "Grendelinrichting", 3], [250, "Inbraakbeveiligingsinstallatie", 3], [251, "Kelder", 10], [255, "Stuwhoofd", 10], [256, "Voorland", 0], [257, "Vooroever", 0], [258, "Buitentalud", 0], [259, "Kruin", 0], [260, "Binnentalud", 0], [261, "Stabiliteitsberm", 0], [262, "Onderhoudsstrook", 0], [263, "Teensloot", 0], [264, "Achterland", 0], [265, "Pipingberm", 0], [266, "Vispassage", 8], [267, "Vaargeul", 0], [268, "Aanloopgebied", 10], [269, "Ankergebied", 0], [270, "Wingebied", 0], [271, "Keerplaats", 0], [272, "Talud", 5], [273, "Landbouwgrond", 0], [275, "Asbestemming", 0], [276, "Boom", 1], [278, "Boomgroep", 1], [281, "Fauna-insprong", 2], [285, "Faunadekking", 3], [291, "Graf", 1], [292, "Haag", 1], [296, "Infiltratievoorziening", 0], [299, "Klim- en leiplant", 1], [302, "Kwelder", 0], [304, "Moerasvegetatie", 0], [306, "Afscheiding", 3], [307, "Faunageleiding", 2], [308, "Schietbaan", 0], [317, "Heester", 0], [319, "Terreinmeubilair", 1], [322, "Vijver", 0], [323, "Vleermuiskelder", 10], [329, "Watervegetatie", 0], [333, "Begroeiingsvrij gebied", 0], [335, "Vissluis", 8], [336, "Ponton", 0], [337, "Klimaatinstallatie", 5], [341, "Grasvegetatie", 1], [343, "Sportattribuut", 0], [344, "Sportveld", 0], [345, "Speeltoestel", 0], [346, "Bol- en knolgewas", 0], [347, "Perkplant", 1], [348, "Vaste plant", 1], [349, "Borstwering", 3], [350, "Stortvak", 0], [351, "Sloot", 0], [353, "Beek", 0], [354, "Put", 1], [356, "Bergbezinkbassin", 0], [357, "Uitlaatvoorziening", 4], [358, "Inlaatvoorziening", 0], [359, "Afscheiderinstallatie (statisch)", 3], [360, "Leikade", 0], [361, "Leidam", 0], [362, "Reddingsmiddel", 1], [363, "Ven", 0], [364, "Nevengeul", 0], [370, "Dataloginstallatie", 3], [372, "Waarschuwings- en alarmeringssysteem (WAS)", 3], [373, "Kathodische bescherminstallatie", 3], [374, "Meetinstallatie", 3], [377, "Afscheiderinstallatie (dynamisch)", 3], [378, "Beluchtingsinstallatie", 0], [379, "Nooddouche-installatie", 1], [380, "Menginstallatie", 3], [381, "Roostergoed container", 0], [382, "Roosterreinigingsinstallatie", 0], [383, "Persinstallatie", 0], [384, "Ruimerinstallatie", 0], [385, "Tankconstructie", 0], [386, "Transportinstallatie", 0], [388, "Wandconstructie", 10], [389, "Vloerconstructie", 10], [390, "Trapconstructie", 4], [391, "Dakconstructie", 0], [392, "Plafondconstructie", 0], [393, "Kozijnwerk", 3], [394, "Sanitaire installatie", 3], [395, "Watertapinstallatie", 0], [396, "Gasinstallatie", 3], [398, "Sluismarkering", 3], [399, "Verkeerseiland", 0], [400, "Toegangscontrole-installatie", 3], [401, "Zonweringsinstallatie", 3], [402, "Pollerinstallatie", 0], [403, "Schoorsteen", 0], [404, "Perron", 5], [405, "Geleidetoren", 5], [406, "Stuurstroomvoedingsinstallatie", 0], [407, "Keukeninrichting", 2], [408, "Warmte-kracht koppelingsinstallatie (WKK)", 3], [409, "Drukluchtschuiminstallatie (DLS)", 3], [410, "Watermistinstallatie (WMS)", 3], [413, "Slijtlaag", 5], [414, "Leuningconstructie", 5], [415, "Sproei-installatie", 3], [416, "Global System for Mobile communications installatie (GSM)", 3], [417, "Opzetinrichting", 6], [418, "Aandrijving en bewegingswerk nivelleermiddel (elektrohydraulisch)", 5], [419, "Aandrijving en bewegingswerk nivelleermiddel (elektromechanisch)", 5], [420, "Aandrijving en bewegingswerk nivelleermiddel (mechanisch)", 3], [421, "Noodconstructie", 8], [422, "Trekconstructie", 6], [423, "Gehele constructie", 1]];
+let sortCol=-1, sortDir=1;
+const filters=LABELS.map(()=> "");
+const hrow=document.getElementById('hrow');
+LABELS.forEach((lab,i)=>{
+  const th=document.createElement('th');
+  const wrap=document.createElement('div'); wrap.className='th-label';
+  wrap.innerHTML='<span>'+lab+'</span><span class="arrow" data-i="'+i+'"></span>';
+  wrap.onclick=()=>{ if(sortCol===i){sortDir*=-1;} else {sortCol=i;sortDir=1;} render(); };
+  const inp=document.createElement('input'); inp.type='text'; inp.placeholder='filter…';
+  inp.oninput=e=>{ filters[i]=e.target.value.toLowerCase(); render(); };
+  inp.onclick=e=>e.stopPropagation();
+  th.appendChild(wrap); th.appendChild(inp); hrow.appendChild(th);
+});
+function escapeHtml(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function render(){
+  let rows=DATA.filter(r=> r.every((v,i)=> String(v).toLowerCase().includes(filters[i]) ));
+  if(sortCol>=0){
+    rows=rows.slice().sort((a,b)=>{
+      let x=a[sortCol], y=b[sortCol];
+      if(NUMERIC[sortCol]){ x=(x===''?-Infinity:+x); y=(y===''?-Infinity:+y); return (x-y)*sortDir; }
+      return String(x).localeCompare(String(y),'nl')*sortDir;
+    });
+  }
+  document.getElementById('body').innerHTML = rows.length
+    ? rows.map(r=>'<tr>'+r.map((v,i)=>'<td'+(NUMERIC[i]?' class="num"':'')+'>'+escapeHtml(v)+'</td>').join('')+'</tr>').join('')
+    : '<tr><td class="noresult" colspan="'+LABELS.length+'">Geen resultaten</td></tr>';
+  document.getElementById('count').textContent = rows.length+' van '+DATA.length+' rijen';
+  document.querySelectorAll('.arrow').forEach(a=>{const i=+a.dataset.i; a.textContent=(i===sortCol)?(sortDir>0?'▲':'▼'):'';});
+}
+render();
+</script>
+</body>
+</html>
