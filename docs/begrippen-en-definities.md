@@ -85,7 +85,7 @@ Datagedreven ontwerpen is een parapluterm voor het gebruiken van assetinformatie
 
 <dt><dfn data-lt="ISOR|Platform ISOR|">ISOR</dfn></dt>
 <dd>
-Platform van samenwerkende overheden, ontstaan ujit de CityDeal Openbare Ruimte. 
+Platform van samenwerkende overheden, ontstaan uit de CityDeal Openbare Ruimte. 
 <abbr title="Integraal samenwerken in de Openbare Ruimte">ISOR</abbr> richt zich op een integrale aanpak voor stedelijke transitieopgaven. <a href="https://www.platformisor.nl/" target="_blank">deze website</a>
 </dd>
 

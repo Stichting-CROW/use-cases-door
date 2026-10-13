@@ -76,7 +76,7 @@ function indexOfRequirements(config) {
 }
 
 var respecConfig = {
-  specStatus: "DRAFT",
+  specStatus: "DEF",
   pubDomain: "use-cases-door",
   shortName: "isor",
   license: "CC-BY",

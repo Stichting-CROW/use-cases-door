@@ -2,7 +2,7 @@
 [=Platform ISOR=] heeft aan CROW gevraagd om een projectplan op te stellen voor een verkenningstraject rondom datagedreven samenwerken in de openbare ruimte en infrastructuur, met focus op de binnenstedelijke ondergrond. Doel van dit document:
 
 1. Een analyse van de ontwikkelingsbehoefte in Nederland de komende 5 – 10 jaar, te agenderen op de strategietafel ISOR 28 okt, met als agendapunt eigenaarschap voor de vervolgstappen op niveau van het Rijk.
-2. Een projectvoorstel met vervolgstappen; zie hiervoor hoofdstuk 8.
+2. Een projectvoorstel met vervolgstappen, tijdens de uitvoering gewijzigd naar: bouwstenen voor een roadmap; zie hiervoor hoofdstuk 8.
 
 <div class="note">
 Het verhaal in dit rapport is heel technisch.
@@ -82,5 +82,3 @@ Collectieve analysemiddelen maken het mogelijk om maatschappelijke opgaven zoals
 De voorgestelde aanpak is om te investeren in collectieve analysetools op nationale schaal. Dit zorgt ervoor, dat het delen van assetinformatie uit eigen systemen meteen zichtbare meerwaarde oplevert omdat de collectieve analysetools beschikbaar zijn. De input bestaat uit de digitale tweelingen die steden reeds ontwikkelen, onder meer bij DMI, maar dan op een schaalbare en uniforme wijze. 
 
 Werk per digitale tweeling de hele keten uit: zorg dat standaarden samenhangen, zorg dat beheersystemen of ontwerppakketten de data kunnen leveren, maak de rekenregels en ontwerptooling beschikbaar. 
-
-In hoofdstuk 8 staan de concrete projecten uitgewerkt met richtbedragen voor het reserveren van middelen vanaf 2027. 
