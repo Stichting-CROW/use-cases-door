@@ -1,0 +1,1588 @@
+<!DOCTYPE html><html lang="nl"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 32.3.0">
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:MuseoSans,"Museo Sans",Museo,sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+<link rel="stylesheet" href="https://docs.crow.nl/webfonts/webfonts.css">
+<link rel="stylesheet" href="https://docs.crow.nl/respec-design/stichting-crow/base.min.css">
+<link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://docs.crow.nl/respec-design/stichting-crow/dark.min.css">
+  
+  
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+  
+  
+  
+<title>Dataspecificaties inspecties en onderzoeken civiele kunstwerken</title>
+  
+  
+  
+<style>
+
+@media ( prefers-reduced-motion: no-preference ) {
+  @keyframes animateheader {
+    0% { background-color: unset; }
+    20%   { background-color: #ffff0020; }
+    100% { background-color: unset; }
+  }
+}
+
+:target {
+  animation: animateheader 1s ease-in-out ;
+}
+.toc-labeled>li li {
+  margin-left: 0;
+  list-style: disc;
+  margin-left: 1rem;
+}
+:not(li)>.toc-labeled {
+  margin-left: 0;
+}
+.toc-labeled {
+  font-size: 0.9rem;
+  line-height: inherit;
+}
+
+</style>
+
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000;color:var(--toclink-text)}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<link rel="icon" href="https://docs.crow.nl/respec-design/logos/crow.ico">
+<style>
+ul.index{columns:30ch;column-gap:1.5em}
+ul.index li{list-style:inherit}
+ul.index li span{color:inherit;cursor:pointer;white-space:normal}
+#index-defined-here ul.index li{font-size:.9rem}
+ul.index code{color:inherit}
+#index-defined-here .print-only{display:none}
+@media print{
+#index-defined-here .print-only{display:initial}
+}
+</style>
+<meta name="description" content="Dit document beschrijft standaard dataspecificaties voor de inspecties en onderzoeken aan civiele kunstwerken uit de CUR117, zodat inspectieresultaten als data verwerkt kunnen worden, en beschikbaar komen voor analyses van het areaal van een of meerdere beheerders, of van specifieke kunstwerken of bouwdelen. Vertrekpunt is een start-dataset met een objectpaspoort en een decompositie (object, element, bouwdeel, component) op basis van IMBOR en de NEN 2767. Daarop volgen de dataset voor de technische inspectie — van waarnemen en feitelijke waarneming tot analyseren en beoordelen, kwalificeren en een geaggregeerde conditiescore volgens de NEN 2767 — en de datasets voor de risico-analyse en het hersteladvies. De specificaties sluiten aan op bestaande standaarden (IMBOR, NEN 2767) en bieden een eenvoudig instapmodel waarmee beheerders en marktpartijen gezamenlijk een betrouwbaar, landelijk beeld kunnen opbouwen van de conditie, de risico's en de vervangings- en renovatieopgave van civiele kunstwerken.">
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "specStatus": "CR",
+  "pubDomain": "use-cases-door",
+  "shortName": "datasets-kunstwerken",
+  "license": "CC-BY",
+  "subtitle": "Datagedreven instandhouden, renoveren en vervangen",
+  "lint": {
+    "no-unused-dfns": false
+  },
+  "editors": [
+    {
+      "name": "Elisabeth De Vries",
+      "company": "CROW"
+    }
+  ],
+  "github": "https://github.com/Stichting-CROW/use-cases-door",
+  "postProcess": [
+    null
+  ],
+  "hypothesisComments": true,
+  "reviewDateEnd": 20261203,
+  "localBiblio": {
+    "prognose-vernieuwingsopgave-2023": {
+      "title": "Vernieuwingsopgave infrastructuur: Landelijk prognoserapport 2023",
+      "authors": [
+        "TNO"
+      ],
+      "date": "2023",
+      "publisher": "TNO",
+      "href": "https://www.tno.nl/nl/newsroom/2023/11/vernieuwing-infrastructuur-essentieel/",
+      "id": "prognose-vernieuwingsopgave-2023"
+    },
+    "Defensie-Strategie-voor-Industrie-en-Innovatie-2025-2029": {
+      "title": "Defensie Strategie voor Industrie en Innovatie 2025-2029",
+      "authors": [
+        "Ministerie van Defensie"
+      ],
+      "date": "2025-04-04",
+      "publisher": "Ministerie van Defensie",
+      "href": "https://www.defensie.nl/downloads/beleidsnota-s/2025/04/04/defensie-strategie-voor-industrie-en-innovatie-2025-2029"
+    },
+    "CROW-CUR-117": {
+      "title": "CROW-CUR Aanbeveling 117:2020 - Inspectie en advies civiele kunstwerken",
+      "authors": [
+        "CROW"
+      ],
+      "date": "2023",
+      "publisher": "CROW",
+      "href": "https://www.tno.nl/nl/newsroom/2023/11/vernieuwing-infrastructuur-essentieel/"
+    },
+    "NEN2767": {
+      "title": "Conditiemeting gebouwde omgeving - Deel 1: Methodiek",
+      "authors": [
+        "NEN"
+      ],
+      "date": "2019",
+      "publisher": "NEN",
+      "href": "https://www.nen.nl/bouw/beheer-en-onderhoud/conditiemeting"
+    },
+    "kamerbrieven-vervanging-renovatie": {
+      "title": "Rapportages Staat van de infrastructuur van Rijkswaterstaat en ProRail en Prognoserapport Vervanging en Renovatie Rijkswaterstaat",
+      "authors": [
+        "IenW"
+      ],
+      "date": "2022",
+      "publisher": "IenW",
+      "href": "https://www.tweedekamer.nl/kamerstukken/brieven_regering/detail?id=2022Z23536&did=2022D50716"
+    },
+    "rws-kamerbrief-meerjarenplan-instandhouding": {
+      "title": "Meerjarenplan instandhouding Rijkswaterstaat- netwerken 2025-2030",
+      "authors": [
+        "IenW"
+      ],
+      "date": "2022",
+      "publisher": "IenW",
+      "href": "https://www.tweedekamer.nl/kamerstukken/brieven_regering/detail?id=2025Z13825&did=2025D31342"
+    }
+  },
+  "publishISODate": "2026-11-04T00:00:00.000Z",
+  "generatedSubtitle": "CROW, in consultatie 4 november 2026"
+}</script></head>
+
+<body class="h-entry informative" style="background-image: url(&quot;https://docs.crow.nl/respec-design/stichting-crow/status-nl/CR.svg&quot;);"><div class="head">
+    <p class="logos"><a class="logo" href="https://www.crow.nl"><img crossorigin="" alt="CROW" height="75" src="https://docs.crow.nl/respec-design/stichting-crow/logo/crow.svg" width="150">
+  </a></p>
+    <h1 id="title" class="title">Dataspecificaties inspecties en onderzoeken civiele kunstwerken</h1> <h2 id="subtitle" class="subtitle">Datagedreven instandhouden, renoveren en vervangen</h2>
+    <p id="w3c-state">CROW,
+  in consultatie <time style="white-space: pre;" class="dt-published" datetime="2026-11-04">4 november 2026</time></p>
+    <details open="">
+      <summary>Meer informatie over dit document</summary>
+      <dl>
+        
+        
+        
+        <dt>Laatste werkversie:</dt><dd><a href="https://docs.crow.nl/use-cases-door/datasets-kunstwerken">https://docs.crow.nl/use-cases-door/datasets-kunstwerken</a></dd>
+        <dt>Geschiedenis:</dt><dd>
+                    <a href="https://github.com/Stichting-CROW/use-cases-door/commits/">Wijzigingsgeschiedenis</a>
+                  </dd>
+        
+        
+        
+        <dt>Redacteur:</dt><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Elisabeth De Vries</span> (<span class="p-org org h-org">CROW</span>)
+  </dd>
+        
+        
+        <dt>Feedback:</dt><dd>
+        <a href="https://github.com/Stichting-CROW/use-cases-door/">GitHub Stichting-CROW/use-cases-door</a>
+        (<a href="https://github.com/Stichting-CROW/use-cases-door/pulls/">wijzigingsverzoeken</a>,
+        <a href="https://github.com/Stichting-CROW/use-cases-door/issues/new/choose">nieuw issue</a>,
+        <a href="https://github.com/Stichting-CROW/use-cases-door/issues/">openstaande issues</a>)
+      </dd><dd id="annotation-service-placeholder">
+        <button type="button" data-load-annotation-service="">
+          Laad annotaties
+        </button>
+        <span><small>Annotaties door <a href="https://web.hypothes.is">Hypothes.is</a> (<a href="https://web.hypothes.is/privacy">privacybeleid</a>).</small></span>
+      </dd><dd hidden="" id="annotation-service-loaded">
+        <span data-hypothesis-annotation-count="">...</span> annotatie(s) met <em>Hypothes.is</em>
+        <button type="button" data-hypothesis-trigger="">
+          Toon annotatiebalk
+        </button>
+        <button type="button" data-unload-annotation-service="">
+          Verberg
+        </button>
+      </dd>
+        
+        
+      </dl>
+    </details>
+    
+    <p class="copyright">
+    Copyright ©
+    2026
+    
+    <a href="https://www.crow.nl">CROW</a>.
+    CROW
+    <a href="https://www.crow.nl/disclaimer">disclaimer</a>
+      van toepassing en gedistribueerd onder
+      <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" title="Creative Commons Naamsvermelding">CC BY 4.0</a>
+  </p>
+    <hr title="Separator for header">
+  </div>
+  
+  <section id="abstract" data-format="markdown" class="introductory"><h2>Samenvatting</h2><p>Dit document beschrijft standaard dataspecificaties voor de inspecties en onderzoeken aan civiele kunstwerken uit de CUR117, zodat inspectieresultaten als data verwerkt kunnen worden, en beschikbaar komen voor analyses van het areaal van een of meerdere beheerders, of van specifieke kunstwerken of bouwdelen. Vertrekpunt is een start-dataset met een objectpaspoort en een decompositie (object, element, bouwdeel, component) op basis van <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> en de NEN 2767. Daarop volgen de dataset voor de technische inspectie — van waarnemen en feitelijke waarneming tot analyseren en beoordelen, kwalificeren en een geaggregeerde conditiescore volgens de NEN 2767 — en de datasets voor de risico-analyse en het hersteladvies. De specificaties sluiten aan op bestaande standaarden (<abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>, NEN 2767) en bieden een eenvoudig instapmodel waarmee beheerders en marktpartijen gezamenlijk een betrouwbaar, landelijk beeld kunnen opbouwen van de conditie, de risico's en de vervangings- en renovatieopgave van civiele kunstwerken.</p>
+<p>Deze samenvatting is gemaakt met hulp van AI. De rest van het document is geschreven door een mens.</p>
+</section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aanleiding"><bdi class="secno">1.1 </bdi>Aanleiding</a></li><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">1.2 </bdi>Context</a></li><li class="tocline"><a class="tocxref" href="#werkgroep"><bdi class="secno">1.3 </bdi>Werkgroep</a></li><li class="tocline"><a class="tocxref" href="#doel"><bdi class="secno">1.4 </bdi>Doel</a></li><li class="tocline"><a class="tocxref" href="#strategie"><bdi class="secno">1.5 </bdi>Strategie</a></li><li class="tocline"><a class="tocxref" href="#scope-en-leeswijzer"><bdi class="secno">1.6 </bdi>Scope en leeswijzer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#startinformatie-inspecties-en-onderzoeken"><bdi class="secno">2. </bdi>Startinformatie Inspecties en onderzoeken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-0"><bdi class="secno">2.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#start-dataset-technische-inspectie"><bdi class="secno">2.2 </bdi>Start-dataset technische inspectie</a></li><li class="tocline"><a class="tocxref" href="#voorbeeld-vaste-brug-beton-groot-en-klein"><bdi class="secno">2.3 </bdi>Voorbeeld: Vaste Brug Beton groot en klein</a></li></ol></li><li class="tocline"><a class="tocxref" href="#technische-inspectie"><bdi class="secno">3. </bdi>Technische inspectie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-1"><bdi class="secno">3.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#dataset-technische-inspectie"><bdi class="secno">3.2 </bdi>Dataset technische inspectie</a></li><li class="tocline"><a class="tocxref" href="#ontologie-dynamische-gegevens"><bdi class="secno">3.3 </bdi>Ontologie dynamische gegevens</a></li><li class="tocline"><a class="tocxref" href="#geaggregeerde-conditiescore-maken"><bdi class="secno">3.4 </bdi>Geaggregeerde conditiescore maken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#benaderingsmethode-vervangingswaarde"><bdi class="secno">3.4.1 </bdi>Benaderingsmethode vervangingswaarde</a></li><li class="tocline"><a class="tocxref" href="#voorbeeld"><bdi class="secno">3.4.2 </bdi>Voorbeeld</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#voorbeeld-voor-het-bepalen-van-2-elementscores"><bdi class="secno">3.4.2.1 </bdi>Voorbeeld voor het bepalen van 2 elementscores</a></li><li class="tocline"><a class="tocxref" href="#voorbeeld-conditieherleiding"><bdi class="secno">3.4.2.2 </bdi>Voorbeeld conditieherleiding</a></li><li class="tocline"><a class="tocxref" href="#voorbeeld-objectscore"><bdi class="secno">3.4.2.3 </bdi>Voorbeeld objectscore</a></li><li class="tocline"><a class="tocxref" href="#voorbeeld-conditieherleiding-kunstwerk"><bdi class="secno">3.4.2.4 </bdi>Voorbeeld Conditieherleiding kunstwerk</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#risico-analyse"><bdi class="secno">4. </bdi>Risico-analyse</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-2"><bdi class="secno">4.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#dataset-risico-analyse"><bdi class="secno">4.2 </bdi>Dataset risico-analyse</a></li></ol></li><li class="tocline"><a class="tocxref" href="#hersteladvies"><bdi class="secno">5. </bdi>Hersteladvies</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-3"><bdi class="secno">5.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#dataset-hersteladvies"><bdi class="secno">5.2 </bdi>Dataset Hersteladvies</a></li></ol></li><li class="tocline"><a class="tocxref" href="#inspectiehandboeken"><bdi class="secno">6. </bdi>Inspectiehandboeken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-4"><bdi class="secno">6.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#hout"><bdi class="secno">6.2 </bdi>Hout</a></li><li class="tocline"><a class="tocxref" href="#staal"><bdi class="secno">6.3 </bdi>Staal</a></li><li class="tocline"><a class="tocxref" href="#beton"><bdi class="secno">6.4 </bdi>Beton</a></li><li class="tocline"><a class="tocxref" href="#kunststof"><bdi class="secno">6.5 </bdi>Kunststof</a></li><li class="tocline"><a class="tocxref" href="#elektrotechnische-en-werktuigbouwkundige-installaties"><bdi class="secno">6.6 </bdi>Elektrotechnische en werktuigbouwkundige installaties</a></li><li class="tocline"><a class="tocxref" href="#voegovergangen"><bdi class="secno">6.7 </bdi>Voegovergangen</a></li><li class="tocline"><a class="tocxref" href="#opleggingen"><bdi class="secno">6.8 </bdi>Opleggingen</a></li><li class="tocline"><a class="tocxref" href="#metselwerk"><bdi class="secno">6.9 </bdi>Metselwerk</a></li><li class="tocline"><a class="tocxref" href="#oeverconstructies"><bdi class="secno">6.10 </bdi>Oeverconstructies</a></li></ol></li><li class="tocline"><a class="tocxref" href="#aanbevelingen"><bdi class="secno">7. </bdi>Aanbevelingen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#start-dataset-technische-inspecties"><bdi class="secno">7.1 </bdi>Start-dataset technische inspecties</a></li><li class="tocline"><a class="tocxref" href="#dataset-technische-inspecties"><bdi class="secno">7.2 </bdi>Dataset technische inspecties</a></li><li class="tocline"><a class="tocxref" href="#handboeken-inspecties"><bdi class="secno">7.3 </bdi>Handboeken inspecties</a></li><li class="tocline"><a class="tocxref" href="#gerelateerde-crow-publicaties"><bdi class="secno">7.4 </bdi>Gerelateerde CROW publicaties</a></li><li class="tocline"><a class="tocxref" href="#werk-samen-met-softwareleveranciers"><bdi class="secno">7.5 </bdi>Werk samen met softwareleveranciers</a></li></ol></li><li class="tocline"><a class="tocxref" href="#definities"><bdi class="secno">8. </bdi>Definities</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Termen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Termen gedefinieerd door referentie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">B.1 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+  
+  
+  
+  
+  <section data-format="markdown" id="inleiding"><div class="header-wrapper"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding</h2><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></div>
+<section id="aanleiding"><div class="header-wrapper"><h3 id="x1-1-aanleiding"><bdi class="secno">1.1 </bdi>Aanleiding</h3><a class="self-link" href="#aanleiding" aria-label="Permalink for Section 1.1"></a></div>
+<p>Nederland staat voor een grote vervangings- en renovatieopgave van civiele kunstwerken, waarbij mobiliteit en veiligheid onder druk kunnen komen te staan. Verouderende infrastructuur vraagt om tijdige en goed onderbouwde beslissingen over ingrepen. Tegelijkertijd groeit de behoefte aan betere coördinatie tussen partijen, zodat werkzaamheden slim kunnen worden gepland met zo min mogelijk hinder voor gebruikers. Volgens het onderzoek naar de staat en benutting van civiele kunstwerken van TNO [<cite><a class="bibref" data-link-type="biblio" href="#bib-prognose-vernieuwingsopgave-2023" title="Vernieuwingsopgave infrastructuur: Landelijk prognoserapport 2023">prognose-vernieuwingsopgave-2023</a></cite>] is het essentieel om op landelijk niveau te beschikken over goede data over civiele kunstwerken voor: </p>
+<ul>
+<li>Collectieve, nationale besluitvorming over de <strong>vervanging en renovatie</strong> van kunstwerken, zodat  mobiliteit en veiligheid gewaarborgd zijn zonder onnodige investeringen te doen. </li>
+<li>Betere uitwisseling van informatie met ketenpartners in ontwerp, productie en aanleg zodat arbeidstijdbesparend en kostenefficiënt gewerkt kan worden en het behalen van de maatschappelijke opgaven in de bouw daarmee uitvoerbaar wordt. Daarbij is essentieel dat overheden, beheerders en marktpartijen hun gegevens op een vergelijkbare manier vastleggen en kunnen delen.</li>
+</ul>
+</section><section id="context"><div class="header-wrapper"><h3 id="x1-2-context"><bdi class="secno">1.2 </bdi>Context</h3><a class="self-link" href="#context" aria-label="Permalink for Section 1.2"></a></div>
+<p>In de <a href="https://docs.crow.nl/use-cases-door/imkunstwerken/">Verkenning informatiemodel civiele kunstwerken</a> is geconstateerd dat een gecoördineerd nationaal vernieuwingsprogramma de beste methode is om de vervangings- en renovatieopgave aan te pakken. In de praktijk is de verantwoordelijkheid verdeeld over 400 overheidsbesturen met hun eigen bestuurlijke verantwoordelijkheid. CROW kan een bescheiden rol spelen door kennisontwikkeling en -uitwisseling met lokale en regionale partijen te organiseren. De meerwaarde ligt daarbij in de samenwerking met opdrachtgevers én opdrachtnemers die gezamenlijk kunnen bepalen welke vraagstukken als eerste moeten worden opgepakt (collectieve kennisagenda) en welke informatie daarbij kan worden uitgewisseld binnen de beperkingen van bestaande systemen. De eerste projecten die daaruit voortkomen in 2026 zijn:</p>
+<ol>
+<li><p><strong>Familieaanpak civiele kunstwerken</strong>: in het samenwerkingsverband van Noord-Hollandse gemeenten, provincies Noord-Holland, Rijkswaterstaat en ProRail  "Samen Slimmer Renoveren en Vervangen" wordt gewerkt aan een dashboard waarin gegevens over civiele kunstwerken worden samengebracht en rechtstreeks worden gevoed vanuit assetinformatiesystemen. Daarmee wordt dubbele registratie voorkomen en blijft de assetinformatie de primaire bron. Door de samenvoeging van gegevens kan een gezamenlijk leertraject ontstaan, waarin nationale kengetallen en risico-inschattingen steeds verder worden aangescherpt voor veelvoorkomende soorten civiele constructies. CROW stelt daarbij <a href="#dfn-dataspecificatie" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-dataspecificatie-1">dataspecificaties</a> op van families van kunstwerken waarover collectieve inschattingen kunnen worden gedaan van constructieve veiligheid.</p>
+</li>
+<li><p><strong>Dataspecificaties inspecties en onderzoeken civiele kunstwerken</strong>: Om te zorgen dat de (semi-)overheden steeds over de actuele data beschikken van hun civiele kunstwerken zal moeten worden gewerkt aan standaardisering van de data die vanuit de markt geleverd wordt. Het project begint met de onderzoeken en inspecties vanuit de CUR-117 die rechtstreeks informatie leveren over de staat van een kunstwerk. Daarom is de aanbeveling om een werkgroep te beginnen waarin marktpartijen en overheden samen de uit te wisselen informatie standaardiseren in aanvulling op de Beheersystematiek Kunstwerken en de CUR-117. Beide kennisproducten komen daarbij beter op elkaar aan te sluiten. Standaardisatie van datasets en termen vinden plaats via het Informatiemodel <a href="#dfn-imbor" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-imbor-1"><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></a> en samenhangende datastandaarden daaromheen.</p>
+</li>
+</ol>
+</section><section id="werkgroep"><div class="header-wrapper"><h3 id="x1-3-werkgroep"><bdi class="secno">1.3 </bdi>Werkgroep</h3><a class="self-link" href="#werkgroep" aria-label="Permalink for Section 1.3"></a></div>
+<p>CROW en Platform Bruggen hebben een werkgroep samengesteld met opdrachtgevers, opdrachtnemers en softwareleveranciers. Deze werkgroep heeft als opdracht om standaarddatasets vast te stellen die kunnen worden geleverd bij de onderzoeken zoals beschreven in CUR117 Inspectie van civiele kunstwerken.<br>Deze datasets sluiten aan op bestaande standaarden (zoals <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> en NEN 2767) en moeten toepasbaar zijn binnen de praktijk van adviesbureaus, provincies, gemeenten en beheerders.</p>
+<p>De werkgroep:</p>
+<ul>
+<li>Selecteert een relatief eenvoudige methode waarmee de conditie van de meest voorkomende bruggen goed vastgesteld kan worden.</li>
+<li>Brengt in kaart welke gegevens minimaal noodzakelijk zijn voor inspecties aan civiele kunstwerken. Deze gegevens zijn beschreven in de CROW-CUR Aanbeveling 117:2020 Inspectie en advies civiele kunstwerken en daarvan afgeleide handboeken inspectie per materiaal. </li>
+<li>Formuleert voorstellen voor  landelijke standaarddatasets, afgestemd met de sector.</li>
+</ul>
+<p>De resultaten worden in een openbare consultatie voorgelegd, om de volgende vragen te kunnen beantwoorden:</p>
+<ul>
+<li>Is dit praktisch toepasbaar, sluit het aan op de praktijk.</li>
+<li>Zijn inspectietools en beheersystemen klaar om deze gegevens te leveren?</li>
+</ul>
+</section><section id="doel"><div class="header-wrapper"><h3 id="x1-4-doel"><bdi class="secno">1.4 </bdi>Doel</h3><a class="self-link" href="#doel" aria-label="Permalink for Section 1.4"></a></div>
+<p>Doel van voorliggende documentatie is het beschrijven van standaard dataspecificaties voor inspecties en onderzoeken aan civiele kunstwerken waarmee:</p>
+<ul>
+<li>Inspectieresultaten uniformer kunnen worden aangeleverd, geïnterpreteerd en opgeslagen; </li>
+<li><a href="#dfn-asseteigenaar" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-asseteigenaar-1">Asseteigenaren</a> sneller en betrouwbaarder kunnen sturen op constructieve veiligheid en beheermaatregelen;</li>
+<li>Ketenpartners in ontwerp, uitvoering en beheer beschikken over dezelfde informatiestandaarden; </li>
+<li>Een landelijk beeld van de conditie en risico’s van civiele kunstwerken kan worden gevormd, waarmee collectief betere voorspellingen gedaan kunnen worden van <a href="#dfn-risico-s" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-risico-s-1">risico's</a> en de benodigde beheersmaatregelen.</li>
+</ul>
+<p>Deze datasets sluiten aan op de bestaande landelijke standaarden (<abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>, NEN 2767). <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> en de decompositie van de NEN2767 worden in een volgende versie van <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> geïntegreerd, deze uitwerking was nog niet beschikbaar tijdens het schrijven van dit document. Deze datasets zijn een aanvulling op, en geen vervanging van, de rapportages die beschreven staan in de CUR117. </p>
+</section><section id="strategie"><div class="header-wrapper"><h3 id="x1-5-strategie"><bdi class="secno">1.5 </bdi>Strategie</h3><a class="self-link" href="#strategie" aria-label="Permalink for Section 1.5"></a></div>
+<p>De strategie is om te beginnen met het standaardiseren van data-uitwisseling voor de meest voorkomende bruggen, en daarvoor een eenvoudig instapmodel te bieden om data uit te wisselen. Hiermee kunnen gemeenten en samenwerkingsverbanden van gemeenten snel informatie gaan verzamelen waarmee de omvang van de vervangings- en renovatieopgave voor een groot deel van het areaal efficiënt in kaart gebracht kan worden, en de kennis en aandacht van experts kan uitgaan naar de complexere bruggen. </p>
+</section><section id="scope-en-leeswijzer"><div class="header-wrapper"><h3 id="x1-6-scope-en-leeswijzer"><bdi class="secno">1.6 </bdi>Scope en leeswijzer</h3><a class="self-link" href="#scope-en-leeswijzer" aria-label="Permalink for Section 1.6"></a></div>
+<p>De scope van dit document is de <em>inhoud</em> van de datasets bepalen die horen bij de inspecties en onderzoeken uit de CROW-CUR Aanbeveling 117:2020 Inspectie en advies civiele kunstwerken en bijbehorende handboeken inspectie van diverse materiaalsoorten. </p>
+<p>Om een onderzoek te kunnen starten is een objectpaspoort nodig met een <a href="#dfn-decompositie" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-decompositie-1">decompositie</a>, dat is de opdeling in elementen, bouwdelen en eventueel componenten die moeten worden onderzocht. Zie <strong>hoofdstuk 2</strong>.</p>
+<p>In onderstaande tabel de scope ten opzichte van de beschreven onderwerpen in de CUR117 en het hoofdstuk waarin dit is uitgewerkt. </p>
+<div class="kw-dataset" markdown="0">
+<table>
+  <thead>
+    <tr><th>Hoofdcategorie</th><th>Code</th><th>Omschrijving</th><th>Levering</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="groep">Gebruiksveiligheid</td><td>A1</td><td>Schouw</td><td><br><b>Dataset technische inspectie</b>: <br>Waarnemen + feitelijke waarneming, zie <b>hoofdstuk 3</b></td></tr>
+    <tr><td class="groep" rowspan="5">Huidige toestand</td><td>B1</td><td>Inventarisatie</td><td>Levert <b>Start-dataset technische inspectie</b>, zie <b>hoofdstuk 2</b></td></tr>
+    <tr><td>B2</td><td>Toestandsinspectie</td><td><br><b>Dataset technische inspectie</b>: <br>Waarnemen + feitelijke waarneming + analyseren en beoordelen + kwalificeren, zie <b>hoofdstuk 3</b></td></tr>
+    <tr><td>B3</td><td>Contractuele vooropname</td><td><b>Dataset technische inspectie</b>: <br>Waarnemen + feitelijke waarneming + analyseren en beoordelen + kwalificeren, zie <b>hoofdstuk 3</b> <br> Dataset hersteladvies, zie <b>hoofdstuk 5</b></td></tr>
+    <tr><td>B4</td><td>Contractuele eindopname</td><td>Zelfde als vooropname, herstelwerkzaamheden buiten scope</td></tr>
+    <tr><td>B5</td><td>Hersteladvies</td><td><b>Dataset hersteladvies</b>, zie <b>hoofdstuk 5</b></td></tr>
+    <tr><td class="groep" rowspan="4">Toekomstige toestand</td><td>C1</td><td>Risicoanalyse</td><td><b>Dataset risico-analyse</b>, zie <b>hoofdstuk 4</b></td></tr>
+    <tr><td>C2</td><td><a href="#dfn-meerjarenonderhoudsplan" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-meerjarenonderhoudsplan-1">Meerjarenonderhoudsplanning</a> en -budgetraming</td><td>Input voor meerjarenplanning in <b>Dataset Hersteladvies</b>, prijzen buiten scope. Zie <b>hoofdstuk 5</b></td></tr>
+    <tr><td>C3</td><td>Constructieve beschouwing</td><td>buiten scope</td></tr>
+    <tr><td>C4</td><td>Analyse <a href="#dfn-restlevensduur" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-restlevensduur-1">restlevensduur</a></td><td>Buiten scope</td></tr>
+    <tr><td class="groep" rowspan="4">Bijzondere informatiebehoefte</td><td>D1</td><td>Monstername en beproeving</td><td rowspan="4" style="vertical-align: middle;">Buiten scope: Meetwaarde, schadeomvang uit complexere metingen, berekeningen of laboratoriumonderzoeken worden nog niet als data uitgewisseld, maar in rapportages opgeleverd</td></tr>
+    <tr><td>D2</td><td>Verfijnde financiële onderbouwing</td></tr>
+    <tr><td>D3</td><td>Verificatieberekening</td></tr>
+    <tr><td>D4</td><td>Monitoring</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+<p>In <strong>hoofdstuk 6</strong> wordt een overzicht gegeven van de verdieping die de inspectiehandboeken in het CUR portfolio geven op algemene gebrekssoorten en <a href="#dfn-maatregelen" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-maatregelen-1">maatregelen</a> uit de NEN2767.</p>
+<p>Buiten scope:</p>
+<ul>
+<li>Formele dataspecificaties op basis van <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>, deze worden in een vervolgproject in 2027 uitgewerkt. </li>
+<li>Afspraken over dataformaten of dataservices.</li>
+</ul>
+</section></section>
+  <section data-format="markdown" id="startinformatie-inspecties-en-onderzoeken"><div class="header-wrapper"><h2 id="x2-startinformatie-inspecties-en-onderzoeken"><bdi class="secno">2. </bdi>Startinformatie Inspecties en onderzoeken</h2><a class="self-link" href="#startinformatie-inspecties-en-onderzoeken" aria-label="Permalink for Section 2."></a></div>
+<section id="inleiding-0"><div class="header-wrapper"><h3 id="x2-1-inleiding"><bdi class="secno">2.1 </bdi>Inleiding</h3><a class="self-link" href="#inleiding-0" aria-label="Permalink for Section 2.1"></a></div>
+<p>Voor de start-dataset is een objectpaspoort nodig met een decompositie. We gaan ervan uit dat deze uit een beheersysteem gehaald worden. Als er nog geen assetregistratie bestaat van het kunstwerk is het noodzakelijk deze uit te werken.</p>
+<p>Welke typen kunstwerken in het areaal zitten kan bepaald worden op basis van de assetregistratie met <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> en decomposities uit de NEN2767. In dit hoofdstuk is dat uitgewerkt voor de voorbeelden: </p>
+<ul>
+<li>Vaste brug beton groot</li>
+<li>Vaste brug beton klein</li>
+</ul>
+</section><section id="start-dataset-technische-inspectie"><div class="header-wrapper"><h3 id="x2-2-start-dataset-technische-inspectie"><bdi class="secno">2.2 </bdi>Start-dataset technische inspectie</h3><a class="self-link" href="#start-dataset-technische-inspectie" aria-label="Permalink for Section 2.2"></a></div>
+<p>In onderstaande tabel wordt weergegeven welke informatie minimaal beschikbaar moet zijn om een datagedreven inspectie uit te voeren. Als ook objecten in de omgeving van het kunstwerk moeten worden geïnspecteerd zoals genoemd in CUR117 ("Reikwijdte omgeving in scope") moeten deze objecten ook worden opgenomen in de start-dataset. </p>
+<div class="kw-dataset" markdown="0">
+<style>
+
+  .kw-dataset { overflow-x: auto; }
+  .kw-dataset table { border-collapse: collapse; width: auto; max-width: 100%; margin: 0 0 24px; font-family: "Segoe UI", Arial, sans-serif; font-size: 14px; }
+  .kw-dataset caption { caption-side: top; text-align: left; font-weight: 700; color: #007e84; font-size: 15px; padding: 0 0 6px; }
+  .kw-dataset th, .kw-dataset td { border: 1px solid #005a9c; padding: 8px 10px; vertical-align: top; text-align: left; }
+  .kw-dataset thead th { background: #007e84; color: #fff; font-weight: 600; }
+  .kw-dataset td.groep { background: #007e84; color: #fff; font-weight: 700; white-space: nowrap; vertical-align: middle; }
+  .kw-dataset td.standaard { white-space: nowrap; }
+  .kw-dataset td.boom { white-space: nowrap; }
+  .kw-dataset td.boom.lvl0 { font-weight: 700; }
+  .kw-dataset td.boom.lvl1 { padding-left: 18px; }
+  .kw-dataset td.boom.lvl2 { padding-left: 38px; }
+  .kw-dataset td.boom.lvl3 { padding-left: 58px; }
+  .kw-dataset sup.vn-ref a { color: #005a9c; text-decoration: none; font-weight: 700; }
+  .kw-dataset p.voetnoot { font-size: 13px; color: #555; margin: -16px 0 24px; max-width: 80ch; }
+  .kw-dataset p.voetnoot sup { color: #005a9c; font-weight: 700; }
+
+</style>
+<table>
+  <caption>Startgegevens Inspecties en onderzoeken</caption>
+  <thead>
+    <tr><th>Thema</th><th>Decompositie</th><th>Attribuut</th><th>Standaard</th><th>Opmerking</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="groep" rowspan="11">Areaal</td><td class="boom lvl0" rowspan="11">Object</td><td>Object familie / type<sup class="vn-ref"><a href="#vn-object-familie">1</a></sup></td><td class="standaard">SSRV, <a href="#dfn-imbor" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-imbor-2"><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></a></td><td></td></tr>
+    <tr><td>Object (identificatie<sup class="vn-ref"><a href="#vn-verplicht">2</a></sup>, naam, nummer)</td><td class="standaard">NEN2767, <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></td><td></td></tr>
+    <tr><td>Beschrijving</td><td class="standaard">CUR117</td><td>Beschrijving van de constructie</td></tr>
+    <tr><td>Domein<sup class="vn-ref"><a href="#vn-verplicht">2</a></sup></td><td class="standaard"><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></td><td>Kunstwerken</td></tr>
+    <tr><td>Status<sup class="vn-ref"><a href="#vn-verplicht">2</a></sup></td><td class="standaard"><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></td><td>Bestaand</td></tr>
+    <tr><td>Geometrische representatie<sup class="vn-ref"><a href="#vn-verplicht">2</a></sup><sup>+</sup><sup class="vn-ref"><a href="#vn-geometrie">4</a></sup></td><td class="standaard"><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></td><td>Hiermee is ook de locatie / ligging bekend </td></tr>
+    <tr><td>Eigenaar</td><td class="standaard"><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></td><td></td></tr>
+    <tr><td>Aanlegjaar</td><td class="standaard"><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></td><td></td></tr>
+    <tr><td>Modaliteit<sup class="vn-ref"><a href="#vn-modaliteit">3</a></sup></td><td class="standaard"><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></td><td></td></tr>
+    <tr><td>Foto's</td><td class="standaard"></td><td>Overzichtsfoto's van het kunstwerk, minimaal een keer zijaanzicht, een keer bovenaanzicht</td></tr>
+    <tr><td>Inspectietekening (leeg)</td><td class="standaard">CUR117</td><td>Objectspecifieke <a href="#dfn-nlcs" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-nlcs-1"><abbr title="Nederlandse CAD Standaard">NLCS</abbr></a>-tekening voor de registratie van gebreken uit de inspectie</td></tr>
+    <tr><td class="groep" rowspan="7"><a href="#dfn-decompositie" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-decompositie-2">Decompositie</a></td><td class="boom lvl1">└ Element</td><td>Element</td><td class="standaard">NEN2767</td><td></td></tr>
+    <tr><td class="boom lvl2" rowspan="3">└ Bouwdeel</td><td>Type</td><td class="standaard">NEN2767</td><td></td></tr>
+    <tr><td>Materiaal</td><td class="standaard"><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></td><td></td></tr>
+    <tr><td>Omvang</td><td class="standaard"><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></td><td>breedte, dikte, lengte</td></tr>
+    <tr><td class="boom lvl3" rowspan="3">└ Component</td><td>Type</td><td class="standaard">NEN2767</td><td></td></tr>
+    <tr><td>Materiaal</td><td class="standaard"><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></td><td></td></tr>
+    <tr><td>Omvang</td><td class="standaard"><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></td><td>breedte, dikte, lengte</td></tr>
+  </tbody>
+</table>
+<p class="voetnoot" id="vn-object-familie"><sup>1</sup> De volgende objecttypes uit <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> worden gebruikt om onderscheid te kunnen maken: <a href="https://data.crow.nl/imbor/def/6156ad75-a23c-4b5f-8095-c773cd6ebffe">Vaste brug</a> (bij vaste brug wordt een verdiepingsslag gemaakt op basis van de in <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> gedefinieerde verschijningsvormen), <a href="https://data.crow.nl/imbor/def/e13e2867-bc61-462a-bcba-a8570c863a75">Viaduct</a> en <a href="https://data.crow.nl/imbor/def/914127ef-670f-44ff-b64f-883596e3244b">Onderdoorgang</a>.</p>
+<p class="voetnoot" id="vn-verplicht"><sup>2</sup> Verplichte informatie bij een Beheerobject volgens <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>.</p>
+<p class="voetnoot" id="vn-modaliteit"><sup>3</sup> In <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> kan een object geschikt zijn voor één of meerdere soorten modaliteit.</p>
+<p class="voetnoot" id="vn-geometrie"><sup>4</sup> <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> schrijft niet voor welke geometrische representatie bekend moet zijn, gebruikelijk in beheersystemen is een 2D-vlak.</p>
+</div>
+
+<p>De start-dataset kan grotendeels worden gedefinieerd op basis van de geintegreerde <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> en NEN2767-decompositie. Dit kan gebeuren nadat NEN en CROW de integratie voltooid hebben, naar verwachting ergens in  2027. </p>
+</section><section id="voorbeeld-vaste-brug-beton-groot-en-klein"><div class="header-wrapper"><h3 id="x2-3-voorbeeld-vaste-brug-beton-groot-en-klein"><bdi class="secno">2.3 </bdi>Voorbeeld: Vaste Brug Beton groot en klein</h3><a class="self-link" href="#voorbeeld-vaste-brug-beton-groot-en-klein" aria-label="Permalink for Section 2.3"></a></div>
+<p>Vaste brug beton klein:</p>
+<ul>
+<li>Modaliteit: Fiets en/of voetganger</li>
+</ul>
+<p>Vaste brug beton groot:</p>
+<ul>
+<li>Modaliteit: Licht wegverkeer</li>
+</ul>
+<p>In de tabel hieronder de veelvoorkomende onderdelen, met linkjes naar <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr>.</p>
+<div class="crow-tabel" markdown="0">
+<style>
+
+  .crow-tabel { overflow-x: auto; }
+  .crow-tabel table { border-collapse: collapse; width: auto; max-width: 100%; font-family: "Segoe UI", Arial, sans-serif; font-size: 14px; }
+  .crow-tabel caption { caption-side: top; text-align: left; font-weight: 700; color: #007e84; font-size: 15px; padding: 0 0 6px; }
+  .crow-tabel th, .crow-tabel td { border: 1px solid #005a9c; padding: 8px 10px; vertical-align: top; text-align: left; }
+  .crow-tabel thead th { background: #007e84; color: #fff; font-weight: 600; }
+  .crow-tabel tbody tr:nth-child(even) td { background: #eaf3ff; }
+
+</style>
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Element</th>
+      <th>Bouwdeel</th>
+      <th>Materiaal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="13"><a href="https://data.crow.nl/imbor/def/6156ad75-a23c-4b5f-8095-c773cd6ebffe">Vaste Brug</a>, Verschijningsvorm: <a href="https://data.crow.nl/imbor/id/domeinwaarden/14b63cdf-8f6f-4058-a60d-48c4b81b720f">Gewone normale vaste brug</a></td>
+      <td rowspan="2"><a href="  
+      https://data.crow.nl/imbor/def/9ee5bd00-c5a8-4d8b-871a-cd3b4eddd9df">Fundering</a></td>
+      <td><a href="https://data.crow.nl/imbor/def/8b7bbb81-3498-49a0-8e08-fe77b2db7657">Paalfundering</a></td>
+      <td><a href="https://data.crow.nl/imbor/def/1b78d861-6b96-4bd5-8a3a-82c68e6eeced">Hout</a></td>
+    </tr>
+    <tr>
+      <td>Vloer</td>
+      <td><a href="https://data.crow.nl/imbor/def/1b78d861-6b96-4bd5-8a3a-82c68e6eeced">Hout</a></td>
+    </tr>
+    <tr>
+      <td rowspan="2">Hoofddraagconstructie</td>
+      <td><a href="  
+      https://data.crow.nl/imbor/def/f3202a49-5227-45e2-92d0-826ce6cf5974">Dek</a></td>
+      <td>beton</td>
+    </tr>
+    <tr>
+      <td>Landhoofd</td>
+      <td>beton</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Kerende constructie</td>
+      <td>Vleugelwand</td>
+      <td>steen</td>
+    </tr>
+    <tr>
+      <td>Wand</td>
+      <td>steen</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Leuningconstructie</td>
+      <td>Leuningafwerking</td>
+      <td>staal</td>
+    </tr>
+    <tr>
+      <td><a href="https://data.crow.nl/imbor/def/b85705df-e508-4ebc-98be-afe55c0326fb">Leuning</a></td>
+      <td>staal</td>
+    </tr>
+    <tr>
+      <td>Schampkant</td>
+      <td>Schampkant, algemeen</td>
+      <td>beton</td>
+    </tr>
+    <tr>
+      <td>Verharding wegtype 3 (gemiddeld belaste weg)</td>
+      <td>Deklaag, dicht</td>
+      <td>asfalt</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Verharding wegtype 7 (fiets weg)</td>
+      <td>Deklaag, dicht</td>
+      <td>asfalt</td>
+    </tr>
+    <tr>
+      <td>Elementenverharding</td>
+      <td>elementen</td>
+    </tr>
+    <tr>
+      <td>Wegmarkering</td>
+      <td>Wegmarkering, Algemeen</td>
+      <td>thermoplast</td>
+    </tr>
+  </tbody>
+</table>
+</div></section></section>
+  <section data-format="markdown" id="technische-inspectie"><div class="header-wrapper"><h2 id="x3-technische-inspectie"><bdi class="secno">3. </bdi>Technische inspectie</h2><a class="self-link" href="#technische-inspectie" aria-label="Permalink for Section 3."></a></div>
+<section id="inleiding-1"><div class="header-wrapper"><h3 id="x3-1-inleiding"><bdi class="secno">3.1 </bdi>Inleiding</h3><a class="self-link" href="#inleiding-1" aria-label="Permalink for Section 3.1"></a></div>
+<p>De technische inspectie kan van start als de start-dataset geleverd is en duidelijk is welke objecten onderzocht moeten worden. In de dataset technische inspectie wordt de feitelijke waarneming vastgelegd met de registratie van gebreken, de analyse en beoordeling ter plaatse van oorzaken en gevolgen, de omvang en gebreksscore op niveau bouwdeel / component en de verwerking naar een globale conditiescore volgens de NEN 2767. </p>
+<p>In de CUR117 staat onderstaande proces beschreven, de dataset bevat de hele flow plus de toevoeging van de conditiescore. </p>
+<figure id="fig-de-stappen-om-te-komen-tot-een-kwalificatie-van-de-toestand-van-het-kunstwerk">
+<img src="../images/C117_Waarnemen.jpg" alt="vier stappen: 1. waarnemen, Feitelijke waarneming; 2 Registreren, Feitelijke registratie, Foto Meetwaarde, 3 analyseren en beoordelen Oorzaak/gevolg, constatering/bevinding, obv referentie; 4. Kwalificeren Gebrek, Schade, Tekortkoming" width="100%">
+<figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">De stappen om te komen tot een kwalificatie van de toestand van het kunstwerk</span></figcaption>
+</figure>
+
+
+</section><section id="dataset-technische-inspectie"><div class="header-wrapper"><h3 id="x3-2-dataset-technische-inspectie"><bdi class="secno">3.2 </bdi>Dataset technische inspectie</h3><a class="self-link" href="#dataset-technische-inspectie" aria-label="Permalink for Section 3.2"></a></div>
+<p>In onderstaande tabel staat de inhoud van de dataset technische inspectie. </p>
+<div class="kw-dataset" markdown="0">
+<table>
+  <caption>Dataset technische inspectie</caption>
+  <thead>
+    <tr><th>Onderwerp</th><th>Attribuut</th><th>Standaard</th><th>Opmerking</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="groep" rowspan="2">Waarnemen</td><td>Inspectiemoment</td><td>CUR117</td><td>datum, tijd</td></tr>
+    <tr><td>Naam inspecteur</td><td>CUR117</td><td>voornaam, achternaam, bedrijf</td></tr>
+    <tr><td class="groep" rowspan="7">Feitelijke waarneming</td><td>Weersgesteldheid</td><td>CUR117</td><td>temperatuur, luchtvochtigheid</td></tr>
+    <tr><td>Locatie waarneming</td><td>CUR117</td><td>Bouwdeel of component, in schadeomschrijving kan nader beschreven worden waar op het bouwdeel / de component</td></tr>
+    <tr><td>Omvang, hoeveelheid</td><td>CUR117</td><td>Aantal van dit gebrek/deze schade/deze tekortkoming op het bouwdeel / de component</td></tr>
+    <tr><td>Omvang, Eenheid</td><td>CUR117</td><td>strekkende meters, oppervlak of inhoud</td></tr>
+    <tr><td>Schadeomschrijving</td><td>CUR117</td><td>Omschrijving en geschatte invloed op gebruiksveiligheid</td></tr>
+    <tr><td>Fotoregistratie</td><td>CUR117</td><td>Uitgangspunt is dat locatie, datum en tijdstip foto's overeenkomen met de waarneming. In dataset: Naam fotobestand(en)</td></tr>
+    <tr><td>Inspectietekening</td><td>CUR117</td><td>optioneel, ingetekende gebreken. In dataset: bestandsnaam tekening(en)</td></tr>
+    <tr><td class="groep" rowspan="2">Analyseren en beoordelen</td><td>Oorzaak</td><td>CUR117</td><td>eerste kwalitatieve oorzaak</td></tr>
+    <tr><td>Gevolg</td><td>CUR117</td><td>Gevolg voor het functioneren en de onderhoudsstaat.</td></tr>
+    <tr><td class="groep" rowspan="6">Kwalificeren</td><td>Gebrekssoort<sup class="vn-ref"><a href="#vn-gebrekssoort">1</a></sup></td><td>NEN2767 of Handboeken Inspectie van de CUR117</td><td>De handboeken geven voor elke materiaalsoort soorten schadebeelden, ook kunnen de schadebeelden uit de NEN2767 genoemd worden in de waarneming.</td></tr>
+    <tr><td>Kwalificatie</td><td>CUR117</td><td>gebrek, schade, tekortkoming, waarneming</td></tr>
+    <tr><td>Functionele toestand</td><td>CUR117</td><td>van alle zichtbare onderdelen, per onderdeel.</td></tr>
+    <tr><td>Ernst gebrek</td><td>NEN2767</td><td>op niveau bouwdeel / component</td></tr>
+    <tr><td>Intensiteit</td><td>NEN2767</td><td>op niveau bouwdeel / component</td></tr>
+    <tr><td>Omvang</td><td>NEN2767</td><td>op niveau bouwdeel / component</td></tr>
+    <tr><td class="groep">Conditiescore</td><td>Conditiescore</td><td>NEN2767 en CUR117</td><td>op niveau object. CUR117 voegt toe: Vervangingsfactor in plaats van berekende <a href="#dfn-levensduurkosten" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-levensduurkosten-1">levensduurkosten</a>, om te kunnen generaliseren op areaalniveau. </td></tr>
+  </tbody>
+</table>
+<p class="voetnoot" id="vn-gebrekssoort"><sup>1</sup> De gebrekssoort uit de NEN 2767-4 webapplicatie is auteursrechtelijk beschermd. Hier moet een oplossing voor komen om dit in een standaard dataspecificatie te kunnen opnemen.</p>
+
+</div>
+
+<p>Voorlopig buiten scope dataspecificatie: Meetwaarde, meting of onderzoek. Hieronder vallen complexe metingen, laboratoriumonderzoeken, tellingen. Voorlopig nog niet als data vastleggen maar als rapportages meeleveren.</p>
+</section><section id="ontologie-dynamische-gegevens"><div class="header-wrapper"><h3 id="x3-3-ontologie-dynamische-gegevens"><bdi class="secno">3.3 </bdi>Ontologie dynamische gegevens</h3><a class="self-link" href="#ontologie-dynamische-gegevens" aria-label="Permalink for Section 3.3"></a></div>
+<p>CROW heeft een Ontologie Dynamische Gegevens ontwikkeld. Een deel van de dataset kan worden afgeleid uit deze ontologie. Hiervoor is een eerste uitwerking gemaakt: <a href="https://github.com/stichting-crow/use-cases-door/blob/main/experimenten/cur117">Dataset technische inspectie</a></p>
+</section><section id="geaggregeerde-conditiescore-maken"><div class="header-wrapper"><h3 id="x3-4-geaggregeerde-conditiescore-maken"><bdi class="secno">3.4 </bdi>Geaggregeerde conditiescore maken</h3><a class="self-link" href="#geaggregeerde-conditiescore-maken" aria-label="Permalink for Section 3.4"></a></div>
+<p>De NEN2767 beschrijft in stappen hoe een geaggregeerde conditiescore tot stand komt. De werkgroep CUR117 voegt daaraan een tabel met vervangingsfactoren toe voor bouwdelen en elementen, om te kunnen generaliseren op areaalniveau. </p>
+<ol>
+<li>Het bouwdeel krijgt een gebreksscore op basis van alle geconstateerde gebreken.</li>
+<li>Het element krijgt een gebreksscore op basis van alle bouwdelen, waarbij de bouwdelen meetellen op basis van de <a href="#dfn-vervangingswaarde" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-vervangingswaarde-1">vervangingswaarde</a>.</li>
+<li>Het object krijgt een gebreksscore op basis van alle elementen, waarbij de elementen meetellen op basis van de vervangingswaarde.</li>
+</ol>
+<p>Om te kunnen werken met de berekeningsmethode conform de NEN2767-1, dient per bouwdeel en element de vervangingswaarde bepaald te worden. Dit per stuks berekenen voor de meest voorkomende kunstwerken in Nederland is een te tijdrovende exercitie, waar een benadering volstaat om een goed beeld te krijgen. Daarom wordt in de vereenvoudigde methode bij CUR117 in plaats van de vervangingswaarde een vervangingsfactor gebruikt, eenmalig per bouwdeel en element. In de meegeleverde dataset is per bouwdeel en element zichtbaar wat de vervangingsfactor is.</p>
+<section id="benaderingsmethode-vervangingswaarde"><div class="header-wrapper"><h4 id="x3-4-1-benaderingsmethode-vervangingswaarde"><bdi class="secno">3.4.1 </bdi>Benaderingsmethode vervangingswaarde</h4><a class="self-link" href="#benaderingsmethode-vervangingswaarde" aria-label="Permalink for Section 3.4.1"></a></div>
+<p>Voor de vervangingswaarde van bouwdelen en elementen wordt een benadering gebruikt in de vorm van een indicatieve, relatieve vervangingswaarde (VW). Hierbij is de onderlinge verhouding van de vervangingswaarden van de bouwdelen of elementen maatgevend. Dit wordt gedaan met behulp van een vervangingsfactor. Deze factor staat als weegfactor voor het bouwdeel of element. De reden hiervoor is dat het zeer omslachtig is om voor elk object de vervangingswaarde per bouwdeel en element te bepalen. Dit is zeer tijdrovend en qua berekening staat een vervangingsfactor gelijk aan een vervangingswaarde.</p>
+<p><a href="https://docs.crow.nl/use-cases-door/kunstwerken-bouwdelen">Tabel vervangingsfactor bouwdelen</a><br>
+<a href="https://docs.crow.nl/use-cases-door/kunstwerken-elementen">Tabel vervangingsfactor elementen</a></p>
+<p>Alle vervangingsfactoren van elk bouwdeel en element zijn uitgewerkt in een tabel op basis van de volgende onderbouwing:</p>
+<p>Tabel 3: Uitgangspunt bepaling vervangingsfactor bouwdelen en elementen</p>
+<div class="crow-tabel" markdown="0">
+<style>
+
+  .crow-tabel { overflow-x: auto; }
+  .crow-tabel table { border-collapse: collapse; width: auto; max-width: 100%; font-family: "Segoe UI", Arial, sans-serif; font-size: 14px; }
+  .crow-tabel th, .crow-tabel td { border: 1px solid #005a9c; padding: 8px 10px; vertical-align: top; text-align: left; }
+  .crow-tabel thead th { background: #007e84; color: #fff; font-weight: 600; }
+  .crow-tabel td.waarde { white-space: nowrap; text-align: center; font-weight: 600; }
+  .crow-tabel tbody tr:nth-child(even) td { background: #eaf3ff; }
+
+</style>
+<table>
+  <thead>
+    <tr><th>Waarde</th><th>Toelichting</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="waarde">1-2</td><td>Klein geneuzel</td></tr>
+    <tr><td class="waarde">3-4</td><td>Kleinere onderdelen en secundaire elementen (eenvoudig te vervangen)</td></tr>
+    <tr><td class="waarde">5-6</td><td>Dure installaties en secundaire elementen (lastig te vervangen)</td></tr>
+    <tr><td class="waarde">7</td><td>-</td></tr>
+    <tr><td class="waarde">8</td><td>Grote primaire elementen (vervangbaar)</td></tr>
+    <tr><td class="waarde">9</td><td>-</td></tr>
+    <tr><td class="waarde">10</td><td>Grote primaire elementen (niet vervangbaar)</td></tr>
+  </tbody>
+</table>
+</div>
+
+<ul>
+<li>De vervangingswaarden van de verschillende bouwdelen worden opgeteld tot de ‘Totale 
+VervangingsWaarde’ (TVW). </li>
+<li>Voor ieder bouwdeel wordt de correctiefactor bepaald. 
+Met de correctiefactor tellen de bouwdelen met een hoge score (slechte staat) ‘harder’ mee. 
+De correctiefactoren staan in de onderstaande tabel. </li>
+<li>Met behulp van de vervangingswaarden per bouwdeel en de correctiefactoren wordt de 
+‘Gecorrigeerde Totale VervangingsWaarde’ (GTVW) van de bouwdelen bepaald. </li>
+<li>De GTVW wordt gedeeld door TVW. </li>
+<li>Met de uitkomst hiervan kan de score voor het element bepaald worden, zie tabel 2.</li>
+</ul>
+<p>Correctiefactoren:</p>
+<div class="crow-tabel" markdown="0">
+<table>
+  <thead>
+    <tr><th>Score</th><th>Correctiefactor</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="waarde">1</td><td class="waarde">1,0</td></tr>
+    <tr><td class="waarde">2</td><td class="waarde">1,02</td></tr>
+    <tr><td class="waarde">3</td><td class="waarde">1,1</td></tr>
+    <tr><td class="waarde">4</td><td class="waarde">1,3</td></tr>
+    <tr><td class="waarde">5</td><td class="waarde">1,7</td></tr>
+    <tr><td class="waarde">6</td><td class="waarde">2,0</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+<p>Herleiding score vanuit ‘uitkomst’:</p>
+<div class="crow-tabel" markdown="0">
+<table>
+  <thead>
+    <tr><th>Uitkomst</th><th>Score</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Uitkomst ≤ 1,01</td><td class="waarde">1</td></tr>
+    <tr><td>1,01 &lt; Uitkomst ≤ 1,04</td><td class="waarde">2</td></tr>
+    <tr><td>1,04 &lt; Uitkomst ≤ 1,15</td><td class="waarde">3</td></tr>
+    <tr><td>1,15 &lt; Uitkomst ≤ 1,40</td><td class="waarde">4</td></tr>
+    <tr><td>1,40 &lt; Uitkomst ≤ 1,78</td><td class="waarde">5</td></tr>
+    <tr><td>Uitkomst &gt; 1,78</td><td class="waarde">6</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+</section><section id="voorbeeld"><div class="header-wrapper"><h4 id="x3-4-2-voorbeeld"><bdi class="secno">3.4.2 </bdi>Voorbeeld</h4><a class="self-link" href="#voorbeeld" aria-label="Permalink for Section 3.4.2"></a></div>
+<section id="voorbeeld-voor-het-bepalen-van-2-elementscores"><div class="header-wrapper"><h5 id="x3-4-2-1-voorbeeld-voor-het-bepalen-van-2-elementscores"><bdi class="secno">3.4.2.1 </bdi>Voorbeeld voor het bepalen van 2 elementscores</h5><a class="self-link" href="#voorbeeld-voor-het-bepalen-van-2-elementscores" aria-label="Permalink for Section 3.4.2.1"></a></div>
+<div class="crow-tabel" markdown="0">
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Bouwdeel</th>
+      <th>Conditiescore</th>
+      <th>Vervangingsfactor</th>
+      <th>Correctiefactor op basis van conditiescore</th>
+      <th>Gecorrigeerde totale waarde<br>(vervangingswaarde × correctiefactor)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="4">Hoofddraagconstructie</td>
+      <td>Rijdek</td>
+      <td>3</td>
+      <td>10</td>
+      <td>1,1</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>Leuning</td>
+      <td>4</td>
+      <td>2</td>
+      <td>1,3</td>
+      <td>2,6</td>
+    </tr>
+    <tr>
+      <td>Langsligger</td>
+      <td>2</td>
+      <td>8</td>
+      <td>1,02</td>
+      <td>8,16</td>
+    </tr>
+    <tr>
+      <td><strong>Totaal</strong></td>
+      <td></td>
+      <td><strong>20</strong></td>
+      <td></td>
+      <td><strong>21,76</strong></td>
+    </tr>
+    <tr>
+      <td rowspan="3">Kerende constructie</td>
+      <td>Damwand</td>
+      <td>3</td>
+      <td>6</td>
+      <td>1,1</td>
+      <td>6,6</td>
+    </tr>
+    <tr>
+      <td>Deksloof</td>
+      <td>6</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td><strong>Totaal</strong></td>
+      <td></td>
+      <td><strong>7</strong></td>
+      <td></td>
+      <td><strong>8,6</strong></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</section><section id="voorbeeld-conditieherleiding"><div class="header-wrapper"><h5 id="x3-4-2-2-voorbeeld-conditieherleiding"><bdi class="secno">3.4.2.2 </bdi>Voorbeeld conditieherleiding</h5><a class="self-link" href="#voorbeeld-conditieherleiding" aria-label="Permalink for Section 3.4.2.2"></a></div>
+<div class="crow-tabel" markdown="0">
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Berekening<br>(optelling gecorrigeerde totale waarde / optelling vervangingsfactor)</th>
+      <th>Conditieherleiding</th>
+      <th>Conditiescore</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Hoofddraagconstructie</td>
+      <td>21,76 / 20</td>
+      <td>1,09</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Kerende constructie</td>
+      <td>8,6 / 7</td>
+      <td>1,23</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</section><section id="voorbeeld-objectscore"><div class="header-wrapper"><h5 id="x3-4-2-3-voorbeeld-objectscore"><bdi class="secno">3.4.2.3 </bdi>Voorbeeld objectscore</h5><a class="self-link" href="#voorbeeld-objectscore" aria-label="Permalink for Section 3.4.2.3"></a></div>
+<p>De aggregatie van elementscore naar objectscore dient conform de NEN uitgevoerd te worden op basis van berekeningssystematiek. De methode is gelijk aan de aggregatie van bouwdeel- naar elementniveau.</p>
+<p>Onderstaand een voorbeeld voor het bepalen van 2 elementscores </p>
+<div class="crow-tabel" markdown="0">
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Conditiescore</th>
+      <th>Vervangingsfactor</th>
+      <th>Correctiefactor op basis van conditiescore</th>
+      <th>Gecorrigeerde totale waarde<br>(vervangingswaarde × correctiefactor)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Hoofddraagconstructie</td>
+      <td>3</td>
+      <td>10</td>
+      <td>1,1</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>Kerende constructie</td>
+      <td>4</td>
+      <td>6</td>
+      <td>1,3</td>
+      <td>7,8</td>
+    </tr>
+    <tr>
+      <td><strong>Totaal</strong></td>
+      <td></td>
+      <td><strong>16</strong></td>
+      <td></td>
+      <td><strong>18,8</strong></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</section><section id="voorbeeld-conditieherleiding-kunstwerk"><div class="header-wrapper"><h5 id="x3-4-2-4-voorbeeld-conditieherleiding-kunstwerk"><bdi class="secno">3.4.2.4 </bdi>Voorbeeld Conditieherleiding kunstwerk</h5><a class="self-link" href="#voorbeeld-conditieherleiding-kunstwerk" aria-label="Permalink for Section 3.4.2.4"></a></div>
+<div class="crow-tabel" markdown="0">
+<table>
+  <thead>
+    <tr>
+      <th>Kunstwerk</th>
+      <th>Berekening<br>(optelling gecorrigeerde totale waarde / optelling vervangingsfactor)</th>
+      <th>Conditieherleiding</th>
+      <th>Conditiescore</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Brug 1</td>
+      <td>18,8 / 16</td>
+      <td>1,18</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div></section></section></section></section>
+    <section data-format="markdown" id="risico-analyse"><div class="header-wrapper"><h2 id="x4-risico-analyse"><bdi class="secno">4. </bdi>Risico-analyse</h2><a class="self-link" href="#risico-analyse" aria-label="Permalink for Section 4."></a></div>
+<section id="inleiding-2"><div class="header-wrapper"><h3 id="x4-1-inleiding"><bdi class="secno">4.1 </bdi>Inleiding</h3><a class="self-link" href="#inleiding-2" aria-label="Permalink for Section 4.1"></a></div>
+<p>De geaggregeerde conditiescore op basis van de NEN2767 geeft een globaal inzicht in de lange termijn conditie van een kunstwerk. Voor de korte termijn moet voor gebreken ook gekeken worden naar de risico's, die een ingreep op korte termijn vragen. </p>
+<figure id="fig-voorbeeld-risico-analyse-houtrot-versus-goede-conditiescore">
+<img src="../images/risicoanalyse-houtrot.png" alt="Voorbeeld risico-analyse houtrot van een leuning: korte termijn direct herstel nodig, algehele conditiescore kunstwerk is goed">
+<figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Voorbeeld risico-analyse houtrot versus goede conditiescore 
+</span></figcaption></figure>
+
+<p>De onderwerpen van de risico-analyse kunnen verschillen per opdrachtgever omdat er verschil in beleid en bedrijfswaarde kan optreden. Dit is in principe aan de <a href="#dfn-beheerder" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-beheerder-1">beheerder</a>. In dit document wordt een eenvoudige methode voorgesteld die de beheerder naar eigen inzicht kan uitbreiden. </p>
+<p><a href="https://docs.crow.nl/use-cases-door/kunstwerken-risicomatrix-toestand.html">Basismethode risico-analyse van de toestand</a></p>
+</section><section id="dataset-risico-analyse"><div class="header-wrapper"><h3 id="x4-2-dataset-risico-analyse"><bdi class="secno">4.2 </bdi>Dataset risico-analyse</h3><a class="self-link" href="#dataset-risico-analyse" aria-label="Permalink for Section 4.2"></a></div>
+<p>De opdrachtgever kan een risico-matrix meegeven zoals in het voorbeeld. De dataset voor de risico-analyse is vervolgens zeer eenvoudig: bij elk gebrek wordt een score meegegeven van 1-4 (zie onderstaande tabel) met een tekstuele toelichting. </p>
+<table class="matrix"><tbody>
+<tr><td class="hd">Risicoklasse</td><td class="hd">Betekenis / maatregel</td><td class="hd">Hersteltermijn</td><td class="hd">Score</td></tr>
+<tr><td style="background:#63be7b;font-weight:700;">Laag</td><td>Acceptabel risico, maatregel niet uitvoeren, Controle bij volgende inspectie (4 jaar later)</td><td style="text-align:center">&gt; 5 jaar herstellen</td><td style="background:#63be7b;text-align:center;font-weight:700">4</td></tr>
+<tr><td style="background:#ffe08a;font-weight:700;">Middel</td><td>Maatregelen meenemen waar mogelijk in instandhoudingsplan</td><td style="text-align:center">3-5 jaar herstellen</td><td style="background:#ffe08a;text-align:center;font-weight:700">3</td></tr>
+<tr><td style="background:#f0a35e;font-weight:700;">Hoog</td><td>Onacceptabel risico, maatregel toetsen en verwerken in instandhoudingsplan</td><td style="text-align:center">1-2 jaar herstellen</td><td style="background:#f0a35e;text-align:center;font-weight:700">2</td></tr>
+<tr><td style="background:#f4676a;font-weight:700;">Zeer Hoog</td><td>Onacceptabel risico, maatregel toetsen en verwerken in instandhoudingsplan</td><td style="text-align:center">direct herstellen</td><td style="background:#f4676a;text-align:center;font-weight:700">1</td></tr>
+</tbody></table></section></section>
+  <section data-format="markdown" id="hersteladvies"><div class="header-wrapper"><h2 id="x5-hersteladvies"><bdi class="secno">5. </bdi>Hersteladvies</h2><a class="self-link" href="#hersteladvies" aria-label="Permalink for Section 5."></a></div>
+<section id="inleiding-3"><div class="header-wrapper"><h3 id="x5-1-inleiding"><bdi class="secno">5.1 </bdi>Inleiding</h3><a class="self-link" href="#inleiding-3" aria-label="Permalink for Section 5.1"></a></div>
+<p>Bij elke gebrekssoort kan een hersteladvies worden meegegeven door de inspecteur. Dat zijn de geadviseerde maatregelen, omvang herstelwerkzaamheden en eerste jaar en uiterste jaar van uitvoering. Dit geeft input voor de onderhoudsplanning.</p>
+</section><section id="dataset-hersteladvies"><div class="header-wrapper"><h3 id="x5-2-dataset-hersteladvies"><bdi class="secno">5.2 </bdi>Dataset Hersteladvies</h3><a class="self-link" href="#dataset-hersteladvies" aria-label="Permalink for Section 5.2"></a></div>
+<div class="kw-dataset" markdown="0">
+<table>
+  <caption>Dataset Hersteladvies</caption>
+  <thead>
+    <tr><th>Thema</th><th>Attribuut</th><th>Standaard</th><th>Opmerking</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="groep" rowspan="10">Onderhoudsadvies</td><td>Hoofdvakdiscipline</td><td class="standaard"><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></td><td></td></tr>
+    <tr><td>Vakdiscipline</td><td class="standaard">CUR117</td><td></td></tr>
+    <tr><td>Maatregel</td><td class="standaard">CUR117</td><td>De handboeken geven voor elke materiaalsoort soorten maatregelen; daarnaast zou gerefereerd kunnen worden aan besteksposten in de RAW.</td></tr>
+    <tr><td>Milieu- en verkeersmaatregelen</td><td class="standaard">CUR117</td><td>De Verkeersmaatregelen komen uit de CROW-publicatie Werk In Uitvoering, milieumaatregelen onder meer uit CROW-publicatie Werken in en met verontreinigde grond</td></tr>
+      <tr><td>Beschrijving maatregel</td><td class="standaard">CUR117</td><td>Beschrijving van de aanpak, de uitgevoerde analyse en het resulterende advies over de te nemen maatregel, benoemen van wetgeving, raakvlakken en randvoorwaarden</td></tr>
+    <tr><td>Omvang, Hoeveelheid</td><td class="standaard">CUR117</td><td>Aantal maatregelen per bouwdeel / component</td></tr>
+    <tr><td>Omvang, Eenheid</td><td class="standaard">CUR117</td><td>hoeveelheid strekkende meters of kubieke meters van een maatregel  per bouwdeel / component</td></tr>
+    <tr><td>Startdatum</td><td class="standaard">CUR117</td><td>Eerste jaar en uiterste jaar van invoering, conform de risico-analyse</td></tr>
+    <tr><td>Frequentie</td><td class="standaard">CUR117</td><td></td></tr>
+    <tr><td>Omgevingsfactoren</td><td class="standaard">CUR117</td><td>Beschrijving (omgevings)factoren, die voor uitvoering van de herstel- en/of onderhoudsmaatregelen van belang zijn</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Eenheidsprijzen en bedragen kunnen worden bepaald in een beheersysteem, niet aangeleverd in het hersteladvies.</p>
+</section></section>
+    <section data-format="markdown" id="inspectiehandboeken"><div class="header-wrapper"><h2 id="x6-inspectiehandboeken"><bdi class="secno">6. </bdi>Inspectiehandboeken</h2><a class="self-link" href="#inspectiehandboeken" aria-label="Permalink for Section 6."></a></div>
+<section id="inleiding-4"><div class="header-wrapper"><h3 id="x6-1-inleiding"><bdi class="secno">6.1 </bdi>Inleiding</h3><a class="self-link" href="#inleiding-4" aria-label="Permalink for Section 6.1"></a></div>
+<p>De handboeken inspectie beschrijven de aanwezige kennis van gebruikte materialen, kritieke onderdelen en de daarmee samenhangende gebreken. Tevens geven zij per materiaal/onderdeel aan wat de aandachtspunten zijn voor inspectie en wat verwacht mag worden van het resultaat van de inspecties. Via de verwijzingstabellen zijn eisen gesteld binnen de gevraagde inspectiecategorie en daarbij te leveren informatie.</p>
+<p> Het gaat om de volgende handboeken:</p>
+<ul>
+<li>CROW-CUR Handboek 3:2020 Inspectie hout</li>
+<li>Handboek inspectie Staal (conform CUR-aanbeveling 117:2015)</li>
+<li>Handboek inspectie beton (conform CUR-Aanbeveling 117:2015)</li>
+<li>CROW-CUR Handboek 8: 2024 Handboek Inspectie vezelversterkte kunststof draagconstructies</li>
+<li>CROW-CUR Handboek 2:2020 Inspectie elektrotechnische en werktuigbouwkundige installaties (E&amp;WI)</li>
+<li>Handboek Inspectie Voegovergangen (conform CUR-aanbeveling 117:2015)</li>
+<li>Handboek Inspectie Opleggingen (conform CUR-aanbeveling 117:2015)</li>
+<li>Handboek Inspectie Metselwerk (behorend bij CUR Rapport 117)</li>
+</ul>
+<p>Uit deze handboeken komen specifieke schadebeelden en herstelmaatregelen die in de dataset kunnen worden opgenomen. Deze zijn reeds opgenomen in de "kruisjeslijst" en kunnen verwerkt worden in een gegevenswoordenboek voor gebruik in de dataspecificaties. </p>
+<figure id="fig-de-kruisjeslijst-uit-crow-cur-handboek-2-2020-inspectie-elektrotechnische-en-werktuigbouwkundige-installaties-e-wi">
+<img src="../images/kruisjeslijst.png" alt="Voorbeeld van de 'kruisjeslijst' waarin schadebeelden worden genoemd per objecttype" width="100%">
+<figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">De kruisjeslijst uit CROW-CUR Handboek 2:2020 Inspectie elektrotechnische en werktuigbouwkundige installaties (E&amp;WI) </span></figcaption>
+</figure>
+
+</section><section id="hout"><div class="header-wrapper"><h3 id="x6-2-hout"><bdi class="secno">6.2 </bdi>Hout</h3><a class="self-link" href="#hout" aria-label="Permalink for Section 6.2"></a></div>
+<p>CROW-CUR Handboek 3:2020 Inspectie hout</p>
+<p>Schadebeelden beschikbaar in de "kruisjeslijst"</p>
+</section><section id="staal"><div class="header-wrapper"><h3 id="x6-3-staal"><bdi class="secno">6.3 </bdi>Staal</h3><a class="self-link" href="#staal" aria-label="Permalink for Section 6.3"></a></div>
+<p>Handboek inspectie Staal (conform CUR-aanbeveling 117:2015)</p>
+</section><section id="beton"><div class="header-wrapper"><h3 id="x6-4-beton"><bdi class="secno">6.4 </bdi>Beton</h3><a class="self-link" href="#beton" aria-label="Permalink for Section 6.4"></a></div>
+<p>Handboek inspectie beton (conform CUR-Aanbeveling 117:2015)</p>
+</section><section id="kunststof"><div class="header-wrapper"><h3 id="x6-5-kunststof"><bdi class="secno">6.5 </bdi>Kunststof</h3><a class="self-link" href="#kunststof" aria-label="Permalink for Section 6.5"></a></div>
+<p>CROW-CUR Handboek 8: 2024 Handboek Inspectie vezelversterkte kunststof draagconstructies</p>
+</section><section id="elektrotechnische-en-werktuigbouwkundige-installaties"><div class="header-wrapper"><h3 id="x6-6-elektrotechnische-en-werktuigbouwkundige-installaties"><bdi class="secno">6.6 </bdi>Elektrotechnische en werktuigbouwkundige installaties</h3><a class="self-link" href="#elektrotechnische-en-werktuigbouwkundige-installaties" aria-label="Permalink for Section 6.6"></a></div>
+<p>CROW-CUR Handboek 2:2020 Inspectie elektrotechnische en werktuigbouwkundige installaties (E&amp;WI)</p>
+</section><section id="voegovergangen"><div class="header-wrapper"><h3 id="x6-7-voegovergangen"><bdi class="secno">6.7 </bdi>Voegovergangen</h3><a class="self-link" href="#voegovergangen" aria-label="Permalink for Section 6.7"></a></div>
+<p>Handboek Inspectie Voegovergangen (conform CUR-aanbeveling 117:2015)</p>
+</section><section id="opleggingen"><div class="header-wrapper"><h3 id="x6-8-opleggingen"><bdi class="secno">6.8 </bdi>Opleggingen</h3><a class="self-link" href="#opleggingen" aria-label="Permalink for Section 6.8"></a></div>
+<p>Handboek Inspectie Opleggingen (conform CUR-aanbeveling 117:2015)</p>
+</section><section id="metselwerk"><div class="header-wrapper"><h3 id="x6-9-metselwerk"><bdi class="secno">6.9 </bdi>Metselwerk</h3><a class="self-link" href="#metselwerk" aria-label="Permalink for Section 6.9"></a></div>
+<p>Handboek Inspectie Metselwerk (behorend bij CUR Rapport 117)</p>
+</section><section id="oeverconstructies"><div class="header-wrapper"><h3 id="x6-10-oeverconstructies"><bdi class="secno">6.10 </bdi>Oeverconstructies</h3><a class="self-link" href="#oeverconstructies" aria-label="Permalink for Section 6.10"></a></div>
+<p>Handboek oeverconstructies</p>
+</section></section>
+        <section data-format="markdown" id="aanbevelingen"><div class="header-wrapper"><h2 id="x7-aanbevelingen"><bdi class="secno">7. </bdi>Aanbevelingen</h2><a class="self-link" href="#aanbevelingen" aria-label="Permalink for Section 7."></a></div>
+<section id="start-dataset-technische-inspecties"><div class="header-wrapper"><h3 id="x7-1-start-dataset-technische-inspecties"><bdi class="secno">7.1 </bdi>Start-dataset technische inspecties</h3><a class="self-link" href="#start-dataset-technische-inspecties" aria-label="Permalink for Section 7.1"></a></div>
+<p>De start-dataset kan grotendeels worden gedefinieerd op basis van de geintegreerde <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> en NEN2767-decompositie. Dit kan gebeuren nadat NEN en CROW de integratie voltooid hebben, naar verwachting ergens in  2027. </p>
+</section><section id="dataset-technische-inspecties"><div class="header-wrapper"><h3 id="x7-2-dataset-technische-inspecties"><bdi class="secno">7.2 </bdi>Dataset technische inspecties</h3><a class="self-link" href="#dataset-technische-inspecties" aria-label="Permalink for Section 7.2"></a></div>
+<p>CROW heeft een Ontologie Dynamische Gegevens ontwikkeld. Een deel van de dataset kan worden afgeleid uit deze ontologie. Hiervoor is een eerste uitwerking gemaakt: [Dataset technische inspectie](experimenten/cur117/CUR117 Inspectiemodel (Abstractie).mmd)</p>
+<p>Aanbeveling is om dit uit te werken in een dataset.</p>
+</section><section id="handboeken-inspecties"><div class="header-wrapper"><h3 id="x7-3-handboeken-inspecties"><bdi class="secno">7.3 </bdi>Handboeken inspecties</h3><a class="self-link" href="#handboeken-inspecties" aria-label="Permalink for Section 7.3"></a></div>
+<p>De handboeken inspecties geven een verdieping waarbij per materiaalsoort een lijst kan worden gegeven van relevante schadebeelden en bijbehorende herstelmaatregelen. De volgende stappen worden voorgesteld in de uitwerking: </p>
+<ol>
+<li><b>Dataficeren handboeken</b>: Schadebeelden en maatregelen als termen en definities. Advies is hierbij om deze handboeken eerst te "dataficeren" zodat deze als termen en definities beschrikbaar zijn, en met de genoemde maatregel ook de bijbehorende teksten gevonden kunnen worden bij gebruik. </li>
+<li><b>Publiceren gegevenswoordenboek CUR117</b>. Daarna kunnen de schadebeelden en maatregelen gepubliceerd worden in een gegevenswoordenboek, waarnaar vanuit de dataset verwezen kan worden. </li>
+<li><b>Bron-onafhankelijke dataset</b>De dataset technische inspecties kan voor de schadebeelden en maatregelen putten uit verschillende bronnen; advies is om geen van deze bronnen of waardelijsten als verplicht aan te wijzen, maar een vrij tekstveld te maken waarin een term wordt ingevuld, en daarnaasrt een referentie naar een van deze bronnen te verplichten. Hiermee is het risico dat de inspectiedatasets zelfbedachte termen en definities hanteren kleiner. Ook wordt hiermee voorkomen dat de auteurrsrechtelijk beschermde lijsten uit bijvoorbeeld de NEN2767 gepubliceerd moeten worden om gebruik in datasets mogelijk te maken.</li>
+</ol>
+</section><section id="gerelateerde-crow-publicaties"><div class="header-wrapper"><h3 id="x7-4-gerelateerde-crow-publicaties"><bdi class="secno">7.4 </bdi>Gerelateerde CROW publicaties</h3><a class="self-link" href="#gerelateerde-crow-publicaties" aria-label="Permalink for Section 7.4"></a></div>
+<p>Diverse gerelateerde CROW-publicaties kunnen input leveren voor de datasets:
+4. Publiceer een gegevenswoordenboek met de besteksposten uit de RAW, en onderzoek of deze overen komen met de maatregelen uit de inspectiehandboeken. Eventueel moeten deze geharmonieerd worden om te zorgen dat vanuit de meerjarenplanning input geleverd kan worden voor besteksposten voor uitvoering van werkzaamheden. 
+5. Publiceer een gegevenswoordenboek met verkeersmaatregelen uit de CROW-publicatie Werk in Uitvoering
+6. Publiceer een gegevenswoordenboek met de milieumaatregelen uit de CROW-publicatie Werken in de met verontreinigde bodem. </p>
+</section><section id="werk-samen-met-softwareleveranciers"><div class="header-wrapper"><h3 id="x7-5-werk-samen-met-softwareleveranciers"><bdi class="secno">7.5 </bdi>Werk samen met softwareleveranciers</h3><a class="self-link" href="#werk-samen-met-softwareleveranciers" aria-label="Permalink for Section 7.5"></a></div>
+<p>Om de informatie uit inspecties goed te kunnen opstellen en verwerken zijn goede apps nodig. Twee soorten softwareleveranciers spelen een rol; </p>
+<ol>
+<li>Leveranciers van assetinformatiesystemen en beheersystemen. Deze moeten de geleverde datasets kunnen verwerken en opslaan bij de objectne.</li>
+<li>Leveranciers van inspectie-apps die een inspecteur ondersteunen om direct buiten waarnemingen te kunnen vastleggen met foto's, schadebeelden, aantallen en hoeveelheden.</li>
+</ol>
+</section></section>
+  <section data-format="markdown" id="definities"><div class="header-wrapper"><h2 id="x8-definities"><bdi class="secno">8. </bdi>Definities</h2><a class="self-link" href="#definities" aria-label="Permalink for Section 8."></a></div>
+<dl data-sort=""><dt><dfn data-lt="Asseteigenaar|Asseteigenaren" id="dfn-asseteigenaar" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Asseteigenaar</dfn></dt>
+<dd>Definitie uit het Standaard Rollenmodel: Een asseteigenaar in de gebouwde omgeving is de persoon of entiteit die verantwoordelijk is voor het strategisch beheer van assets, zoals gebouwen, infrastructuur, en andere fysieke objecten. De asseteigenaar stelt de doelen en kaders vast voor het beheer en onderhoud van deze assets. De rol van de asseteigenaar is cruciaal omdat deze op strategisch niveau bepaalt wat er nodig is om de assets in optimale staat te houden. Dit omvat het maken van beslissingen over nieuwbouw, vervanging, en onderhoud, evenals het vaststellen van de functionele eisen waaraan de assets moeten voldoen.</dd>
+
+<dt><dfn data-lt="Beheerder" id="dfn-beheerder" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Beheerder</dfn></dt>
+<dd>Definitie uit het Standaard Rollenmodel:Een beheerder in de context van de gebouwde omgeving is verantwoordelijk voor het beheer en de optimalisatie van een gebouw of infrastructuur. Dit kan variëren van het beheer van technische installaties tot het coördineren van facilitaire diensten.</dd>
+
+<dt><dfn data-lt="Dataspecificatie" data-plurals="dataspecificaties" id="dfn-dataspecificatie" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Dataspecificatie</dfn></dt>
+<dd>
+Een nauwkeurig afgebakende verzameling gegevens die essentieel zijn voor een specifiek proces, programma of beleidsvraag. De gegevens worden gespecificeerd op basis van een datastandaard.
+</dd>
+
+<dt><dfn data-lt="Decompositie|Samenstelling" id="dfn-decompositie" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Decompositie</dfn></dt>
+<dd>
+Een decompositie is de samenstelling van een object, in technische termen: een bouwdeel heeft een "partOf" relatie naar het civiele kunstwerk.
+</dd>
+
+<dt><dfn data-lt="IMBOR|Informatiemodel Beheer Openbare Ruimte" id="dfn-imbor" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn"><abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr></dfn></dt>
+  <dd>
+    Het <abbr title="Informatiemodel Beheer Openbare Ruimte">IMBOR</abbr> beschrijft de objecttypen die voorkomen in de openbare ruimte en de vaste objectgegevens die nodig zijn voor het beheer hiervan. 
+    Zie ook <a href="https://www.crow.nl/thema-s/openbare-ruimte/imbor" target="_blank">deze website</a> en <a href="https://imbor-viewer.apps.crow.nl/" target="_blank">deze viewer</a>.
+  </dd>
+
+<dt><dfn data-lt="Levensduurkosten" id="dfn-levensduurkosten" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Levensduurkosten</dfn></dt>
+  <dd>
+    Levensduurkosten zijn alle kosten die gedurende de gehele levenscyclus van een civiel kunstwerk worden gemaakt, vanaf ontwerp en aanleg tot en met beheer, onderhoud, vervanging en sloop. In de beoordeling van civiele kunstwerken vormen levensduurkosten een essentieel criterium om investeringen af te wegen tegen prestaties en risico’s. Door kosten integraal te benaderen (Total Cost of Ownership) kan een optimale balans worden gevonden tussen functionaliteit, duurzaamheid en financiële efficiëntie.
+  </dd>
+
+<dt><dfn data-lt="Maatregelen" id="dfn-maatregelen" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Maatregelen</dfn></dt>
+<dd>
+  Geplande acties gericht op het instandhouden of ontwikkelen van de functionaliteit van infrastructuurobjecten, zoals civiele kunstwerken. 
+</dd>
+
+<dt><dfn data-lt="Meerjarenonderhoudsplan|Meerjarenonderhoudsplanning" id="dfn-meerjarenonderhoudsplan" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Meerjarenonderhoudsplan</dfn></dt>
+  <dd>
+Een Meerjarenonderhoudsplan is een strategisch document waarin het verwachte onderhoud aan een object (zoals een brug, kade, gebouw of rioolstelsel) voor een langere periode — meestal 10 tot 50 jaar — wordt gepland en begroot. Het plan bevat een overzicht van te verwachten onderhoudsactiviteiten per jaar, de bijbehorende kosten, de timing van vervangingen, inspecties en renovaties en de relatie met prestatie-eisen of servicelevels.
+</dd>
+
+<dt><dfn data-lt="NLCS|Nederlandse CAD standaard" id="dfn-nlcs" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn"><abbr title="Nederlandse CAD Standaard">NLCS</abbr></dfn></dt>
+  <dd>
+    De <abbr title="Nederlandse CAD Standaard">NLCS</abbr> is een 2D-tekenstandaard voor de openbare ruimte en infrastructuur. Deze open standaard bevat afspraken voor het omgaan met metadata, digitaal tekenen, het uiterlijk van de tekening en de coderingssystematiek en lagenstructuur van tekenwerk.
+    Zie ook <a href="https://www.digigo.nu/standaarden/nlcs/" target="_blank">deze website</a>.
+  </dd>
+
+<dt><dfn data-lt="Restlevensduur" id="dfn-restlevensduur" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Restlevensduur</dfn></dt>
+<dd>
+Verwachte periode waarin een object nog functioneel kan blijven voordat ontmanteling noodzakelijk wordt.
+</dd>
+
+<dt><dfn data-lt="Risico's" id="dfn-risico-s" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Risico's</dfn></dt>
+  <dd>
+    Binnen de beoordeling van civiele kunstwerken zijn risico’s de kans dat een gebrek, schade of functieverlies zich voordoet in combinatie met de mogelijke gevolgen daarvan voor veiligheid, functionaliteit, beschikbaarheid, milieu of kosten. Risicoanalyse maakt het mogelijk om op gestructureerde wijze prioriteiten te stellen in inspectie, onderhoud en vervanging. Typische risicofactoren zijn materiaalveroudering, overbelasting, gebrekkig onderhoud en externe invloeden zoals verkeer of weersomstandigheden.
+  </dd><dt><dfn data-lt="Vervangingswaarde" id="dfn-vervangingswaarde" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Vervangingswaarde</dfn></dt>
+<dd>
+De kosten die gepaard gaan met het vervangen van een object. De vervangingswaarde wordt berekend op basis van de fysieke kenmerken van het object, bijvoorbeeld het aantal meters, vierkante meters of kubieke meters, en kostenkengetallen voor het object. 
+</dd>
+
+</dl></section>
+  <section id="index" class="appendix"><div class="header-wrapper"><h2 id="a-index"><bdi class="secno">A. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix A."></a></div><section id="index-defined-here"><div class="header-wrapper"><h3 id="a-1-termen-gedefinieerd-door-deze-specificatie"><bdi class="secno">A.1 </bdi>Termen gedefinieerd door deze specificatie</h3><a class="self-link" href="#index-defined-here" aria-label="Permalink for Appendix A.1"></a></div>
+    
+    <ul class="index">
+    <li>
+      <a class="index-term" href="#dfn-asseteigenaar">Asseteigenaar</a> 
+    <span class="print-only">§8.</span></li><li>
+      <a class="index-term" href="#dfn-beheerder">Beheerder</a> 
+    <span class="print-only">§8.</span></li><li>
+      <a class="index-term" href="#dfn-dataspecificatie">Dataspecificatie</a> 
+    <span class="print-only">§8.</span></li><li>
+      <a class="index-term" href="#dfn-decompositie">Decompositie</a> 
+    <span class="print-only">§8.</span></li><li>
+      <a class="index-term" href="#dfn-imbor">IMBOR</a> 
+    <span class="print-only">§8.</span></li><li>
+      <a class="index-term" href="#dfn-levensduurkosten">Levensduurkosten</a> 
+    <span class="print-only">§8.</span></li><li>
+      <a class="index-term" href="#dfn-maatregelen">Maatregelen</a> 
+    <span class="print-only">§8.</span></li><li>
+      <a class="index-term" href="#dfn-meerjarenonderhoudsplan">Meerjarenonderhoudsplan</a> 
+    <span class="print-only">§8.</span></li><li>
+      <a class="index-term" href="#dfn-nlcs">NLCS</a> 
+    <span class="print-only">§8.</span></li><li>
+      <a class="index-term" href="#dfn-restlevensduur">Restlevensduur</a> 
+    <span class="print-only">§8.</span></li><li>
+      <a class="index-term" href="#dfn-risico-s">Risico's</a> 
+    <span class="print-only">§8.</span></li><li>
+      <a class="index-term" href="#dfn-vervangingswaarde">Vervangingswaarde</a> 
+    <span class="print-only">§8.</span></li>
+  </ul>
+  </section><section id="index-defined-elsewhere"><div class="header-wrapper"><h3 id="a-2-termen-gedefinieerd-door-referentie"><bdi class="secno">A.2 </bdi>Termen gedefinieerd door referentie</h3><a class="self-link" href="#index-defined-elsewhere" aria-label="Permalink for Appendix A.2"></a></div>
+    
+    <ul class="index">
+    
+  </ul>
+  </section></section>
+
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+
+<script id="annotation-service-runtime">(() => {
+// @ts-check
+const SETTING_KEY = "annotation-service-hypothesis";
+const SETTING_VALUE_ALLOWED = "allowed";
+const hClientDefault = {
+  openSidebar: false,
+  showHighlights: true,
+  theme: "classic",
+  branding: {
+    accentColor: "rgb(0, 157, 224)",
+    appBackgroundColor: "white",
+    ctaBackgroundColor: "rgb(255, 110, 26)",
+    ctaTextColor: "white",
+    selectionFontFamily: "'Museo Sans', Museo, Helvetica, Arial, sans serif",
+    annotationFontFamily: "'Museo Sans', Museo, Helvetica, Arial, sans serif",
+  },
+};
+
+if (document.respec) {
+  document.respec.ready.then(render);
+} else {
+  render();
+}
+
+/** Render the placeholder (Load Service Button) or annotation info (# annotations, Show Annotation Button). */
+function render() {
+  if (localStorage.getItem(SETTING_KEY) == SETTING_VALUE_ALLOWED) {
+    renderAnnotationServiceInfo();
+  } else {
+    renderPlaceholder();
+  }
+}
+
+/** Render Load Service Button, with privacy info. */
+function renderPlaceholder() {
+  localStorage.removeItem(SETTING_KEY);
+
+  /** @type {HTMLElement} */
+  const placeholder = document.querySelector("#annotation-service-placeholder");
+  placeholder.hidden = false;
+
+  const listener = loadButtonListener();
+  document
+    .querySelector("[data-load-annotation-service]")
+    .addEventListener("keydown", listener);
+  document
+    .querySelector("[data-load-annotation-service]")
+    .addEventListener("click", listener);
+
+  /** @type {HTMLElement} */
+  const serviceInfo = document.querySelector("#annotation-service-loaded");
+  serviceInfo.hidden = true;
+}
+
+function loadButtonListener() {
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLButtonElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    target.disabled = true;
+    localStorage.setItem(SETTING_KEY, SETTING_VALUE_ALLOWED);
+    renderAnnotationServiceInfo();
+  };
+}
+
+function unloadButtonListener() {
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLButtonElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    target.disabled = true;
+    localStorage.removeItem(SETTING_KEY);
+    removeHScript();
+  };
+}
+
+function renderAnnotationServiceInfo() {
+  addHConfig(document);
+  addHScript(document);
+}
+
+/**
+ *
+ * @param {Document} doc
+ * @param {*} conf
+ */
+function addHScript(doc, conf) {
+  const script = doc.createElement("script");
+  script.src = "https://hypothes.is/embed.js";
+  script.async = true;
+  doc.body.appendChild(script);
+
+  script.addEventListener("load", event => {
+    /** @type {HTMLElement} */
+    const placeholder = document.querySelector(
+      "#annotation-service-placeholder"
+    );
+    placeholder.hidden = true;
+
+    /** @type {HTMLElement} */
+    const serviceInfo = document.querySelector("#annotation-service-loaded");
+    serviceInfo.hidden = false;
+
+    const unloadListener = unloadButtonListener();
+    document
+      .querySelector("[data-unload-annotation-service]")
+      .addEventListener("keydown", unloadListener);
+    document
+      .querySelector("[data-unload-annotation-service]")
+      .addEventListener("click", unloadListener);
+  });
+}
+
+/**
+ * Retract Hypothesis permission.
+ */
+function removeHScript() {
+  // Deleting the hypothesis-script, does not undo its changes, listeners etc.
+  // Instead, reload the frame.
+  window.location.reload();
+}
+
+/**
+ *
+ * @param {Document} doc
+ * @param {*} conf
+ */
+function addHConfig(doc, conf) {
+  const script = doc.createElement("script");
+  script.className = "js-hypothesis-config";
+  script.type = "application/json";
+  script.innerText = JSON.stringify(hClientDefault);
+  doc.body.appendChild(script);
+}
+})()</script><section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-referenties"><bdi class="secno">B. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="informatieve-referenties"><div class="header-wrapper"><h3 id="b-1-informatieve-referenties"><bdi class="secno">B.1 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix B.1"></a></div>
+    
+    <dl class="bibliography"><dt id="bib-prognose-vernieuwingsopgave-2023">[prognose-vernieuwingsopgave-2023]</dt><dd>
+      <a href="https://www.tno.nl/nl/newsroom/2023/11/vernieuwing-infrastructuur-essentieel/"><cite>Vernieuwingsopgave infrastructuur: Landelijk prognoserapport 2023</cite></a>. TNO.  TNO. 2023. URL: <a href="https://www.tno.nl/nl/newsroom/2023/11/vernieuwing-infrastructuur-essentieel/">https://www.tno.nl/nl/newsroom/2023/11/vernieuwing-infrastructuur-essentieel/</a>
+    </dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-asseteigenaar" aria-label="Links in this document to definition: Asseteigenaar">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-asseteigenaar" aria-label="Permalink for definition: Asseteigenaar. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-asseteigenaar-1" title="§ 1.4 Doel">§ 1.4 Doel</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-beheerder" aria-label="Links in this document to definition: Beheerder">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-beheerder" aria-label="Permalink for definition: Beheerder. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-beheerder-1" title="§ 4.1 Inleiding">§ 4.1 Inleiding</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-dataspecificatie" aria-label="Links in this document to definition: Dataspecificatie">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-dataspecificatie" aria-label="Permalink for definition: Dataspecificatie. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-dataspecificatie-1" title="§ 1.2 Context">§ 1.2 Context</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-decompositie" aria-label="Links in this document to definition: Decompositie">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-decompositie" aria-label="Permalink for definition: Decompositie. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-decompositie-1" title="§ 1.6 Scope en leeswijzer">§ 1.6 Scope en leeswijzer</a> 
+  </li><li>
+    <a href="#ref-for-dfn-decompositie-2" title="§ 2.2 Start-dataset technische inspectie">§ 2.2 Start-dataset technische inspectie</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-imbor" aria-label="Links in this document to definition: IMBOR">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-imbor" aria-label="Permalink for definition: IMBOR. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-imbor-1" title="§ 1.2 Context">§ 1.2 Context</a> 
+  </li><li>
+    <a href="#ref-for-dfn-imbor-2" title="§ 2.2 Start-dataset technische inspectie">§ 2.2 Start-dataset technische inspectie</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-levensduurkosten" aria-label="Links in this document to definition: Levensduurkosten">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-levensduurkosten" aria-label="Permalink for definition: Levensduurkosten. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-levensduurkosten-1" title="§ 3.2 Dataset technische inspectie">§ 3.2 Dataset technische inspectie</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-maatregelen" aria-label="Links in this document to definition: Maatregelen">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-maatregelen" aria-label="Permalink for definition: Maatregelen. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-maatregelen-1" title="§ 1.6 Scope en leeswijzer">§ 1.6 Scope en leeswijzer</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-meerjarenonderhoudsplan" aria-label="Links in this document to definition: Meerjarenonderhoudsplan">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-meerjarenonderhoudsplan" aria-label="Permalink for definition: Meerjarenonderhoudsplan. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-meerjarenonderhoudsplan-1" title="§ 1.6 Scope en leeswijzer">§ 1.6 Scope en leeswijzer</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-nlcs" aria-label="Links in this document to definition: NLCS">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-nlcs" aria-label="Permalink for definition: NLCS. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-nlcs-1" title="§ 2.2 Start-dataset technische inspectie">§ 2.2 Start-dataset technische inspectie</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-restlevensduur" aria-label="Links in this document to definition: Restlevensduur">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-restlevensduur" aria-label="Permalink for definition: Restlevensduur. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-restlevensduur-1" title="§ 1.6 Scope en leeswijzer">§ 1.6 Scope en leeswijzer</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-risico-s" aria-label="Links in this document to definition: Risico's">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-risico-s" aria-label="Permalink for definition: Risico's. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-risico-s-1" title="§ 1.4 Doel">§ 1.4 Doel</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-vervangingswaarde" aria-label="Links in this document to definition: Vervangingswaarde">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-vervangingswaarde" aria-label="Permalink for definition: Vervangingswaarde. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-vervangingswaarde-1" title="§ 3.4 Geaggregeerde conditiescore maken">§ 3.4 Geaggregeerde conditiescore maken</a> 
+  </li>
+  </ul>
+    </div><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://docs.crow.nl/respec-design/fixup.js"></script></body></html>

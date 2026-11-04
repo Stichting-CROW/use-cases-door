@@ -23,7 +23,7 @@ Beschikbare use cases:
 
 [Verkenning informatiemodel civiele kunstwerken: Informatie voor de vervangings- en renovatieopgave](https://docs.crow.nl/use-cases-door/imkunstwerken)
 
-[Dataspecificaties inspecties en onderzoeken civiele kunstwerken](https://docs.crow.nl/use-cases-door/datasets-kunstwerken)
+[Dataspecificaties inspecties en onderzoeken civiele kunstwerken](https://docs.crow.nl/use-cases-door/datasets-kunstwerken) - [Reviewversie voor werkgroep nov 2026](https://docs.crow.nl/use-cases-door/consultationversions/CR-use-cases-door_datasets-kunstwerken-20261104.html) 
 
 [Dataspecificatie familiebenadering kunstwerken voor constructieve veiligheid](https://docs.crow.nl/use-cases-door/families-kunstwerken)
 
