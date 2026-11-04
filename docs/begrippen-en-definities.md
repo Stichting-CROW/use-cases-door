@@ -14,7 +14,7 @@ DigiGO maakt en beheert standaarden voor de gebouwde omgeving, waaronder de met 
 
 <dt><dfn data-lt="DSGO|Digitaal stelsel gebouwde omgeving">DSGO</dfn></dt>
 <dd>
-Het Digitaal Stelsel Gebouwde Omgeving (<abbr title="Digitaal Stelsel Gebouwde Omgeving">DSGO</abbr>) maakt een set van uniforme afspraken die zorgt voor veilige, betrouwbare en gecontroleerde toegang tot data in de gebouwde omgeving. Dit stelsel wordt ontwikkeld en beheerd door [=DigiGO=] Doel: Met deze uniforme afspraken maken alle ketenpartners die actief zijn in de verschillende fases van de levenscyclus van een bouwwerk makkelijk en veilig gebruik van reeds beschikbare data. Waardoor zij in staat zijn om hun onderlinge – digitale - samenwerking te verbeteren, en efficiënter en duurzamer te werken.</dd>
+Het Digitaal Stelsel Gebouwde Omgeving (<abbr title="Digitaal Stelsel Gebouwde Omgeving">DSGO</abbr>) maakt een set van uniforme afspraken die zorgt voor veilige, betrouwbare en gecontroleerde toegang tot data in de gebouwde omgeving. Dit stelsel wordt ontwikkeld en beheerd door [=DigiGO=]. Doel: Met deze uniforme afspraken maken alle ketenpartners die actief zijn in de verschillende fases van de levenscyclus van een bouwwerk makkelijk en veilig gebruik van reeds beschikbare data. Waardoor zij in staat zijn om hun onderlinge – digitale - samenwerking te verbeteren, en efficiënter en duurzamer te werken.</dd>
 
 <dt><dfn data-lt="Bestuursakkoord digitale ketensamenwerking in de gebouwde omgeving|Bestuursakkoord">Bestuursakkoord digitale ketensamenwerking in de gebouwde omgeving</dfn></dt>
 <dd>
@@ -61,7 +61,7 @@ Het <abbr title="Nationaal Programma Bodem, Ondergrond en Grondwater">BOG</abbr>
 
  <dt><dfn data-lt="Assets|Fysieke assets">Fysieke assets</dfn></dt>
   <dd>
-    Gegevens over de ruimtelijke ordening en objecten, zoals civieltechnische infrastructuur (kabels, leidingen/netwerken), archeologie, bodemenergiesystemen (WKO) en ondergrondse bouwwerken. Gegevens over de ruimtelijke ordening en objecten, zoals civieltechnische infrastructuur (kabels, leidingen/netwerken), archeologie, bodemenergiesystemen (WKO) en ondergrondse bouwwerken. 
+    Gegevens over de ruimtelijke ordening en objecten, zoals civieltechnische infrastructuur (kabels, leidingen/netwerken), archeologie, bodemenergiesystemen (WKO) en ondergrondse bouwwerken. 
   </dd>
 
    <dt><dfn data-lt="Federatief delen van assetinformatie">Federatief delen van assetinformatie</dfn></dt>
@@ -78,7 +78,7 @@ Parametrisch ontwerpen is een verzamelterm voor een aantal zaken: In een ontwerp
 
 <dt><dfn data-lt="datagedreven ontwerpen">datagedreven ontwerpen</dfn></dt>
 <dd>
-Datagedreven ontwerpen is een parapluterm voor het gebruiken van assetinformatie, sensordata en omgevingsinformatie om een ontwerp te maken en in te passen in een bestaande omgeving; ook kunnen bij datagedreven ontwerpen ontwerpstandaarden en beleidsdoelen zijn vertaal in rekenregels waarmee parameters worden ingevuld of getoetst. Parametrisch ontwerpen is daarmee een deel van datagedreven ontwerpen. 
+Datagedreven ontwerpen is een parapluterm voor het gebruiken van assetinformatie, sensordata en omgevingsinformatie om een ontwerp te maken en in te passen in een bestaande omgeving; ook kunnen bij datagedreven ontwerpen ontwerpstandaarden en beleidsdoelen zijn vertaald in rekenregels waarmee parameters worden ingevuld of getoetst. Parametrisch ontwerpen is daarmee een deel van datagedreven ontwerpen. 
 </dd>
 
 
@@ -91,7 +91,7 @@ Platform van samenwerkende overheden, ontstaan uit de CityDeal Openbare Ruimte.
 
 <dt><dfn data-lt="Rekenregels">Rekenregels</dfn></dt>
 <dd>
-Computerleesbare specificaties waarmee gevalideerd kan worden of een ontwerp voldoet aan beleidsdoelen, bijvoorbeeld de 3-30-300 regel voor groen of voorkomen van overstromingen, en of een ontwerp voldoet normen en standaarden vanuit wetgeving, NEN, Stichting CROW, Norminstituut Bomen enzovoorts, bijvoorbeeld bufferruimtes tussen kabels, veiligheidsnormen en groeiplaatsen voor bomen. 
+Computerleesbare specificaties waarmee gevalideerd kan worden of een ontwerp voldoet aan beleidsdoelen, bijvoorbeeld de 3-30-300 regel voor groen of voorkomen van overstromingen, en of een ontwerp voldoet aan normen en standaarden vanuit wetgeving, NEN, Stichting CROW, Norminstituut Bomen enzovoorts, bijvoorbeeld bufferruimtes tussen kabels, veiligheidsnormen en groeiplaatsen voor bomen. 
 </dd>
 
 <dt><dfn data-lt="parametrische symbolen en objecten">parametrische symbolen en objecten</dfn></dt>
@@ -114,7 +114,7 @@ De use case beschrijft **wie** betrokken is bij de informatie-uitwisseling (acto
 <dt><dfn data-lt="DOOR|DOOR-programma">DOOR</dfn></dt>
 <dd>
 De CORE gemeenten, Stichting Rioned en CROW hebben de handen ineen geslagen om voor de sector assetmanagement ​te komen tot een gemeenschappelijke informatiebasis met het volgende doel: ​In 2030 beschikken Assetmanagers en hun (keten)partners in de openbare ruimte en infrastructuur over een samenhangend stelsel objectstandaarden in de leefomgeving om de data over hun beheerde assets efficiënt op orde te houden en uit te wisselen.​
-<abbr title="Dataharmonisatie Objecten in de Openbare Ruimte">DOOR</abbr> richt zich op de ontwikkeling van de ontbrekende standaards en uitwisselingsprotocollen, zodat een samenhangend stelsel ontstaat.  Zie ook <a href="https://www.crow.nl/Onderwerpen/Assetmanagement-en-beheer-openbare-ruimte/Data-en-informatie/programmadoor/" target="_blank">deze website</a>
+<abbr title="Dataharmonisatie Objecten in de Openbare Ruimte">DOOR</abbr> richt zich op de ontwikkeling van de ontbrekende standaarden en uitwisselingsprotocollen, zodat een samenhangend stelsel ontstaat.  Zie ook <a href="https://www.crow.nl/Onderwerpen/Assetmanagement-en-beheer-openbare-ruimte/Data-en-informatie/programmadoor/" target="_blank">deze website</a>
 </dd>
 
 <dt><dfn data-lt="PIM">PIM</dfn></dt>
@@ -198,7 +198,7 @@ Het Informatiemodel ontwikkeld voor objectgerichte geografische informatie in de
 
   <dt><dfn data-lt="Informatieleveringsspecificatie">Informatieleveringsspecificatie</dfn></dt>
   <dd>
-  Een <abbr title="informatieleveringsspecificatie">ILS</abbr> is een contractdocument voor projecten bedoeld om om de informatiecyclus voor assetmanagement goed te laten verlopen. Het bundelt de informatiebehoefte van de asset- en informatiemanagers en de vereisten aan welke deze informatie moet voldoen.  Een ILS bestaat typisch uit een eisenset met bijlagen die betrekking hebben op topografie, areaalgegevens, tekeningen en documenten en waarin wordt beschreven: Welke data geleverd moeten worden; Wanneer deze data geleverd moeten worden; In welke vorm de data geleverd moeten worden; Aan welke standaarden de informatie moet voldoen.  
+  Een <abbr title="informatieleveringsspecificatie">ILS</abbr> is een contractdocument voor projecten bedoeld om de informatiecyclus voor assetmanagement goed te laten verlopen. Het bundelt de informatiebehoefte van de asset- en informatiemanagers en de vereisten aan welke deze informatie moet voldoen.  Een ILS bestaat typisch uit een eisenset met bijlagen die betrekking hebben op topografie, areaalgegevens, tekeningen en documenten en waarin wordt beschreven: Welke data geleverd moeten worden; Wanneer deze data geleverd moeten worden; In welke vorm de data geleverd moeten worden; Aan welke standaarden de informatie moet voldoen.  
   </dd>
 
   
@@ -211,13 +211,13 @@ Het Informatiemodel ontwikkeld voor objectgerichte geografische informatie in de
   </dd>
 
 <dt><dfn data-lt="Minimale dataset">Minimale dataset</dfn></dt>
-  <dd>Een minimale dataset is de kleinst mogelijk verzameling gegevens (dataspecificatie) die nodig is om de gegevens van een bepaald proces of informatieproduct vast te leggen. 
+  <dd>Een minimale dataset is de kleinst mogelijke verzameling gegevens (dataspecificatie) die nodig is om de gegevens van een bepaald proces of informatieproduct vast te leggen. 
     Zie ook <a href="https://begrippen.crow.nl/ombk/nl/page/?uri=https%3A%2F%2Fdata.crow.nl%2Ftech-term%2Fterm%2FTT004" target="_blank">begrippen.crow.nl</a>.
   </dd>
 
 
 <dt><dfn data-lt="GEBORA Bouwwerklevenscyclus">GEBORA Bouwwerklevenscyclus</dfn></dt>
-<dd>De GEBORA bouwwerklevenscyclus beschrijft de opeenvolgende fasen die een bouwwerk doorloopt vanaf het eerste initiatief tot en met de ontmanteling. Deze fasen zijn: ontwikkeling, onderhoud en ontmanteling. Elke van deze fasen bestaat uit vier informatiegebaseerde stappen (functioneel gepland, technisch gepland, technisch gerealiseerd, functioneel gerealiseerd), en herhaalt zich iteratief voor elk fysiek object in de gebouwde omgeving. Zie ook <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">dit document</a>. </dd>
+<dd>De GEBORA bouwwerklevenscyclus beschrijft de opeenvolgende fasen die een bouwwerk doorloopt vanaf het eerste initiatief tot en met de ontmanteling. Deze fasen zijn: ontwikkeling, onderhoud en ontmanteling. Elk van deze fasen bestaat uit vier informatiegebaseerde stappen (functioneel gepland, technisch gepland, technisch gerealiseerd, functioneel gerealiseerd), en herhaalt zich iteratief voor elk fysiek object in de gebouwde omgeving. Zie ook <a href="https://www.digigo.nu/gebora-bouwwerk-levenscyclus/" target="_blank">dit document</a>. </dd>
 
 
 <dt><dfn data-lt="Functioneel gepland|Functioneel geplande">T1 Functioneel gepland</dfn></dt>
@@ -243,7 +243,7 @@ Het Informatiemodel ontwikkeld voor objectgerichte geografische informatie in de
 
 <dt><dfn data-lt="GEBORA">GEBORA</dfn></dt>
   <dd>
-    <abbr title="GEbouwen en BORgring van Rollen en Aansprakelijkheden">GEBORA</abbr> is een standaard rollenmodel voor de gebouwde omgeving dat verantwoordelijkheden en bevoegdheden structureert binnen assetmanagementprocessen. Het model helpt bij het eenduidig vastleggen van rollen, zoals asseteigenaar, beheerder en opdrachtnemer, zodat samenwerking, besluitvorming en informatie-uitwisseling efficiënt en transparant verlopen.
+    <abbr title="GEbouwen en BORging van Rollen en Aansprakelijkheden">GEBORA</abbr> is een standaard rollenmodel voor de gebouwde omgeving dat verantwoordelijkheden en bevoegdheden structureert binnen assetmanagementprocessen. Het model helpt bij het eenduidig vastleggen van rollen, zoals asseteigenaar, beheerder en opdrachtnemer, zodat samenwerking, besluitvorming en informatie-uitwisseling efficiënt en transparant verlopen.
   </dd>
 
 
@@ -254,7 +254,7 @@ Het Informatiemodel ontwikkeld voor objectgerichte geografische informatie in de
 
 
 <dt><dfn data-lt="Asseteigenaar|Asseteigenaren">Asseteigenaar</dfn></dt>
-<dd>Definitie uit het <a>Standaard Rollenmodel</a>: Een asseteigenaar in de gebouwde omgeving is de persoon of entiteit die verantwoordelijk is voor het strategisch beheer van assets, zoals gebouwen, infrastructuur, en andere fysieke objecten. De asseteigenaar stelt de doelen en kaders vast voor het beheer en onderhoud van deze assets. De rol van de asseteigenaar is cruciaal omdat deze op strategisch niveau bepaalt wat er nodig is om de assets in optimale staat te houden. Ditomvat het maken van beslissingen over nieuwbouw, vervanging, en onderhoud, evenals het vaststellen van de functionele eisen waaraan de assets moetenvoldoen.</dd>
+<dd>Definitie uit het <a>Standaard Rollenmodel</a>: Een asseteigenaar in de gebouwde omgeving is de persoon of entiteit die verantwoordelijk is voor het strategisch beheer van assets, zoals gebouwen, infrastructuur, en andere fysieke objecten. De asseteigenaar stelt de doelen en kaders vast voor het beheer en onderhoud van deze assets. De rol van de asseteigenaar is cruciaal omdat deze op strategisch niveau bepaalt wat er nodig is om de assets in optimale staat te houden. Dit omvat het maken van beslissingen over nieuwbouw, vervanging, en onderhoud, evenals het vaststellen van de functionele eisen waaraan de assets moeten voldoen.</dd>
 
 <dt><dfn data-lt="Assetmanager">Assetmanager</dfn></dt>
 <dd>Definitie uit het <a>Standaard Rollenmodel</a>: Een assetmanager in de gebouwde omgeving is verantwoordelijk voor het beheer en de optimalisatie van fysieke assets zoals gebouwen, infrastructuur en andere faciliteiten. De assetmanager zorgt ervoor dat deze assets veilig, functioneel en kosteneffectief blijven gedurende hun levenscyclus.</dd>
@@ -283,7 +283,7 @@ Het Informatiemodel ontwikkeld voor objectgerichte geografische informatie in de
 <dd>Definitie uit het <a>Standaard Rollenmodel</a>: Een leverancier in de context van de gebouwde omgeving is een bedrijf of persoon die bouwmaterialen, apparatuur, en andere benodigdheden levert aan bouwprojecten. Leveranciers spelen een cruciale rol in de bouwsector door ervoor te zorgen dat de benodigde materialen en producten op tijd en in goede staat beschikbaar zijn voor de uitvoering van bouwprojecten</dd>
 
 <dt><dfn data-lt="Registrerende instantie">Registrerende instantie</dfn></dt>
-<dd>Definitie uit het <a>Standaard Rollenmodel</a>: Een registrerende instantie in de context van de gebouwde omgeving is een organisatie die verantwoordelijk is voor het bijhoudenen beheren van officiële registraties van onroerend goed, eigendomsrechten, en andere relevante gegevens. Deze instanties zorgen ervoor dat informatieover eigendom, gebruik en beperkingen van vastgoed nauwkeurig en up-to-date is.</dd>
+<dd>Definitie uit het <a>Standaard Rollenmodel</a>: Een registrerende instantie in de context van de gebouwde omgeving is een organisatie die verantwoordelijk is voor het bijhouden en beheren van officiële registraties van onroerend goed, eigendomsrechten, en andere relevante gegevens. Deze instanties zorgen ervoor dat informatie over eigendom, gebruik en beperkingen van vastgoed nauwkeurig en up-to-date is.</dd>
 
 <dt><dfn data-lt="Kwaliteitsborger">Kwaliteitsborger</dfn></dt>
 <dd>Definitie uit het <a>Standaard Rollenmodel</a>: Onder de Wet Kwaliteitsborging voor het Bouwen (WKB) is een kwaliteitsborger een onafhankelijke partij die toeziet op de kwaliteit van bouwprojecten. De kwaliteitsborger controleert of de bouwtechnische aspecten van een project voldoen aan de gestelde regels en voorschriften, zoals brandveiligheid, fundering, en energiezuinigheid. Deze controle vindt plaats zowel voor als tijdens de bouw, en de kwaliteitsborger geeft uiteindelijk de finale goedkeuring voordat het project gereedmelding krijgt.</dd>
@@ -458,7 +458,7 @@ Informatie die bij afronding van een project wordt overhandigd, zoals garanties,
 </dd>
 
 
-<dt><dfn data-lt="Produkteigenschappen">Produkteigenschappen</dfn></dt>
+<dt><dfn data-lt="Producteigenschappen">Producteigenschappen</dfn></dt>
 <dd>
 Technische kenmerken van gebruikte producten of componenten, zoals afmetingen, duurzaamheid, prestatie of onderhoudsvereisten.
 </dd>
@@ -574,7 +574,7 @@ De kosten die gepaard gaan met het vervangen van een object. De vervangingswaard
 
 <dt><dfn data-lt="kostenkengetal|kostenkengetallen">kostenkengetal</dfn></dt>
 <dd>
-De gemiddelde kosten voor de vervanging van een constuctiedeel van een civiel kunstwerk. </dd>
+De gemiddelde kosten voor de vervanging van een constructiedeel van een civiel kunstwerk. </dd>
 
  
 
@@ -665,32 +665,32 @@ Zie ook <a href="https://essit.nl/over-assetmanagement/wat-is-het-iampro-model-v
 
 <dt><dfn data-lt="Beleid en strategie">Beleid en strategie</dfn></dt>
 <dd>
-De eerste processtap binnen het <a>iAMPro model</a>iAMPro model waarin strategische doelen worden vastgesteld en vertaald naar uitgangspunten voor assetmanagement. Dit wordt vastgelegd in het Strategisch Asset Management Plan (SAMP).
+De eerste processtap binnen het <a>iAMPro model</a> waarin strategische doelen worden vastgesteld en vertaald naar uitgangspunten voor assetmanagement. Dit wordt vastgelegd in het Strategisch Asset Management Plan (SAMP).
 </dd>
 
 <dt><dfn data-lt="Beheren en Programmeren">Beheren en Programmeren</dfn></dt>
 <dd>
-De tweede processtap binnen het <a>iAMPro model</a>iAMPro model waarin meerjaren-maatregelenprogramma's worden opgesteld voor assets. De maatregelen kunnen eenmalig zijn (bijvoorbeeld een vervanging) of met regelmaat terugkeren (bijvoorbeeld een onderhoudsbeurt). 
+De tweede processtap binnen het <a>iAMPro model</a> waarin meerjaren-maatregelenprogramma's worden opgesteld voor assets. De maatregelen kunnen eenmalig zijn (bijvoorbeeld een vervanging) of met regelmaat terugkeren (bijvoorbeeld een onderhoudsbeurt). 
 </dd>
 
 <dt><dfn data-lt="Plannen en Voorbereiden">Plannen en Voorbereiden</dfn></dt>
 <dd>
-De derde processtap binnen het <a>iAMPro model</a>iAMPro model waarin nieuwbouwplannen, herstructureringen en instandhoudingsmaatregelen worden uitgewerkt tot ontwerpoplossingen en bestekken. Daarbij horen ook planningen. Verder komen in deze stap aan de orde het opstellen van specificaties, het uitwerken van ontwerpen, het voorbereiden van contracten en het maken van een keuze tussen zelf doen en uitbesteden. Het resultaat bestaat uit contracten en inrichtingsplannen (ontwerpen).
+De derde processtap binnen het <a>iAMPro model</a> waarin nieuwbouwplannen, herstructureringen en instandhoudingsmaatregelen worden uitgewerkt tot ontwerpoplossingen en bestekken. Daarbij horen ook planningen. Verder komen in deze stap aan de orde het opstellen van specificaties, het uitwerken van ontwerpen, het voorbereiden van contracten en het maken van een keuze tussen zelf doen en uitbesteden. Het resultaat bestaat uit contracten en inrichtingsplannen (ontwerpen).
 </dd>
 
 <dt><dfn data-lt="Bouwen en Onderhouden">Bouwen en Onderhouden</dfn></dt>
 <dd>
-De vierde processtap binnen het <a>iAMPro model</a>iAMPro model waarin de fysieke uitvoering plaatsvindt van werkzaamheden die in eerdere stappen zijn voorbereid. Denk aan het bouwen van nieuwe objecten, uitvoeren van groot onderhoud of het aanpassen van bestaande assets. In deze stap is ook toezicht inbegrepen, waarbij gecontroleerd wordt of de uitvoering voldoet aan specificaties en afspraken.
+De vierde processtap binnen het <a>iAMPro model</a> waarin de fysieke uitvoering plaatsvindt van werkzaamheden die in eerdere stappen zijn voorbereid. Denk aan het bouwen van nieuwe objecten, uitvoeren van groot onderhoud of het aanpassen van bestaande assets. In deze stap is ook toezicht inbegrepen, waarbij gecontroleerd wordt of de uitvoering voldoet aan specificaties en afspraken.
 </dd>
 
 <dt><dfn data-lt="Monitoren en analyseren">Monitoren en analyseren</dfn></dt>
 <dd>
-De vijfde processtap binnen het <a>iAMPro model</a>iAMPro model waarin de prestaties van het assetsysteem worden gemonitord en de resultaten geanalyseerd. Hierbij wordt bekeken in hoeverre de servicelevels uit de processtap ‘Beleid en Strategie’ zijn gehaald en wat de belangrijkste oorzaken zijn van eventuele afwijkingen. De onderhoudsactiviteiten worden gemonitord aan de hand van klachten en storingen; de conditie van de assets aan de hand van uitgevoerde inspecties. 
+De vijfde processtap binnen het <a>iAMPro model</a> waarin de prestaties van het assetsysteem worden gemonitord en de resultaten geanalyseerd. Hierbij wordt bekeken in hoeverre de servicelevels uit de processtap ‘Beleid en Strategie’ zijn gehaald en wat de belangrijkste oorzaken zijn van eventuele afwijkingen. De onderhoudsactiviteiten worden gemonitord aan de hand van klachten en storingen; de conditie van de assets aan de hand van uitgevoerde inspecties. 
 </dd>
 
-<dt><dfn data-lt="Evalueren en Bijsturen">Evalueren en Bijsturenn</dfn></dt>
+<dt><dfn data-lt="Evalueren en Bijsturen">Evalueren en Bijsturen</dfn></dt>
 <dd>
-De zesde processtap binnen het <a>iAMPro model</a>iAMPro model waarin het assetmanagementproces en het functioneren van het assetsysteem worden geëvalueerd. Dit gebeurt op basis van de aanbevelingsrapportage uit de processtap ‘Monitoren en Analyseren’, waarin ook de stakeholderstevredenheid is meegenomen. </dd>
+De zesde processtap binnen het <a>iAMPro model</a> waarin het assetmanagementproces en het functioneren van het assetsysteem worden geëvalueerd. Dit gebeurt op basis van de aanbevelingsrapportage uit de processtap ‘Monitoren en Analyseren’, waarin ook de stakeholderstevredenheid is meegenomen. </dd>
 
 
   <dt><dfn data-lt="Meerjarenonderhoudsplan|Meerjarenonderhoudsplanning">Meerjarenonderhoudsplan</dfn></dt>
