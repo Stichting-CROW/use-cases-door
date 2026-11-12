@@ -1,0 +1,225 @@
+@prefix imbor:              <https://data.crow.nl/imbor/def/> .
+@prefix imbor-domeinwaarde: <https://data.crow.nl/imbor/id/domeinwaarden/> .
+@prefix nen2660:            <https://w3id.org/nen2660/def#> .
+@prefix nen3610:            <http://modellen.geostandaarden.nl/def/nen3610-2022#> .
+@prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix geo:                <http://www.opengis.net/ont/geosparql#> .
+@prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh:                 <http://www.w3.org/ns/shacl#> .
+@prefix owl:                <http://www.w3.org/2002/07/owl#> .
+@prefix tooiGem:            <https://identifier.overheid.nl/tooi/id/gemeente/>.
+@prefix tooiont:            <https://identifier.overheid.nl/tooi/def/ont/>.
+@prefix data:               <http://example.com/gemeente/areaaldata/id/> .
+
+
+## ============================================================
+## Ontologie declaratie
+## ============================================================
+
+data: a owl:Ontology ;
+    owl:imports <https://w3id.org/nen2660/> ;
+    owl:imports <https://data.crow.nl/imbor/def/> ;
+    owl:imports <https://data.crow.nl/imbor/id/domeinwaarden/> ;
+    .
+
+## ============================================================
+## Vaste Brug
+## ============================================================
+
+## Vaste brug
+data:vbvb1
+    a                                           imbor:6156ad75-a23c-4b5f-8095-c773cd6ebffe ;    #'Vaste brug'
+    nen2660:hasBoundary [
+        a                                       geo:Geometry ;
+        a                                       imbor:e995a2d7-b1a2-43c5-a8bc-9ef148c309e6 ;     #GM_Surface
+        geo:asWKT                               "<http://www.opengis.net/def/crs/EPSG/0/28992>POLYGON((125147 502292,125158 502287,125148 502269,125137 502274))"^^geo:wktLiteral ;
+    ] ;                                                                                          #'geometrie'
+    imbor:4e721262-e6e2-41df-bb99-0b6693e32435  imbor-domeinwaarde:01a31554-111c-4765-82cb-79f0b178eb8e ; #'status' (In gebruik)
+    nen3610:identificatie                        "vbvb1" ;                                       #'identificatie'
+    nen3610:domein                               "http://example.com/gemeente/areaaldata/"^^xsd:anyURI ; #'domein' (Voorbeeld gemeente data)
+    imbor:ee97b257-d3b8-4d0c-9a42-c07d88b36d9f  "Postbrug - stadsgracht langs Herengracht" ;     #'naam'
+    imbor:a6424f8a-080e-4f85-a160-6fa4f0848ed8  "KW_01004" ;                                     #'nummer'
+    imbor:534f07b8-9243-4848-a3d0-6ebeb321784c  "1900"^^xsd:gYear ;                              #'aanlegjaar'
+    imbor:e3e112b3-e46f-45c4-b2c9-b152e6f805a1  imbor-domeinwaarde:caf30391-b503-4d56-a0f1-b722244d9ca5 ; #'verschijningsvorm' (Plaatbrug)
+    nen2660:isDescribedBy                        data:vbvb1_m ;                                  #'is beschreven door Modaliteit-informatie'
+    nen2660:hasPart                              data:vbrd1 ;                                    #'heeft als deel Rijdek'
+    nen2660:hasPart                              data:vblh1 ;                                    #'heeft als deel Landhoofd'
+    nen2660:hasPart                              data:vblh2 ;                                    #'heeft als deel Landhoofd'
+    nen2660:hasPart                              data:vbf1  ;                                    #'heeft als deel Fundering'
+    nen2660:isConnectedTo                        data:vblm1 ;                                    #'is verbonden met Lichtmast'
+    nen2660:isConnectedTo                        data:vblm2 ;                                    #'is verbonden met Lichtmast'
+    .
+
+## Vaste brug - Modaliteit-informatie
+data:vbvb1_m
+    a                                           imbor:76c74447-0325-4276-9809-bdc7215380a1 ;   #'Modaliteit-informatie'
+    nen3610:identificatie                        "vbvb1_m " ;                                   #'identificatie'
+    nen3610:domein                               "http://example.com/gemeente/areaaldata/"^^xsd:anyURI ; #'domein' (Voorbeeld gemeente data)
+    imbor:962110b3-46ad-46b8-85c6-f40539a21ee3  imbor-domeinwaarde:941bf143-5d2d-4c41-ba1d-b5e5bb9474a0 ; #'modaliteit' (Autobus)
+    .
+
+## Vaste brug - Eigenaar
+tooiGem:gm0439                                                                                 #'Gemeente Purmerend'
+    a                                       tooiont:Gemeente ;                                  #'TOOI Gemeente'
+    nen3610:domein                          "https://identifier.overheid.nl/tooi/id/gemeente/" ;#'domein' (uit TOOI)
+    nen3610:identificatie                   "gm0599"^^xsd:string ;                              #'identificatie'
+    imbor:speelt                             data:eigvbvb1 ;                                    #'speelt Eigenaar'
+    .
+
+data:eigvbvb1 
+    a                                       imbor:7dc78de4-02e4-41c8-974f-585066e09225 ;       # Rol = Eigenaar
+    nen3610:domein                          "http://example.com/gemeente/areaaldata/" ;         #'domein' (Voorbeeld gemeente data)
+    nen3610:identificatie                   "Beheerdervbvb1"^^xsd:string ;                      #'identificatie'
+    imbor:heeftBetrekkingOp                  data:vbvb1 ;                                       #'heeft betrekking op Vaste brug'
+    .
+
+## ============================================================
+## Dek
+## ============================================================
+
+## Dek
+data:vbrd1
+    a                                           imbor:f3202a49-5227-45e2-92d0-826ce6cf5974 ;   #'Dek'
+    nen3610:identificatie                        "vbrd1" ;                                      #'identificatie'
+    nen3610:domein                               "http://example.com/gemeente/areaaldata/"^^xsd:anyURI ; #'domein' (Voorbeeld gemeente data)
+    imbor:4e721262-e6e2-41df-bb99-0b6693e32435  imbor-domeinwaarde:01a31554-111c-4765-82cb-79f0b178eb8e ; #'status' (In gebruik)
+    nen2660:consistOf                            data:vbrd1_m1 ;                                #'bestaat uit Gewapend beton'
+    .
+
+## Dek - Materiaal
+data:vbrd1_m1
+    a                                           imbor:cc9e23e8-8e47-4f71-ae1c-19ba3ffe86a7 ;   #'Gewapend beton'
+    nen3610:identificatie                        "vbrd1_m1" ;                                   #'identificatie'
+    nen3610:domein                               "http://example.com/gemeente/areaaldata/"^^xsd:anyURI ; #'domein' (Voorbeeld gemeente data)
+    imbor:ceb1b8d7-d0d2-4c79-aaf5-fd834449731b  "188.8"^^xsd:decimal ;                          #'volume' (m3)
+    .
+
+
+## ============================================================
+## Landhoofden
+## ============================================================
+
+## Landhoofd 1
+data:vblh1
+    a                                           imbor:f3202a49-5227-45e2-92d0-826ce6cf5974 ;   #'Landhoofd'
+    nen3610:identificatie                        "vblh1" ;                                      #'identificatie'
+    nen3610:domein                               "http://example.com/gemeente/areaaldata/"^^xsd:anyURI ; #'domein' (Voorbeeld gemeente data)
+    imbor:4e721262-e6e2-41df-bb99-0b6693e32435  imbor-domeinwaarde:01a31554-111c-4765-82cb-79f0b178eb8e ; #'status' (In gebruik)
+    nen2660:consistOf                            data:vblh1_m ;                                 #'bestaat uit Gewapend beton'
+    .
+
+## Landhoofd 1 - Materiaal
+data:vblh1_m1
+    a                                           imbor:cc9e23e8-8e47-4f71-ae1c-19ba3ffe86a7 ;   #'Gewapend beton'
+    nen3610:identificatie                        "vblh1_m1" ;                                   #'identificatie'
+    nen3610:domein                               "http://example.com/gemeente/areaaldata/"^^xsd:anyURI ; #'domein' (Voorbeeld gemeente data)
+    .
+
+## Landhoofd 2
+data:vblh2
+    a                                           imbor:f3202a49-5227-45e2-92d0-826ce6cf5974 ;   #'Landhoofd'
+    nen3610:identificatie                        "vblh2" ;                                      #'identificatie'
+    nen3610:domein                               "http://example.com/gemeente/areaaldata/"^^xsd:anyURI ; #'domein' (Voorbeeld gemeente data)
+    imbor:4e721262-e6e2-41df-bb99-0b6693e32435  imbor-domeinwaarde:01a31554-111c-4765-82cb-79f0b178eb8e ; #'status' (In gebruik)
+    nen2660:consistOf                            imbor:cc9e23e8-8e47-4f71-ae1c-19ba3ffe86a7 ;   #'bestaat uit Gewapend beton'
+    .
+
+## Landhoofd 2 - Materiaal
+data:vblh2_m1
+    a                                           imbor:cc9e23e8-8e47-4f71-ae1c-19ba3ffe86a7 ;   #'Gewapend beton'
+    nen3610:identificatie                        "vblh2_m1" ;                                   #'identificatie'
+    nen3610:domein                               "http://example.com/gemeente/areaaldata/"^^xsd:anyURI ; #'domein' (Voorbeeld gemeente data)
+    .
+
+## ============================================================
+## Fundering
+## ============================================================
+
+## Fundering
+
+data:vbf1
+    a                                           imbor:8b7bbb81-3498-49a0-8e08-fe77b2db7657 ;   #'Paalfundering'
+    nen3610:identificatie                        "vbf1" ;                                      #'identificatie'
+    nen3610:domein                               "http://example.com/gemeente/areaaldata/"^^xsd:anyURI ; #'domein' (Voorbeeld gemeente data)
+    imbor:4e721262-e6e2-41df-bb99-0b6693e32435  imbor-domeinwaarde:01a31554-111c-4765-82cb-79f0b178eb8e ; #'status' (In gebruik)
+    nen2660:consistOf                            data:vbf1_m ;                                 #'bestaat uit Beton'
+    .
+
+## Fundering - Materiaal
+data:vbf1_m
+    a                                           imbor:52ab27f2-fb67-4752-8cfc-ac4f3638df4e ;   #'Beton'
+    nen3610:identificatie                        "vbf1_m" ;                                   #'identificatie'
+    nen3610:domein                               "http://example.com/gemeente/areaaldata/"^^xsd:anyURI ; #'domein' (Voorbeeld gemeente data)
+    #### 2 opties: 'aantal palen' als attribuut op Paalfundering (moet in IMBOR toegevoegd) OF ga je de Palen apart doen?
+    .
+
+    
+
+## ============================================================
+## Lichtmasten
+## ============================================================
+
+## Lichtmast 1
+data:vblm1
+    a                                           imbor:e5d5a58c-bb19-4d49-8bf0-d1ea48a5487e ;    #'Lichtmast'
+    nen2660:hasBoundary 
+    [
+        a geo:Geometry ;
+        a imbor:bdb53bb7-defc-4055-b047-271c5edda82a ; #GM_Point
+        geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/28992>POINT((125145 502283))"^^geo:wktLiteral ;
+    ]    ; #'geometrie'
+    nen3610:identificatie                        "vblm1" ;                                      #'identificatie'
+    nen3610:domein                               "http://example.com/gemeente/areaaldata/"^^xsd:anyURI ; #'domein' (Voorbeeld gemeente data)
+    imbor:4e721262-e6e2-41df-bb99-0b6693e32435  imbor-domeinwaarde:01a31554-111c-4765-82cb-79f0b178eb8e ; #'status' (In gebruik)
+    nen2660:isConnectedTo                       data:vblm1_pa1 ;                                #'is verbonden met Paaltoparmatuur'
+    .
+
+## Lichtmast 1 - Paaltoparmatuur
+data:vblm1_pa1
+    a                                           imbor:91484875-ba8a-443e-bb2a-2c5c89f24769 ;    #'Paaltoparmatuur'
+    nen3610:identificatie                        "vblm1_pa1" ;                                  #'identificatie'
+    nen3610:domein                               "http://example.com/gemeente/areaaldata/"^^xsd:anyURI ; #'domein' (Voorbeeld gemeente data)
+    imbor:4e721262-e6e2-41df-bb99-0b6693e32435  imbor-domeinwaarde:01a31554-111c-4765-82cb-79f0b178eb8e ; #'status' (In gebruik)
+    nen2660:isConnectedTo                        data:vblm1_pa1_lb1 ;                           #'is verbonden met Lichtbron'
+    .
+
+## Lichtmast 1 - Paaltoparmatuur - Lichtbron
+data:vblm1_pa1_lb1
+    a                                           imbor:53929f41-9240-4a61-9abe-5ade04a679b8 ;    #'Lichtbron'
+    nen3610:identificatie                        "vblm1_pa1_lb1" ;                              #'identificatie'
+    imbor:4e721262-e6e2-41df-bb99-0b6693e32435  imbor-domeinwaarde:01a31554-111c-4765-82cb-79f0b178eb8e ; #'status' (In gebruik)
+    nen3610:domein                               "http://example.com/gemeente/areaaldata/"^^xsd:anyURI ; #'domein' (Voorbeeld gemeente data)
+    .
+
+## Lichtmast 2
+data:vblm2
+    a                                           imbor:e5d5a58c-bb19-4d49-8bf0-d1ea48a5487e ;    #'Lichtmast'
+    nen2660:hasBoundary 
+    [
+        a geo:Geometry ;
+        a imbor:bdb53bb7-defc-4055-b047-271c5edda82a ; #GM_Point
+        geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/28992>POINT((125154 502280))"^^geo:wktLiteral ;
+    ]    ; #'geometrie'
+    nen3610:identificatie                        "vblm2" ;                                      #'identificatie'
+    nen3610:domein                               "http://example.com/gemeente/areaaldata/"^^xsd:anyURI ; #'domein' (Voorbeeld gemeente data)
+    imbor:4e721262-e6e2-41df-bb99-0b6693e32435  imbor-domeinwaarde:01a31554-111c-4765-82cb-79f0b178eb8e ; #'status' (In gebruik)
+    nen2660:isConnectedTo                       data:vblm2_pa1 ;                                #'is verbonden met Paaltoparmatuur'
+    .
+
+## Lichtmast 2 - Paaltoparmatuur
+data:vblm2_pa1
+    a                                           imbor:91484875-ba8a-443e-bb2a-2c5c89f24769 ;    #'Paaltoparmatuur'
+    nen3610:identificatie                        "vblm2_pa1" ;                                  #'identificatie'
+    nen3610:domein                               "http://example.com/gemeente/areaaldata/"^^xsd:anyURI ; #'domein' (Voorbeeld gemeente data)
+    imbor:4e721262-e6e2-41df-bb99-0b6693e32435  imbor-domeinwaarde:01a31554-111c-4765-82cb-79f0b178eb8e ; #'status' (In gebruik)
+    nen2660:isConnectedTo                        data:vblm2_pa1_lb1 ;                           #'is verbonden met Lichtbron'
+    .
+
+## Lichtmast 2 - Paaltoparmatuur - Lichtbron
+data:vblm2_pa1_lb1
+    a                                           imbor:53929f41-9240-4a61-9abe-5ade04a679b8 ;    #'Lichtbron'
+    nen3610:identificatie                        "vblm2_pa1_lb1" ;                              #'identificatie'
+    nen3610:domein                               "http://example.com/gemeente/areaaldata/"^^xsd:anyURI ; #'domein' (Voorbeeld gemeente data)
+    imbor:4e721262-e6e2-41df-bb99-0b6693e32435  imbor-domeinwaarde:01a31554-111c-4765-82cb-79f0b178eb8e ; #'status' (In gebruik)
+    .
+

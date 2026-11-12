@@ -1,0 +1,241 @@
+@prefix data: <https://example.org/materialenpaspoort-asfalt/id/> .
+@prefix wco:  <https://data.crow.nl/wco/def/> .
+@prefix geo:  <http://www.opengis.net/ont/geosparql#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+## ============================================================================
+## Voorbeeld materialenpaspoort asfalt
+## ============================================================================
+## Fictieve gegevens voor een nieuw aangebrachte deklaag op een bestaande
+## asfaltuitvoeringseenheid. Dit bestand bevat geen IMBOR-gegevens.
+##
+## De WCO-ontologie bevat de classes, properties en waardelijsten. Daardoor
+## hoeven die niet in dit gegevensbestand te worden herhaald.
+##
+## Niet opgenomen omdat WCO 0.5 hiervoor geen passende property heeft:
+## Opdrachtgever, Laagnummer, Steenslagklasse en Herkomst RAP.
+## Gewicht wordt niet als property opgeslagen maar kan worden berekend:
+## 1250 m2 x 50 mm x 2350 kg/m3 / 1.000.000 = 146,875 ton.
+## ============================================================================
+
+data:
+    a owl:Ontology ;
+    rdfs:label "Voorbeeld materialenpaspoort asfalt — fictieve gegevens"@nl ;
+    rdfs:comment "Voorbeeldgegevens volgens Dataspecificatie_MaterialenpaspoortAsfalt_WCO_v0.5.ttl en Wegconstructies-OTL 0.5."@nl .
+
+## ============================================================================
+## Project
+## ============================================================================
+
+data:project-N1-2026
+    a wco:98595978-5319-7476-6837-3cc6dee294b1 ;             # Project
+    wco:730ef0ed-91cb-46f5-887c-aa09146b13c0 "PIM-PRJ-2026-001" ; # id — ProjectNummerAannemer
+    wco:0aaf103a-ae1e-4012-9c5c-ee518c159aa0 "RAW-2026-N1-001" ; # contract nummer — ContractNummer
+    wco:a8d87659-d09b-35d4-e6b6-1a5643305bd1 data:wegconstructie-N1-deklaag ; # realiseert
+    wco:e479bd2d-1658-f2ce-8303-0bb7bc1b8fba "2026-10-15"^^xsd:date . # einddatum — toekomstige Opleverdatum constructie
+
+## ============================================================================
+## Wegconstructie en geometrische locatie
+## ============================================================================
+
+data:wegconstructie-N1-deklaag
+    a wco:c2c320dd-a232-e3ee-5cd0-77ba3765f25c ;             # Wegconstructie
+    wco:730ef0ed-91cb-46f5-887c-aa09146b13c0 "PIM-CON-N1-001" ; # id — ConstructieID (UID)
+    wco:c1d47619-8b2d-8786-f4cc-339d0eec9fe2 "N1, hectometer 12,4–13,0, rijbaan oost" ; # locatie omschrijving
+    geo:hasGeometry data:wegconstructie-N1-deklaag-geometrie ;
+    wco:be620f07-5e42-6f53-755b-8f44aef91fbd data:bovenbouw-N1 . # heeft deel
+
+data:wegconstructie-N1-deklaag-geometrie
+    a geo:Geometry ;
+    geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/28992> LINESTRING (155000 463000, 155060 463600)"^^geo:wktLiteral .
+
+## ============================================================================
+## Constructieopbouw: bovenbouw, asfaltconstructie en deklaag
+## ============================================================================
+
+data:bovenbouw-N1
+    a wco:537189b8-f9ce-e0a2-8d9a-03ccfb91cc4d ;             # Bovenbouw
+    wco:be620f07-5e42-6f53-755b-8f44aef91fbd data:asfaltconstructie-N1 . # heeft deel
+
+data:asfaltconstructie-N1
+    a wco:b7bc687b-58bb-2181-db5e-a1e7919e543a ;             # Asfaltconstructie
+    wco:be620f07-5e42-6f53-755b-8f44aef91fbd data:deklaag-N1 . # heeft deel
+
+data:deklaag-N1
+    a wco:b6945c7f-e083-058b-39b3-191bd711092b ;             # Deklaag — Type constructielaag
+    wco:be620f07-5e42-6f53-755b-8f44aef91fbd data:uitvoeringseenheid-N1-deklaag . # heeft deel
+
+## ============================================================================
+## Nieuwe asfaltuitvoeringseenheid
+## ============================================================================
+
+data:uitvoeringseenheid-N1-deklaag
+    a wco:e6483831-b4b4-42d9-4036-64d33e764f87 ;             # Asfaltuitvoeringseenheid
+    wco:730ef0ed-91cb-46f5-887c-aa09146b13c0 "PIM-UE-N1-DEK-001" ; # id — UitvoeringsEeheidID (UID)
+    wco:51020794-0ee4-4287-cc31-9daa228c5919 "1250.0"^^xsd:double ;        # oppervlakte — 1250 m2
+    wco:fd3e9326-1b72-475c-bd68-068a9c12393e "50"^^xsd:decimal ; # ontwerplaagdikte — 50 mm
+    wco:420d11e6-5bf4-487f-ae09-ee18b6636fa7 data:uitvoeringseenheid-N1-bestaand ; # is gelegen bovenop
+    wco:eb6594f0-699d-87c8-3242-4356a238fef9 data:mengsel-AC16 ; # bestaat uit — Asfaltmengsel
+    wco:e774bb80-0524-45a9-aec9-fc13ee371e42 data:asfaltcentrale-noord . # heeft asfaltcentrale
+
+## Bestaande onderliggende uitvoeringseenheid; geen nieuw paspoort voor deze laag.
+data:uitvoeringseenheid-N1-bestaand
+    a wco:987c4125-7775-b402-cd74-10dceaa811e2 .             # Uitvoeringseenheid
+
+data:asfaltcentrale-noord
+    a wco:06f90b18-1802-46f4-90f6-16e78b7098ba ;             # Asfaltcentrale
+    wco:94d76d4a-149e-406f-bc84-b78034fb80fb "AC-NOORD" .    # afkortingsnaam — Naam asfaltmolen
+
+## ============================================================================
+## Asfaltmengsel / mengselontwerp
+## ============================================================================
+
+data:mengsel-AC16
+    a wco:1830190f-8ae6-d85a-ccf7-5c5e6797c50a ;             # Asfaltmengsel
+    wco:730ef0ed-91cb-46f5-887c-aa09146b13c0 "PIM-MO-AC16-001" ; # id — MengselOntwerpID (UID)
+    wco:6aea190d-8a45-5dfe-440a-1c5dfabe708e "AC 16 surf 50/70 circulair" ; # mengsel omschrijving — handelsnaam
+    wco:4daf0f60-a94e-0074-b5ff-f233667f82fc "NEN-EN 13108-1" ; # europese norm — Europese benaming
+    wco:1244da85-23f9-0c4d-ca12-7366ce1c972c "AC 16 surf 50/70" ; # mengsel code — MengselCode
+    wco:a68618b0-e5cb-1a54-784d-4dca6ffaa1dd wco:c3d4e5f6-0001-4001-8001-000000000001 ; # mengsel soort — AC
+    wco:38d85060-1462-a2a7-79e6-638abf817362 "2350.0"^^xsd:double ;        # streefdichtheid — 2350 kg/m3
+    wco:eb6594f0-699d-87c8-3242-4356a238fef9 data:aandeel-steenslag , # bestaat uit
+        data:aandeel-zand ,
+        data:aandeel-fijnstoof ,
+        data:aandeel-bitumen ,
+        data:aandeel-additief ,
+        data:aandeel-rap .
+
+## ============================================================================
+## Bouwstof: grof toeslagmateriaal / steenslag
+## ============================================================================
+
+data:aandeel-steenslag
+    a wco:3e6c276c-cfd9-4b48-a36f-c67106d1c2b9 ;             # Aggregaataandeel
+    wco:c9795ed3-2258-4249-acdf-2e8d5d13a277 data:bouwstof-steenslag ; # heeft bouwstof
+    wco:112ca5a3-a02c-7fe5-0cc3-44a116b92c96 data:percentage-steenslag . # aandeel
+
+data:bouwstof-steenslag
+    a wco:059e1508-7b96-4ed4-b3c6-934d43fc80f2 ;             # Aggregaat
+    wco:730ef0ed-91cb-46f5-887c-aa09146b13c0 "PIM-BS-STEEN-001" ; # id — BouwstofID
+    wco:b9085801-5919-062b-3737-71c9b72ad567 wco:b2c3d4e5-0001-4001-8001-000000000006 ; # bouwstof soort — Grof toeslagmateriaal
+    wco:4eb729cf-1a83-a92b-8f60-d5af9726b48c "Basalt 8/11" ; # bouwstof naam — productnaam
+    wco:7ff0fed6-c63b-51ca-e267-d23c52c4e094 wco:a1b2c3d4-0001-4001-8001-000000000082 . # bouwstof type — Steenslag 1
+
+## ============================================================================
+## Bouwstof: zand
+## ============================================================================
+
+data:aandeel-zand
+    a wco:3e6c276c-cfd9-4b48-a36f-c67106d1c2b9 ;             # Aggregaataandeel
+    wco:c9795ed3-2258-4249-acdf-2e8d5d13a277 data:bouwstof-zand ;
+    wco:112ca5a3-a02c-7fe5-0cc3-44a116b92c96 data:percentage-zand .
+
+data:bouwstof-zand
+    a wco:059e1508-7b96-4ed4-b3c6-934d43fc80f2 ;             # Aggregaat
+    wco:730ef0ed-91cb-46f5-887c-aa09146b13c0 "PIM-BS-ZAND-001" ;
+    wco:b9085801-5919-062b-3737-71c9b72ad567 wco:b2c3d4e5-0001-4001-8001-000000000005 ; # Fijn toeslagmateriaal
+    wco:4eb729cf-1a83-a92b-8f60-d5af9726b48c "Natuurzand 0/2" ;
+    wco:7ff0fed6-c63b-51ca-e267-d23c52c4e094 wco:a1b2c3d4-0001-4001-8001-000000000072 . # Natuurlijk zand
+
+## ============================================================================
+## Bouwstof: zeer fijn toeslagmateriaal
+## ============================================================================
+
+data:aandeel-fijnstoof
+    a wco:3e6c276c-cfd9-4b48-a36f-c67106d1c2b9 ;             # Aggregaataandeel
+    wco:c9795ed3-2258-4249-acdf-2e8d5d13a277 data:bouwstof-fijnstoof ;
+    wco:112ca5a3-a02c-7fe5-0cc3-44a116b92c96 data:percentage-fijnstoof .
+
+data:bouwstof-fijnstoof
+    a wco:059e1508-7b96-4ed4-b3c6-934d43fc80f2 ;             # Aggregaat
+    wco:730ef0ed-91cb-46f5-887c-aa09146b13c0 "PIM-BS-FIJN-001" ;
+    wco:b9085801-5919-062b-3737-71c9b72ad567 wco:b2c3d4e5-0001-4001-8001-000000000016 ; # Zeer fijn toeslagmateriaal
+    wco:4eb729cf-1a83-a92b-8f60-d5af9726b48c "Kalksteenfiller" ;
+    wco:7ff0fed6-c63b-51ca-e267-d23c52c4e094 wco:a1b2c3d4-0001-4001-8001-000000000016 . # Zeer fijn toeslagmateriaal
+
+## ============================================================================
+## Bouwstof: bitumen / bindmiddel
+## ============================================================================
+
+data:aandeel-bitumen
+    a wco:d35a9550-c8d3-4512-b0ce-f59985900dc8 ;             # Bindmiddelaandeel
+    wco:c9795ed3-2258-4249-acdf-2e8d5d13a277 data:bouwstof-bitumen ;
+    wco:112ca5a3-a02c-7fe5-0cc3-44a116b92c96 data:percentage-bitumen .
+
+data:bouwstof-bitumen
+    a wco:4852c59e-36eb-4940-9f22-56bbd9adfab4 ;             # Bindmiddel
+    wco:730ef0ed-91cb-46f5-887c-aa09146b13c0 "PIM-BS-BIT-001" ;
+    wco:b9085801-5919-062b-3737-71c9b72ad567 wco:b2c3d4e5-0001-4001-8001-000000000003 ; # Bitumen
+    wco:4eb729cf-1a83-a92b-8f60-d5af9726b48c "Penetratiebitumen 50/70" ;
+    wco:7ff0fed6-c63b-51ca-e267-d23c52c4e094 wco:a1b2c3d4-0001-4001-8001-000000000077 . # Penetratiebitumen
+
+## ============================================================================
+## Bouwstof: additief
+## ============================================================================
+
+data:aandeel-additief
+    a wco:9fd4f551-f919-4516-8613-e348ee729e6c ;             # Additiefaandeel
+    wco:c9795ed3-2258-4249-acdf-2e8d5d13a277 data:bouwstof-additief ;
+    wco:112ca5a3-a02c-7fe5-0cc3-44a116b92c96 data:percentage-additief .
+
+data:bouwstof-additief
+    a wco:831da4d0-cdae-461b-ad92-09cf34813827 ;             # Additief
+    wco:730ef0ed-91cb-46f5-887c-aa09146b13c0 "PIM-BS-ADD-001" ;
+    wco:b9085801-5919-062b-3737-71c9b72ad567 wco:b2c3d4e5-0001-4001-8001-000000000013 ; # Toeslagstoffen
+    wco:4eb729cf-1a83-a92b-8f60-d5af9726b48c "Hechtverbeteraar H-100" ;
+    wco:7ff0fed6-c63b-51ca-e267-d23c52c4e094 wco:a1b2c3d4-0001-4001-8001-000000000055 . # Hechtverbeteraars
+
+## ============================================================================
+## Bouwstof: asfaltgranulaat / RAP
+## ============================================================================
+
+data:aandeel-rap
+    a wco:32b810fc-e2b4-4a3b-b15c-ad7c50a3d8b9 ;             # Asfaltgranulaataandeel
+    wco:c9795ed3-2258-4249-acdf-2e8d5d13a277 data:bouwstof-rap ;
+    wco:112ca5a3-a02c-7fe5-0cc3-44a116b92c96 data:percentage-rap .
+
+data:bouwstof-rap
+    a wco:2f20e8be-ecd7-4085-be1f-8450922773b4 ;             # Asfaltgranulaat
+    wco:730ef0ed-91cb-46f5-887c-aa09146b13c0 "PIM-BS-RAP-001" ;
+    wco:b9085801-5919-062b-3737-71c9b72ad567 wco:b2c3d4e5-0001-4001-8001-000000000001 ; # Asfaltgranulaat
+    wco:4eb729cf-1a83-a92b-8f60-d5af9726b48c "Asfaltgranulaat 0/16" .
+
+## ============================================================================
+## Kwantiteitwaarden: massapercentages van de afzonderlijke bouwstoffen
+## ============================================================================
+## Voorbeeldwaarden. Een Kwantiteitwaarde gebruikt een decimaal en unit:PERCENT.
+## Het gegevensmodel maakt geen onderscheid tussen exacte waarden en bandbreedtes.
+## ============================================================================
+
+data:percentage-steenslag
+    a wco:3071ee6f-5045-065c-85a3-5999ba900615 ;             # Kwantiteitwaarde
+    wco:74f0e640-4b1a-d9e2-c266-7926b31e679e "52.0"^^xsd:decimal ;
+    wco:58666027-113b-919d-754d-76613d43be00 unit:PERCENT .
+
+data:percentage-zand
+    a wco:3071ee6f-5045-065c-85a3-5999ba900615 ;
+    wco:74f0e640-4b1a-d9e2-c266-7926b31e679e "18.0"^^xsd:decimal ;
+    wco:58666027-113b-919d-754d-76613d43be00 unit:PERCENT .
+
+data:percentage-fijnstoof
+    a wco:3071ee6f-5045-065c-85a3-5999ba900615 ;
+    wco:74f0e640-4b1a-d9e2-c266-7926b31e679e "4.5"^^xsd:decimal ;
+    wco:58666027-113b-919d-754d-76613d43be00 unit:PERCENT .
+
+data:percentage-bitumen
+    a wco:3071ee6f-5045-065c-85a3-5999ba900615 ;
+    wco:74f0e640-4b1a-d9e2-c266-7926b31e679e "5.2"^^xsd:decimal ;
+    wco:58666027-113b-919d-754d-76613d43be00 unit:PERCENT .
+
+data:percentage-additief
+    a wco:3071ee6f-5045-065c-85a3-5999ba900615 ;
+    wco:74f0e640-4b1a-d9e2-c266-7926b31e679e "0.3"^^xsd:decimal ;
+    wco:58666027-113b-919d-754d-76613d43be00 unit:PERCENT .
+
+data:percentage-rap
+    a wco:3071ee6f-5045-065c-85a3-5999ba900615 ;
+    wco:74f0e640-4b1a-d9e2-c266-7926b31e679e "20.0"^^xsd:decimal ; # RAP-gehalte — 20 massaprocent
+    wco:58666027-113b-919d-754d-76613d43be00 unit:PERCENT .

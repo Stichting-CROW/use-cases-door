@@ -1,0 +1,512 @@
+@prefix : <https://data.crow.nl/wco/dataspec/materialenpaspoort-asfalt/> .
+@prefix wco: <https://data.crow.nl/wco/def/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:DataspecificatieMaterialenpaspoortAsfalt
+    a owl:Ontology ;
+    rdfs:label "Dataspecificatie Materialenpaspoort Asfalt — concept"@nl ;
+    owl:versionInfo "0.1-concept; gebaseerd op Wegconstructies-OTL 0.5"@en ;
+    rdfs:comment """
+Dit voorstel past de 31 geselecteerde parameters uit 'Parameter selectie.csv'
+toe op '20261111_OTL-Wegconstructies.ttl' (Wegconstructies-OTL versie 0.5). Hierna te noemen: 'WCO'
+De tracering van de mapping staat in 'Mapping Materialenpaspoort Wegconstructies-OTL v0.5.csv'.
+
+Het betreft dus een selectie uit 'Materialenpaspoort asfalt selectie parameters.xlsx' gefilterd
+op de kolom 'Opleverdossier / materialenpaspoort' = 'MPA' & 'Eigen MPA'.
+
+De specificatie gebruikt bestaande WCO-classes en -properties; GeoSPARQL voor geometrie
+en QUDT voor eenheden. Er worden geen nieuwe zaken toegevoegd of gewijzigd aan de OTL.
+'Eisniveaus' volgen de bronselectie: reguliere gegevens zijn verplicht (sh:Violation).
+Toekomstige, conditionele en afgeleide gegevens zijn optioneel of een sh:Warning.
+
+Objecten krijgen een persistente IRI. De aangeleverde PIM-UID wordt als xsd:string
+vastgelegd op de bestaande generieke property wco:id. Dat is dus géén PIM-identifier!.
+
+Structuur: Project realiseert Wegconstructie; via Bovenbouw en Asfaltconstructie worden
+Deklaag, Tussenlaag en Onderlaag gekoppeld. Elke laag bevat minimaal één
+Asfaltuitvoeringseenheid. De uitvoeringseenheid verwijst naar het toegepaste
+Asfaltmengsel en de Asfaltcentrale. Het mengsel bestaat uit Materieaandelen; een
+Materieaandeel verwijst naar precies één Bouwstof en kan een percentage bevatten via
+Kwantiteitwaarde. Welke type laag het is (Deklaag, Tussenlaag, Onderlaag) wordt door de OTL-class 
+uitgedrukt; AC, SMA en vergelijkbare mengselsoorten worden via wco:mengsel soort op een individu 
+van MengselsoortLijst vastgelegd. WCO koppelt in deze versie geen expliciete objecttype-property 
+aan Constructielaag of Uitvoeringseenheid.
+
+De gespecialiseerde bouwstofshapes worden via sh:targetClass automatisch gevalideerd zodra
+het bijbehorende type aandeel of bouwstof voorkomt. Het voorkomen van Additiefaandeel,
+Bindmiddelaandeel en Aggregaataandeel wordt vanuit Asfaltmengsel niet verplicht gesteld;
+alleen een RAP-aandeel wordt daar met sh:Warning gevraagd.
+
+Scope: dit voorstel beperkt zich tot de asfaltverharding in de bovenbouw:
+Wegconstructie → Bovenbouw → Asfaltconstructie → Deklaag/Tussenlaag/Onderlaag →
+Asfaltuitvoeringseenheid. Fundering en Onderfundering horen bij Funderingsconstructie,
+niet bij Asfaltconstructie, en krijgen daarom geen eigen materialenpaspoort. Een
+bestaande onderliggende laag kan alleen als relatie met 'wco:is gelegen bovenop' worden
+opgenomen; voor een paspoort van de fundering zou de scope met Funderingsconstructie
+moeten worden uitgebreid.
+
+'Herkomst RAP' wordt niet afgeleid uit de RAP-classificatie. Alleen een numeriek
+massapercentage wordt via Asfaltgranulaataandeel → aandeel → Kwantiteitwaarde gevraagd.
+'Aangebracht op bestaande constructielaag' is een optionele verwijzing van de nieuwe
+uitvoeringseenheid naar de direct onderliggende uitvoeringseenheid met
+'wco:is gelegen bovenop'. Verwijderde lagen horen volgens de projectmemo in een eigen
+materialenpaspoort en worden niet met de nieuwe laag vermengd.
+
+Gewicht is afgeleid en WCO heeft hiervoor geen property. De berekening in ton is:
+oppervlakte [m²] × ontwerplaagdikte [mm] × streefdichtheid [kg/m³] / 1.000.000.
+Deze specificatie voegt geen extra gewichtsproperty toe. Zie :InformatieGewichtAfgeleid
+voor de documentatie van deze afgeleide parameter.
+
+Binnen de WCO-only scope blijven vier gevraagde gegevens expliciete gaps en krijgen
+daarom geen schijnbare of uitgeschakelde SHACL-eis:
+1. OpdrachtgeverNaam: geen WCO-property voor opdrachtgever; (zou actor-rol constructie kunnenn worden)
+2. Laagnummer / Nummer Uitvoeringseenheid: geen expliciete volgnummerproperty;
+   Dit is af te leiden ui de 'wco:is gelegen bovenop' koppeling.
+3. Steenslagklasse / PetrografischeSamenstelling: niet gelijk aan wco:bouwstof type
+   of wco:psv waarde.
+4. Herkomst RAP (bewerkt/onbewerkt granulaat): geen expliciete
+   verwerkingsherkomstproperty.
+
+Beperking aandeel bouwstof: WCO ondersteunt één xsd:decimal met unit:PERCENT,
+maar geen expliciete minimum/maximum-bandbreedte of categorie zoals '<5%', '5-10%'
+of '>10%'. 
+
+Deze shapes specificeren de geselecteerde paspoortvelden; ze vervangen of herhalen
+niet alle overige eisen uit de volledige Wegconstructies-OTL. Het gewenste CRS voor
+WKT-geometrie moet in de uitwisselafspraken worden vastgelegd.
+
+Iedere direct gemodelleerde paspoortproperty heeft bovendien een rdfs:comment met de
+originele parameter, het PIM-veld en de toelichting en beperking uit de mapping.
+Voor opdrachtgever en laagnummer zijn deze gegevens opgenomen op de relevante NodeShape;
+het afgeleide gewicht heeft een eigen informatieve NodeShape.
+
+Bepaalde URI's zijn nu nog met een tijdelijk URI aangeven. Dit geldt bijvoorbeeld voor 
+'wco:a8d87659-d09b-35d4-e6b6-1a5643305bd1' (wco:realiseert). Dit zullen op termijn nen2660
+URI's worden.
+"""@nl .
+
+# =============================================================================
+# Project en opleverdatum van de constructie
+# =============================================================================
+
+:ProjectPaspoortShape
+    a sh:NodeShape ;
+    sh:targetClass wco:98595978-5319-7476-6837-3cc6dee294b1 ; # Project
+        rdfs:comment "Originele parameter: Opdrachtgever (PIM-veld: OpdrachtgeverNaam). Toelichting en beperking: WCO heeft opdrachtnemer maar geen opdrachtgever. OpdrachtgeverNaam niet gelijkstellen aan opdrachtnemer. Daarom is hiervoor binnen WCO-only geen SHACL-property opgenomen."@nl ;
+    sh:property [
+        sh:path wco:730ef0ed-91cb-46f5-887c-aa09146b13c0 ; # id
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:name "Projectcode van het project (bron-UID)"@nl ;
+        sh:message "Een project heeft exact één ProjectNummerAannemer als bron-UID."@nl ;
+        rdfs:comment "Originele parameter: Projectcode PIM van het project (PIM-veld: ProjectNummerAannemer). Toelichting en beperking: ProjectNummerAannemer is geen dedicated WCO-property. Gebruik generieke wco:id voor de aangeleverde broncode en een persistenter project-IRI. projectnaam is geen equivalent voor de gevraagde code."@nl
+    ] ;
+    sh:property [
+        sh:path wco:0aaf103a-ae1e-4012-9c5c-ee518c159aa0 ; # contract nummer
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:name "Besteksnummer (contractnummer)"@nl ;
+        sh:message "Een project heeft exact één contractnummer als tekst."@nl ;
+        rdfs:comment "Originele parameter: Besteksnummer (contractnummer) (PIM-veld: ContractNummer). Toelichting en beperking: Exacte semantische aansluiting; uitwisselen als xsd:string."@nl
+    ] ;
+    sh:property [
+        sh:path wco:a8d87659-d09b-35d4-e6b6-1a5643305bd1 ; # realiseert
+        sh:qualifiedValueShape :WegconstructiePaspoortShape ;
+        sh:qualifiedMinCount 1 ;
+        sh:name "Gerealiseerde wegconstructie"@nl ;
+        sh:message "Een project realiseert minimaal één volledig beschreven wegconstructie."@nl
+    ] ;
+    sh:property [
+        sh:path wco:e479bd2d-1658-f2ce-8303-0bb7bc1b8fba ; # einddatum
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ;
+        sh:severity sh:Warning ;
+        sh:name "Opleverdatum constructie"@nl ;
+        sh:message "Geef bij voorkeur de opleverdatum van het werk als xsd:date."@nl ;
+        rdfs:comment "Originele parameter: Plaatsingsdatum / Opleverdatum constructie (PIM-veld: niet aanwezig). Toelichting en beperking: Beste WCO-aansluiting voor opleverdatum van het werk. Dit is niet de aanlegdatum van een individuele uitvoeringseenheid. Bron vermeldt dat de waarde nu niet in PIM beschikbaar is; daarom sh:Warning."@nl
+    ] .
+
+# =============================================================================
+# Wegconstructie: identificatie, hoofdlocatie en geometrie
+# =============================================================================
+
+:WegconstructiePaspoortShape
+    a sh:NodeShape ;
+    sh:targetClass wco:c2c320dd-a232-e3ee-5cd0-77ba3765f25c ; # Wegconstructie
+    sh:property [
+        sh:path wco:730ef0ed-91cb-46f5-887c-aa09146b13c0 ; # id
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:name "ConstructieID (bron-UID)"@nl ;
+        sh:message "Een wegconstructie heeft naast haar IRI exact één ConstructieID als bron-UID."@nl ;
+        rdfs:comment "Originele parameter: Identificatie + naam (PIM-veld: ConstructieID (UID)). Toelichting en beperking: ConstructieID is technische identificatie. De IRI is duurzame objectidentificatie; generieke wco:id bewaart de PIM-code. De projectmemo benoemt dit expliciet als technische parameter."@nl
+    ] ;
+    sh:property [
+        sh:path wco:c1d47619-8b2d-8786-f4cc-339d0eec9fe2 ; # locatie omschrijving
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:name "Hoofdlocatie project"@nl ;
+        sh:message "Een wegconstructie heeft exact één tekstuele hoofdlocatie."@nl ;
+        rdfs:comment "Originele parameter: Hoofdlocatie project (PIM-veld: HoofdlocatieWerk). Toelichting en beperking: HoofdlocatieWerk is tekstuele locatie van de gerealiseerde constructie, niet een aparte WCO-eigenschap van Project."@nl
+    ] ;
+    sh:property [
+        sh:path geo:hasGeometry ; # heeft geometrie
+        sh:qualifiedValueShape :ConstructieGeometrieShape ;
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ;
+        sh:name "Geometrische locatie constructie"@nl ;
+        sh:message "Een wegconstructie heeft exact één GeoSPARQL-geometrie met één WKT-waarde."@nl ;
+        rdfs:comment "Originele parameter: Kilometrering / Geometrische locatie constructie (geen afzonderlijk PIM-veld in de selectie). Toelichting en beperking: x,y worden als GeoSPARQL WKT vastgelegd. CRS expliciet in WKT opnemen wanneer dat niet uit de default volgt. Kilometrering zelf is geen geometrie; een tekstuele wegaanduiding kan via locatie omschrijving."@nl
+    ] ;
+    sh:property [
+        sh:path wco:be620f07-5e42-6f53-755b-8f44aef91fbd ; # heeft deel
+        sh:qualifiedValueShape :BovenbouwPaspoortShape ;
+        sh:qualifiedMinCount 1 ;
+        sh:name "Bovenbouw met asfaltconstructie"@nl ;
+        sh:message "Een materialenpaspoort koppelt de wegconstructie via een bovenbouw aan minimaal één asfaltconstructie."@nl
+    ] .
+
+:ConstructieGeometrieShape
+    a sh:NodeShape ;
+    sh:class geo:Geometry ;
+    sh:property [
+        sh:path geo:asWKT ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype geo:wktLiteral ;
+        sh:message "De constructiegeometrie heeft exact één geo:asWKT-waarde met geo:wktLiteral."@nl
+    ] .
+
+:BovenbouwPaspoortShape
+    a sh:NodeShape ;
+    sh:class wco:537189b8-f9ce-e0a2-8d9a-03ccfb91cc4d ; # Bovenbouw
+    sh:property [
+        sh:path wco:be620f07-5e42-6f53-755b-8f44aef91fbd ; # heeft deel
+        sh:qualifiedValueShape :AsfaltconstructiePaspoortShape ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "De bovenbouw bevat minimaal één asfaltconstructie."@nl
+    ] .
+
+:AsfaltconstructiePaspoortShape
+    a sh:NodeShape ;
+    sh:class wco:b7bc687b-58bb-2181-db5e-a1e7919e543a ; # Asfaltconstructie
+    sh:property [
+        sh:path wco:be620f07-5e42-6f53-755b-8f44aef91fbd ; # heeft deel
+        sh:qualifiedValueShape :ConstructielaagPaspoortShape ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "De asfaltconstructie bevat minimaal één gekwalificeerde dek-, tussen- of onderlaag."@nl
+    ] .
+
+:InformatieGewichtAfgeleid
+    a sh:NodeShape ;
+    rdfs:label "Informatief gegeven: gewicht (ton)"@nl ;
+    rdfs:comment "Originele parameter: Gewicht (ton) (PIM-veld: Berekend veld: Oppervlakte × gewenste dikte × streefgewicht). Toelichting en beperking: Geen gewicht-property in WCO. Formule in ton: oppervlakte [m²] × laagdikte [mm] × streefdichtheid [kg/m³] / 1.000.000. Geen nieuwe paspoortproperty toegevoegd; mapping legt de berekening vast. Deze resource bevat bewust geen target of propertyeis."@nl .
+
+# =============================================================================
+# Constructielaag: OTL-laagrol en nieuwe uitvoeringseenheden
+# =============================================================================
+
+:ConstructielaagPaspoortShape
+    a sh:NodeShape ;
+    sh:targetClass wco:b6945c7f-e083-058b-39b3-191bd711092b ; # Deklaag
+    sh:targetClass wco:dc082c55-988c-65fb-307e-52ba3766c8be ; # Tussenlaag
+    sh:targetClass wco:79ae7b44-9cb7-73f4-e9a0-8af86f076e39 ; # Onderlaag
+    sh:property [
+        sh:path rdf:type ;
+        sh:in (
+            wco:b6945c7f-e083-058b-39b3-191bd711092b # Deklaag
+            wco:dc082c55-988c-65fb-307e-52ba3766c8be # Tussenlaag
+            wco:79ae7b44-9cb7-73f4-e9a0-8af86f076e39 # Onderlaag
+        ) ;
+        sh:minCount 1 ;
+        sh:name "Type constructielaag ('type laag')"@nl ;
+        sh:message "Leg de 'type laag' vast als Deklaag, Tussenlaag of Onderlaag; mengselsoort is een aparte eigenschap van het asfaltmengsel."@nl ;
+        rdfs:comment "Originele parameter: Type constructielaag (PIM-velden: Omschrijving ConstructieLaag voor type laag ('laagrol'); ObjectType voor AC, SMA, waterafdichtende laag). Toelichting en beperking: OTL scheidt fysieke laagrol van mengselclassificatie. AC/SMA e.d. behoren bij mengsel soort (MengselsoortLijst). WCO gebruikt ObjecttypeLijst niet via een expliciete datatype/objectproperty op Constructielaag of Uitvoeringseenheid."@nl
+    ] ;
+    sh:property [
+        sh:path wco:be620f07-5e42-6f53-755b-8f44aef91fbd ; # heeft deel
+        sh:qualifiedValueShape :AsfaltuitvoeringseenheidPaspoortShape ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "Elke geselecteerde constructielaag heeft minimaal één volledig beschreven asfaltuitvoeringseenheid."@nl
+    ] .
+
+# =============================================================================
+# Uitvoeringseenheid: UID, oppervlakte, eisdikte en relaties
+# =============================================================================
+
+:AsfaltuitvoeringseenheidPaspoortShape
+    a sh:NodeShape ;
+    sh:targetClass wco:e6483831-b4b4-42d9-4036-64d33e764f87 ; # Asfaltuitvoeringseenheid
+        rdfs:comment "Originele parameter: Laagnummer (PIM-veld: Nummer Uitvoeringseenheid). Toelichting en beperking: Nummer Uitvoeringseenheid mag niet worden vertaald naar wco:id: dat is een volgnummer, geen objectidentificatie. Laagvolgorde kan alleen via relaties worden afgeleid wanneer de hele keten aanwezig is. Daarom is hiervoor binnen WCO-only geen SHACL-property opgenomen."@nl ;
+    sh:property [
+        sh:path wco:730ef0ed-91cb-46f5-887c-aa09146b13c0 ; # id
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:name "UitvoeringseenheidID (bron-UID)"@nl ;
+        sh:message "Een asfaltuitvoeringseenheid heeft naast haar IRI exact één bron-UID."@nl ;
+        rdfs:comment "Originele parameter: Identificatie + naam (PIM-veld: UitvoeringsEeheidID (UID), spelling volgens bronbestand). Toelichting en beperking: WCO heeft geen specifieke UID-property op Uitvoeringseenheid; generieke wco:id wordt in het paspoortprofiel hergebruikt voor de aangeleverde bron-UID."@nl
+    ] ;
+    sh:property [
+        sh:path wco:51020794-0ee4-4287-cc31-9daa228c5919 ; # oppervlakte
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:double ; sh:unit unit:M2 ;
+        sh:name "Oppervlakte"@nl ;
+        sh:message "Een uitvoeringseenheid heeft exact één oppervlakte als xsd:double in m²."@nl ;
+        rdfs:comment "Originele parameter: Oppervlakte (PIM-veld: Oppervlakte). Toelichting en beperking: xsd:double; sh:unit unit:M2."@nl
+    ] ;
+    sh:property [
+        sh:path wco:fd3e9326-1b72-475c-bd68-068a9c12393e ; # ontwerplaagdikte
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:unit unit:MilliM ;
+        sh:name "Laagdikte (eis)"@nl ;
+        sh:message "Een uitvoeringseenheid heeft exact één ontwerplaagdikte als xsd:decimal in mm."@nl ;
+        rdfs:comment "Originele parameter: Laagdikte (eis) (PIM-veld: Gewenste dikte). Toelichting en beperking: Vereiste/gewenste dikte is ontwerplaagdikte, niet gemeten laagdikte. xsd:decimal; sh:unit unit:MilliM."@nl
+    ] ;
+    sh:property [
+        sh:path wco:eb6594f0-699d-87c8-3242-4356a238fef9 ; # bestaat uit
+        sh:qualifiedValueShape :AsfaltmengselPaspoortShape ;
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ;
+        sh:name "Toegepast asfaltmengsel / mengselontwerp"@nl ;
+        sh:message "Een asfaltuitvoeringseenheid wordt gekoppeld aan exact één beschreven asfaltmengsel."@nl ;
+        rdfs:comment "Originele parameter: Identificatie (PIM-veld: MengselOntwerpID (UID)). Toelichting en beperking: MengselOntwerpID is technische koppelidentificatie, geen mengselcode of productnaam. WCO onderscheidt geen aparte klasse MengselOntwerp. Deze property legt de relatie vast; de bron-UID staat in wco:id in :AsfaltmengselPaspoortShape."@nl
+    ] ;
+    sh:property [
+        sh:path wco:e774bb80-0524-45a9-aec9-fc13ee371e42 ; # heeft asfaltcentrale
+        sh:qualifiedValueShape :AsfaltcentralePaspoortShape ;
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ;
+        sh:name "Naam asfaltmolen"@nl ;
+        sh:message "Een asfaltuitvoeringseenheid heeft exact één asfaltcentrale met een naamafkorting."@nl ;
+        rdfs:comment "Originele parameter: Naam asfaltmolen (PIM-veld: Asfaltcentrale). Toelichting en beperking: De enige naamproperty bij Asfaltcentrale is een afkorting. Als PIM een volledige handelsnaam levert, controleer dan of deze in dit veld mag. De centrale hoort bij de uitvoering, niet direct bij het abstracte mengselontwerp. De waarde-eis staat in :AsfaltcentralePaspoortShape."@nl
+    ] ;
+    sh:property [
+        sh:path wco:420d11e6-5bf4-487f-ae09-ee18b6636fa7 ; # is gelegen bovenop
+        sh:qualifiedValueShape [
+            sh:class wco:987c4125-7775-b402-cd74-10dceaa811e2 ; # bestaande Uitvoeringseenheid
+            sh:nodeKind sh:IRI
+        ] ;
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ; sh:severity sh:Warning ;
+        sh:name "Aangebracht op bestaande constructielaag"@nl ;
+        sh:message "Verwijs indien bekend vanuit de nieuwe uitvoeringseenheid naar exact één direct onderliggende bestaande uitvoeringseenheid; zonder verwijzing wordt een waarschuwing gemeld."@nl ;
+        rdfs:comment "Originele parameter: Aangebracht op bestaande constructielaag (PIM-veld: Ondergrond asfaltconstructie). Toelichting en beperking: Alleen verwijzen vanuit de nieuw aangebrachte laag naar de bestaande onderliggende uitvoeringseenheid. Verwijderde lagen krijgen een eigen materialenpaspoort en worden niet vermengd."@nl
+    ] .
+
+:AsfaltcentralePaspoortShape
+    a sh:NodeShape ;
+    sh:targetClass wco:06f90b18-1802-46f4-90f6-16e78b7098ba ; # Asfaltcentrale
+    sh:property [
+        sh:path wco:94d76d4a-149e-406f-bc84-b78034fb80fb ; # afkorting's naam asfaltcentrale
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:name "Naam asfaltmolen (WCO-afkortingsnaam)"@nl ;
+        sh:message "De asfaltcentrale heeft exact één naamafkorting als tekst; controleer de aansluiting met de PIM-bronnaam."@nl ;
+        rdfs:comment "Originele parameter: Naam asfaltmolen (PIM-veld: Asfaltcentrale). Toelichting en beperking: De enige naamproperty bij Asfaltcentrale is een afkorting. Als PIM een volledige handelsnaam levert, controleer dan of deze in dit veld mag. De centrale hoort bij de uitvoering, niet direct bij het abstracte mengselontwerp."@nl
+    ] .
+
+# =============================================================================
+# Asfaltmengsel: koppeling, identificatie en kenmerken
+# =============================================================================
+
+:AsfaltmengselPaspoortShape
+    a sh:NodeShape ;
+    sh:targetClass wco:1830190f-8ae6-d85a-ccf7-5c5e6797c50a ; # Asfaltmengsel
+    sh:property [
+        sh:path wco:730ef0ed-91cb-46f5-887c-aa09146b13c0 ; # id
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:name "MengselOntwerpID (bron-UID)"@nl ;
+        sh:message "Een asfaltmengsel heeft naast zijn IRI exact één MengselOntwerpID als bron-UID."@nl ;
+        rdfs:comment "Originele parameter: Identificatie (PIM-veld: MengselOntwerpID (UID)). Toelichting en beperking: MengselOntwerpID is technische koppelidentificatie, geen mengselcode of productnaam. WCO onderscheidt geen aparte klasse MengselOntwerp."@nl
+    ] ;
+    sh:property [
+        sh:path wco:6aea190d-8a45-5dfe-440a-1c5dfabe708e ; # mengsel omschrijving
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:name "Productnaam / handelsnaam"@nl ;
+        sh:message "Een asfaltmengsel heeft exact één productnaam in mengsel omschrijving."@nl ;
+        rdfs:comment "Originele parameter: Productnaam / Handelsnaam (PIM-veld: MengselOmschrijving). Toelichting en beperking: Product-/handelsnaam van het mengsel zoals op CE; xsd:string."@nl
+    ] ;
+    sh:property [
+        sh:path wco:4daf0f60-a94e-0074-b5ff-f233667f82fc ; # europese norm
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:name "Europese benaming"@nl ;
+        sh:message "Een asfaltmengsel heeft exact één Europese benaming/productnorm als tekst."@nl ;
+        rdfs:comment "Originele parameter: Europese benaming (PIM-veld: Europese benaming). Toelichting en beperking: WCO definieert dit als productnorm zoals NEN-EN 13108-1. Controleer bij bronimplementatie of Europese benaming ook andere tekst bevat dan de normaanduiding; bewaar dan de oorspronkelijke bronwaarde."@nl
+    ] ;
+    sh:property [
+        sh:path wco:1244da85-23f9-0c4d-ca12-7366ce1c972c ; # mengsel code
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:name "Mengselcode"@nl ;
+        sh:message "Een asfaltmengsel heeft exact één mengselcode als tekst."@nl ;
+        rdfs:comment "Originele parameter: Mengselcode (PIM-veld: MengselCode). Toelichting en beperking: Directe aansluiting; xsd:string."@nl
+    ] ;
+    sh:property [
+        sh:path wco:a68618b0-e5cb-1a54-784d-4dca6ffaa1dd ; # mengsel soort
+        sh:qualifiedValueShape [ sh:class wco:a19a1e4a-56f6-4378-a08a-1e8bf68f6763 ] ; # MengselsoortLijst
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:name "Type asfaltmengsel"@nl ;
+        sh:message "Gebruik exact één IRI van een individu uit MengselsoortLijst, niet een vrije tekst."@nl ;
+        rdfs:comment "Originele parameter: Type asfaltmengsel (PIM-veld: MengselType). Toelichting en beperking: Waarde is een OTL-enumeratie-IRI (bijvoorbeeld AC, SMA, ZOAB), geen vrije tekst."@nl
+    ] ;
+    sh:property [
+        sh:path wco:38d85060-1462-a2a7-79e6-638abf817362 ; # streefdichtheid
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:double ; sh:unit unit:KiloGM-PER-M3 ;
+        sh:severity sh:Warning ;
+        sh:name "Dichtheid (eis) / streefdichtheid"@nl ;
+        sh:message "Geef bij voorkeur exact één streefdichtheid als xsd:double in kg/m³."@nl ;
+        rdfs:comment "Originele parameter: Dichtheid (eis) / Streefdichtheid (eis) (PIM-veld: Streefdichtheid). Toelichting en beperking: xsd:double; sh:unit unit:KiloGM-PER-M3. Ontwerpwaarde, niet gemeten proefstuk- of mengseldensiteit."@nl
+    ] ;
+    sh:property [
+        sh:path wco:eb6594f0-699d-87c8-3242-4356a238fef9 ; # bestaat uit
+        sh:qualifiedValueShape :MaterieaandeelPaspoortShape ;
+        sh:qualifiedMinCount 1 ;
+        sh:name "Bouwstoffen en aandelen van het mengsel"@nl ;
+        sh:message "Koppel minimaal één materieaandeel dat aan het bouwstofprofiel voldoet; valideer ieder ander uitgewisseld materieaandeel als doel van :MaterieaandeelPaspoortShape."@nl
+    ] ;
+    sh:property [
+        sh:path wco:eb6594f0-699d-87c8-3242-4356a238fef9 ; # bestaat uit
+        sh:qualifiedValueShape :AsfaltgranulaataandeelPaspoortShape ;
+        sh:qualifiedMinCount 1 ; sh:severity sh:Warning ;
+        sh:name "RAP-gehalte (PR)"@nl ;
+        sh:message "Geef bij voorkeur een asfaltgranulaataandeel met een numeriek percentage; ontbrekende RAP-informatie is een aandachtspunt."@nl ;
+        rdfs:comment "Originele parameter: Reclaimed Asphalt Pavement (RAP) gehalte (ofwel PR) (PIM-veld: Percentage hergebruik?). Toelichting en beperking: Gebruik numerieke massaprocentwaarde en unit:PERCENT. Herkomst/bewerking wordt apart niet afgeleid uit Asfaltgranulaat. Het klassetype identificeert de bouwstof; gebruik niet het untyped lijstindividu uit de oude mapping."@nl
+    ] .
+
+# =============================================================================
+# Materieaandeel: bouwstofidentificatie en optionele aandelen
+# =============================================================================
+
+:MaterieaandeelPaspoortShape
+    a sh:NodeShape ;
+    sh:targetClass wco:69e6ad34-9830-72b8-a34e-151f5058be6f ; # Materieaandeel
+    sh:property [
+        sh:path wco:c9795ed3-2258-4249-acdf-2e8d5d13a277 ; # heeft bouwstof
+        sh:qualifiedValueShape :BouwstofPaspoortShape ;
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ;
+        sh:message "Een materieaandeel verwijst naar exact één volledig beschreven bouwstof."@nl
+    ] ;
+    sh:property [
+        sh:path wco:112ca5a3-a02c-7fe5-0cc3-44a116b92c96 ; # aandeel
+        sh:qualifiedValueShape :KwantiteitwaardePercentageShape ;
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ; sh:severity sh:Warning ;
+        sh:name "Aandeel bouwstof (eis)"@nl ;
+        sh:message "Geef bij voorkeur exact één numeriek ontwerpaandeel in procenten; WCO onderscheidt geen bandbreedtecategorieën."@nl ;
+        rdfs:comment "Originele parameter: Aandeel bouwstof (eis) (PIM-veld: BerekeningsResultaat). Toelichting en beperking: Ondersteunt één numeriek ontwerppercentage per bouwstof, geen expliciet min/max- of georchestreerde bandbreedtecategorie. Bij een bronbandbreedte is een afspraak nodig over representatie (bijvoorbeeld bovengrens) of OTL-uitbreiding; niet verzinnen als exact percentage."@nl
+    ] .
+
+:KwantiteitwaardePercentageShape
+    a sh:NodeShape ;
+    sh:class wco:3071ee6f-5045-065c-85a3-5999ba900615 ; # Kwantiteitwaarde
+    sh:property [
+        sh:path wco:74f0e640-4b1a-d9e2-c266-7926b31e679e ; # heeft waarde
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ;
+        sh:message "Een aandeel heeft exact één xsd:decimal-waarde."@nl
+    ] ;
+    sh:property [
+        sh:path wco:58666027-113b-919d-754d-76613d43be00 ; # heeft eenheid
+        sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue unit:PERCENT ; sh:nodeKind sh:IRI ;
+        sh:message "Een aandeel gebruikt exact de QUDT-eenheid unit:PERCENT."@nl
+    ] .
+
+:BouwstofPaspoortShape
+    a sh:NodeShape ;
+    sh:targetClass wco:528bd52d-c35c-68c0-dba5-e1c585aed3ad ; # Bouwstof
+    sh:property [
+        sh:path wco:730ef0ed-91cb-46f5-887c-aa09146b13c0 ; # id
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:name "BouwstofID (bron-UID)"@nl ;
+        sh:message "Een bouwstof heeft naast haar IRI exact één BouwstofID als bron-UID."@nl ;
+        rdfs:comment "Originele parameter: Identificatie (PIM-veld: BouwstofID). Toelichting en beperking: Generieke wco:id bewaart de bron-UID; de URI identificeert de bouwstof. Niet gebruiken als vervanging voor bouwstofcode indien die een andere betekenis heeft."@nl
+    ] ;
+    sh:property [
+        sh:path wco:b9085801-5919-062b-3737-71c9b72ad567 ; # bouwstof soort
+        sh:qualifiedValueShape [ sh:class wco:c564ba4e-d1b2-471c-91d6-ccf33079d909 ] ; # BouwstofsoortLijst
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:name "BouwstofSoort"@nl ;
+        sh:message "Gebruik exact één IRI van een individu uit BouwstofsoortLijst."@nl ;
+        rdfs:comment "Originele parameter: BouwstofSoort (PIM-veld: BouwstofSoort). Toelichting en beperking: OTL-enumeratie-IRI; 16 waarden in deze versie."@nl
+    ] ;
+    sh:property [
+        sh:path wco:4eb729cf-1a83-a92b-8f60-d5af9726b48c ; # bouwstof naam
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:name "Productnaam bouwstof"@nl ;
+        sh:message "Een bouwstof heeft exact één productnaam als tekst."@nl ;
+        rdfs:comment "Originele parameter: Productnaam (PIM-veld: BouwstofNaam). Toelichting en beperking: Handelsnaam of beschrijvende productnaam van de bouwstof; xsd:string."@nl
+    ] .
+
+# =============================================================================
+# Gespecialiseerde bouwstofaandelen: type additief, bitumen en steenslag
+# =============================================================================
+
+:AdditiefaandeelPaspoortShape
+    a sh:NodeShape ;
+    sh:targetClass wco:9fd4f551-f919-4516-8613-e348ee729e6c ; # Additiefaandeel
+    sh:property [
+        sh:path wco:c9795ed3-2258-4249-acdf-2e8d5d13a277 ; # heeft bouwstof
+        sh:qualifiedValueShape [ sh:class wco:831da4d0-cdae-461b-ad92-09cf34813827 ] ; # Additief
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1
+    ] .
+
+:BindmiddelaandeelPaspoortShape
+    a sh:NodeShape ;
+    sh:targetClass wco:d35a9550-c8d3-4512-b0ce-f59985900dc8 ; # Bindmiddelaandeel
+    sh:property [
+        sh:path wco:c9795ed3-2258-4249-acdf-2e8d5d13a277 ; # heeft bouwstof
+        sh:qualifiedValueShape [ sh:class wco:4852c59e-36eb-4940-9f22-56bbd9adfab4 ] ; # Bindmiddel
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ;
+        sh:message "Een bindmiddelaandeel verwijst naar een bindmiddel."@nl
+    ] .
+
+:AggregaataandeelPaspoortShape
+    a sh:NodeShape ;
+    sh:targetClass wco:3e6c276c-cfd9-4b48-a36f-c67106d1c2b9 ; # Aggregaataandeel
+    sh:property [
+        sh:path wco:c9795ed3-2258-4249-acdf-2e8d5d13a277 ; # heeft bouwstof
+        sh:qualifiedValueShape [ sh:class wco:059e1508-7b96-4ed4-b3c6-934d43fc80f2 ] ; # Aggregaat
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ;
+        sh:message "Een aggregaataandeel verwijst naar een aggregaat."@nl
+    ] .
+
+:AsfaltgranulaataandeelPaspoortShape
+    a sh:NodeShape ;
+    sh:targetClass wco:32b810fc-e2b4-4a3b-b15c-ad7c50a3d8b9 ; # Asfaltgranulaataandeel
+        rdfs:comment "Originele parameter: Herkomst RAP (PIM-veld: BouwstofType). Toelichting en beperking: Bron bedoelt of het granulaat bewerkt is, niet geografische oorsprong. Asfaltgranulaat, Asfaltgranulaat A1/A2 en bouwstof type coderen die verwerkingshistorie niet eenduidig; daarom is hiervoor binnen WCO-only geen SHACL-property opgenomen."@nl ;
+    sh:property [
+        sh:path wco:c9795ed3-2258-4249-acdf-2e8d5d13a277 ; # heeft bouwstof
+        sh:qualifiedValueShape [ sh:class wco:2f20e8be-ecd7-4085-be1f-8450922773b4 ] ; # Asfaltgranulaat
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ;
+        sh:message "Een RAP-aandeel verwijst naar een bouwstof van de class Asfaltgranulaat."@nl
+    ] ;
+    sh:property [
+        sh:path wco:112ca5a3-a02c-7fe5-0cc3-44a116b92c96 ; # aandeel
+        sh:qualifiedValueShape :KwantiteitwaardePercentageShape ;
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ; sh:severity sh:Warning ;
+        sh:name "RAP-gehalte (PR)"@nl ;
+        sh:message "Een asfaltgranulaataandeel heeft bij voorkeur exact één percentage met unit:PERCENT."@nl
+    ] .
+
+:AdditiefTypePaspoortShape
+    a sh:NodeShape ;
+    sh:targetClass wco:831da4d0-cdae-461b-ad92-09cf34813827 ; # Additief
+    sh:property [
+        sh:path wco:7ff0fed6-c63b-51ca-e267-d23c52c4e094 ; # bouwstof type
+        sh:qualifiedValueShape [ sh:class wco:cad44b37-ed4e-4652-bc9e-401157fe1e66 ] ; # BouwstoftypeLijst
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:name "Type additief"@nl ; sh:message "Een additief heeft exact één waarde uit BouwstoftypeLijst."@nl ;
+        rdfs:comment "Originele parameter: Type additief (PIM-veld: BouwstofType). Toelichting en beperking: Gebruik de gespecialiseerde OTL-subklasse Additief en Additiefaandeel. Toegestane typeringen komen uit BouwstoftypeLijst; exacte PIM-code mapping moet per waarde worden gecontroleerd."@nl
+    ] .
+
+:BindmiddelTypePaspoortShape
+    a sh:NodeShape ;
+    sh:targetClass wco:4852c59e-36eb-4940-9f22-56bbd9adfab4 ; # Bindmiddel
+    sh:property [
+        sh:path wco:7ff0fed6-c63b-51ca-e267-d23c52c4e094 ; # bouwstof type
+        sh:qualifiedValueShape [ sh:class wco:cad44b37-ed4e-4652-bc9e-401157fe1e66 ] ; # BouwstoftypeLijst
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:name "Type bitumen"@nl ; sh:message "Een bindmiddel/bitumen heeft exact één waarde uit BouwstoftypeLijst."@nl ;
+        rdfs:comment "Originele parameter: Type bitumen (PIM-veld: BouwstofType). Toelichting en beperking: Type bitumen is bouwstof type van de concrete Bouwstof/Bindmiddel. Bijvoorbeeld Penetratiebitumen of Gemodificeerde bitumen uit de bestaande waardelijst."@nl
+    ] .
+
+:AggregaatTypePaspoortShape
+    a sh:NodeShape ;
+    sh:targetClass wco:059e1508-7b96-4ed4-b3c6-934d43fc80f2 ; # Aggregaat
+        rdfs:comment "Originele parameter: Steenslagklasse (PIM-veld: PetrografischeSamenstelling). Toelichting en beperking: PetrografischeSamenstelling is niet hetzelfde als bouwstof type of PSV (polijstweerstand). Geen onjuiste semantische mapping naar psv waarde; daarom is hiervoor binnen WCO-only geen SHACL-property opgenomen."@nl ;
+    sh:property [
+        sh:path wco:7ff0fed6-c63b-51ca-e267-d23c52c4e094 ; # bouwstof type
+        sh:qualifiedValueShape [ sh:class wco:cad44b37-ed4e-4652-bc9e-401157fe1e66 ] ; # BouwstoftypeLijst
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:name "Type steenslag"@nl ; sh:message "Een aggregaat/steenslag heeft exact één waarde uit BouwstoftypeLijst."@nl ;
+        rdfs:comment "Originele parameter: Type steenslag (PIM-veld: BouwstofType). Toelichting en beperking: Type steenslag is bouwstof type van de concrete bouwstof, niet van het gehele mengsel. Waardelijstkeuzes vereisen controle op PIM-codes."@nl
+    ] .

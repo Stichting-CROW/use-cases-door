@@ -1,0 +1,32 @@
+﻿Synoniem vanuit aannemer,PIM Veld,Parameter om me te werken,Opmerkingen
+Projectcode PIM  van het project,ProjectNummerAannemer,Projectcode PIM  van het project,
+Besteksnummer (contractnummer),ContractNummer,Besteksnummer (contractnummer),
+Hoofdlocatie project,HoofdlocatieWerk,Hoofdlocatie project,
+Opdrachtgever,OpdrachtgeverNaam,Opdrachtgever,
+Identificatie,ConstructieID (UID),Identificatie + naam,Code die in PIM wordt meegegeven. Visueel heb je hier niets aan. Uitvoeringseenheden behoren samengesteld tot een constructie ID
+Plaatsingsdatum,Niet aanwezig,Opleverdatum constructie,"Is momenteel nog niet beschikbaar in PIM, wensenlijst voor de toekomst"
+Kilometrering,,Geometrische locatie constructrie,"Alleen locatiegegevens x,y. Overige locatie inforamtie komt uit andere bronnen."
+Identificatie,UitvoeringsEeheidID (UID),Identificatie + naam,Nog zoeken naar het juiste veld in PIM
+Type constructielaag,"Type Verharding: Deklaag, onderlaag = ""Omschrijving ConstructieLaag""; Objecttype AC, SMA, waterafdichtende laag =""ObjectType"" (=volgnummer + Naam Objecttype + oppervlak)",Type constructielaag,
+Aangebracht op bestaande constructielaag,Ondergrond asfaltconstructie,bestaande constructielaag onder deze constructie of verwijderde constructielaag krijgt eigen paspoort,"Vanuit Provincie wenselijk. Op zich geen weerstand vanuit VBW, alleen de vraag welke meerwaarde het heeft."
+Laagnummer,Nummer Uitvoeringseenheid,Laagnummer,
+Oppervlakte,Oppervlakte,Oppervlakte,
+Laagdikte (eis),Gewenste dikte,Laagdikte (eis),
+Gewicht (ton),Berekend veld (Oppervlakte x gewenste dikte x streefgewicht),Gewicht (ton),
+Identificatie,MengselOntwerpID (UID),Identificatie,Is op de achtergrond nodig tbv koppelen gegevens. Niet nodig als inhoud tbv het materialenpaspoort.
+Productnaam,MengselOmschrijving,Handelsnaam,Zelfde aanhouden als op CE
+Europese benaming,Europese benaming,Europese benaming,
+Mengselcode,MengselCode,Mengselcode,
+Type asfaltmengsel,MengselType,Type asfaltmengsel,
+Naam asfaltmolen,Asfaltcentrale,Naam asfaltmolen,
+Dichtheid (eis),Streefdichtheid,Streefdichtheid (eis),
+Reclaimed Asphalt Pavement (RAP) gehalte (ofwel PR),Percentage hergebruik??,Reclaimed Asphalt Pavement (RAP) gehalte (ofwel PR),
+Identificatie,BouwstofID,Identificatie,
+BouwstofSoort,BouwstofSoort,BouwstofSoort,
+Productnaam,BouwstofNaam,Productnaam,
+Type additief,BouwstofType,Type additief,
+Type bitumen,BouwstofType,Type bitumen,
+Type steenslag,BouwstofType,Type steenslag,
+Steenslagklasse,PetrografischeSamenstelling,Steenslagklasse,
+Aandeel bouwstof (eis),BerekeningsResultaat,Aandeel bouwstof (eis),Bandbreedte; voorstel wat vanuit DPP Europa wordt geeist.  / Op dit moment al verplichting vanuit EPD (bandbreedtes). Spelregels over precieze bandbreedtes worden wellicht nader bepaald. / Zie verkort verslag. / Op LCA alleen primair deel beschikbaar.
+Herkomst RAP,BouwstofType,Herkomst RAP,Gaat over de vraag of het granulaat bewerkt is. / Het is al vermeld in het verkort verslag. Dit staat ook in PIM
